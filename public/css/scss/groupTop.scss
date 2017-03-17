@@ -1,0 +1,294 @@
+//css for GroupTop
+.groupTop {
+    background-image: url(images/grouptop/bg-group.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    header{
+        #logo{
+            background-image: none;
+            padding: 0px;
+            position: relative;
+            text-align: center;
+            a img.logoTop{
+                height: auto;
+                width: 58%;
+            }
+            .logoTop2{
+                height: auto;
+                width: 40%;
+            }
+            .bgLogo{
+                width: 100%
+            }
+        }
+        #bannerMain{
+            position: relative;
+            .a1Banner{
+                position: absolute;
+                width: 50%;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+            }
+            .a2Banner{
+                position: absolute;
+                width: 50%;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+            }
+        }
+        #mainMenu{
+            position: relative;
+            padding: 0px;
+            .ctMenu{
+                position: absolute;
+                width: 100%;
+                top: 0px;
+                padding-top: 18px;
+                @media(max-width: 1600px){
+                    padding-top: 14px;
+                }
+                @media(max-width: 1400px){
+                    padding-top: 9px;
+                    a{
+                        padding: 2px;
+                    }
+                }
+                @media(max-width: 1200px){
+                    padding-top: 3px;
+                }
+                @media(max-width: 992px){
+                    padding-top: 0px;
+                    a{
+                        padding: 0px;
+                    }
+                }
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .img-logo{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+        }
+    }
+    #main{
+        background: none;
+        position: relative;
+        padding: 0px;
+        .bgCheo{
+            width: 100%;
+            position: absolute;
+            z-index: 3;
+        }
+    }
+    .infoTop{
+        height: 68px;
+        overflow: hidden;
+    }
+    .scroll{
+        height: 242px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    #mainContetn{
+        position: absolute;
+        background-image: url(images/grouptop/bg-group.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: 0px;
+        background-position: 0px;
+        left: 0px;
+        width: 100%;
+        padding: 20px 40px 20px 100px;
+        @media(max-width: 1500px){
+            padding: 20px 20px 20px 50px;
+        }
+        @media(max-width: 768px){
+            padding: 0px;
+        }
+    }
+    .home-left, .home-right{
+        z-index: 4;
+    }
+    .titleAva1{
+        background-image: url(images/grouptop/titleNumber.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: left;
+        font-size: 18px;
+        padding: 10px 0px 10px 35px;
+        margin-bottom: 0px;
+    }
+    .titleAva2{
+        background-image: url(images/grouptop/titleGigo.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: left;
+        font-size: 18px;
+        padding: 10px 0px 10px 35px;
+        margin-bottom: 0px;
+    }
+    .ct-ava{
+        img{
+            max-width: 100%;
+            width: 100%;
+        }
+        .titleAva1{
+            background-image: url(images/grouptop/number1.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 0;
+            margin-bottom: 0px;
+        }
+        .titleAva2{
+            background-image: url(images/grouptop/number2.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 0;
+            margin-bottom: 0px;
+        }
+        .titleAva3{
+            background-image: url(images/grouptop/number3.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px 0;
+            margin-bottom: 0px;
+        }
+    }
+    .titleAva4{
+         background-image: url(images/grouptop/titleSli1.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+    .titleAva5{
+         background-image: url(images/grouptop/titleSli2.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+    .titleAva6{
+         background-image: url(images/grouptop/titleContent.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+    .lineSli{
+        margin-bottom: 50px;
+    }
+    footer{
+        p{
+            text-align: center;
+        }
+    }
+    footer {
+        padding: 20px 0 20px 30px;
+        position: absolute;
+        width: 100%;
+        left: 0px;
+    }
+    @media(max-width: 1500px){
+        footer{
+            img{
+                width: 300px;
+            }
+            padding: 20px 0 20px 30px;
+        }
+        .lineSli{
+            margin-top: 50px;
+        }
+    }
+}
+    @media(max-width: 767px){
+        .groupTop .titleAva4, .groupTop .titleAva5, .groupTop .titleAva6{
+            padding: 5px 0;
+        }
+         .groupTop .lineSli{
+            margin-top: 20px;
+        }
+        .groupTop #mainContetn{
+            background-size: auto;
+        }
+        .groupTop footer {
+            padding: 20px 0 20px 0px;
+        }
+        .groupTop #logo{
+            a img.logoTop{
+                width: 80% !important;
+            }
+        }
+        .groupTop .ct-ava .titleAva1, .groupTop .ct-ava .titleAva2, .groupTop .ct-ava .titleAva3, .titleAva4, .titleAva5, .titleAva6{
+            padding: 0px 0;
+        }
+        .groupTop .titleAva2, .groupTop .titleAva1{
+            padding: 0px 20px;
+        }
+         footer{
+            img{
+                width: 200px;
+            }
+             padding: 20px 0 20px 0px;
+        }
+        #mainMenu{
+            position: fixed !important;
+            display: none;
+            top: 70px;
+            z-index: 10;
+            left: 0px;
+            width: 100%;
+        }
+         #mainMenu a {
+            display: block !important;
+            width: 100%;
+            display: block;
+            background-color: red;
+            width: 100%;
+            max-width: 100%;
+            border-bottom: 1px solid white;
+        }
+        #mainMenu br{
+            display: none;
+        }
+        .click{
+            font-size: 30px;
+            color: white;
+        }
+    }
+@media(max-width: 992px){
+    @media(max-width: 992px){
+        .groupTop .home-right{
+            padding-top: 20px;
+        }
+
+    }
+}
+
+

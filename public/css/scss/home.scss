@@ -1,0 +1,371 @@
+
+#logo{
+    padding: 10px 0px 10px 30px;
+    background-image: url(images/bg-main.jpg);
+    a img{
+        height: 90px;
+    }
+}
+.clear-fix{
+    clear: both;
+}
+#main{
+    padding: 20px 40px 20px 100px;
+    background-image: url(images/bg-main.jpg);
+}
+#bannerMain{
+    img {
+        width: 100%;
+    }
+}
+.ct-topLeft{
+    font-size: 16px;
+    background-color: white;
+    overflow: auto;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    .imgex{
+        width: 100%;
+    }
+}
+
+#mainMenu{
+    background-color: #d20000;
+    text-align: center;
+    padding: 10px 0px;
+    a{
+        width: 15%;
+        max-width: 145px;
+        display: inline-block;
+        color: white;
+        font-size: 16px;
+        padding: 5px 0;
+    }
+}
+
+.infoTop {
+    margin-top: 10px;
+    padding: 0 10px;
+    > img{
+        float: left;
+        max-width: 100%;
+        width: 35%;
+    }
+    .content1{
+        float: right;
+        width: 60%;
+        span{
+            display: block;
+        }
+        .title-1{
+            color: #ff00d8;
+            font-weight: bold;
+        }
+        .title-2{
+            font-weight: bold;
+        }
+    }
+    .line{
+        text-align: center;
+        img{
+            width: 80%;
+            margin: 10px auto;
+            margin-top: 0px;
+        }
+    }
+}
+.avaId{
+    margin-top: 20px;
+    background-color: white;
+    overflow: auto;
+    border-radius: 10px;
+}
+.lineSli{
+    margin-top: 90px;
+}
+.titleAva{
+    background-image: url(images/ex2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    padding: 10px 0px 10px 35px;
+    margin-bottom: 0px;
+}
+.ct-ava{
+    img{
+        max-width: 100%;
+        width: 100%;
+    }
+    .titleAva{
+        background-image: url(images/bg-titleAva.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+}
+
+.lineSli{
+    #lineImg img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.setHeight{
+    height: 90px;
+}
+
+.containerSlider{
+    position: relative;
+    padding: 20px 35px;
+    .owl-prev {
+        position: absolute;
+        background-image: url(images/prev.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        top: 33px;
+        width: 16px;
+        left: -30px;
+        font-size: 0px;
+        height: 21px;
+    }
+    .owl-next {
+        position: absolute;
+        background-image: url(images/next.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        top: 33px;
+        width: 16px;
+        font-size: 0px;
+        right: -30px;
+        height: 21px;
+    }
+}
+
+.slider1, .slider2 {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.slider2 {
+    margin-top: 20px;
+}
+.bannerContent img{
+    width: 100%;
+}
+.bcLeft, bcRight{
+    position: relative;
+}
+.rowPlus{
+    margin-right: 0px;
+    background-color: white;
+    margin-left: 0px;
+    padding-bottom: 15px;
+}
+.bnContent{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: white;
+    text-align: right;
+    span{
+        display: block;
+    }
+    span:first-child{
+        font-size: 16px;
+    }
+    p{
+        margin-bottom: 3px;
+    };
+}
+.number{
+    margin-top: 20px;
+}
+.bcRight{
+    padding-left: 0px;
+}
+.bcLeft{
+    padding-right: 0px;
+}
+.gold{
+    .contentGold{
+        margin-top: 25px;
+    }
+    img {
+        width: 100%;
+    }
+}
+.pd0{
+    padding: 0px;
+}
+.pdLeft{
+    padding-left: 0px;
+}
+.pdRight{
+    padding-right: 0px;
+}
+.pdCenter{
+    padding: 0 7.5px;
+}
+.title-Right{
+    background-image: url(images/bg-titleRight.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 95px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.tableTop{
+    position: relative;
+    margin-bottom: 25px;
+    img{
+        width: 100%;
+    }
+    .tableCt{
+        position: absolute;
+        bottom: 0px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+footer{
+    background-color: #282928;
+    padding: 30px;
+    color: white;
+    font-size: 16px;
+    .copyRight, .ftRight{
+        display: table-cell;
+    }
+    .ftRight{
+        padding-left: 150px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 1500px){
+    #main{
+        padding: 20px 20px 20px 50px;
+        background-image: url(images/bg-main.jpg);
+    }
+    #logo{
+        padding: 10px 0px 10px 30px;
+        background-image: url(images/bg-main.jpg);
+        a img{
+            height: 60px;
+        }
+    }
+    footer{
+        img{
+            width: 150px;
+        }
+        padding: 20px 0 20px 30px;
+    }
+    #mainMenu{
+        padding: 5px 0px;
+    }
+    footer{
+        padding: 10px 30px;
+    }
+}
+
+@media(max-width: 1200px){
+    #mainMenu{
+        padding: 5px 0px;
+        a{
+            width: 15%;
+            max-width: 115px;
+            display: inline-block;
+            color: white;
+            font-size: 12px;
+            padding: 5px 0;
+        }
+    }
+}
+
+@media(max-width: 992px){
+    #mainMenu{
+        a{
+            width: 15%;
+            max-width: 104px;
+            display: inline-block;
+            color: white;
+            font-size: 11px;
+            padding: 5px 0;
+        }
+    }
+}
+
+@media(max-width: 768px){
+    #main{
+        padding: 0px;
+        background-image: url(images/bg-main.jpg);
+    }
+    .home-left, .title-Right{
+        margin-top: 30px;
+    }
+    .ct-topLeft{
+        margin-top: 20px;
+    }
+    .title-Right {
+        min-height: 65px;
+    }
+    footer{
+        padding: 30px 20px;
+        color: white;
+        font-size: 16px;
+        .copyRight, .ftRight{
+            display: block;
+            text-align: center;
+        }
+        .ftRight{
+            padding-left: 0px;
+            font-weight: bold;
+        }
+    }
+    #mainMenu{
+        position: fixed;
+        display: none;
+        top: 70px;
+        z-index: 10;
+        left: 0px;
+        width: 100%;
+    }
+    #logo{
+        position: fixed;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+    }
+    #mainMenu a {
+        display: block;
+        width: 100%;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-bottom: 1px solid white;
+    }
+    #mainMenu br{
+        display: none;
+    }
+    .click{
+        font-size: 30px;
+        color: white;
+    }
+    #logo a img {
+        height: 50px;
+    }
+    #menu{
+        float: right;
+        width: 40px;
+        margin-right: 10px;
+        margin-top: 3px;
+    }
+}

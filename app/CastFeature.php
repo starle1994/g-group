@@ -1,0 +1,41 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Laraveldaily\Quickadmin\Observers\UserActionsObserver;
+
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class CastFeature extends Model {
+
+    use SoftDeletes;
+
+    /**
+    * The attributes that should be mutated to dates.
+    *
+    * @var array
+    */
+    protected $dates = ['deleted_at'];
+
+    protected $table    = 'castfeature';
+    
+    protected $fillable = [
+          'image',
+          'backgroud_image',
+          'description'
+    ];
+    
+
+    public static function boot()
+    {
+        parent::boot();
+
+        CastFeature::observe(new UserActionsObserver);
+    }
+    
+    
+    
+    
+}
