@@ -3,6 +3,7 @@
  * Function requested by Ajax
  */
 if(isset($_POST['func']) && !empty($_POST['func'])){
+
 	switch($_POST['func']){
 		case 'getCalender':
 			getCalender($_POST['year'],$_POST['month']);
@@ -27,6 +28,7 @@ function getCalender($year = '',$month = '')
 	$totalDaysOfMonth = cal_days_in_month(CAL_GREGORIAN,$dateMonth,$dateYear);
 	$totalDaysOfMonthDisplay = ($currentMonthFirstDay == 7)?($totalDaysOfMonth):($totalDaysOfMonth + $currentMonthFirstDay);
 	$boxDisplay = ($totalDaysOfMonthDisplay <= 35)?35:42;
+
 ?>
 	<div id="calender_section">
 		<h2>
@@ -57,10 +59,7 @@ function getCalender($year = '',$month = '')
 						$currentDate = $dateYear.'-'.$dateMonth.'-'.$dayCount;
 						$eventNum = 0;
 						//Include db configuration file
-						include 'dbConfig.php';
-						//Get number of events based on the current date
-						$result = $db->query("SELECT title FROM events WHERE date = '".$currentDate."' AND status = 1");
-						$eventNum = $result->num_rows;
+					
 						//Define date cell color
 						if(strtotime($currentDate) == strtotime(date("Y-m-d"))){
 							echo '<li date="'.$currentDate.'" class="grey date_cell">';
@@ -83,6 +82,7 @@ function getCalender($year = '',$month = '')
 						
 						echo '</li>';
 						$dayCount++;
+
 			?>
 			<?php }else{ ?>
 				<li><span>&nbsp;</span></li>
@@ -147,7 +147,9 @@ function getCalender($year = '',$month = '')
 			});
 		});
 	</script>
+
 <?php
+
 }
 
 /*

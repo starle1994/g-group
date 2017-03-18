@@ -10,7 +10,11 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+Route::get('/schedule', ['as' => 'user.schedule', function () {
+    
+    return view('schedule');
+   
+}]);
 Route::get('/', ['as' => 'user.home', function () {
     
     return redirect()->route('index');
