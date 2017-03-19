@@ -36,25 +36,18 @@
         {!! Form::text('start_time', old('start_time'), array('class'=>'form-control datetimepicker')) !!}
         
     </div>
-</div><div class="form-group">
+</div>
+<div class="form-group">
     {!! Form::label('end_time', 'end_time*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('end_time', old('end_time'), array('class'=>'form-control datetimepicker')) !!}
         
     </div>
-</div><div class="form-group">
-    {!! Form::label('image', 'image*', array('class'=>'col-sm-2 control-label')) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('event_type', 'event type*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::file('image') !!}
-        {!! Form::hidden('image_w', 4096) !!}
-        {!! Form::hidden('image_h', 4096) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('color', 'color*', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('color', old('color'), array('class'=>'form-control')) !!}
-        
+        {!! Form::select('event_type', array_event(), old('event_type'), array('class'=>'form-control')) !!}
     </div>
 </div>
 

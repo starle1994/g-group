@@ -29,7 +29,7 @@
             <div id="mainMenu" >
                 <img class="hidden-xs" src="{{ asset('images/grouptop/bg-menu.jpg') }}" alt="">
                 <div class="ctMenu">
-                    @foreach($categories as $cate)
+                    @foreach(categories() as $cate)
                     <a href="">{{$cate->name}}</a>
                     @endforeach
                 </div>

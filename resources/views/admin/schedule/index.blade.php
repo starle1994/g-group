@@ -17,10 +17,9 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>name_event</th>
-<th>start_time</th>
-<th>end_time</th>
-<th>image</th>
-<th>color</th>
+                        <th>start_time</th>
+                        <th>end_time</th>
+                        <th>event type</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -33,11 +32,16 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->name_event }}</td>
-<td>{{ $row->start_time }}</td>
-<td>{{ $row->end_time }}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>{{ $row->color }}</td>
-
+                            <td>{{ $row->start_time }}</td>
+                            <td>{{ $row->end_time }}</td>
+                            <td>@if($row->event_type == 1)
+                                    Birthday 
+                                @elseif($row->event_type == 2)
+                                     Event
+                                @else 
+                                    Holiday
+                                @endif
+                            </td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.schedule.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.schedule.destroy', $row->id))) !!}

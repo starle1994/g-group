@@ -15,7 +15,7 @@
     <script src='{!! url('js/bootstrap.min.js') !!}' type='text/javascript'></script>
     <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script>
     </head>
-<body>
+<body id="calendar_div">
     <div id="wrapper" class="groupTop">
         @include('layouts.header')
         <div id="main">
@@ -46,11 +46,9 @@
             0:{
                 items:1
             },
-            600:{
-                items:3
-            },
+            
             1000:{
-                items:5
+                items:2
             }
         }
     })

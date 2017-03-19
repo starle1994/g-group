@@ -26,10 +26,8 @@ class CreateScheduleRequest extends FormRequest {
 		return [
             'name_event' => 'required', 
             'description' => 'required', 
-            'start_time' => 'required', 
-            'end_time' => 'required', 
-            'image' => 'required', 
-            'color' => 'required', 
+            'start_time' => 'required',  
+            'event_type' => 'required', 
             
 		];
 	}

@@ -47,8 +47,14 @@ class ScheduleController extends Controller {
 	 */
 	public function store(CreateScheduleRequest $request)
 	{
-	    $request = $this->saveFiles($request);
-		Schedule::create($request->all());
+		$end_time = ($request->end_time != '') ?  $request->end_time : NULL;
+
+	  	Schedule::create(['name_event'=>$request->name_event,
+          'description'=>$request->description,
+          'start_time'=>$request->start_time,
+          'end_time'=>$end_time,
+          'event_type'=>$request->event_type
+        ]);
 
 		return redirect()->route(config('quickadmin.route').'.schedule.index');
 	}
@@ -76,10 +82,12 @@ class ScheduleController extends Controller {
 	public function update($id, UpdateScheduleRequest $request)
 	{
 		$schedule = Schedule::findOrFail($id);
-
-        $request = $this->saveFiles($request);
-
-		$schedule->update($request->all());
+		$end_time = ($request->end_time != '') ?  $request->end_time : NULL;
+		$schedule->update(['name_event'=>$request->name_event,
+          'description'=>$request->description,
+          'start_time'=>$request->start_time,
+          'end_time'=>$end_time,
+          'event_type'=>$request->event_type]);
 
 		return redirect()->route(config('quickadmin.route').'.schedule.index');
 	}

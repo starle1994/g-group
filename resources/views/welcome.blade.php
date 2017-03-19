@@ -9,7 +9,6 @@
                 <div class="ct-topLeft">
                     <div><img class="imgex" src="{{ asset('images/grouptop/titleMino.png') }}"
                      alt=""></div>
-
                     <div class="scroll">
                         <div class="infoTop">
                             <img src="images/info1.png" alt="">
@@ -158,66 +157,37 @@
                     
                 </div>
             </div>
-            <div class="col-xs-4 pdLeft">
-                <div class="ct-ava">
-                    <img src="images/grouptop/avar1.png" alt="">
-                    <p class="titleAva1">
-                        
-                    </p>
+            @foreach($million_ranking_staff as $million)
+                <div class="col-xs-4 pdLeft">
+                    <div class="ct-ava">
+                        <img src="{{ asset('uploads/'.$million->image) }}" alt="{{$million->name}}">
+                        <p class="titleAva1">
+                            
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4 pdCenter">
-                <div class="ct-ava">
-                    <img src="images/grouptop/avar2.png" alt="">
-                    <p class="titleAva2">
-                        
-                    </p>
-                </div>
-            </div>
-            <div class="col-xs-4 pdRight">
-                <div class="ct-ava">
-                    <img src="images/grouptop/avar3.png" alt="">
-                    <p class="titleAva3">
-                        
-                    </p>
-                </div>
-            </div>
+            @endforeach
             <div class="clear-fix"></div>
             <div class="col-xs-12 pd0">
                 <div class="titleAva2">
                     
                 </div>
             </div>
-            <div class="col-xs-4 pdLeft">
+            @foreach($gigolo_ranking_staff as $gigolo)
+                <div class="col-xs-4 pdLeft">
                     <div class="ct-ava">
-                        <img src="images/grouptop/avar4.png" alt="">
+                        <img src="{{ asset('uploads/'.$gigolo->image) }}" alt="{{$gigolo->name}}">
                         <p class="titleAva1">
                             
                         </p>
                     </div>
                 </div>
-            <div class="col-xs-4 pdCenter">
-                <div class="ct-ava">
-                    <img src="images/grouptop/avar5.png" alt="">
-                    <p class="titleAva2">
-                        
-                    </p>
-                </div>
-            </div>
-            <div class="col-xs-4 pdRight" >
-                        <div class="ct-ava">
-                            <img src="images/grouptop/avar6.png" alt="">
-                            <p class="titleAva3">
-                                
-                            </p>
-                        </div>
-                    </div>
+            @endforeach
         </div>
         <div class="row lineSli">
             <div class="col-xs-3" id="lineImg">
-                @foreach($categories_left as $left)
-                    <img src="{{ asset('uploads/'.$left->image) }}" alt="{{$left->name}}">
-                @endforeach
+                <img src="images/group-rankking/Line@.jpg" alt="">
+                @include('include.categories_left')
             </div>
             <div class="col-xs-9">
                <div class="slider1">
@@ -226,12 +196,11 @@
                     </div>
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
-                            <div class="item"><img class="setHeight" src="images/slider1.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider2.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider3.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider4.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider5.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider6.png" alt=""></div>
+                            
+                            @foreach($secrect_contents as $secrect_content)
+                            <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$secrect_content->image) }}" alt="{{$secrect_content->name}}"></div>
+          
+                            @endforeach
                         </div>
                     </div>
                </div>
@@ -241,12 +210,10 @@
                     </div>
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
-                            <div class="item"><img class="setHeight" src="images/slider1.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider2.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider3.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider4.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider5.png" alt=""></div>
-                            <div class="item"><img class="setHeight" src="images/slider6.png" alt=""></div>
+                            @foreach($rookies_feature as $rookie)
+                            <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$rookie->image) }}" alt="{{$rookie->name}}"></div>
+          
+                            @endforeach
                         </div>
                     </div>
                </div>
@@ -291,11 +258,7 @@
 
 <!--                        all content right-->
    <div class="col-sm-5 col-xs-12 home-right">
-        @foreach($categories_right as $right)
-           <div class="tableTop">
-               <img src="{{ asset('uploads/'.$right->image) }}" alt="{{$right->name}}">
-           </div>
-        @endforeach
+        @include('include.categories_right')
        
    </div>
 </div>

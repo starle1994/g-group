@@ -65,8 +65,6 @@ class BlogsController extends Controller {
 	{
 		$blogs = Blogs::find($id);
 	    $shopslist = ShopsList::pluck("name", "id")->prepend('Please select', null);
-
-	    
 		return view('admin.blogs.edit', compact('blogs', "shopslist"));
 	}
 

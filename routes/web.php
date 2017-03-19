@@ -10,20 +10,20 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/schedule', ['as' => 'user.schedule', function () {
-    
-    return view('schedule');
-   
-}]);
+
 Route::get('/', ['as' => 'user.home', function () {
     
     return redirect()->route('index');
    
 }]);
 Route::get('/home', ['as'=>'index','uses'=>'HomeController@index']);
+Route::get('/schedule',['as'=>'show.schedule','uses'=>'HomeController@showSchedule']);
+Route::get('/ajax-schedule',['as'=>'post.schedule','uses'=>'HomeController@postSchedule']);
+Route::get('/shop-list',['as'=>'shop-list','uses'=>'HomeController@showShopList']);
+Route::get('/group-ranking',['as'=>'group-ranking','uses'=>'HomeController@showGroupRanking']);
 
 Route::group([ 'middleware' => 'auth'], function () {
-	Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');
+    Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');
     Route::group([ 'middleware' => 'role'], function () {
         // Menu routing
         Route::get(config('quickadmin.route') . '/menu', [
