@@ -21,6 +21,10 @@ Route::get('/schedule',['as'=>'show.schedule','uses'=>'HomeController@showSchedu
 Route::get('/ajax-schedule',['as'=>'post.schedule','uses'=>'HomeController@postSchedule']);
 Route::get('/shop-list',['as'=>'shop-list','uses'=>'HomeController@showShopList']);
 Route::get('/group-ranking',['as'=>'group-ranking','uses'=>'HomeController@showGroupRanking']);
+Route::get('/million-god',['as'=>'million-god','uses'=>'HomeController@showMillionGod']);
+Route::get('/gigoro',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
+Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
+Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
 
 Route::group([ 'middleware' => 'auth'], function () {
     Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');

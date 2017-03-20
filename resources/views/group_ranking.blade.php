@@ -15,6 +15,7 @@
                                         <img src="../images/group-rankking/g5.jpg" alt="">
                                     </div>
                                </div>
+                               @if($best_ranking->isEmpty() != true)
                                <div class="gr-rank-slider2">
                                     <div class=" row gr-rank-containerSlider">
                                         <div style="padding: 0px" class="col-md-6 col-sm-12 lf">
@@ -101,7 +102,7 @@
                                                     </div>
 
                                                     <div class="avt-lf">
-                                                        <img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt="">
+                                                        <a href="{{ route('staff-detail',base64_encode($group_ranking[$i]->id)) }}"><img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt="{{$group_ranking[$i]->godstaffs->name}}"></a>
                                                     </div>
                                                 </div>
 
@@ -112,7 +113,7 @@
                                         @endfor
                                    </div>
                                 </div>
-
+                                @endif
                                 <!-- dong 1 -->
                                 <div style="margin-top: 30px" class="slider1">
                                     <div class="gr-rank-sliderAva">
@@ -149,7 +150,7 @@
                                             
                                             <div class="av-main">
                                                 <div class="avt-lf">
-                                                    <img src="{{ asset('uploads/'.$group->godstaffs->image) }}" alt="">
+                                                    <a href="{{ route('staff-detail',base64_encode($group->id)) }}"><img src="{{ asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                                 </div>
                                             </div>
 
@@ -169,168 +170,49 @@
                                     </div>
                                 </div>
                                 <div class="gr-rank-footer-p1">
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l1.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img class="avt-img" src="images/group-rankking/anh1.jpg" alt="">
+                                    @foreach ($group_ranking_type2 as $group_type2)
+                                        @if($group_type2->ranking_id ==1)
+                                                    <?php $image = '../images/group-rankking/l1.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==2)
+                                                    <?php $image = '../images/group-rankking/l2.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==3)
+                                                    <?php $image = '../images/group-rankking/l3.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==4)
+                                                    <?php $image = '../images/group-rankking/l4.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==5)
+                                                    <?php $image = '../images/group-rankking/l5.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==6)
+                                                    <?php $image = '../images/group-rankking/l6.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==7)
+                                                    <?php $image = '../images/group-rankking/l7.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==8)
+                                                    <?php $image = '../images/group-rankking/l8.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==9)
+                                                    <?php $image = '../images/group-rankking/l9.jpg' ?>
+                                                @elseif($group_type2->ranking_id ==10)
+                                                    <?php $image = '../images/group-rankking/l10.jpg' ?>
+                                        @endif
+                                        <div class="col-xs-2 item">
+                                            <div class="title">
+                                               <img src="{{$image}}" alt="">
                                             </div>
-                                        </div>
+                                            
+                                            <div class="av-main">
+                                                <div class="avt-lf">
+                                                    <a href="{{ route('staff-detail',base64_encode($group_ranking_type2->id)) }}"><img src="{{ asset('uploads/'.$group_type2->godstaffs->image) }}" alt=""></a>
+                                                </div>
+                                            </div>
 
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l2.jpg" alt="">
+                                            <div class="ft-bk">
+                                                     {{$group_type2->name}}
+                                                </div>
                                         </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh2.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l3.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh3.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l4.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh4.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l5.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh5.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-                                
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l6.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img class="avt-img" src="images/group-rankking/anh6.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-
-                                    <div class="col-xs-2 col-md-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l7.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh7.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-
-                                    <div class="col-xs-2 col-md-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l8.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh8.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-
-                                    <div class="col-xs-2 col-md-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l9.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh9.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
-
-                                    <div class="col-md-2 col-xs-2 item">
-                                        <div class="title">
-                                           <img src="images/group-rankking/l10.jpg" alt="">
-                                        </div>
-                                        
-                                        <div class="av-main">
-                                            <div class="avt-lf">
-                                                <img src="images/group-rankking/anh10.jpg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="ft-bk">
-                                                V3達成!! <br>要
-                                            </div>
-                                    </div>
+                                    @endforeach
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                    <div class="col-sm-5 col-xs-12">
                         @include('include.categories_right')
                        

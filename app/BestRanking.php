@@ -8,7 +8,7 @@ use Laraveldaily\Quickadmin\Observers\UserActionsObserver;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class GodStaffs extends Model {
+class BestRanking extends Model {
 
     use SoftDeletes;
 
@@ -19,15 +19,12 @@ class GodStaffs extends Model {
     */
     protected $dates = ['deleted_at'];
 
-    protected $table    = 'godstaffs';
+    protected $table    = 'bestranking';
     
     protected $fillable = [
-          'shopslist_id',
-          'name',
-          'romajiname',
-          'position',
+          'godstaffs_id',
           'image',
-          'description'
+          'ranking_id'
     ];
     
 
@@ -35,12 +32,22 @@ class GodStaffs extends Model {
     {
         parent::boot();
 
-        GodStaffs::observe(new UserActionsObserver);
+        BestRanking::observe(new UserActionsObserver);
     }
     
-    public function shopslist()
+    public function godstaffs()
     {
-        return $this->hasOne('App\ShopsList', 'id', 'shopslist_id');
+        return $this->hasOne('App\GodStaffs', 'id', 'godstaffs_id');
     }
+
+
+    public function ranking()
+    {
+        return $this->hasOne('App\Ranking', 'id', 'ranking_id');
+    }
+
+
+    
+    
     
 }
