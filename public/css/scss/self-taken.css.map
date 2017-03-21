@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,gBAAiB;EAChB,UAAU,EAAE,+BAA+B;EAC3C,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;;AAGpB,iCAAkC;EACjC,mBAAoB;IACnB,KAAK,EAAE,IAAI;IACX,uBAAI;MACH,aAAa,EAAE,IAAI;MACnB,UAAU,EAAE,IAAI;MAChB,KAAK,EAAE,IAAI;AAKd,kCAAmC;EAClC,mBAAoB;IACnB,KAAK,EAAE,MAAM",
-"sources": ["self-taken.scss"],
-"names": [],
-"file": "self-taken.css"
-}

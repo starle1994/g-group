@@ -19,6 +19,7 @@ trait FileUploadTrait
         }
         foreach ($request->all() as $key => $value) {
             if ($request->hasFile($key)) {
+
                 if ($request->has($key . '_w') && $request->has($key . '_h')) {
                     // Check file width
                     $filename = time() . '-' . $request->file($key)->getClientOriginalName();
@@ -39,7 +40,9 @@ trait FileUploadTrait
                         });
                     }
                     $image->save(public_path('uploads') . '/' . $filename);
+
                     $request = new Request(array_merge($request->all(), [$key => $filename]));
+                    
                 } else {
                     $filename = time() . '-' . $request->file($key)->getClientOriginalName();
                     $request->file($key)->move(public_path('uploads'), $filename);

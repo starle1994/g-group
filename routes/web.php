@@ -26,6 +26,13 @@ Route::get('/gigoro',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
 Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
 Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
 Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
+Route::get('/event',['as'=>'event','uses'=>'HomeController@showEvent']);
+Route::get('/dialog',['as'=>'dialog','uses'=>'HomeController@showDialog']);
+Route::get('/cast-feature',['as'=>'cast-feature','uses'=>'HomeController@showCastFeature']);
+Route::get('/cast-feature-detail',['as'=>'cast-feature-detail','uses'=>'HomeController@showDetailCastFeature']);
+Route::get('/movie',['as'=>'movie','uses'=>'HomeController@showMovie']);
+Route::get('/rookie-feature',['as'=>'rookie-feature','uses'=>'HomeController@showRookie']);
+
 
 Route::group([ 'middleware' => 'auth'], function () {
     Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');

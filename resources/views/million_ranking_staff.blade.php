@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <div class="row group-rankking">
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row gr-rank-lineSli">
@@ -13,7 +12,7 @@
                 <!-- dong 1 -->
                 <div style="" class="slider1">
                     <div class="gr-rank-sliderAva">
-                        <img src="{{asset('css/css/images/group-rankking/H2.jpg')}}" alt="">
+                        <img src="{{asset('css/css/images/gigolo/img1.png')}}" alt="">
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
@@ -63,7 +62,7 @@
                 <!-- dong 2 -->
                 <div style="" class="slider1">
                     <div class="gr-rank-sliderAva">
-                        <img src="{{ asset('css/css/images/group-rankking/H2.jpg')}}" alt="">
+                        <img src="{{ asset('css/css/images/gigolo/img1.png')}}" alt="">
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">

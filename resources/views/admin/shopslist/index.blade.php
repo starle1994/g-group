@@ -25,13 +25,14 @@
 
                 <tbody>
                     @foreach ($shopslist as $row)
+                   
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->name }}</td>
 <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-
+<td>@if($row->image_intro != '')<img src="{!! asset('uploads/thumb') . '/'.  $row->image_intro !!}">@endif</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.shopslist.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.shopslist.destroy', $row->id))) !!}

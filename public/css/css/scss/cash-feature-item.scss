@@ -1,0 +1,165 @@
+@media all and (min-width: 320px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.cash-feature-item {
+			padding-top: 10px;
+    		padding-left: 10px;
+    		margin: 0px;
+
+			.left {
+				padding-right: 0px;
+				padding-left: 0px;
+
+				img {
+					width: 30%;
+					padding: 3px;
+				}
+			}
+
+			.right {
+				padding-right: 25px;
+				padding-left: 0px;
+
+				.title {
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.content {
+					background: url(images/cash-feature-item/lg-bk.jpg);
+
+					.line {
+						background: url(images/cash-feature-item/line.jpg);
+						height: 10px;
+					}
+
+					.nen {
+						background: url(images/cash-feature-item/sm1-bk.jpg);
+					}
+
+					.avatar {
+						/*padding-left: 0px;*/
+
+						img {
+							width: 100%;
+							padding: 3px;
+						}
+					}
+
+					.for-loop {
+						margin: 0px;
+
+						.question {
+							/*text-align: center;*/
+
+							p {
+								color: red;
+							}
+						}
+
+						.answer {
+							/*text-align: center;*/
+							margin-left: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 600px) {
+	
+	.cash-feature-item {
+		
+		.right {
+
+			.content {
+
+				.for-loop {
+					.question {
+						p {
+							font-size: 30px;
+						}
+					}
+
+					.answer {
+						text-align: left;
+						font-size: 20px;
+						margin-left: 42px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.cash-feature-item {
+		.left {
+			img {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1280px) {
+	.cash-feature-item {
+		.left {
+			img {
+				width: 100% !important;
+				padding-right: 40px !important;
+				padding-bottom: 20px !important;
+			}
+		}
+
+		.right {
+			.content {
+				.avatar {
+					padding-top: 60px;
+				    padding-left: 27px;
+				    padding-bottom: 60px;
+				}
+
+				.line {
+					margin-bottom: 45px;
+				}
+
+				.for-loop {
+					margin-bottom: 70px !important;
+
+					.question {
+						text-align: center;
+
+						p {
+							font-size: 40px;
+						}
+					}
+
+					.answer {
+						p {
+							font-size: 26px;
+						    margin-left: 100px;
+						    line-height: 42px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

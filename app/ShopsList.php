@@ -24,6 +24,7 @@ class ShopsList extends Model {
     protected $fillable = [
           'name',
           'image',
+          'image_intro',
           'description'
     ];
     

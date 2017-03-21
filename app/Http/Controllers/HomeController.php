@@ -14,19 +14,20 @@ use App\RankingAll;
 use App\BestRanking;
 use App\GodStaffs;
 use App\LogGroupRanking;
+use App\ShopsList;
 
 class HomeController extends Controller
 {
 
 	public function index()
-	{
-		
+	{	
 		$contents				= GroupTopPageConten::all();
 		$million_ranking_staff 	= MillionGodRankingStaff::limit(3)->orderBy('ranking_id','asc')->get();
 		$gigolo_ranking_staff 	= GigoloRankingStaff::limit(3)->orderBy('ranking_id','asc')->get();	
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
-		 return view('welcome', compact('contents','million_ranking_staff', 'gigolo_ranking_staff','secrect_contents','rookies_feature'));
+		$shop_list 				= ShopsList::all();
+		 return view('welcome', compact('contents','million_ranking_staff', 'gigolo_ranking_staff','secrect_contents','rookies_feature','shop_list'));
 	}
 
 	public function showSchedule($year = '', $month = '')
@@ -50,13 +51,14 @@ class HomeController extends Controller
 
 	public function showShopList()
 	{
-		return view('shop_list');
+		$shop_list 				= ShopsList::all();
+		return view('shop_list',compact('shop_list'));
 	}
 
 	public function showGroupRanking()
 	{
 		$best_ranking 			= BestRanking::orderBy('ranking_id','asc')->with('godstaffs')->limit(5)->get();
-		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
+		$group_ranking 			= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
 		$group_ranking_type2 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
 		return view('group_ranking',compact('best_ranking','group_ranking','group_ranking_type2'));
 	}
@@ -68,7 +70,7 @@ class HomeController extends Controller
 
 	public function showGigoro()
 	{
-		return view('million_god');
+		return view('gigolo');
 	}
 
 	public function showSystem()
@@ -90,5 +92,35 @@ class HomeController extends Controller
 		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
 
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff'));
+	}
+
+	public function showEvent()
+	{
+		return view('event');
+	}
+
+	public function showDialog()
+	{
+		return view('dialogue');
+	}
+
+	public function showCastFeature()
+	{
+		return view('cast_feature');
+	}
+
+	public function showDetailCastFeature()
+	{
+		return view('cash-feature-item');
+	}
+
+	public function showMovie()
+	{
+		return view('movie');
+	}
+
+	public function showRookie()
+	{
+		return view('movie');
 	}
 }

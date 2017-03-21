@@ -32,6 +32,14 @@
         {!! Form::hidden('image_h', 4096) !!}
         
     </div>
+<div class="form-group">
+    {!! Form::label('image_intro', 'image_intro', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::file('image_intro') !!}
+        {!! Form::hidden('image_intro_w', 4096) !!}
+        {!! Form::hidden('image_intro_h', 4096) !!}
+        
+    </div>
 </div><div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">

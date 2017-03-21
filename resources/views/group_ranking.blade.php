@@ -10,7 +10,7 @@
             </div>
             <div class="col-xs-9">
                <div class="slider1">
-                    <div class="gr-rank-sliderAva">
+                    <div class="gr-rank-sliderAva" style="margin-bottom: 20px;">
                         <img src="{{ asset('css/css/images/group-rankking/g5.jpg') }}" alt="">
                     </div>
                </div>

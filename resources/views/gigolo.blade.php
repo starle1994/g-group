@@ -1,4 +1,4 @@
- @extends('layouts.master')
+ @extends('layouts.gigolo_master')
 
 @section('content')
  <div class="row">

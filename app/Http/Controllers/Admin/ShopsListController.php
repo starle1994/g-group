@@ -73,12 +73,12 @@ class ShopsListController extends Controller {
      *
 	 * @param  int  $id
 	 */
-	public function update($id, UpdateShopsListRequest $request)
+	public function update($id, Request $request)
 	{
 		$shopslist = ShopsList::findOrFail($id);
 
         $request = $this->saveFiles($request);
-
+      
 		$shopslist->update($request->all());
 
 		return redirect()->route(config('quickadmin.route').'.shopslist.index');

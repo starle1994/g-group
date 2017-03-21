@@ -19,7 +19,7 @@
     <div id="wrapper" class="groupTop">
         @include('layouts.header')
         <div id="main">
-            <img class="bgCheo" src="{{ asset('images/grouptop/bgCheo.jpg')}}" alt="">
+            <img class="bgCheo" src="{{ asset('css/css/images/grouptop/bgCheo.jpg')}}" alt="">
             <div id="mainContetn">
                 <div class="container-fluid">
                     @yield('content')
