@@ -25,6 +25,7 @@ Route::get('/million-god',['as'=>'million-god','uses'=>'HomeController@showMilli
 Route::get('/gigoro',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
 Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
 Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
+Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
 
 Route::group([ 'middleware' => 'auth'], function () {
     Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');

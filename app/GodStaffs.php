@@ -43,4 +43,18 @@ class GodStaffs extends Model {
         return $this->hasOne('App\ShopsList', 'id', 'shopslist_id');
     }
     
+    public function staffphotos()
+    {
+        return $this->hasMany('App\staffphotos', 'staffs_id', 'id');
+    }
+
+    public function staffmovies()
+    {
+        return $this->hasMany('App\staffmovies', 'staffs_id', 'id');
+    }
+
+    public function logRanking()
+    {
+        return $this->hasMany('App\staffmovies', 'staffs_id', 'id');
+    }
 }

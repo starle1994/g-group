@@ -12,6 +12,8 @@ use App\SecrectContents;
 use App\RookieFeature;
 use App\RankingAll;
 use App\BestRanking;
+use App\GodStaffs;
+use App\LogGroupRanking;
 
 class HomeController extends Controller
 {
@@ -77,7 +79,16 @@ class HomeController extends Controller
 	public function staffDetail($id)
 	{
 		$id = base64_decode($id);
-		$staff = GodStaffs::where('id',$id)->get();
-		return view('staff_detail','staff');
+		$staff = GodStaffs::where('id',$id)->with('staffphotos')->first();
+		$logs = LogGroupRanking::where('id_staff', $staff->id)->get();
+		return view('staff_detail',compact('staff','logs'));
+	}
+
+	public function rankingMillionStaff()
+	{
+		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
+		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
+
+		return view('million_ranking_staff', compact('group_ranking','million_god_staff'));
 	}
 }

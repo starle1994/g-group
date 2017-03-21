@@ -1,0 +1,83 @@
+.rkItem .rkImgLeft img {
+  max-width: 100%;
+  margin-bottom: 20px; }
+.rkItem .photoTop {
+  background: url(images/groupRankkingItem/bgContainer.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 20% 10%; }
+  .rkItem .photoTop > p {
+    color: white;
+    font-size: 16px; }
+  .rkItem .photoTop .flexPt {
+    margin-bottom: 30px;
+    display: -webkit-flex; }
+    .rkItem .photoTop .flexPt .photoLeft {
+      position: relative;
+      width: 50%; }
+      .rkItem .photoTop .flexPt .photoLeft .mainPhoto {
+        width: 100%; }
+      .rkItem .photoTop .flexPt .photoLeft .bgPhoto {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%; }
+    .rkItem .photoTop .flexPt .textPhoto {
+      width: 50%;
+      text-align: center;
+      color: white;
+      align-self: center; }
+      .rkItem .photoTop .flexPt .textPhoto span {
+        font-size: 20px; }
+      .rkItem .photoTop .flexPt .textPhoto p {
+        font-size: 44px; }
+  .rkItem .photoTop .owlRankking .owl-nav.disabled {
+    display: block !important; }
+  .rkItem .photoTop .owlRankking .setHeight {
+    height: auto; }
+.rkItem .sliderPt p {
+  text-align: center;
+  font-size: 30px;
+  color: #e6c500; }
+.rkItem .imgPhoto {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 15px; }
+.rkItem .owl-next {
+  background-image: url(images/groupRankkingItem/next.png);
+  top: 42%; }
+.rkItem .owl-prev {
+  background-image: url(images/groupRankkingItem/prev.png);
+  top: 42%; }
+.rkItem .sliderPt {
+  background: url(images/groupRankkingItem/bg2.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 50px 20px;
+  margin-top: 50px; }
+.rkItem .rkBot {
+  background: url(images/groupRankkingItem/bg3.png) no-repeat;
+  background-size: 100% 100%;
+  padding: 5% 10% 20% 10%;
+  margin-top: 50px; }
+  .rkItem .rkBot p {
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    color: #bb9702; }
+  .rkItem .rkBot span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: white; }
+.rkItem .imgRight img {
+  width: 100%;
+  margin-bottom: 20px; }
+.rkItem .home-left {
+  z-index: 4;
+  padding-bottom: 40px; }
+
+.owl-carousel .owl-nav.disabled {
+  display: block; }
+
+/*# sourceMappingURL=groupRankkingItem.css.map */

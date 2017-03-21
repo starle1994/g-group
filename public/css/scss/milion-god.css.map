@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEE,6BAAM;EACL,aAAa,EAAE,IAAI;EACnB,iCAAI;IACH,KAAK,EAAE,IAAI;AAGb,iCAAU;EACT,aAAa,EAAE,IAAI",
+"sources": ["milion-god.scss"],
+"names": [],
+"file": "milion-god.css"
+}

@@ -1,0 +1,67 @@
+.exe-fa {
+	margin-top: 30px;
+}
+
+.exe-fa-paganitor {
+	img {
+		width: 100%;
+	}
+}
+
+.exe-main-content {
+	background: url(images/rookie-feature/bk.jpg);
+}
+
+/*.exe-fa-head-1 {
+	background: url(images/rookie-feature/h1.png);
+}*/
+
+@media all and (min-width: 320px) {
+	.exe-fa-line {
+		img {
+			padding: 0px 0px 10px 50px;
+		}
+	}
+
+	.exe-fa-content {
+		width: 100%;
+		img {
+			margin-bottom: 20px;
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+
+	.groupTop #main .bgCheo {
+		z-index: 0 !important;
+	}
+
+	.exe-fa-head-1 {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@media all and (min-width: 600px) {
+	.exe-fa-line {
+		img {
+
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.exe-fa-line {
+		img {
+		    width: 100%;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media all and (min-width: 1024px) {
+	.exe-fa-content {
+		width: 50%;
+	}
+}

@@ -1,0 +1,26 @@
+
+.rookie-item {
+	.exe-main-content {
+		padding: 20px;
+		.border {
+			height: 1px;
+    		border: 1px dotted #ff9933;
+    		margin: 20px 0;
+		} 
+		.content {
+			padding: 0 20px;
+			h1 {
+				color: #ff0000;
+				font-weight: 700;
+			}
+			ul {
+				list-style: none;
+				margin-bottom: 80px;
+				li {
+					font-size: 25px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}

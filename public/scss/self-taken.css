@@ -1,0 +1,17 @@
+.self-taken-line {
+  background: url(images/self-taken/lin1.jpg);
+  height: 10px;
+  margin-bottom: 20px; }
+
+@media all and (min-width: 320px) {
+  .self-taken-content {
+    width: 100%; }
+    .self-taken-content img {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      width: 100%; } }
+@media all and (min-width: 1280px) {
+  .self-taken-content {
+    width: 33.33%; } }
+
+/*# sourceMappingURL=self-taken.css.map */

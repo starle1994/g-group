@@ -1,0 +1,202 @@
+.schedule{
+    .scheTitle{
+         background-image: url(images/schedule/scheTitle.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 17px 0;
+        .scheTitle{
+            padding: 10px;
+        }
+    }
+    .schedu{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    .contentSche{
+        background-color: white;
+        padding: 20px 5%;
+    }
+    #mainContetn{
+        padding: 20px 5%;
+    }
+    .month {
+        display: -webkit-flex;
+        justify-content: space-between;
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    .mon1{
+        color: #003cff;
+        font-weight: 900;
+    }
+    .mon2{
+        color: #ff0000;
+        font-weight: 900;
+    }
+    .tbSche{
+        thead{
+            border: 1px solid black;
+        }
+        .music{
+            background-image: url(images/schedule/music.png);
+            background-size: 28%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .contai{
+             background-image: url(images/schedule/contai.png);
+            background-size: 28%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        td{
+            font-size: 20px;
+            padding: 0px;
+            font-weight: bold;
+            padding-left: 10px;
+            height: 85px;
+            font-family: hira;
+            border: 1px solid black;
+        }
+        th{
+            background-color: #96ffff;
+            border: 1px solid black;
+            text-align: center;
+            font-family: hira;
+            color: #0024ff;
+        }
+        .sunText{
+            background-color: #fcb9d4;
+            color: #ff0000;
+        }
+    }
+    .scheBox{
+        display: -webkit-flex;
+        padding: 30px 0px 30px 30px;
+        border: 1px solid black;
+        span{
+            width: 28%;
+            font-size: 30px;
+            font-weight: 800;
+            img{
+                width: 16%;
+            }
+        }
+    }
+    .red{
+        color: #ff0000;
+    }
+    .titCol{
+        h3{
+            text-align: center;
+            margin: 30px 0;
+        }
+    }
+    .colSche{
+        position: relative;
+        margin-top: 30px;
+        border-top: 4px dotted #ffa319;
+    }
+    .bgTit{
+        position: absolute;
+        right: 0;
+        top: 20px;
+        font-size: 24px;
+        padding: 5px 61px;
+        background: url(images/schedule/colBg.png) no-repeat;
+        background-position: center;
+        color: white;
+    }
+    h3{
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .tdInline{
+        display: inline-block;
+    }
+    .colTab td{
+        height: 70px;
+    }
+    .colTab td:first-child{
+        width: 135px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 800;
+    }
+    .colTab td:last-child{
+        color: #655f5f;
+        font-weight: 800;
+        img{
+            margin: 0 20px;
+        }
+    }
+    .imgCol{
+        width: 50px;
+    }
+    .home-left{
+        margin-bottom: 30px;
+    }
+    @media(max-width: 1200px){
+        .scheBox{
+            span{
+                width: 28%;
+                font-size: 20px;
+                font-weight: 800;
+                img{
+                    width: 16%;
+                }
+            }
+        }
+        .tbSche td{
+            height: 60px;
+        }
+    }
+    @media(max-width: 768px){
+        .tbSche{
+            font-size: 11px;
+        }
+        .scheBox {
+            display: -webkit-flex;
+            padding: 30px 0px 30px 0px;
+            border: 1px solid black;
+        }
+        .scheBox span {
+            width: auto;
+            padding: 0 5px;
+        }
+        .scheTitle {
+            background-image: url(images/schedule/scheTitle.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            padding: 0px 0;
+        }
+        .titCol {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .bgTit {
+            position: inherit;
+            margin-left: 10px;
+        }
+        .scheBox span img {
+    width: 25%;
+}
+
+    }
+    @media(max-width: 1100px){
+        .titCol {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .bgTit {
+            position: inherit;
+            margin-left: 10px;
+            max-width: 50%;
+        }
+    }
+}
