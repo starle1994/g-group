@@ -123,4 +123,10 @@ class HomeController extends Controller
 	{
 		return view('movie');
 	}
+
+	public function showBlog()
+	{
+		return 'coming soon';
+	}
+	
 }

@@ -13,11 +13,11 @@
 
 Route::get('/', ['as' => 'user.home', function () {
     
-    return redirect()->route('index');
+    return redirect()->route('group-top');
    
 }]);
-Route::get('/home', ['as'=>'index','uses'=>'HomeController@index']);
-Route::get('/schedule',['as'=>'show.schedule','uses'=>'HomeController@showSchedule']);
+Route::get('/home', ['as'=>'group-top','uses'=>'HomeController@index']);
+Route::get('/schedule',['as'=>'schedule','uses'=>'HomeController@showSchedule']);
 Route::get('/ajax-schedule',['as'=>'post.schedule','uses'=>'HomeController@postSchedule']);
 Route::get('/shop-list',['as'=>'shop-list','uses'=>'HomeController@showShopList']);
 Route::get('/group-ranking',['as'=>'group-ranking','uses'=>'HomeController@showGroupRanking']);
@@ -27,12 +27,15 @@ Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
 Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
 Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
 Route::get('/event',['as'=>'event','uses'=>'HomeController@showEvent']);
-Route::get('/dialog',['as'=>'dialog','uses'=>'HomeController@showDialog']);
+Route::get('/dialogue',['as'=>'dialogue','uses'=>'HomeController@showDialog']);
 Route::get('/cast-feature',['as'=>'cast-feature','uses'=>'HomeController@showCastFeature']);
 Route::get('/cast-feature-detail',['as'=>'cast-feature-detail','uses'=>'HomeController@showDetailCastFeature']);
 Route::get('/movie',['as'=>'movie','uses'=>'HomeController@showMovie']);
 Route::get('/rookie-feature',['as'=>'rookie-feature','uses'=>'HomeController@showRookie']);
-
+Route::get('/blog',['as'=>'Blog','uses'=>'HomeController@showBlog']);
+Route::get('/self-feature',['as'=>'self-feature','uses'=>'HomeController@showBlog']);
+Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showBlog']);
+Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showBlog']);
 
 Route::group([ 'middleware' => 'auth'], function () {
     Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');

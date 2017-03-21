@@ -2,7 +2,6 @@
 
 @section('content')
  <div class="row">
-
                     <div class="col-sm-7 col-xs-12 home-left">
                         <div class="row">
                             <div class="col-sm-6">

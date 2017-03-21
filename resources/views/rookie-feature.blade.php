@@ -4,7 +4,7 @@
 	<div class="row exe-fa">
         <div class="col-sm-3">
             <div class="exe-fa-line">
-                @include('include.categories_left')
+                @include('include.categories_left2')
             </div>
             
         </div>

@@ -1536,3 +1536,19 @@ footer {
     
     padding: 20px 0;
 }
+
+.groupTop .infoTop {
+    height: auto !important;
+    overflow: hidden;
+}
+
+.infoTop .line img{
+  width: auto;
+}
+
+#mainMenu a{
+  max-width: 120px;
+  text-transform: uppercase;
+  font-size: 13;
+    line-height: 2;
+}

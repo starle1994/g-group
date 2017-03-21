@@ -30,7 +30,8 @@
                 <img class="hidden-xs" src="{{ asset('css/css/images/grouptop/bg-menu.jpg') }}" alt="">
                 <div class="ctMenu">
                     @foreach(categories() as $cate)
-                    <a href="">{{$cate->name}}</a>
+                    <?php  $route = $cate->alias ?>
+                    <a href="{{route($route)}}">{{$cate->name}}</a>
                     @endforeach
                 </div>
             </div>

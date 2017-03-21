@@ -3,7 +3,7 @@
 @section('content')
 <div class="row cash-feature-item">
                         <div class="col-sm-3 left">
-                            @include('include.categories_left')
+                            @include('include.categories_left2')
                         </div>
 
                         <div class="col-sm-9 right">

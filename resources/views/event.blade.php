@@ -4,7 +4,7 @@
  <div class="row exe-fa">
                         <div class="col-sm-3">
                             <div class="exe-fa-line">
-                                @include('include.categories_left')
+                                @include('include.categories_2')
                             </div>
                         </div>
 
@@ -16,108 +16,108 @@
                             <div class="exe-main-content">
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
-                                    </div>
-
-                                    <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
 
                                     <div class="col-xs-6 exe-fa-content">
-                                        <img src="images/event/avt1.jpg" alt="">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                                    </div>
+
+                                    <div class="col-xs-6 exe-fa-content">
+                                        <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
                             
 
                             <div class="exe-fa-paganitor">
-                                <img src="images/rookie-feature/h2.png" alt="">
+                                <img src="{{ asset('css/css/images/rookie-feature/h2.png')}}" alt="">
                             </div>
 
                         </div>

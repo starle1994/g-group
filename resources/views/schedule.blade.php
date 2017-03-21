@@ -12,8 +12,8 @@
  <div class="row schedule">
     <div class="col-xs-12 home-left">
       <div class="schedu">
-          <div class="scheTitle">
-              Huynh Ba Dat
+          <div class="scheTitle" style="padding: 30px">
+              
           </div>
       </div>
       <div class="contentSche" >
@@ -110,15 +110,15 @@
                               </table>
                                 <div class="scheBox">
                                     <span>
-                                        <img src="../images/schedule/contai.png" alt="">
+                                        <img src="{{asset('css/css/images/schedule/contai.png')}}" alt="">
                                         Birthday
                                     </span>
                                     <span>
-                                        <img src="../images/schedule/music.png" alt="">
+                                        <img src="{{asset('css/css/images/schedule/music.png')}}" alt="">
                                         イベント
                                     </span>
                                     <span>
-                                        <img src="../images/schedule/char.png" alt="">
+                                        <img src="{{asset('css/css/images/schedule/char.png')}}" alt="">
                                         休業日
                                     </span>
                                 </div>
@@ -138,12 +138,12 @@
                                             $class = '';
                                             if ($event != null) {
                                                 if ($event->event_type ==1) {
-                                                  $class = '../images/schedule/contai.png';
+                                                  $class = '../css/css/images/schedule/contai.png';
                                                 }else{
                                                   if ($event->event_type ==2) {
-                                                    $class = '../images/schedule/music.png';
+                                                    $class = '../css/css/images/schedule/music.png';
                                                   }else{
-                                                    $class = '../images/schedule/char.png';
+                                                    $class = '../css/css/images/schedule/char.png';
                                                   }
                                                 }
                                             }
@@ -191,7 +191,7 @@
                                 </div>
                             </div>
                        </div>
-                   </div>	
+                   
  {!! Form::close() !!}
          <script type="text/javascript">
 		function getCalendar(target_div,year,month){

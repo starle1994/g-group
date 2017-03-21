@@ -26,6 +26,11 @@ function categories()
 	return App\Categories::all();
 }
 
+function categories_2()
+{
+	return App\LeftCateVer2::all();
+}
+
 function categories_left()
 {
 	return App\CategoryLeft::all();
