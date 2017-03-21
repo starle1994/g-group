@@ -1552,3 +1552,11 @@ footer {
   font-size: 13;
     line-height: 2;
 }
+
+.gr-rank-p2 .contents .ft-bk{
+  padding: 10px;
+}
+
+.gr-rank-p2 .contents .ft-bk a{
+  color: white !important;
+}

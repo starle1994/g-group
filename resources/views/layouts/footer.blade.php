@@ -1,5 +1,5 @@
 <div class="copyRight">
-    <img src="images/grouptop/logoGroup.png" alt="">
+    <img src="{{ asset('css/css/images/grouptop/logoGroup.png')}}" alt="">
     <p>Copyright(C)nagoya-gsgroup.com</p>
 </div>
 <div class="ftRight">
