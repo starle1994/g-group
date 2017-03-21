@@ -45,16 +45,16 @@ class GodStaffs extends Model {
     
     public function staffphotos()
     {
-        return $this->hasMany('App\staffphotos', 'staffs_id', 'id');
+        return $this->hasMany('App\StaffPhotos', 'staffs_id', 'id');
     }
 
     public function staffmovies()
     {
-        return $this->hasMany('App\staffmovies', 'staffs_id', 'id');
+        return $this->hasMany('App\StaffMovies', 'staffs_id', 'id');
     }
 
     public function logRanking()
     {
-        return $this->hasMany('App\staffmovies', 'staffs_id', 'id');
+        return $this->hasMany('App\LogGroupRanking', 'staffs_id', 'id');
     }
 }

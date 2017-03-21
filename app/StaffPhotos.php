@@ -36,7 +36,7 @@ class StaffPhotos extends Model {
     
     public function staffs()
     {
-        return $this->hasOne('App\godstaffs', 'id', 'staffs_id');
+        return $this->hasOne('App\GodStaffs', 'id', 'staffs_id');
     }
 
 
