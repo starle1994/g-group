@@ -39,7 +39,8 @@
 </div><div class="form-group">
     {!! Form::label('content', 'content*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('content', old('content'), array('class'=>'form-control ckeditor')) !!}
+        <textarea id="my-editor" name="content" class="form-control">{!! old('content', 'test editor content') !!}</textarea>
+
     </div>
 </div><div class="form-group">
     {!! Form::label('image', 'image*', array('class'=>'col-sm-2 control-label')) !!}
