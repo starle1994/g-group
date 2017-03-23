@@ -11,7 +11,7 @@
 
                 <!-- dong 1 -->
                 <div style="" class="slider1">
-                    <div class="gr-rank-sliderAva">
+                    <div class="gr-rank-sliderAva" style="margin-bottom: 30px;">
                         <img src="{{asset('css/css/images/gigolo/img1.png')}}" alt="">
                     </div>
                 </div>
@@ -39,19 +39,19 @@
                                 @elseif($group->ranking_id ==10)
                                     <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                         @endif
-                        <div class="col-xs-2 item">
+                        <div class="col-xs-2 item" style="margin-bottom: 30px;">
                             <div class="title">
                                <img src="{{asset($image)}}" alt="">
                             </div>
                             
                             <div class="av-main">
                                 <div class="avt-lf">
-                                    <a href="{{route('staff-detail',$group->godstaffs->name)}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                 </div>
                             </div>
 
                             <div class="ft-bk">
-                                    <a href="{{route('staff-detail',$group->godstaffs->name)}}"> {{$group->godstaffs->name}}</a>
+                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
                             </div>
                         </div>
                     @endforeach
@@ -60,29 +60,24 @@
 
 
                 <!-- dong 2 -->
-                <div style="" class="slider1">
-                    <div class="gr-rank-sliderAva">
+                <div style="margin-bottom: 30px;" class="slider1">
+                    <div class="gr-rank-sliderAva" >
                         <img src="{{ asset('css/css/images/gigolo/img1.png')}}" alt="">
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
                     @foreach ($million_god_staff as $group2)
-                        
-                        
-
-                        <div class="col-md-2 col-xs-2 item">
-                        
-                        
-                        <div class="av-main">
-                            <div class="avt-lf">
-                                <a href="{{route('staff-detail',$group2->name)}}"><img class="avt-img" src="{{ asset('uploads/'.$group2->image) }}" alt=""></a>
+                        <div class="col-md-2 col-xs-2 item" style="margin-bottom: 15px;">
+                            <div class="av-main">
+                                <div class="avt-lf">
+                                    <a href="{{route('staff-detail',base64_encode($group2->id))}}"><img class="avt-img" src="{{ asset('uploads/'.$group2->image) }}" alt=""></a>
+                                </div>
                             </div>
+
+                            <div class="ft-bk">
+                                    <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a> 
+                                </div>
                         </div>
-
-                        <div class="ft-bk">
-                                V3達成!! 
-                            </div>
-                    </div>
                     @endforeach
                     
                     

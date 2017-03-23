@@ -1,0 +1,65 @@
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .event-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .event-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .event-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .event-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .event-item .right .title img {
+          width: 100%; }
+        .container-fluid .event-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px; }
+          .container-fluid .event-item .right .content .top {
+            margin: 0px; }
+            .container-fluid .event-item .right .content .top .avt-parent img {
+              width: 100%;
+              margin-bottom: 10px; }
+            .container-fluid .event-item .right .content .top .paraph p {
+              padding-left: 5px;
+              font-weight: bold; }
+            .container-fluid .event-item .right .content .top .paraph .year {
+              color: #0c00ff; }
+          .container-fluid .event-item .right .content .main .avatar {
+            margin-bottom: 40px; }
+            .container-fluid .event-item .right .content .main .avatar img {
+              width: 100%;
+              padding: 3px; }
+            .container-fluid .event-item .right .content .main .avatar p {
+              font-weight: bold; }
+          .container-fluid .event-item .right .content .dong-ke {
+            background: url(images/bbq-list-item/dong-ke.jpg);
+            height: 10px;
+            margin-bottom: 30px; } }
+@media all and (min-width: 768px) {
+  .event-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .event-item .right .content .back {
+    margin-bottom: 40px !important; }
+  .event-item .right .content .title-first {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .event-item .right .content .header {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .event-item .right .content .blog-avatar {
+    padding: 70px; }
+  .event-item .right .content .blog-content {
+    text-align: center;
+    padding-bottom: 100px; }
+    .event-item .right .content .blog-content p {
+      font-size: 26px;
+      line-height: 3; } }
+
+/*# sourceMappingURL=event-item.css.map */

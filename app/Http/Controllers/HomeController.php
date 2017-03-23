@@ -17,6 +17,7 @@ use App\LogGroupRanking;
 use App\ShopsList;
 use App\GodPageContent;
 use App\GigoloPageContents;
+use App\Blogs;
 
 class HomeController extends Controller
 {
@@ -140,7 +141,13 @@ $millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->g
 
 	public function showBlog()
 	{
-		return 'coming soon';
+		$blogs = Blogs::orderBy('id','desc')->paginate(20);
+		return view('blog', compact('blogs'));
 	}
 	
+	public function showBlogDetail($alias)
+	{
+		$blog = Blogs::where('alias',$alias)->with('shopslist')->first();
+		return view('blog_detail',compact('blog'));
+	}
 }

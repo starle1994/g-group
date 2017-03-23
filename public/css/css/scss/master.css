@@ -1495,5 +1495,310 @@ footer {
       font-size: 26px;
       margin-left: 100px;
       line-height: 42px; } }
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .group-god {
+      padding-top: 10px;
+      padding-left: 10px;
+      margin: 0px; }
+      .container-fluid .group-god .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .group-god .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .group-god .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .group-god .right .title img {
+          width: 100%; }
+        .container-fluid .group-god .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg); }
+          .container-fluid .group-god .right .content .avatar {
+            /*padding-left: 0px;*/ }
+            .container-fluid .group-god .right .content .avatar img {
+              width: 100%;
+              padding: 3px; } }
+@media all and (min-width: 600px) {
+  .container-fluid {
+    padding-right: 0px; } }
+@media all and (min-width: 1024px) {
+  .group-god .left {
+    padding-right: 45px !important; }
+    .group-god .left img {
+      width: 100% !important;
+      margin-bottom: 20px; }
+  .group-god .right .content .row {
+    margin: 0px; }
+    .group-god .right .content .row .avatar {
+      padding-right: 0px; }
+      .group-god .right .content .row .avatar img {
+        padding-top: 20px;
+        margin-bottom: 20px; } }
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .blog-list-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .blog-list-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .blog-list-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .blog-list-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .blog-list-item .right .title img {
+          width: 100%; }
+        .container-fluid .blog-list-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg); }
+          .container-fluid .blog-list-item .right .content .back {
+            font-size: 20px;
+            margin: 0px;
+            padding: 5px; }
+          .container-fluid .blog-list-item .right .content .title-first {
+            margin: 0px; }
+          .container-fluid .blog-list-item .right .content .header {
+            margin: 0px; }
+            .container-fluid .blog-list-item .right .content .header h2 {
+              font-size: 20px; }
+          .container-fluid .blog-list-item .right .content .blog-avatar {
+            margin: 0px;
+            margin-bottom: 10px; }
+            .container-fluid .blog-list-item .right .content .blog-avatar img {
+              width: 100%; }
+          .container-fluid .blog-list-item .right .content .blog-content {
+            margin: 0px; } }
+@media all and (min-width: 768px) {
+  .blog-list-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .blog-list-item .right .content .back {
+    margin-bottom: 40px !important; }
+  .blog-list-item .right .content .title-first {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .blog-list-item .right .content .header {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .blog-list-item .right .content .blog-avatar {
+    padding: 70px; }
+  .blog-list-item .right .content .blog-content {
+    text-align: center;
+    padding-bottom: 100px; }
+    .blog-list-item .right .content .blog-content p {
+      font-size: 26px;
+      line-height: 3; } }
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .bbq-list-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .bbq-list-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .bbq-list-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .bbq-list-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .bbq-list-item .right .title img {
+          width: 100%; }
+        .container-fluid .bbq-list-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px; }
+          .container-fluid .bbq-list-item .right .content .top {
+            margin: 0px; }
+            .container-fluid .bbq-list-item .right .content .top .avt-parent img {
+              width: 100%;
+              margin-bottom: 10px; }
+            .container-fluid .bbq-list-item .right .content .top .paraph p {
+              padding-left: 5px; }
+            .container-fluid .bbq-list-item .right .content .top .paraph .year {
+              color: #0c00ff; }
+          .container-fluid .bbq-list-item .right .content .main .avatar img {
+            width: 100%;
+            padding: 3px; }
+          .container-fluid .bbq-list-item .right .content .dong-ke {
+            background: url(images/bbq-list-item/dong-ke.jpg);
+            height: 10px;
+            margin-bottom: 30px; } }
+@media all and (min-width: 768px) {
+  .bbq-list-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .bbq-list-item .right .content .back {
+    margin-bottom: 40px !important; }
+  .bbq-list-item .right .content .title-first {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .bbq-list-item .right .content .header {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .bbq-list-item .right .content .blog-avatar {
+    padding: 70px; }
+  .bbq-list-item .right .content .blog-content {
+    text-align: center;
+    padding-bottom: 100px; }
+    .bbq-list-item .right .content .blog-content p {
+      font-size: 26px;
+      line-height: 3; } }
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .event-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .event-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .event-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .event-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .event-item .right .title img {
+          width: 100%; }
+        .container-fluid .event-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px; }
+          .container-fluid .event-item .right .content .top {
+            margin: 0px; }
+            .container-fluid .event-item .right .content .top .avt-parent img {
+              width: 100%;
+              margin-bottom: 10px; }
+            .container-fluid .event-item .right .content .top .paraph p {
+              padding-left: 5px;
+              font-weight: bold; }
+            .container-fluid .event-item .right .content .top .paraph .year {
+              color: #0c00ff; }
+          .container-fluid .event-item .right .content .main .avatar {
+            margin-bottom: 40px; }
+            .container-fluid .event-item .right .content .main .avatar img {
+              width: 100%;
+              padding: 3px; }
+            .container-fluid .event-item .right .content .main .avatar p {
+              font-weight: bold; }
+          .container-fluid .event-item .right .content .dong-ke {
+            background: url(images/bbq-list-item/dong-ke.jpg);
+            height: 10px;
+            margin-bottom: 30px; } }
+@media all and (min-width: 768px) {
+  .event-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .event-item .right .content .back {
+    margin-bottom: 40px !important; }
+  .event-item .right .content .title-first {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .event-item .right .content .header {
+    text-align: center;
+    margin-bottom: 50px !important; }
+  .event-item .right .content .blog-avatar {
+    padding: 70px; }
+  .event-item .right .content .blog-content {
+    text-align: center;
+    padding-bottom: 100px; }
+    .event-item .right .content .blog-content p {
+      font-size: 26px;
+      line-height: 3; } }
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .tomo-list-item {
+      padding-top: 10px;
+      padding-left: 10px;
+      margin: 0px; }
+      .container-fluid .tomo-list-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .tomo-list-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .tomo-list-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .tomo-list-item .right .title img {
+          width: 100%; }
+        .container-fluid .tomo-list-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg); }
+          .container-fluid .tomo-list-item .right .content .line {
+            background: url(images/cash-feature-item/line.jpg);
+            height: 10px; }
+          .container-fluid .tomo-list-item .right .content .nen {
+            background: url(images/cash-feature-item/sm1-bk.jpg); }
+          .container-fluid .tomo-list-item .right .content .avatar img {
+            width: 100%;
+            padding: 3px;
+            margin-top: 20px; }
+          .container-fluid .tomo-list-item .right .content .texts h2 {
+            font-weight: 300;
+            font-size: 20px; }
+          .container-fluid .tomo-list-item .right .content .for-loop {
+            margin: 0px;
+            padding-bottom: 50px;
+            padding-top: 10px; }
+            .container-fluid .tomo-list-item .right .content .for-loop .question p {
+              color: #1901ff;
+              font-weight: bold; }
+            .container-fluid .tomo-list-item .right .content .for-loop .answer {
+              margin-left: 20px;
+              font-weight: bold; } }
+@media all and (min-width: 600px) {
+  .tomo-list-item .right .content .texts {
+    padding-top: 67px;
+    text-align: right;
+    padding-right: 60px;
+    /*h2 {
+    	font-weight: 300;
+    	font-size: 20px;
+    }*/ }
+    .tomo-list-item .right .content .texts p {
+      line-height: 38px; }
+  .tomo-list-item .right .content .for-loop .question p {
+    font-size: 30px; }
+  .tomo-list-item .right .content .for-loop .answer {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 42px; } }
+@media all and (min-width: 768px) {
+  .tomo-list-item .left img {
+    width: 90% !important;
+    padding-bottom: 10px !important; }
+  .tomo-list-item .right .content .for-loop .question p {
+    font-size: 25px; } }
+@media all and (min-width: 1280px) {
+  .tomo-list-item .left img {
+    width: 100% !important;
+    padding-right: 40px !important;
+    padding-bottom: 20px !important; }
+  .tomo-list-item .right .content .avatar {
+    padding-top: 60px;
+    padding-left: 27px;
+    padding-bottom: 60px; }
+  .tomo-list-item .right .content .line {
+    margin-bottom: 45px; }
+  .tomo-list-item .right .content .for-loop {
+    margin-bottom: 70px !important; }
+    .tomo-list-item .right .content .for-loop .question {
+      text-align: center; }
+      .tomo-list-item .right .content .for-loop .question p {
+        font-size: 40px; }
+    .tomo-list-item .right .content .for-loop .answer p {
+      font-size: 26px;
+      margin-left: 100px;
+      line-height: 42px; } }
 
 /*# sourceMappingURL=master.css.map */

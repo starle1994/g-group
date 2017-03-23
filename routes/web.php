@@ -33,6 +33,7 @@ Route::get('/cast-feature-detail',['as'=>'cast-feature-detail','uses'=>'HomeCont
 Route::get('/movie',['as'=>'movie','uses'=>'HomeController@showMovie']);
 Route::get('/rookie-feature',['as'=>'rookie-feature','uses'=>'HomeController@showRookie']);
 Route::get('/blog',['as'=>'Blog','uses'=>'HomeController@showBlog']);
+Route::get('/blog-detail/{alias}',['as'=>'blog-detail','uses'=>'HomeController@showBlogDetail']);
 Route::get('/self-feature',['as'=>'self-feature','uses'=>'HomeController@showBlog']);
 Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showBlog']);
 Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showBlog']);

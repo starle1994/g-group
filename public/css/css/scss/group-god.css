@@ -1,0 +1,43 @@
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .group-god {
+      padding-top: 10px;
+      padding-left: 10px;
+      margin: 0px; }
+      .container-fluid .group-god .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .group-god .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .group-god .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .group-god .right .title img {
+          width: 100%; }
+        .container-fluid .group-god .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg); }
+          .container-fluid .group-god .right .content .avatar {
+            /*padding-left: 0px;*/ }
+            .container-fluid .group-god .right .content .avatar img {
+              width: 100%;
+              padding: 3px; } }
+@media all and (min-width: 600px) {
+  .container-fluid {
+    padding-right: 0px; } }
+@media all and (min-width: 1024px) {
+  .group-god .left {
+    padding-right: 45px !important; }
+    .group-god .left img {
+      width: 100% !important;
+      margin-bottom: 20px; }
+  .group-god .right .content .row {
+    margin: 0px; }
+    .group-god .right .content .row .avatar {
+      padding-right: 0px; }
+      .group-god .right .content .row .avatar img {
+        padding-top: 20px;
+        margin-bottom: 20px; } }
+
+/*# sourceMappingURL=group-god.css.map */

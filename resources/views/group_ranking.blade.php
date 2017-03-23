@@ -18,12 +18,12 @@
                     <div class=" row gr-rank-containerSlider">
                         <div style="padding: 0px" class="col-md-6 col-sm-12 lf">
                             <div class="bk-left">
-                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"> <img style="width: 100%" src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
+                               <a href="{{route('ranking-staff')}}"> <img style="width: 100%" src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
                                </a>
                             </div>
                             
                             <div class="avt-left">
-                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"><img style="width: 100%" src="{{ asset('uploads/'.$group_ranking[0]->godstaffs->image) }}" alt="">
+                               <a href="{{route('ranking-staff')}}"><img style="width: 100%" src="{{ asset('uploads/'.$group_ranking[0]->godstaffs->image) }}" alt="">
                                </a>
                             </div>
 
@@ -60,16 +60,16 @@
                                 </div>
                                 <div class="av-main">
                                     <div class="bg-lf">
-                                        <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
+                                        <a href="{{route('ranking-staff')}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
                                     </div>
 
                                     <div class="avt-lf">
-                                        <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}"><img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt=""></a>
+                                        <a href="{{route('ranking-staff')}}"><img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt=""></a>
                                     </div>
                                 </div>
 
                                 <div class="ft-bk">
-<a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}">{{$group_ranking[$i]->godstaffs->name}}</a>
+<a href="{{route('ranking-staff')}}">{{$group_ranking[$i]->godstaffs->name}}</a>
                                 </div>
                             </div>
                         @endfor
@@ -91,7 +91,7 @@
                                 
                                 <div class="av-main">
                                     <div class="bg-lf">
-                                        <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
+                                        <a href="{{route('ranking-staff')}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
                                     </div>
 
                                     <div class="avt-lf">
@@ -100,7 +100,7 @@
                                 </div>
 
                                 <div class="ft-bk">
-                                    <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}">{{$group_ranking[$i]->godstaffs->name}}</a>
+                                    <a href="{{route('ranking-staff')}}">{{$group_ranking[$i]->godstaffs->name}}</a>
                                 </div>
                             </div>
                         @endfor
@@ -137,19 +137,19 @@
                                 @elseif($group->ranking_id ==10)
                                     <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                         @endif
-                        <div class="col-xs-2 item">
+                        <div class="col-xs-2 item" style="margin-top: 30px;">
                             <div class="title">
                                <img src="{{asset($image)}}" alt="">
                             </div>
                             
                             <div class="av-main">
                                 <div class="avt-lf">
-                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                                    <a href="{{route('ranking-staff')}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                 </div>
                             </div>
 
                             <div class="ft-bk">
-                                     {{$group->godstaffs->name}}
+                                    <a href="{{route('ranking-staff')}}"> {{$group->godstaffs->name}}</a>
                             </div>
                         </div>
                     @endforeach
@@ -158,8 +158,8 @@
 
 
                 <!-- dong 2 -->
-                <div style="margin-top: 30px" class="slider1">
-                    <div class="gr-rank-sliderAva">
+                <div  class="slider1">
+                    <div class="gr-rank-sliderAva" style="margin-top: 30px">
                         <img src="{{ asset('css/css/images/group-rankking/H2.jpg')}}" alt="">
                     </div>
                 </div>
@@ -188,19 +188,19 @@
                         @endif
                         
 
-                        <div class="col-md-2 col-xs-2 item">
+                        <div class="col-md-2 col-xs-2 item" style="">
                         <div class="title">
                            <img src="{{ asset($image)}}" alt="">
                         </div>
                         
                         <div class="av-main">
                             <div class="avt-lf">
-                                <img class="avt-img" src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt="">
+                               <a href="{{route('ranking-staff')}}">  <img class="avt-img" src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt=""></a>
                             </div>
                         </div>
 
                         <div class="ft-bk">
-                                V3達成!! 
+                                <a href="{{route('ranking-staff')}}"> {{$group2->godstaffs->name}}</a>
                             </div>
                     </div>
                     @endforeach

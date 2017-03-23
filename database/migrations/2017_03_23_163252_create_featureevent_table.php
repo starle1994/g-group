@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Model;
 
-class CreateLeftCateVer2Table extends Migration {
+class CreateFeatureEventTable extends Migration {
 
     /**
      * Run the migrations.
@@ -14,11 +14,11 @@ class CreateLeftCateVer2Table extends Migration {
     public function up()
     {
         Model::unguard();
-        Schema::create('leftcatever2',function(Blueprint $table){
+        Schema::create('featureevent',function(Blueprint $table){
             $table->increments("id");
-            $table->string("image");
             $table->string("name");
-            $table->string("alias");
+            $table->string("image");
+            $table->text("description");
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,7 +31,7 @@ class CreateLeftCateVer2Table extends Migration {
      */
     public function down()
     {
-        Schema::drop('leftcatever2');
+        Schema::drop('featureevent');
     }
 
 }
