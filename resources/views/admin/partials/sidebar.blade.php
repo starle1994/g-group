@@ -6,19 +6,19 @@
             data-slide-speed="200">
             @if(Auth::user()->role_id == config('quickadmin.defaultRole'))
                 <li @if(Request::path() == config('quickadmin.route').'/menu') class="active" @endif>
-                    <a href="{{ url('jp/'.config('quickadmin.route').'/menu') }}">
+                    <a href="{{ url(config('quickadmin.route').'/menu') }}">
                         <i class="fa fa-list"></i>
                         <span class="title">{{ trans('quickadmin::admin.partials-sidebar-menu') }}</span>
                     </a>
                 </li>
                 <li @if(Request::path() == 'users') class="active" @endif>
-                    <a href="{{ url('jp/'.'users') }}">
+                    <a href="{{ url('users') }}">
                         <i class="fa fa-users"></i>
                         <span class="title">{{ trans('quickadmin::admin.partials-sidebar-users') }}</span>
                     </a>
                 </li>
                 <li @if(Request::path() == 'roles') class="active" @endif>
-                    <a href="{{ url('jp/'.'roles') }}">
+                    <a href="{{ url('roles') }}">
                         <i class="fa fa-gavel"></i>
                         <span class="title">{{ trans('quickadmin::admin.partials-sidebar-roles') }}</span>
                     </a>

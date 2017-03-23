@@ -19,7 +19,7 @@
                         <th>ranking</th>
 <th>name</th>
 <th>image</th>
-<th>Executive_layer</th>
+<th>banner</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -32,9 +32,9 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ isset($row->ranking->description) ? $row->ranking->description : '' }}</td>
-<td>{{ $row->name }}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>{{ $row->Executive_layer }}</td>
+                            <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
+                            <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
+                            <td>@if($row->banner != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->banner }}">@endif</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.gigolorankingstaff.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

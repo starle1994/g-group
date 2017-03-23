@@ -23,9 +23,9 @@ class MillionGodRankingStaff extends Model {
     
     protected $fillable = [
           'ranking_id',
-          'name',
+          'godstaffs_id',
           'image',
-          'executive_layer'
+          'banner',
     ];
     
 
@@ -41,6 +41,10 @@ class MillionGodRankingStaff extends Model {
         return $this->hasOne('App\Ranking', 'id', 'ranking_id');
     }
 
+    public function godstaffs()
+    {
+        return $this->hasOne('App\GodStaffs', 'id', 'godstaffs_id');
+    }
 
     
     

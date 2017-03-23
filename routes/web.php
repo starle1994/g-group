@@ -22,7 +22,7 @@ Route::get('/ajax-schedule',['as'=>'post.schedule','uses'=>'HomeController@postS
 Route::get('/shop-list',['as'=>'shop-list','uses'=>'HomeController@showShopList']);
 Route::get('/group-ranking',['as'=>'group-ranking','uses'=>'HomeController@showGroupRanking']);
 Route::get('/million-god',['as'=>'million-god','uses'=>'HomeController@showMillionGod']);
-Route::get('/gigoro',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
+Route::get('/gigolo',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
 Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
 Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
 Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);

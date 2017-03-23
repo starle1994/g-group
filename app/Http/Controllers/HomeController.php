@@ -15,6 +15,8 @@ use App\BestRanking;
 use App\GodStaffs;
 use App\LogGroupRanking;
 use App\ShopsList;
+use App\GodPageContent;
+use App\GigoloPageContents;
 
 class HomeController extends Controller
 {
@@ -65,11 +67,23 @@ class HomeController extends Controller
 
 	public function showMillionGod()
 	{
-		return view('million_god');
+		
+$millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->get();
+		$godPageContent = GodPageContent::all();
+		$secrect_contents 		= SecrectContents::all();
+		$rookies_feature 		= RookieFeature::all();
+		$shop_list 				= ShopsList::all();
+		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list'));
 	}
 
 	public function showGigoro()
 	{
+		$gigoloRankingStaff = GigoloRankingStaff::orderBy('ranking_id','asc')->get();
+		$gigoloPageContents = GigoloPageContents::all();
+		$secrect_contents 		= SecrectContents::all();
+		$rookies_feature 		= RookieFeature::all();
+		$shop_list 				= ShopsList::all();
+		return view('gigolo',compact('gigoloRankingStaff','gigoloPageContents','secrect_contents','rookies_feature','shop_list'));
 		return view('gigolo');
 	}
 

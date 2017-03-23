@@ -24,7 +24,10 @@ class CreateGigoloRankingStaffRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            
+            'ranking_id'=>'required',
+          	'godstaffs_id'=>'required',
+          	'image'=>'required',
+          	'banner'=>'required', 
 		];
 	}
 }

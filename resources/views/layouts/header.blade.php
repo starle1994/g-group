@@ -23,8 +23,8 @@
             </div>
             <div id="bannerMain">
                 <img src="{{ asset('css/css/images/grouptop/banner-group.jpg') }}" alt="Flower">
-                    <a class="a1Banner" href="banner1.html"></a>
-                    <a class="a2Banner" href="banner2.html"></a>
+                    <a class="a1Banner" href="{{route('million-god')}}"></a>
+                    <a class="a2Banner" href="{{route('gigoro')}}"></a>
             </div>
             <div id="mainMenu" >
                 <img class="hidden-xs" src="{{ asset('css/css/images/grouptop/bg-menu.jpg') }}" alt="">

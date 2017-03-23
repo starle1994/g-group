@@ -11,7 +11,7 @@ use App\Http\Requests\UpdateMillionGodRankingStaffRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Ranking;
-
+use App\GodStaffs;
 
 class MillionGodRankingStaffController extends Controller {
 
@@ -24,7 +24,7 @@ class MillionGodRankingStaffController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $milliongodrankingstaff = MillionGodRankingStaff::with("ranking")->get();
+        $milliongodrankingstaff = MillionGodRankingStaff::with("ranking")->with("godstaffs")->get();
 
 		return view('admin.milliongodrankingstaff.index', compact('milliongodrankingstaff'));
 	}
@@ -37,9 +37,9 @@ class MillionGodRankingStaffController extends Controller {
 	public function create()
 	{
 	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-
+	    $godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 	    
-	    return view('admin.milliongodrankingstaff.create', compact("ranking"));
+	    return view('admin.milliongodrankingstaff.create', compact("ranking","godstaffs"));
 	}
 
 	/**

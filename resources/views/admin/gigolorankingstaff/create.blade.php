@@ -27,8 +27,7 @@
 </div><div class="form-group">
     {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('name', old('name'), array('class'=>'form-control')) !!}
-        
+         {!! Form::select('godstaffs_id', $godstaffs, old('godstaffs_id'), array('class'=>'form-control')) !!}
     </div>
 </div><div class="form-group">
     {!! Form::label('image', 'image', array('class'=>'col-sm-2 control-label')) !!}
@@ -39,10 +38,11 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('Executive_layer', 'Executive_layer', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('banner', 'banner', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::hidden('Executive_layer','') !!}
-        {!! Form::checkbox('Executive_layer', 1, false) !!}
+        {!! Form::file('banner') !!}
+        {!! Form::hidden('banner_w', 4096) !!}
+        {!! Form::hidden('banner_h', 4096) !!}
         
     </div>
 </div>
