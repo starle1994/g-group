@@ -24,7 +24,8 @@ class RookieFeature extends Model {
     protected $fillable = [
           'image',
           'backgroud_image',
-          'description'
+          'description',
+          'alias',
     ];
     
 
@@ -34,8 +35,6 @@ class RookieFeature extends Model {
 
         RookieFeature::observe(new UserActionsObserver);
     }
-    
-    
     
     
 }

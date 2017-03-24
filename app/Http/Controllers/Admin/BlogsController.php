@@ -55,12 +55,12 @@ class BlogsController extends Controller {
 	    if ($blogs == null) {
 	    	$number = 1;
 	    }else{
-	    	$alias = explode($blogs->alias,'-');
-	    	$number = $alias[2];
+	    	$alias = explode('-',$blogs->alias);
+	    	$number = $alias[2]+1;
 	    }
 	    
 	    $input['alias'] = 'list-blog-'.$number;
-	
+
 		Blogs::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.blogs.index');

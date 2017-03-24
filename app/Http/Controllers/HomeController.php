@@ -18,6 +18,9 @@ use App\ShopsList;
 use App\GodPageContent;
 use App\GigoloPageContents;
 use App\Blogs;
+use App\FeatureEvent;
+use App\CastFeature;
+use App\SelfTaken;
 
 class HomeController extends Controller
 {
@@ -69,7 +72,7 @@ class HomeController extends Controller
 	public function showMillionGod()
 	{
 		
-$millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->get();
+		$millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->get();
 		$godPageContent = GodPageContent::all();
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
@@ -111,7 +114,14 @@ $millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->g
 
 	public function showEvent()
 	{
-		return view('event');
+		$events = FeatureEvent::orderBy('id','desc')->paginate(20);
+		return view('event',compact('events'));
+	}
+
+	public function showEventDetail($alias)
+	{
+		$event = FeatureEvent::where('alias',$alias)->with('schedule')->with('eventsfeature')->first();
+		return view('event_detail',compact('event'));
 	}
 
 	public function showDialog()
@@ -121,12 +131,14 @@ $millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->g
 
 	public function showCastFeature()
 	{
-		return view('cast_feature');
+		$cast_feature = CastFeature::orderBy('id','desc')->paginate(20);
+		return view('cast_feature',compact('cast_feature'));
 	}
 
-	public function showDetailCastFeature()
+	public function showDetailCastFeature($alias)
 	{
-		return view('cash-feature-item');
+		$cast_feature = CastFeature::where('alias',$alias)->first();
+		return view('cash-feature-item',compact('cast_feature'));
 	}
 
 	public function showMovie()
@@ -136,7 +148,14 @@ $millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->g
 
 	public function showRookie()
 	{
-		return view('movie');
+		$rookie_feature = RookieFeature::orderBy('id','desc')->paginate(20);
+		return view('rookie-feature',compact('rookie_feature'));
+	}
+
+	public function showRookieDetail($alias)
+	{
+		$rookie_feature = RookieFeature::where('alias',$alias)->first();
+		return view('rookie-feature-item',compact('rookie_feature'));
 	}
 
 	public function showBlog()
@@ -149,5 +168,11 @@ $millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->g
 	{
 		$blog = Blogs::where('alias',$alias)->with('shopslist')->first();
 		return view('blog_detail',compact('blog'));
+	}
+
+	public function showSelfFeature()
+	{
+		$self_taken = SelfTaken::orderBy('id','desc')->paginate(20);
+		return view('self_taken',compact('self_taken'));
 	}
 }

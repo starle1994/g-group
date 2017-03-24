@@ -47,9 +47,20 @@ class RookieFeatureController extends Controller {
 	 */
 	public function store(CreateRookieFeatureRequest $request)
 	{
+		$rookie = RookieFeature::orderBy('id','desc')->first();
 	    $request = $this->saveFiles($request);
-		RookieFeature::create($request->all());
+		
+		$input = $request->all();
+	    if ($rookie == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$rookie->alias);
 
+	    	$number = $alias[3]+1;
+	    }
+	    
+	    $input['alias'] = 'list-rookie-feature-'.$number;
+	    RookieFeature::create($input);
 		return redirect()->route(config('quickadmin.route').'.rookiefeature.index');
 	}
 

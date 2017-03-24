@@ -14,112 +14,14 @@
         </div>
         
         <div class="cash-main-content">
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
+            @foreach($cast_feature as $cast)
+                <div class="col-xs-6 exe-fa-content">
+                    <a href="{{route('cast-feature-detail',$cast->alias)}}">
+                        <img src="{{ asset('uploads/'.$cast->image)}}" alt="{{$cast->name}}">
+                    </a>
                 </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="row cash-row">
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-
-                <div class="col-xs-6 cash-content">
-                    <img src="images/cash-feature/avt1.jpg" alt="">
-                </div>
-            </div>
+            @endforeach
         </div>
-        
-
-        <div class="exe-fa-paganitor">
-            <img src="images/rookie-feature/h2.png" alt="">
-        </div>
-
     </div>
    
 </div>

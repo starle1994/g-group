@@ -9,7 +9,7 @@ use App\EventsFeature;
 use App\Http\Requests\CreateEventsFeatureRequest;
 use App\Http\Requests\UpdateEventsFeatureRequest;
 use Illuminate\Http\Request;
-
+use App\Schedule;
 
 
 class EventsFeatureController extends Controller {
@@ -35,9 +35,9 @@ class EventsFeatureController extends Controller {
 	 */
 	public function create()
 	{
+	    $schedule = Schedule::pluck("name_event", "id")->prepend('Please select', null);
 	    
-	    
-	    return view('admin.eventsfeature.create');
+	    return view('admin.eventsfeature.create',compact('schedule'));
 	}
 
 	/**
@@ -47,8 +47,19 @@ class EventsFeatureController extends Controller {
 	 */
 	public function store(CreateEventsFeatureRequest $request)
 	{
+	    $event = EventsFeature::orderBy('id','desc')->first();
+		
+		$input = $request->all();
+	    if ($event == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode($event->alias,'-');
+	    	$number = $alias[2];
+	    }
 	    
-		EventsFeature::create($request->all());
+	    $input['alias'] = 'list-blog-'.$number;
+
+		EventsFeature::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.eventsfeature.index');
 	}

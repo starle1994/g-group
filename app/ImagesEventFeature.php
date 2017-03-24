@@ -37,7 +37,7 @@ class ImagesEventFeature extends Model {
     
     public function eventsfeature()
     {
-        return $this->hasOne('App\EventsFeature', 'id', 'eventsfeature_id');
+        return $this->hasOne('App\FeatureEvent', 'id', 'eventsfeature_id');
     }
 
 

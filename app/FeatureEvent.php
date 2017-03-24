@@ -24,7 +24,9 @@ class FeatureEvent extends Model {
     protected $fillable = [
           'name',
           'image',
-          'description'
+          'description',
+          'alias',
+          'schedule_id',
     ];
     
 
@@ -34,8 +36,20 @@ class FeatureEvent extends Model {
 
         FeatureEvent::observe(new UserActionsObserver);
     }
+  
+    public function schedule()
+    {
+        return $this->hasOne('App\Schedule', 'id', 'id_event');
+    }
     
-    
-    
+    public function eventsfeatureimage()
+    {
+        return $this->hasMany('App\ImagesEventFeature', 'eventsfeature_id', 'id');
+    }
+
+     public function schedule()
+    {
+        return $this->hasOne('App\Schedule', 'schedule_id', 'id');
+    }
     
 }

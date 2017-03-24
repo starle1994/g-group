@@ -25,7 +25,8 @@ class EventsFeature extends Model {
           'name',
           'time',
           'image',
-          'description'
+          'description',
+          'alias',
     ];
     
 
@@ -36,7 +37,10 @@ class EventsFeature extends Model {
         EventsFeature::observe(new UserActionsObserver);
     }
     
-    
+    public function schedule()
+    {
+        return $this->hasOne('App\Schedule', 'schedule_id', 'id');
+    }
     
     
 }

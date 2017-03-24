@@ -15,111 +15,19 @@
         
         <div class="exe-main-content">
             <div class="row">
+            @foreach($events as $event)
                 <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
+                    <a href="{{route('blog-detail',$event->alias)}}">
+                        <img src="{{ asset('uploads/'.$event->image)}}" alt="{{$event->name}}">
+                    </a>
                 </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
+            @endforeach
+                
             </div>
 
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-
-                <div class="col-xs-6 exe-fa-content">
-                    <img src="{{ asset('css/css/images/event/avt1.jpg')}}" alt="">
-                </div>
-            </div>
+           
         </div>
         
-
-        <div class="exe-fa-paganitor">
-            <img src="{{ asset('css/css/images/rookie-feature/h2.png')}}" alt="">
-        </div>
-
     </div>
    
 </div>

@@ -37,7 +37,7 @@
 </div><div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('description', old('description',$castfeature->description), array('class'=>'form-control')) !!}
+        {!! Form::textarea('description', old('description',$castfeature->description), array('class'=>'form-control ckeditor')) !!}
         
     </div>
 </div>

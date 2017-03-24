@@ -17,7 +17,6 @@
 </div>
 
 {!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.castfeature.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
-
 <div class="form-group">
     {!! Form::label('image', 'image*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
@@ -37,8 +36,7 @@
 </div><div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('description', old('description'), array('class'=>'form-control')) !!}
-        
+        {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}
     </div>
 </div>
 

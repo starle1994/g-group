@@ -14,7 +14,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-sm-6 avatar">
-                    <img src="{{ asset('uploads/'.$cast_feature->image) }}" alt="">
+                    <img src="{{ asset('uploads/'.$rookie_feature->image) }}" alt="">
                 </div>
             </div>
             
@@ -28,7 +28,7 @@
             
             <!-- start loop -->
             <div class="row for-loop" style="padding-right: 20px;padding-left: 20px">
-                {!! $cast_feature->description !!}
+                {!! $rookie_feature->description !!}
             </div>
             <!-- end loop -->
 

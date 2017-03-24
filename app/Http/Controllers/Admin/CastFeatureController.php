@@ -47,8 +47,20 @@ class CastFeatureController extends Controller {
 	 */
 	public function store(CreateCastFeatureRequest $request)
 	{
+		$cast = CastFeature::orderBy('id','desc')->first();
+
 	    $request = $this->saveFiles($request);
-		CastFeature::create($request->all());
+	    $input = $request->all();
+	    if ($cast == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$cast->alias);
+
+	    	$number = $alias[3]+1;
+	    }
+	    
+	    $input['alias'] = 'list-cast-feature-'.$number;
+		CastFeature::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.castfeature.index');
 	}

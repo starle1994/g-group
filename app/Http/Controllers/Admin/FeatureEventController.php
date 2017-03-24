@@ -10,7 +10,7 @@ use App\Http\Requests\CreateFeatureEventRequest;
 use App\Http\Requests\UpdateFeatureEventRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-
+use App\Schedule;
 
 class FeatureEventController extends Controller {
 
@@ -35,7 +35,7 @@ class FeatureEventController extends Controller {
 	 */
 	public function create()
 	{
-	    
+	    $schedule = Schedule::pluck("name_event", "id")->prepend('Please select', null);
 	    
 	    return view('admin.featureevent.create');
 	}
@@ -48,7 +48,20 @@ class FeatureEventController extends Controller {
 	public function store(CreateFeatureEventRequest $request)
 	{
 	    $request = $this->saveFiles($request);
-		FeatureEvent::create($request->all());
+	    
+	    $event = EventsFeature::orderBy('id','desc')->first();
+		
+		$input = $request->all();
+	    if ($event == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode($event->alias,'-');
+	    	$number = $alias[2]+1;
+	    }
+	    
+	    $input['alias'] = 'list-event-'.$number;
+
+		FeatureEvent::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.featureevent.index');
 	}
