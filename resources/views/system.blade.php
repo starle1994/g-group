@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="row">
+<div class="row system">
     <div class="col-sm-2 home-left">
         <div class="flexImg">
              @include('include.categories_left2')
         </div>
     </div>
     <div class="col-sm-10 home-right">
-        <img class="stTitl" src="images/system/mainTitle.jpg" alt="">
+        <img class="stTitl" src="{{asset('css/css/images/system/mainTitle.jpg')}}" alt="">
         <div class="contentSyst">
             <div class="textSyst">
                 <div class="titText">
@@ -17,7 +17,7 @@
                 <div class="sysContent1">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 ctImg">
-                            <img src="images/system/imgContent1.png" alt="">
+                            <img src="{{asset('css/css/images/system/imgContent1.png')}}" alt="">
                         </div>
                         <div class="col-xs-12 col-sm-6 ctText">
                             <p>・90分 1,000円</p>                                                         <span>A:鏡月+割り物飲み放題</span>                                                                                                                   <span>B:ビール類2本+ハーフ鏡月1本+割り物飲み放題</span>
@@ -66,7 +66,7 @@
                             <img src="images/system/ct3Top1.png" alt="">
                         </div>
                         <div>
-                            <img class="im1" src="images/system/ct3Top2.png" alt="">
+                            <img class="im1" src="/images/system/ct3Top2.png" alt="">
                             <img class="im2" src="images/system/ct3Top3.png" alt="">
                         </div>
                     </div>

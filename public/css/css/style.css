@@ -1538,3 +1538,67 @@ footer {
         margin-bottom: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+.groupTop .titleAva1{
+   padding: 30px 0px 10px 35px;
+ }
+ .groupTop .titleAva2{
+   padding: 30px 0px 10px 35px;
+ }
+ .groupTop .titleAva3{
+   padding: 30px 0px 10px 35px;
+ }
+ .groupTop .titleAva4{
+   padding: 30px 0px 10px 35px;
+ }
+ .groupTop .titleAva5{
+   padding: 30px 0px 10px 35px;
+ }
+ 
+ .groupTop .titleAva6{
+   padding: 30px 0px 10px 35px;
+ }
+ 
+ .bcLeft {
+     padding-right: 0px;
+     padding-left: 0px;
+ }
+ .rowPlus {
+     padding-right: 15px;
+   padding-top: 15px;
+    padding-left: 15px;
+  
+}
+.lineSli {
+    margin-top: 30px;
+}
+
+
+.groupTop .ct-ava .titleAva1 {
+     
+     padding: 20px 0;
+ }
+ 
+ .groupTop .infoTop {
+    height: auto !important;
+    overflow: hidden;
+ }
+ 
+ .infoTop .line img{
+  width: auto;
+}
+
+#mainMenu a{
+  max-width: 120px;
+  text-transform: uppercase;
+  font-size: 13;
+    line-height: 2;
+}
+
+.gr-rank-p2 .contents .ft-bk{
+  padding: 10px;
+}
+
+.gr-rank-p2 .contents .ft-bk a{
+  color: white !important;
+}
