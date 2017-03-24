@@ -1,9 +1,9 @@
 <script>
   var options = {
-    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    filebrowserImageBrowseUrl: '{{asset("laravel-filemanager?type=Images")}}',
+    filebrowserImageUploadUrl: '{{asset("laravel-filemanager/upload?type=Images&_token=")}}{{csrf_token()}}',
+    filebrowserBrowseUrl: '{{asset("laravel-filemanager?type=Files")}}',
+    filebrowserUploadUrl: '{{asset("laravel-filemanager/upload?type=Files&_token=")}}{{csrf_token()}}'
   };
   CKEDITOR.replace('my-editor', options);
 </script>
