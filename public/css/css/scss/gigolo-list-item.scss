@@ -1,0 +1,171 @@
+@media all and (min-width: 320px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.gigolo-list-item{
+			padding-top: 10px;
+    		/*padding-left: 10px;*/
+    		margin: 0px;
+
+			.left {
+				padding-right: 0px;
+				padding-left: 0px;
+
+				img {
+					width: 30%;
+					padding: 3px;
+				}
+			}
+
+			.right {
+				padding-right: 25px;
+				padding-left: 0px;
+
+				.title {
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.content {
+					background: url(images/cash-feature-item/lg-bk.jpg);
+					    padding: 3px;
+    					padding-top: 10px;
+
+					.top {
+						margin: 0px;
+
+						.avt-parent {
+							img {
+								width: 100%;
+								margin-bottom: 10px;
+							}
+						}
+
+						.paraph {
+							p {
+								padding-left: 5px;
+							}
+							.year {
+								color: #ff0101;
+							}
+						}
+					}
+
+					.main {
+						.avatar {
+							img {
+								width: 100%;
+								padding: 3px;
+							}
+						}
+
+						.loop {
+							margin-bottom: 40px;
+							.paraph {
+								.question {
+									color: #ff0101;
+								}
+							}
+						}
+					}
+
+					.dong-ke {
+						background: url(images/bbq-list-item/dong-ke.jpg);
+						height: 10px;
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.gigolo-list-item {
+		.left {
+			img {
+				width: 90% !important;
+				padding: 10px !important;
+			}
+		}
+
+		.right {
+			.content {
+				.back {
+					margin-bottom: 40px !important;
+				}
+
+				.title-first {
+					text-align: center;
+					margin-bottom: 50px !important;
+				}
+
+				.header {
+					text-align: center;
+					margin-bottom: 50px !important;
+				}
+
+				.blog-avatar {
+					padding: 70px;
+				}
+
+				.blog-content {
+					text-align: center;
+					padding-bottom: 100px;
+
+					p {
+						font-size: 26px;
+						line-height: 3;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1280px) {
+	.gigolo-list-item {
+		.right {
+			.content {
+				.main {
+					.loop {
+						.paraph {
+							.question {
+								font-size: 30px;
+							}
+
+							.answer {
+								font-size: 25px;
+								line-height: 45px;
+							}
+						}
+					}
+				}
+
+				.top {
+					.paraph {
+						p {
+							font-size: 22px;
+						}
+
+						.time {
+							float: right;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

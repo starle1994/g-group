@@ -34,6 +34,7 @@ Route::get('/event',['as'=>'event','uses'=>'HomeController@showEvent']);
 Route::get('/event-detail',['as'=>'event-detail','uses'=>'HomeController@showEventDetail']);
 
 Route::get('/dialogue',['as'=>'dialogue','uses'=>'HomeController@showDialog']);
+Route::get('/dialogue-detail/{alias}',['as'=>'dialogue-detail','uses'=>'HomeController@showDialogDetail']);
 
 Route::get('/cast-feature',['as'=>'cast-feature','uses'=>'HomeController@showCastFeature']);
 Route::get('/cast-feature-detail/{alias}',['as'=>'cast-feature-detail','uses'=>'HomeController@showDetailCastFeature']);

@@ -21,6 +21,8 @@ use App\Blogs;
 use App\FeatureEvent;
 use App\CastFeature;
 use App\SelfTaken;
+use App\Dialogue;
+use App\Movies;
 
 class HomeController extends Controller
 {
@@ -126,8 +128,14 @@ class HomeController extends Controller
 
 	public function showDialog()
 	{
-		return view('dialogue');
+	    $dialogs=Dialogue::orderBy('id','desc')->paginate(20);
+		return view('dialogue', compact('dialogs'));
 	}
+    public function showDialogDetail($alias)
+    {
+        $dialog = Dialogue::where('alias',$alias)->first();
+        return view('dialogue_detail',compact('dialog'));
+    }
 
 	public function showCastFeature()
 	{
@@ -143,7 +151,8 @@ class HomeController extends Controller
 
 	public function showMovie()
 	{
-		return view('movie');
+		$movies = Movies::orderBy('id','desc')->paginate(20);
+		return view('movie',compact('movies'));
 	}
 
 	public function showRookie()

@@ -1,0 +1,146 @@
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .event-restaurant {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .event-restaurant .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .event-restaurant .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .event-restaurant .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .event-restaurant .right .title img {
+          width: 100%; }
+        .container-fluid .event-restaurant .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px;
+          padding-bottom: 50px; }
+          .container-fluid .event-restaurant .right .content .event-loop {
+            text-align: center;
+            margin: 0px; }
+            .container-fluid .event-restaurant .right .content .event-loop .backs-1 {
+              background: url(images/event-restaurant/bk1.jpg); }
+            .container-fluid .event-restaurant .right .content .event-loop .top {
+              margin: 0px; }
+              .container-fluid .event-restaurant .right .content .event-loop .top .even-text {
+                color: #003cff; }
+                .container-fluid .event-restaurant .right .content .event-loop .top .even-text .lg {
+                  font-size: 40px; }
+                .container-fluid .event-restaurant .right .content .event-loop .top .even-text .small {
+                  font-size: 36px; }
+            .container-fluid .event-restaurant .right .content .event-loop img {
+              width: 100%; }
+            .container-fluid .event-restaurant .right .content .event-loop .col-sm-6 {
+              padding-left: 0px;
+              padding-right: 0px; }
+            .container-fluid .event-restaurant .right .content .event-loop .button {
+              margin-top: 20px; }
+          .container-fluid .event-restaurant .right .content .event-loop-2 {
+            text-align: center;
+            margin: 0px; }
+            .container-fluid .event-restaurant .right .content .event-loop-2 .backs-2 {
+              background: url(images/event-restaurant/bk2.jpg); }
+            .container-fluid .event-restaurant .right .content .event-loop-2 .top {
+              margin: 0px; }
+              .container-fluid .event-restaurant .right .content .event-loop-2 .top .even-text {
+                color: #003cff; }
+                .container-fluid .event-restaurant .right .content .event-loop-2 .top .even-text .lg {
+                  font-size: 40px; }
+                .container-fluid .event-restaurant .right .content .event-loop-2 .top .even-text .small {
+                  font-size: 36px; }
+            .container-fluid .event-restaurant .right .content .event-loop-2 img {
+              width: 100%; }
+            .container-fluid .event-restaurant .right .content .event-loop-2 .col-sm-6 {
+              padding-left: 0px;
+              padding-right: 0px; }
+            .container-fluid .event-restaurant .right .content .event-loop-2 .button {
+              margin-top: 20px; }
+          .container-fluid .event-restaurant .right .content .dong-ke {
+            background: url(images/x-gs-group-list-item/o_sen3.png);
+            height: 10px;
+            margin-bottom: 30px;
+            margin-top: 20px; } }
+@media all and (min-width: 768px) {
+  .event-restaurant .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .event-restaurant .right .content .event-loop .backs-1 {
+    background: url(images/event-restaurant/bk1.jpg) !important;
+    height: 500px;
+    margin: 20px; }
+    .event-restaurant .right .content .event-loop .backs-1 .event-text-title {
+      font-size: 23px; }
+    .event-restaurant .right .content .event-loop .backs-1 .a1 {
+      margin-top: 20px;
+      position: absolute;
+      z-index: 100; }
+      .event-restaurant .right .content .event-loop .backs-1 .a1 img {
+        width: 78%;
+        margin-right: 58px; }
+    .event-restaurant .right .content .event-loop .backs-1 .a2 img {
+      width: 78%;
+      top: 137px;
+      position: relative;
+      margin-left: 40px; }
+    .event-restaurant .right .content .event-loop .backs-1 .button {
+      position: relative;
+      top: 150px;
+      right: 40px; }
+  .event-restaurant .right .content .event-loop .top .even-text .small {
+    font-size: 24px !important; }
+  .event-restaurant .right .content .event-loop-2 .top .even-text .small {
+    font-size: 24px !important; }
+  .event-restaurant .right .content .event-loop-2 .backs-2 {
+    background: url(images/event-restaurant/bk2.jpg) !important;
+    height: 500px;
+    margin: 20px; }
+    .event-restaurant .right .content .event-loop-2 .backs-2 .event-text-title {
+      font-size: 23px; }
+    .event-restaurant .right .content .event-loop-2 .backs-2 .a1 {
+      margin-top: 20px;
+      position: absolute;
+      z-index: 100; }
+      .event-restaurant .right .content .event-loop-2 .backs-2 .a1 img {
+        width: 78%;
+        margin-right: 58px; }
+    .event-restaurant .right .content .event-loop-2 .backs-2 .a2 img {
+      width: 78%;
+      top: 114px;
+      position: relative;
+      margin-left: 40px; }
+    .event-restaurant .right .content .event-loop-2 .backs-2 .button {
+      position: relative;
+      top: 150px;
+      right: 40px; } }
+@media all and (min-width: 1280px) {
+  .event-restaurant .right .content {
+    padding: 0px; }
+    .event-restaurant .right .content .top {
+      margin-top: 50px !important;
+      margin-bottom: 50px !important; }
+    .event-restaurant .right .content .event-loop .even-text .lg {
+      font-size: 74px !important;
+      margin-right: 20px; }
+    .event-restaurant .right .content .event-loop .backs-1 {
+      height: 600px; }
+      .event-restaurant .right .content .event-loop .backs-1 .event-text-title {
+        font-size: 44px; }
+      .event-restaurant .right .content .event-loop .backs-1 p {
+        font-size: 20px; }
+    .event-restaurant .right .content .event-loop-2 .even-text .lg {
+      font-size: 50px !important;
+      margin-right: 20px; }
+    .event-restaurant .right .content .event-loop-2 .backs-2 {
+      height: 600px; }
+      .event-restaurant .right .content .event-loop-2 .backs-2 .event-text-title {
+        font-size: 44px; }
+      .event-restaurant .right .content .event-loop-2 .backs-2 p {
+        font-size: 20px; } }
+
+/*# sourceMappingURL=event-restaurant.css.map */

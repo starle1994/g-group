@@ -12,51 +12,69 @@
                             <div class="exe-fa-head-1">
                                 <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
                             </div>
-                            
-                            <div class="dialogue-main-content">
 
+                            <div class="dialogue-main-content">
+                            @foreach($dialogs as $item)
                                 <div class="parap">
                                     <p>
-                                        G’s group が誇る<br>
-                                        5名のイケメン達、、、通称　　　　　!!<br>
-                                        彼らによる夢の対談を見逃すな!!
+                                        <!--G’s group ???<br>
+                                        5????????????     !!<br>
+                                        ??????????????!!-->
+                                        <?php echo $item->name; ?>
                                     </p>
-                                    
+                                    <p><?php echo $item->description; ?></p>
+
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-12 dialogue-content">
-                                        <img src="images/dialogue/anh1.jpg" alt="">
+
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-xs-12 dialogue-content">
-                                        <img src="images/dialogue/anh1.jpg" alt="">
+
+                                        <?php
+                                            if ($item->image == null) {
+                                                $embedCode = '<iframe src="'.$item->link.'" frameborder="0" allowfullscreen></iframe>';
+                                                preg_match('/src="([^"]+)"/', $embedCode, $match);
+
+                                                // Extract video url from embed code
+                                                $videoURL = $match[1];
+                                                $urlArr = explode("/",$videoURL);
+                                                $urlArrNum = count($urlArr);
+
+                                                // YouTube video ID
+                                                $youtubeVideoId = $urlArr[$urlArrNum - 1];
+
+                                                // Generate youtube thumbnail url
+                                                $thumbURL = 'http://img.youtube.com/vi/'.$youtubeVideoId.'/0.jpg';
+                                            }else{
+                                                $thumbURL = asset('uploads/'.$item->image);
+                                            }
+
+                                            $target = 'myModal-'.$item->id ;
+                                            $target_1= '#'.$target ;
+                                            ?>
+
+                                            <?php $target = 'myModal-'.$item->id ; $target_1= '#'.$target ?>
+
+                                        <a href="{{route('dialogue-detail',$item->alias)}}">
+                                            <img src="{!! $thumbURL !!}" alt="">
+                                        </a>
+
+
+
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12 dialogue-content">
-                                        <img src="images/dialogue/anh1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12 dialogue-content">
-                                        <img src="images/dialogue/anh1.jpg" alt="">
-                                    </div>
-                                </div>
-
-                                
-                            
-
                             <div class="exe-fa-paganitor">
-                                <img src="images/rookie-feature/h2.png" alt="">
+                                <img src="{{ asset('css/css/images/rookie-feature/h2.png') }}" alt="">
                             </div>
+                                @endforeach
 
                         </div>
-                       
+
                     </div>
                 </div>
 @endsection

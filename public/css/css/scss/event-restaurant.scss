@@ -1,0 +1,296 @@
+@media all and (min-width: 320px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.event-restaurant {
+			padding-top: 10px;
+    		/*padding-left: 10px;*/
+    		margin: 0px;
+
+			.left {
+				padding-right: 0px;
+				padding-left: 0px;
+
+				img {
+					width: 30%;
+					padding: 3px;
+				}
+			}
+
+			.right {
+				padding-right: 25px;
+				padding-left: 0px;
+
+				.title {
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.content {
+					background: url(images/cash-feature-item/lg-bk.jpg);
+				    padding: 3px;
+					padding-top: 10px;
+					padding-bottom: 50px;
+
+					.event-loop {
+						text-align: center;
+						margin: 0px;
+
+						.backs-1 {
+							background: url(images/event-restaurant/bk1.jpg);
+						}
+
+						.top {
+							margin: 0px;
+							.even-text {
+								color: #003cff;
+
+								.lg {
+									font-size: 40px;
+								}
+
+								.small {
+									font-size: 36px;
+								}
+							}
+						}
+
+						img {
+							width: 100%;
+						}
+
+						.col-sm-6 {
+							padding-left: 0px;
+							padding-right: 0px;
+						}
+
+						.button {
+							margin-top: 20px;
+						}
+					}
+
+					.event-loop-2 {
+						text-align: center;
+						margin: 0px;
+						
+
+						.backs-2 {
+							background: url(images/event-restaurant/bk2.jpg);
+						}
+
+						.top {
+							margin: 0px;
+							.even-text {
+								color: #003cff;
+
+								.lg {
+									font-size: 40px;
+								}
+
+								.small {
+									font-size: 36px;
+								}
+							}
+						}
+
+						img {
+							width: 100%;
+						}
+
+						.col-sm-6 {
+							padding-left: 0px;
+							padding-right: 0px;
+						}
+
+						.button {
+							margin-top: 20px;
+						}
+					}
+
+					.dong-ke {
+						background: url(images/x-gs-group-list-item/o_sen3.png);
+						height: 10px;
+						margin-bottom: 30px;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.event-restaurant {
+		.left {
+			img {
+				width: 90% !important;
+				padding: 10px !important;
+			}
+		}
+
+		.right {
+			.content {
+				.event-loop {
+					.backs-1 {
+						background: url(images/event-restaurant/bk1.jpg) !important;
+						height: 500px;
+						margin: 20px;
+
+						.event-text-title {
+							font-size: 23px;
+						}
+
+						.a1 {
+							margin-top: 20px;
+							position: absolute;
+    						z-index: 100;
+
+							img {
+								width: 78%;
+								margin-right: 58px;
+							}
+						}
+
+						.a2 {
+							img {
+								width: 78%;
+								top: 137px;
+							    position: relative;
+							    margin-left: 40px;
+							}
+						}
+
+						.button {
+							position: relative;
+						    top: 150px;
+						    right: 40px;
+						}
+					}
+
+					.top {
+						.even-text {
+							.small {
+								font-size: 24px !important;
+							}
+						}
+					}
+				}
+
+				.event-loop-2 {
+					.top {
+						.even-text {
+							.small {
+								font-size: 24px !important;
+							}
+						}
+					}
+
+					.backs-2 {
+						background: url(images/event-restaurant/bk2.jpg) !important;
+						height: 500px;
+						margin: 20px;
+
+						.event-text-title {
+							font-size: 23px;
+						}
+
+						.a1 {
+							margin-top: 20px;
+							position: absolute;
+    						z-index: 100;
+
+							img {
+								width: 78%;
+								margin-right: 58px;
+							}
+						}
+
+						.a2 {
+							img {
+								width: 78%;
+								top: 114px;
+							    position: relative;
+							    margin-left: 40px;
+							}
+						}
+
+						.button {
+							position: relative;
+						    top: 150px;
+						    right: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1280px) {
+	.event-restaurant {
+		.right {
+			.content {
+				padding: 0px;
+
+				.top {
+					margin-top: 50px !important;
+					margin-bottom: 50px !important;
+				}
+
+				.event-loop {
+					.even-text {
+						.lg {
+							font-size: 74px !important;
+							margin-right: 20px;
+						}
+					}
+
+					.backs-1 { 
+						height: 600px;
+						.event-text-title {
+							font-size: 44px;
+						}
+
+						p {
+							font-size: 20px;
+						}
+					}
+				}
+
+				.event-loop-2 {
+					.even-text {
+						.lg {
+							font-size: 50px !important;
+							margin-right: 20px;
+						}
+					}
+
+					.backs-2 { 
+						height: 600px;
+						.event-text-title {
+							font-size: 44px;
+						}
+
+						p {
+							font-size: 20px;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

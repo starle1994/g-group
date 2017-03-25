@@ -1,0 +1,63 @@
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .gs-group-list-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .gs-group-list-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .gs-group-list-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .gs-group-list-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .gs-group-list-item .right .title img {
+          width: 100%; }
+        .container-fluid .gs-group-list-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px; }
+          .container-fluid .gs-group-list-item .right .content .top {
+            margin: 0px;
+            /*.paraph {
+            	p {
+            		padding-left: 5px;
+            	}
+            	.year {
+            		color: #0c00ff;
+            	}
+            }*/ }
+            .container-fluid .gs-group-list-item .right .content .top .avt-parent img {
+              width: 100%;
+              margin-bottom: 10px; }
+          .container-fluid .gs-group-list-item .right .content .main .avatar img {
+            width: 100%;
+            padding: 3px; }
+          .container-fluid .gs-group-list-item .right .content .dong-ke {
+            background: url(images/bbq-list-item/dong-ke.jpg);
+            height: 10px;
+            margin-bottom: 30px;
+            margin-top: 20px; } }
+@media all and (min-width: 768px) {
+  .gs-group-list-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .gs-group-list-item .right .content .main {
+    margin: 0px; }
+    .gs-group-list-item .right .content .main .avatar {
+      padding-left: 0px;
+      padding-right: 0px; }
+      .gs-group-list-item .right .content .main .avatar img {
+        height: 200px;
+        padding: 8px !important; } }
+@media all and (min-width: 1280px) {
+  .gs-group-list-item .right .content .main .avatar img {
+    height: 400px; }
+  .gs-group-list-item .right .content .top .avt-parent {
+    margin-top: 30px;
+    margin-left: 20px; } }
+
+/*# sourceMappingURL=gs-group-list-item.css.map */

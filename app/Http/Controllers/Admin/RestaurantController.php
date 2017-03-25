@@ -10,7 +10,7 @@ use App\Http\Requests\CreateRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-
+use App\CategoryLeft;
 
 class RestaurantController extends Controller {
 
@@ -35,9 +35,9 @@ class RestaurantController extends Controller {
 	 */
 	public function create()
 	{
+	     $categories = CategoryLeft::pluck("name", "id")->prepend('Please select', null);
 	    
-	    
-	    return view('admin.restaurant.create');
+	    return view('admin.restaurant.create',compact('categories'));
 	}
 
 	/**

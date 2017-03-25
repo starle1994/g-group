@@ -23,7 +23,9 @@ class Restaurant extends Model {
     
     protected $fillable = [
           'name',
-          'image'
+          'image',
+          'cate_id',
+          'description'
     ];
     
 
@@ -34,7 +36,10 @@ class Restaurant extends Model {
         Restaurant::observe(new UserActionsObserver);
     }
     
-    
+    public function CategoryLeft()
+    {
+        return $this->hasOne('App\CategoryLeft', 'id', 'cate_id');
+    }
     
     
 }

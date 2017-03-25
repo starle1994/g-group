@@ -1,0 +1,75 @@
+@media all and (min-width: 320px) {
+  .container-fluid {
+    padding-right: 0px; }
+    .container-fluid .group-god-item {
+      padding-top: 10px;
+      /*padding-left: 10px;*/
+      margin: 0px; }
+      .container-fluid .group-god-item .left {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .container-fluid .group-god-item .left img {
+          width: 30%;
+          padding: 3px; }
+      .container-fluid .group-god-item .right {
+        padding-right: 25px;
+        padding-left: 0px; }
+        .container-fluid .group-god-item .right .title img {
+          width: 100%; }
+        .container-fluid .group-god-item .right .content {
+          background: url(images/cash-feature-item/lg-bk.jpg);
+          padding: 3px;
+          padding-top: 10px; }
+          .container-fluid .group-god-item .right .content .top {
+            margin: 0px; }
+            .container-fluid .group-god-item .right .content .top .avt-parent img {
+              width: 100%;
+              margin-bottom: 10px; }
+          .container-fluid .group-god-item .right .content .main {
+            margin: 0px; }
+            .container-fluid .group-god-item .right .content .main .avatar {
+              padding-left: 0px;
+              padding-right: 0px; }
+              .container-fluid .group-god-item .right .content .main .avatar img {
+                width: 100%;
+                margin-bottom: 10px; }
+          .container-fluid .group-god-item .right .content .dong-ke {
+            background: url(images/x-gs-group-list-item/o_sen3.png);
+            height: 10px;
+            margin-bottom: 30px;
+            margin-top: 20px; } }
+@media all and (min-width: 768px) {
+  .group-god-item .left img {
+    width: 90% !important;
+    padding: 10px !important; }
+  .group-god-item .right .content .main {
+    margin: 0px; }
+    .group-god-item .right .content .main .avatar {
+      padding-left: 0px;
+      padding-right: 0px; }
+      .group-god-item .right .content .main .avatar img {
+        height: 200px;
+        padding: 8px !important; } }
+@media all and (min-width: 1280px) {
+  .group-god-item .right .content {
+    padding: 0px; }
+    .group-god-item .right .content .top {
+      margin-top: 50px !important;
+      margin-bottom: 50px !important; }
+    .group-god-item .right .content .avt-parent {
+      padding-right: 0px;
+      padding-left: 0px; }
+    .group-god-item .right .content .main .bao-avatar {
+      padding-left: 0px;
+      padding-right: 0px; }
+      .group-god-item .right .content .main .bao-avatar .avatar .phan-tren {
+        margin: 0px; }
+        .group-god-item .right .content .main .bao-avatar .avatar .phan-tren .a-top {
+          padding-right: 0px;
+          padding-left: 0px; }
+      .group-god-item .right .content .main .bao-avatar .avatar img {
+        /*margin-bottom: 60px;*/
+        /*padding-right: 30px !important;*/
+        height: 500px; } }
+
+/*# sourceMappingURL=group-god-item.css.map */
