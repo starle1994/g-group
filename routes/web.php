@@ -43,12 +43,15 @@ Route::get('/movie',['as'=>'movie','uses'=>'HomeController@showMovie']);
 Route::get('/rookie-feature',['as'=>'rookie-feature','uses'=>'HomeController@showRookie']);
 Route::get('/rookie-feature-detail/{alias}',['as'=>'rookie-feature-detail','uses'=>'HomeController@showRookieDetail']);
 
+Route::get('/office-work-feature',['as'=>'office-work-feature','uses'=>'HomeController@showWorkFeature']);
+Route::get('/office-work-feature-detail/{alias}',['as'=>'office-work-feature-detail','uses'=>'HomeController@showWorkFeatureDetail']);
+
 Route::get('/blog',['as'=>'Blog','uses'=>'HomeController@showBlog']);
 Route::get('/blog-detail/{alias}',['as'=>'blog-detail','uses'=>'HomeController@showBlogDetail']);
 
 Route::get('/self-feature',['as'=>'self-feature','uses'=>'HomeController@showSelfFeature']);
 
-Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showBlog']);
+Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showCoupon']);
 Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showBlog']);
 
 Route::group([ 'middleware' => 'auth'], function () {

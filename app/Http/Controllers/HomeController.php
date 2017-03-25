@@ -82,8 +82,8 @@ class HomeController extends Controller
 
 	public function showGigoro()
 	{
-		$gigoloRankingStaff = GigoloRankingStaff::orderBy('ranking_id','asc')->get();
-		$gigoloPageContents = GigoloPageContents::all();
+		$gigoloRankingStaff 	= GigoloRankingStaff::orderBy('ranking_id','asc')->get();
+		$gigoloPageContents 	= GigoloPageContents::all();
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::all();
@@ -155,6 +155,7 @@ class HomeController extends Controller
 	public function showRookieDetail($alias)
 	{
 		$rookie_feature = RookieFeature::where('alias',$alias)->first();
+
 		return view('rookie-feature-item',compact('rookie_feature'));
 	}
 
@@ -174,5 +175,20 @@ class HomeController extends Controller
 	{
 		$self_taken = SelfTaken::orderBy('id','desc')->paginate(20);
 		return view('self_taken',compact('self_taken'));
+	}
+
+	public function showWorkFeature()
+	{
+		return view('office_work_freature');
+	}
+
+	public function showWorkFeatureDetail($alias)
+	{
+		return view('office_work_freature');
+	}
+
+	public function showCoupon()
+	{
+		return view('coupon');
 	}
 }

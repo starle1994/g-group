@@ -24,6 +24,7 @@ class Dialogue extends Model {
     protected $fillable = [
           'image',
           'name',
+          'description',
           'link'
     ];
     

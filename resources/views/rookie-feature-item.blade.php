@@ -32,8 +32,6 @@
             </div>
             <!-- end loop -->
 
-           
-
         </div>
 
     </div>
