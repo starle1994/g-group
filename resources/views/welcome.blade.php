@@ -163,7 +163,7 @@
                         <div class="owl-carousel owl-theme">
                             
                             @foreach($secrect_contents as $secrect_content)
-                            <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$secrect_content->image) }}" alt="{{$secrect_content->name}}"></div>
+                            <div class="item"><a href="{{route($secrect_content->alias)}}"><img class="setHeight" src="{{ asset('uploads/'.$secrect_content->image) }}" alt="{{$secrect_content->name}}"></a></div>
           
                             @endforeach
                         </div>
@@ -191,8 +191,8 @@
                         <div class="row rowPlus">
                             @foreach($contents as $content)
                             <div class="col-xs-6 bcLeft">
-                                <img src="{{ asset('uploads/'.$content->image) }}" alt="{{$content->name}}">
-<!--
+                               <a href="{{route($content->alias)}}"> <img src="{{ asset('uploads/'.$content->image) }}" alt="{{$content->name}}"></a>
+<!--    
                                 <div class="bnContent">
                                     <span>Number - Staff</span>
                                     <span>asfsadf</span>
