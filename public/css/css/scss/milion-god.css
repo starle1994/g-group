@@ -4,5 +4,29 @@
     width: 100%; }
 .milion-god .home-right .tableTop {
   margin-bottom: 20px; }
+.milion-god .titleAva1 {
+  background: url(images/milion-god/t3.jpg);
+  height: 45px; }
+.milion-god .titleAva4 {
+  background: url(images/milion-god/t-ban-1.jpg);
+  height: 45px;
+  background-size: 100% 100%; }
+.milion-god .titleAva5 {
+  background: url(images/milion-god/t-ban-2.jpg);
+  height: 45px;
+  background-size: 100% 100%; }
+.milion-god .titleAva6 {
+  background: url(images/milion-god/t-ban-3.jpg);
+  height: 45px;
+  background-size: 100% 100%; }
+.milion-god .ct-ava .titleAva1 {
+  background: url(images/milion-god/le1.jpg);
+  background-size: 100% 100%; }
+.milion-god .ct-ava .titleAva2 {
+  background: url(images/milion-god/l2.jpg);
+  background-size: 100% 100%; }
+.milion-god .ct-ava .titleAva3 {
+  background: url(images/milion-god/l3.jpg);
+  background-size: 100% 100%; }
 
 /*# sourceMappingURL=milion-god.css.map */

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAGG,4CAAI;EACH,YAAY,EAAE,IAAI;AAGnB,mDAAW;EACV,aAAa,EAAE,IAAI",
+"sources": ["event.scss"],
 "names": [],
 "file": "event.css"
 }

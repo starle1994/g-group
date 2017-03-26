@@ -28,7 +28,7 @@
                         <p>
                             {{$year}}年{{$month}}月{{$day}}日　{{$time}}（水） <br>
                         </p>
-                        {{$event->description}}
+                        {!! $event->description !!}
                     </div>
                 </div>
 
@@ -37,11 +37,11 @@
                 </div>
                 <!-- loop -->
                 <div class="row main">
-                @foreach($event->eventsfeatureimage->image as $image)
+                @foreach($event->eventsfeatureimage as $image)
                     <div class="col-sm-6 avatar">
                         <img src="{{ asset('uploads/'.$image->image)}}" alt="">
                         <p>
-                            {{ $image->description }}
+                            {!! $image->description !!}
                         </p>
                     </div>
                  @endforeach

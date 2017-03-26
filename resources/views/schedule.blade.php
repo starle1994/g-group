@@ -20,12 +20,12 @@
           <div class="month">
           	
                 <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' - 1 Month')); ?>','<?php echo date("m",strtotime($date.' - 1 Month')); ?>');">
-                  <span name="month_dropdown" class="month_dropdown mon1" >◁{{date("m",strtotime($date.' - 1 Month'))}}月{{ date("Y",strtotime($date.' - 1 Month')) }}年</span></a>
+                  <span name="month_dropdown" class="month_dropdown mon1" >◁{{ date("Y",strtotime($date.' - 1 Month')) }}年{{date("m",strtotime($date.' - 1 Month'))}}月</span></a>
 
                   
                   <span class="mon2">{{ $dateMonth }}月</span>
                   
-                  <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' + 1 Month')); ?>','<?php echo date("m",strtotime($date.' + 1 Month')); ?>');"><span class="mon1">{{date("m",strtotime($date.' + 1 Month'))}}月{{ date("Y",strtotime($date.' + 1 Month')) }}年▷</span></a>
+                  <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' + 1 Month')); ?>','<?php echo date("m",strtotime($date.' + 1 Month')); ?>');"><span class="mon1">{{ date("Y",strtotime($date.' + 1 Month')) }}年{{date("m",strtotime($date.' + 1 Month'))}}月▷</span></a>
               </div>
           <table class="table table-bordered tbSche">
               <thead>
@@ -124,9 +124,9 @@
                                 </div>
 
                                 <div class="colSche">
-                                    <div class="titCol">
-                                        <h3>{{ $dateMonth }}月{{$dateYear}}年のスケジュール詳細</h3>
-                                        <span class="bgTit">ádfasdfasf</span>
+                                    <div class="titCol" >
+                                        <h3>{{$dateYear}}年{{ $dateMonth }}月のスケジュール詳細</h3>
+                                        <span class="bgTit" style="padding: 30px 100px;"></span>
                                     </div>
                                     <table class="table table-bordered colTab">
                                         <tbody>
@@ -138,12 +138,12 @@
                                             $class = '';
                                             if ($event != null) {
                                                 if ($event->event_type ==1) {
-                                                  $class = '../css/css/images/schedule/contai.png';
+                                                  $class = './css/css/images/schedule/contai.png';
                                                 }else{
                                                   if ($event->event_type ==2) {
-                                                    $class = '../css/css/images/schedule/music.png';
+                                                    $class = './css/css/images/schedule/music.png';
                                                   }else{
-                                                    $class = '../css/css/images/schedule/char.png';
+                                                    $class = './css/css/images/schedule/char.png';
                                                   }
                                                 }
                                             }
@@ -180,12 +180,12 @@
                                     <div class="month">
             
                 <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' - 1 Month')); ?>','<?php echo date("m",strtotime($date.' - 1 Month')); ?>');">
-                  <span name="month_dropdown" class="month_dropdown mon1" >◁{{date("m",strtotime($date.' - 1 Month'))}}月{{ date("Y",strtotime($date.' - 1 Month')) }}年</span></a>
+                  <span name="month_dropdown" class="month_dropdown mon1" >◁{{ date("Y",strtotime($date.' - 1 Month')) }}年{{date("m",strtotime($date.' - 1 Month'))}}月</span></a>
 
                   
                   
                   
-                  <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' + 1 Month')); ?>','<?php echo date("m",strtotime($date.' + 1 Month')); ?>');"><span class="mon1">{{date("m",strtotime($date.' + 1 Month'))}}月{{ date("Y",strtotime($date.' + 1 Month')) }}年▷</span></a>
+                  <a href="javascript:void(0);" onclick="getCalendar('calendar_div','<?php echo date("Y",strtotime($date.' + 1 Month')); ?>','<?php echo date("m",strtotime($date.' + 1 Month')); ?>');"><span class="mon1">{{ date("Y",strtotime($date.' + 1 Month')) }}年{{date("m",strtotime($date.' + 1 Month'))}}月▷</span></a>
               </div>
                                 </div>
                                 </div>

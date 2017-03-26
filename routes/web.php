@@ -31,7 +31,7 @@ Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController
 Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
 
 Route::get('/event',['as'=>'event','uses'=>'HomeController@showEvent']);
-Route::get('/event-detail',['as'=>'event-detail','uses'=>'HomeController@showEventDetail']);
+Route::get('/event-detail/{alias}',['as'=>'event-detail','uses'=>'HomeController@showEventDetail']);
 
 Route::get('/dialogue',['as'=>'dialogue','uses'=>'HomeController@showDialog']);
 Route::get('/dialogue-detail/{alias}',['as'=>'dialogue-detail','uses'=>'HomeController@showDialogDetail']);
@@ -50,10 +50,38 @@ Route::get('/office-work-feature-detail/{alias}',['as'=>'office-work-feature-det
 Route::get('/blog',['as'=>'Blog','uses'=>'HomeController@showBlog']);
 Route::get('/blog-detail/{alias}',['as'=>'blog-detail','uses'=>'HomeController@showBlogDetail']);
 
-Route::get('/self-feature',['as'=>'self-feature','uses'=>'HomeController@showSelfFeature']);
+Route::get('/self-feature',['as'=>'self-taken','uses'=>'HomeController@showSelfFeature']);
 
 Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showCoupon']);
-Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showBlog']);
+Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showRecruit']);
+
+Route::get('/gravute',['as'=>'gravure','uses'=>'HomeController@showGroupGod']);
+Route::get('/gravute-detail/{alias}',['as'=>'restaurant-detail','uses'=>'HomeController@showGravuteDetail']);
+
+Route::get('/restaurant',['as'=>'restaurant','uses'=>'HomeController@showRestaurant']);
+Route::get('/restaurant-detail/{alias}',['as'=>'restaurant-detail','uses'=>'HomeController@showRestaurantDetail']);
+
+Route::get('/sport',['as'=>'sport','uses'=>'HomeController@showSport']);
+Route::get('/sport-detail/{alias}',['as'=>'sport-detail','uses'=>'HomeController@showSportDetail']);
+
+Route::get('/fashion',['as'=>'fashion','uses'=>'HomeController@showFashion']);
+Route::get('/fashion-detail/{alias}',['as'=>'fashion-detail','uses'=>'HomeController@showFashionDetail']);
+
+
+Route::get('/holiday',['as'=>'holiday','uses'=>'HomeController@showHolyday']);
+Route::get('/holiday-detail/{alias}',['as'=>'holyday-detail','uses'=>'HomeController@showHolydayDetail']);
+
+Route::get('/photo-list',['as'=>'photo-list','uses'=>'HomeController@showFashion']);
+Route::get('/photo-list-detail/{alias}',['as'=>'photo-list-detail','uses'=>'HomeController@showFashionDetail']);
+
+Route::get('/last-song',['as'=>'last-song','uses'=>'HomeController@showFashion']);
+
+Route::get('/link',['as'=>'link','uses'=>'HomeController@showFashion']);
+Route::get('/link-detail/{alias}',['as'=>'link-detail','uses'=>'HomeController@showFashionDetail']);
+
+Route::get('milliongod-system',['as'=>'milliongod-system','uses'=>'HomeController@showmillionGodSystem']);
+
+Route::get('gigilo-system',['as'=>'gigilo-system','uses'=>'HomeController@showGigiloGodSystem']);
 
 Route::group([ 'middleware' => 'auth'], function () {
     Route::get(config('quickadmin.homeRoute'), 'QuickadminController@index');
@@ -111,6 +139,15 @@ Route::group([ 'middleware' => 'auth'], function () {
         Route::get(config('quickadmin.route') . '/actions/ajax', [
             'as' => 'actions.ajax',
             'uses' => 'UserActionsController@table'
+        ]);
+
+        Route::get(config('quickadmin.route') . '/image/{id}', [
+            'as' => 'admin.restaurant.image',
+            'uses' => 'Admin\RestaurantController@showUloadImage'
+        ]);
+        Route::post(config('quickadmin.route') . '/image', [
+            'as' => 'admin.restaurant.image.post',
+            'uses' => 'Admin\RestaurantController@postUloadImage'
         ]);
     });
 });

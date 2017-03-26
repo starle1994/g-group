@@ -1,0 +1,536 @@
+.recruit {
+  /*background-repeat: no-repea*/ }
+
+#mainContetn {
+  background: url(images/grouptop/bg-group.jpg) no-repeat;
+  background-size: 100% 100%; }
+
+.system {
+  color: black; }
+  .system .flexImg {
+    display: -webkit-flex;
+    flex-flow: column;
+    flex-direction: flex-end; }
+    .system .flexImg div {
+      align-self: flex-end;
+      margin-bottom: 30px; }
+      .system .flexImg div img {
+        width: 100%; }
+  .system .stTitl {
+    width: 100%; }
+  .system .contentSyst {
+    padding: 0 5%;
+    background-color: #cccccc;
+    margin-top: 30px; }
+    .system .contentSyst .textSyst {
+      background-color: white;
+      padding-top: 50px; }
+      .system .contentSyst .textSyst .titText {
+        background: url(images/system/textTitle.jpg) no-repeat;
+        background-size: 100% 100%;
+        padding: 10px 0;
+        font-size: 30px;
+        margin-top: 20px;
+        color: white;
+        text-align: center; }
+    .system .contentSyst .ctImg {
+      text-align: center; }
+      .system .contentSyst .ctImg img {
+        max-width: 100%;
+        vertical-align: middle; }
+    .system .contentSyst .ctText {
+      padding-top: 20px; }
+      .system .contentSyst .ctText p {
+        font-size: 24px;
+        margin: 30px 0; }
+      .system .contentSyst .ctText span {
+        display: block;
+        font-size: 16px; }
+      .system .contentSyst .ctText span:last-child {
+        margin-top: 20px;
+        margin-bottom: 30px; }
+    .system .contentSyst .sysContent2 {
+      padding: 20px 12%; }
+      .system .contentSyst .sysContent2 p {
+        font-size: 16px; }
+      .system .contentSyst .sysContent2 .spec {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        display: block; }
+      .system .contentSyst .sysContent2 .bgContent {
+        background: url(images/system/bgContent2.png) no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        padding: 50px 30%; }
+        .system .contentSyst .sysContent2 .bgContent span {
+          display: block;
+          color: white;
+          font-size: 18px;
+          margin: 10px 0;
+          text-align: left;
+          font-weight: bold; }
+    .system .contentSyst .syscontent3 {
+      padding: 20px 10%;
+      margin-top: 20px; }
+      .system .contentSyst .syscontent3 .flexImg3 {
+        display: -webkit-flex;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        justify-content: space-between; }
+        .system .contentSyst .syscontent3 .flexImg3 div:first-child {
+          padding-left: 5%;
+          font-size: 22px;
+          font-weight: bold; }
+        .system .contentSyst .syscontent3 .flexImg3 span {
+          display: inline-block;
+          background: url(images/system/bgLeft.png) no-repeat;
+          background-size: 100% 100%;
+          padding: 5px 10px;
+          color: white; }
+        .system .contentSyst .syscontent3 .flexImg3 span.sp2 {
+          background: url(images/system/bgRight.png) no-repeat;
+          background-size: 100% 100%; }
+      .system .contentSyst .syscontent3 .ctImg3 {
+        display: -webkit-flex; }
+        .system .contentSyst .syscontent3 .ctImg3 img {
+          min-width: 100%;
+          min-height: 100%;
+          max-width: 100%;
+          max-height: 100%; }
+        .system .contentSyst .syscontent3 .ctImg3 div {
+          display: -webkit-flex;
+          width: 50%;
+          flex-direction: column;
+          justify-content: space-between; }
+          .system .contentSyst .syscontent3 .ctImg3 div img {
+            width: 100%; }
+          .system .contentSyst .syscontent3 .ctImg3 div .im1 {
+            margin-bottom: 10px; }
+          .system .contentSyst .syscontent3 .ctImg3 div .im2 {
+            margin-top: 10px; }
+        .system .contentSyst .syscontent3 .ctImg3 div:last-child {
+          margin-left: 10px; }
+        .system .contentSyst .syscontent3 .ctImg3 div:first-child {
+          margin-right: 10px; }
+    .system .contentSyst .syscontent4 {
+      padding: 20px 12%;
+      margin-top: 20px; }
+      .system .contentSyst .syscontent4 .card {
+        background: url(images/system/bgContent4.png) no-repeat;
+        background-size: 100% 100%;
+        padding: 50px 0 80px 0; }
+        .system .contentSyst .syscontent4 .card .flexCard {
+          display: -webkit-flex;
+          justify-content: center;
+          margin-top: 60px;
+          align-items: center; }
+        .system .contentSyst .syscontent4 .card a {
+          max-width: 10%;
+          margin: 0 5px; }
+        .system .contentSyst .syscontent4 .card a img {
+          max-width: 100%; }
+      .system .contentSyst .syscontent4 .pCard {
+        text-align: center;
+        color: #ecc619; }
+    .system .contentSyst .syscontent5 {
+      padding: 20px 13%;
+      margin-top: 20px; }
+      .system .contentSyst .syscontent5 p {
+        margin-bottom: 20px; }
+  .system .imgMap {
+    width: 100%;
+    margin: 60px 0; }
+
+@media (max-width: 767px) {
+  .system .flexImg div {
+    align-self: center; }
+
+  .system .contentSyst .syscontent4 .card {
+    padding: 50px 15px 50px 15px; }
+
+  .system .contentSyst .syscontent4 .card .flexCard {
+    margin-top: 40px; } }
+@media (max-width: 320px) {
+  #mainContetn {
+    background: url(images/grouptop/bg-group.jpg);
+    background-size: 100% 100% !important; }
+
+  .textSyst .anh-gioi-thieu img {
+    width: 100%;
+    margin-bottom: 20px; }
+  .textSyst .text1 {
+    background: url(images/recruit/a3.png) no-repeat;
+    /*padding: 50px 0 80px 0;*/ }
+    .textSyst .text1 .txt-span {
+      color: red; }
+  .textSyst .titText-h1 {
+    background: url(images/recruit/h1.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h2 {
+    background: url(images/recruit/h2.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .bgContent {
+    background: url(images/system/bgContent2.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 50px 30%; }
+    .textSyst .bgContent span {
+      display: block;
+      color: white;
+      font-size: 16px;
+      margin: 10px 0;
+      text-align: left;
+      font-weight: bold; }
+  .textSyst .titText-h3 {
+    background: url(images/recruit/h3.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h3-content {
+    margin: 0px;
+    background: url(images/system/bgContent4.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 0 80px 0; }
+    .textSyst .titText-h3-content .pa {
+      padding-right: 0px;
+      padding-left: 0px; }
+      .textSyst .titText-h3-content .pa p {
+        padding-left: 40px;
+        padding-right: 30px; }
+  .textSyst .titText-h4 {
+    background: url(images/recruit/h4.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h6 {
+    background: url(images/recruit/h6.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h6-pa p .star {
+    color: red; }
+  .textSyst .titText-h6-pa .star {
+    color: red; }
+  .textSyst .titText-h6-pa p {
+    margin-bottom: 30px; }
+  .textSyst .titText-h7 {
+    background: url(images/recruit/h7.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h8 {
+    background: url(images/recruit/h8.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .syscontent3 .note {
+    color: red; }
+  .textSyst .syscontent3 .tel {
+    color: 5458ff; }
+  .textSyst .syscontent3 .dong-ke {
+    background: url(images/recruit/o_sen3.png);
+    height: 10px; }
+  .textSyst .titText-h9 {
+    background: url(images/recruit/h9.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .textSyst .titText-h9-ct {
+    margin: 0px; }
+    .textSyst .titText-h9-ct .col-sm-6 {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #eeeeee; }
+    .textSyst .titText-h9-ct p {
+      margin-bottom: 20px; } }
+@media (min-width: 600px) {
+  #mainContetn {
+    background: url(images/grouptop/bg-group.jpg);
+    background-size: 100% 100% !important; }
+
+  .contentSyst .anh-gioi-thieu img {
+    width: 100%;
+    padding: 20px; }
+  .contentSyst .text1 {
+    background: url(images/recruit/a3.png) no-repeat;
+    /*padding: 50px 0 80px 0;*/ }
+    .contentSyst .text1 .txt-span {
+      color: red; }
+    .contentSyst .text1 p {
+      font-size: 20px;
+      /*margin: 20px;*/
+      padding: 10px;
+      text-align: center; }
+  .contentSyst .titText-h1 {
+    background: url(images/recruit/h1.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-paraph p {
+    font-size: 20px;
+    margin-left: 20px; }
+  .contentSyst .titText-h2 {
+    background: url(images/recruit/h2.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .bgContent {
+    background: url(images/system/bgContent2.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 50px 30%; }
+    .contentSyst .bgContent span {
+      display: block;
+      color: white;
+      font-size: 16px;
+      margin: 10px 0;
+      text-align: left;
+      font-weight: bold; }
+  .contentSyst .titText-h3 {
+    background: url(images/recruit/h3.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-h3-content {
+    margin: 0px;
+    background: url(images/system/bgContent4.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 0 80px 0; }
+    .contentSyst .titText-h3-content .pa {
+      padding-right: 0px;
+      padding-left: 0px; }
+      .contentSyst .titText-h3-content .pa p {
+        padding-left: 50px;
+        padding-right: 50px;
+        /*padding-top: 30px;*/ }
+  .contentSyst .titText-h4 {
+    background: url(images/recruit/h4.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-h4-pa p {
+    font-size: 20px; }
+  .contentSyst .titText-h6 {
+    background: url(images/recruit/h6.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-h6-pa p .star {
+    color: red; }
+  .contentSyst .titText-h6-pa .star {
+    color: red; }
+  .contentSyst .titText-h6-pa p {
+    margin-bottom: 30px;
+    font-size: 20px; }
+  .contentSyst .titText-h7 {
+    background: url(images/recruit/h7.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-h7-pa p {
+    font-size: 20px; }
+  .contentSyst .titText-h8 {
+    background: url(images/recruit/h8.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .syscontent3 p {
+    font-size: 20px; }
+  .contentSyst .syscontent3 .note {
+    color: red; }
+  .contentSyst .syscontent3 .tel {
+    color: 5458ff; }
+  .contentSyst .syscontent3 .dong-ke {
+    background: url(images/recruit/o_sen3.png);
+    height: 10px; }
+  .contentSyst .titText-h9 {
+    background: url(images/recruit/h9.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .contentSyst .titText-h9-ct {
+    margin: 0px; }
+    .contentSyst .titText-h9-ct .col-sm-6 {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #eeeeee; }
+    .contentSyst .titText-h9-ct p {
+      margin-bottom: 20px; } }
+@media (min-width: 768px) {
+  .system #mainContetn {
+    background: url(images/grouptop/bg-group.jpg);
+    background-size: 100% 100% !important; }
+  .system .home-right {
+    float: right;
+    width: 75%; }
+  .system .col-sm-10 {
+    width: 75%; }
+  .system .contentSyst .anh-gioi-thieu img {
+    width: 100%;
+    padding: 20px; }
+  .system .contentSyst .text1 {
+    background: url(images/recruit/a3.png) no-repeat;
+    background-size: 3050%;
+    /*padding: 50px 0 80px 0;*/ }
+    .system .contentSyst .text1 .txt-span {
+      color: red; }
+    .system .contentSyst .text1 p {
+      font-size: 20px;
+      /*margin: 20px;*/
+      padding: 10px;
+      text-align: center; }
+  .system .contentSyst .titText-h1 {
+    background: url(images/recruit/h1.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-paraph p {
+    font-size: 20px;
+    margin-left: 20px; }
+  .system .contentSyst .titText-h2 {
+    background: url(images/recruit/h2.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .bgContent {
+    background: url(images/system/bgContent2.png) no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 50px 30%; }
+    .system .contentSyst .bgContent span {
+      display: block;
+      color: white;
+      font-size: 16px;
+      margin: 10px 0;
+      text-align: left;
+      font-weight: bold; }
+  .system .contentSyst .titText-h3 {
+    background: url(images/recruit/h3.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-h3-content {
+    margin: 0px;
+    background: url(images/system/bgContent4.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 0 80px 0; }
+    .system .contentSyst .titText-h3-content .pa {
+      padding-right: 0px;
+      padding-left: 0px; }
+      .system .contentSyst .titText-h3-content .pa p {
+        padding-left: 50px;
+        padding-right: 50px;
+        /*padding-top: 30px;*/ }
+  .system .contentSyst .titText-h4 {
+    background: url(images/recruit/h4.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-h4-pa p {
+    font-size: 20px; }
+  .system .contentSyst .titText-h6 {
+    background: url(images/recruit/h6.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-h6-pa p .star {
+    color: red; }
+  .system .contentSyst .titText-h6-pa .star {
+    color: red; }
+  .system .contentSyst .titText-h6-pa p {
+    margin-bottom: 30px;
+    font-size: 20px; }
+  .system .contentSyst .titText-h7 {
+    background: url(images/recruit/h7.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-h7-pa p {
+    font-size: 20px; }
+  .system .contentSyst .titText-h8 {
+    background: url(images/recruit/h8.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .syscontent3 p {
+    font-size: 20px; }
+  .system .contentSyst .syscontent3 .note {
+    color: red; }
+  .system .contentSyst .syscontent3 .tel {
+    color: 5458ff; }
+  .system .contentSyst .syscontent3 .dong-ke {
+    background: url(images/recruit/o_sen3.png);
+    height: 10px; }
+  .system .contentSyst .titText-h9 {
+    background: url(images/recruit/h9.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 20px;
+    height: 56px;
+    padding: 10px 0px;
+    margin-bottom: 20px; }
+  .system .contentSyst .titText-h9-ct {
+    margin: 0px; }
+    .system .contentSyst .titText-h9-ct .col-sm-6 {
+      padding-left: 0px;
+      padding-right: 0px;
+      background-color: #eeeeee; }
+    .system .contentSyst .titText-h9-ct p {
+      margin-bottom: 20px; } }
+@media (min-width: 1280px) {
+  .textSyst .anh-gioi-thieu img {
+    width: 50%;
+    margin-bottom: 20px;
+    float: left;
+    padding: 15px; } }
+
+/*# sourceMappingURL=recruit.css.map */

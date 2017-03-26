@@ -1,18 +1,97 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .system .contentSyst .textSyst .titText{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Google Map
+=================================================================== */
+#googlemaps-container-top {
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: inset 0px 3px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: inset 0px 3px 3px rgba(0,0,0,.25);
+    box-shadow: inset 0px 3px 3px rgba(0,0,0,.25);
+    height: 20px;
+}
+
+#googlemaps-container-bottom {
+    position: relative;
+    z-index: 2;
+    -webkit-box-shadow: inset 0px -3px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: inset 0px -3px 3px rgba(0,0,0,.25);
+    box-shadow: inset 0px -3px 3px rgba(0,0,0,.25);
+    height: 20px;
+    margin-top: -40px;
+    border-bottom: 5px solid #f6f6f6;
+    margin-bottom: 20px;
+}
+
+#googlemaps{
+    position: relative;
+    z-index: 1;
+    height: 400px;
+    width: 100%;
+    top: -20px;
+}
+
+#small-map-container {
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+    position: relative;
+    z-index: 2;
+    border: 5px solid #f6f6f6;
+    -webkit-box-shadow: inset 0px 0px 5px rgba(0,0,0,.25);
+    -moz-box-shadow: inset 0px 0px 5px rgba(0,0,0,.25);
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,.25);
+    height: 210px;
+    width: 210px;
+    margin-bottom: -215px;
+
+}
+
+#small-map-container a {
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+    position: relative;
+    z-index: 2;
+    height: 210px;
+    width: 210px;
+    display: block;
+}
+    
+#small-map {
+    position: relative;
+    z-index: 1;
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+    margin-left: 5px;
+
+}
+
+</style> 
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
 <div class="row system">
-    <div class="col-sm-2 home-left">
-        <div class="flexImg">
-             @include('include.categories_left2')
-        </div>
-    </div>
+    <div class="bbq-list-item">
+                            <div class="col-sm-3 left">
+                                 @include('include.categories_left2')
+                            </div>
+                        </div>
     <div class="col-sm-10 home-right">
         <img class="stTitl" src="{{asset('css/css/images/system/mainTitle.jpg')}}" alt="">
         <div class="contentSyst">
             <div class="textSyst">
                 <div class="titText">
-                    ABCDDDDDDDD
+                    
                 </div>
                 <div class="sysContent1">
                     <div class="row">
@@ -20,22 +99,15 @@
                             <img src="{{asset('css/css/images/system/imgContent1.png')}}" alt="">
                         </div>
                         <div class="col-xs-12 col-sm-6 ctText">
-                            <p>・90分 1,000円</p>                                                         <span>A:鏡月+割り物飲み放題</span>                                                                                                                   <span>B:ビール類2本+ハーフ鏡月1本+割り物飲み放題</span>
-                            <p>・フリータイム 5,000円</p>
-                            <span>鏡月+割りもの飲み放題</span>
-                            <p>・フリータイム 10,000円</p>
-                            <span>シャンパン(コール付)+鏡月+割り物飲み放題</span>
-                            <span>場内指名2名無料!!</span>
+                            {!! $system->cost !!}
                         </div>
                     </div>
                 </div>
                 <div class="titText">
-                    ABCDDDDDDDD
+                    
                 </div>
                 <div class="sysContent2">
-                    <p>当グループでは、20歳未満のお客様のご入店をお断りさせて頂いております。</p>
-                    <p>初めてご来店頂くお客様には、ご本人様の確認をさせて頂きますので、</p>
-                    <p>身分証明書のご提示をお願いしております。</p>
+                     {!! $system->before_visiting  !!}
                     <span class="spec">来店時に、以下のいずれかのご本人様確認書類をお持ち下さい。</span>
                     <div class="bgContent">
                        <span>・運転免許証</span>
@@ -48,7 +120,7 @@
 
 
                 <div class="titText">
-                    ABCDDDDDDDD
+                    
                 </div>
                 <div class="syscontent3">
                     <p>G’s GROUPは「Million GOD」「Gigolo」の全2店舗を現在展開しております。</p>
@@ -57,17 +129,17 @@
                         <div class="flexImg3">
                             <div>Million GOD</div>
                             <div>
-                                <span>基本料金を確認する</span>
+                                <a href="{{route('milliongod-system')}}"><span style="padding: 20px 100px"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="ctImg3">
                         <div>
-                            <img src="images/system/ct3Top1.png" alt="">
+                            <img src="{{asset('css/css/images/system/ct3Top1.png')}}" alt="">
                         </div>
                         <div>
-                            <img class="im1" src="/images/system/ct3Top2.png" alt="">
-                            <img class="im2" src="images/system/ct3Top3.png" alt="">
+                            <img class="im1" src="{{asset('css/css/images/system/ct3Top2.png')}}" alt="">
+                            <img class="im2" src="{{asset('css/css/images/system/ct3Top3.png')}}" alt="">
                         </div>
                     </div>
 
@@ -75,24 +147,24 @@
                         <div class="flexImg3">
                             <div>Gigolo</div>
                             <div>
-                                <span class="sp2">基本料金を確認する</span>
+                                <a href="{{route('gigilo-system')}}"><span class="sp2" style="padding: 20px 100px"></span></a>
                             </div>
                         </div>
                     </div>
                     <div class="ctImg3">
                         <div>
-                            <img src="images/system/ct3Top4.png" alt="">
+                            <img src="{{asset('css/css/images/system/ct3Top4.png')}}" alt="">
                         </div>
                         <div>
-                            <img class="im1" src="images/system/ct3Top5.png" alt="">
-                            <img class="im2" src="images/system/ct3Top6.png" alt="">
+                            <img class="im1" src="{{asset('css/css/images/system/ct3Top5.png')}}" alt="">
+                            <img class="im2" src="{{asset('css/css/images/system/ct3Top6.png')}}" alt="">
                         </div>
                     </div>
                 </div>
 
 
                 <div class="titText">
-                    ABCDDDDDDDD
+                    
                 </div>
                 <div class="syscontent4">
                     <p>お会計は全て、伝票でお出ししております。</p>
@@ -101,45 +173,64 @@
                     <div class="card">
                         <p class="pCard">◆ご利用可能なクレジットカード◆</p>
                         <div class="flexCard">
-                            <a href=""><img src="images/system/icon1Visa.png" alt=""></a>
+                            <a href=""><img src="{{asset('css/css/images/system/icon1Visa.png')}}" alt=""></a>
                             <a href="">
-                            <img src="images/system/icon2.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon2.png')}}" alt="">
                             </a>
                             <a href="">
-                            <img src="images/system/icon3.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon3.png')}}" alt="">
                             </a>
                             <a href="">
-                            <img src="images/system/icon4.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon4.png')}}" alt="">
                             </a>
                             <a href="">
-                            <img src="images/system/icon5.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon5.png')}}" alt="">
                             </a>
                             <a href="">
-                            <img src="images/system/icon6.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon6.png')}}" alt="">
                             </a>
                             <a href="">
-                            <img src="images/system/icon7.png" alt="">
+                            <img src="{{asset('css/css/images/system/icon7.png')}}" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="titText">
-                    ABCDDDDDDDD
+                    
                 </div>
                 <div class="syscontent5">
-                    <span>歌舞伎町で数々の実績を残し、名古屋に進出し、</span>
-                    <p>そしてわずか１年で総工費１億円にして１００坪の超大型店に拡大移転を成し遂げました。</p>
-                    <p>”millionGOD”から新たな改革が今始まり、</p>
-                    <p>完全新規GOD２号店がオープンしました。</p>
-                    <p>G'sグループが繰り出す新たな新時代の幕開けを見せます。</p>
-                    <span>名古屋に大旋風を巻き起こすお店。</span>
-                    <p>それが、私達です。</p>
-                    <p>そして、ホストだけではなく、あらゆる方面に事業を拡大して行き、数</p>
-                    <p>多くの経営者を世に生み出していくグループです。</p>
+                    
+                    {!! $system->greeting !!}
                 </div>
             </div>
         </div>
-        <img class="imgMap" src="images/system/imgMap.png" alt="">
+        <div>
+
+        <!-- starts: Google Maps -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <div id="googlemaps-container-top"></div>
+        <div id="googlemaps" class="google-map google-map-full"></div>
+        <div id="googlemaps-container-bottom"></div>
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="js/jquery.gmap.min.js"></script>
+        <script type="text/javascript">
+            $('#googlemaps').gMap({
+                maptype: 'ROADMAP',
+                scrollwheel: false,
+                zoom: 13,
+                markers: [
+                    {
+                        address: 'Cầu Thuận Phước, Thanh Khê, Sơn Trà, Đà Nẵng, Việt Nam', // Your Adress Here
+                        html: '',
+                        popup: false,
+                    }
+
+                ],
+
+            });
+        </script>
+        <!-- end: Google Maps -->
+    </div>
     </div>
 </div>
 @endsection

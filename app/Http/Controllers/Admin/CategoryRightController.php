@@ -76,10 +76,16 @@ class CategoryRightController extends Controller {
 	public function update($id, UpdateCategoryRightRequest $request)
 	{
 		$categoryright = CategoryRight::findOrFail($id);
-
-        $request = $this->saveFiles($request);
-
-		$categoryright->update($request->all());
+		if ($request->image != null) {
+			$request = $this->saveFiles($request);
+			$categoryright->update($request->all());
+		}else{
+			$input = [
+				'name'	=> $request->name,
+				'alias'	=> $request->alias
+			];
+			$categoryright->update($input);
+		}
 
 		return redirect()->route(config('quickadmin.route').'.categoryright.index');
 	}

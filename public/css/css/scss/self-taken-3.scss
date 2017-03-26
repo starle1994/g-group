@@ -1,0 +1,154 @@
+@media all and (min-width: 320px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.self-taken-3 {
+			padding-top: 10px;
+    		padding-left: 10px;
+    		margin: 0px;
+
+			.left {
+				padding-right: 0px;
+				padding-left: 0px;
+
+				img {
+					width: 30%;
+					padding: 3px;
+				}
+			}
+
+			.right {
+				padding-right: 25px;
+				padding-left: 0px;
+
+				.title {
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.content {
+					background: url(images/cash-feature-item/lg-bk.jpg);
+					.avatar {
+						img {
+							width: 100%;
+							padding: 3px;
+							margin-top: 10px;
+							margin-bottom: 10px;
+						}
+					}
+
+					.date-time {
+						/*height: 25px;*/
+						margin: 0px;
+
+						span {
+							float: right;
+							margin-right: 17px;
+							font-weight: bold;
+						}
+					}
+
+					.o_sen3 {
+						background: url(images/self-taken/o_sen3.jpg);
+						height: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 600px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.self-taken-3 {
+			.right {
+				.content {
+					padding-top: 50px;
+
+					.date-time {
+						span {
+							margin-top: 20px;
+						}
+					}
+
+					.o_sen3 {
+						margin-top: 30px;
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.self-taken-3 {
+		.left {
+			img {
+				width: 90% !important;
+				padding-bottom: 20px !important;
+			}
+		}
+
+		.right {
+			.content {
+				.avatar {
+					padding-right: 0px;
+					padding-left: 0px;
+					width: 33.33%;
+					padding: 5px;
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1024px) {
+	.self-taken-3 {
+		.left {
+			padding-right: 45px !important;
+			img {
+				width: 100% !important;
+				margin-bottom: 20px;
+				/*height: 200px;*/
+			}
+		}
+
+		.right {
+			.content {
+				.row {
+					margin: 0px;
+					.avatar {
+						padding-right: 0px;
+						img {
+							padding-top: 20px;
+							margin-bottom: 20px;
+							height: 200px;
+						}
+					}
+				}
+
+				.date-time {
+					span {
+						font-size: 36px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

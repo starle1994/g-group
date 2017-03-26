@@ -17,7 +17,7 @@
             <div class="row">
             @foreach($events as $event)
                 <div class="col-xs-6 exe-fa-content">
-                    <a href="{{route('blog-detail',$event->alias)}}">
+                    <a href="{{route('event-detail',$event->alias)}}">
                         <img src="{{ asset('uploads/'.$event->image)}}" alt="{{$event->name}}">
                     </a>
                 </div>

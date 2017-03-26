@@ -10,7 +10,7 @@ use App\Http\Requests\CreateImagesEventFeatureRequest;
 use App\Http\Requests\UpdateImagesEventFeatureRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-use App\EventsFeature;
+use App\FeatureEvent;
 
 
 class ImagesEventFeatureController extends Controller {
@@ -36,7 +36,7 @@ class ImagesEventFeatureController extends Controller {
 	 */
 	public function create()
 	{
-	    $eventsfeature = EventsFeature::pluck("name", "id")->prepend('Please select', null);
+	    $eventsfeature = FeatureEvent::pluck("name", "id")->prepend('Please select', null);
 
 	    
 	    return view('admin.imageseventfeature.create', compact("eventsfeature"));
@@ -64,9 +64,8 @@ class ImagesEventFeatureController extends Controller {
 	public function edit($id)
 	{
 		$imageseventfeature = ImagesEventFeature::find($id);
-	    $eventsfeature = EventsFeature::pluck("name", "id")->prepend('Please select', null);
+	    $eventsfeature = FeatureEvent::pluck("name", "id")->prepend('Please select', null);
 
-	    
 		return view('admin.imageseventfeature.edit', compact('imageseventfeature', "eventsfeature"));
 	}
 
@@ -76,11 +75,22 @@ class ImagesEventFeatureController extends Controller {
      *
 	 * @param  int  $id
 	 */
-	public function update($id, UpdateImagesEventFeatureRequest $request)
+	public function update($id, Request $request)
 	{
 		$imageseventfeature = ImagesEventFeature::findOrFail($id);
 
         $request = $this->saveFiles($request);
+
+        $input = [];
+        if ($request->image != null) {
+        	$input['image']	= $request->image;
+        }
+        if ($request->description != null) {
+        	$input['description']	= $request->description;
+        }
+        if ($request->eventsfeature_id != null) {
+        	$input['eventsfeature_id']	= $request->eventsfeature_id;
+        }
 
 		$imageseventfeature->update($request->all());
 

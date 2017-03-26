@@ -23,6 +23,11 @@ use App\CastFeature;
 use App\SelfTaken;
 use App\Dialogue;
 use App\Movies;
+use App\Coupon;
+use App\Restaurant;
+use App\ImageRestaurant;
+use App\System;
+use App\RecomentCate;
 
 class HomeController extends Controller
 {
@@ -79,7 +84,8 @@ class HomeController extends Controller
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::all();
-		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list'));
+		$recoments 				= RecomentCate::where('shopslist_id',1)->get();
+		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list','recoments'));
 	}
 
 	public function showGigoro()
@@ -89,13 +95,15 @@ class HomeController extends Controller
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::all();
-		return view('gigolo',compact('gigoloRankingStaff','gigoloPageContents','secrect_contents','rookies_feature','shop_list'));
+		$recoments 				= RecomentCate::where('shopslist_id',2)->get();
+		return view('gigolo',compact('gigoloRankingStaff','gigoloPageContents','secrect_contents','rookies_feature','shop_list','recoments'));
 		return view('gigolo');
 	}
 
 	public function showSystem()
 	{
-		return view('system');
+		$system = System::first();
+		return view('system',compact('system'));
 	}
 
 	public function staffDetail($id)
@@ -122,7 +130,8 @@ class HomeController extends Controller
 
 	public function showEventDetail($alias)
 	{
-		$event = FeatureEvent::where('alias',$alias)->with('schedule')->with('eventsfeature')->first();
+		$event = FeatureEvent::where('alias',$alias)->with('schedule')->with('eventsfeatureimage')->first();
+
 		return view('event_detail',compact('event'));
 	}
 
@@ -182,7 +191,7 @@ class HomeController extends Controller
 
 	public function showSelfFeature()
 	{
-		$self_taken = SelfTaken::orderBy('id','desc')->paginate(20);
+		$self_taken = SelfTaken::orderBy('time','desc')->paginate(20);
 		return view('self_taken',compact('self_taken'));
 	}
 
@@ -198,6 +207,90 @@ class HomeController extends Controller
 
 	public function showCoupon()
 	{
-		return view('coupon');
+        $coupons=Coupon::orderBy('id','desc')->paginate(20);
+		return view('coupon-list', compact('coupons'));
 	}
+
+	public function showGroupGod()
+    {
+        $groupgods = Restaurant::where('cate_id',5)->get();
+        return view('gravute-list', compact('groupgods'));
+    }
+
+    public function showRecruit()
+    {
+    	return view('recruit');
+    }
+
+    public function showGravuteDetail($alias)
+    {
+        $restaurant= Restaurant::where('alias',$alias)->first();
+        $imagerestaurant = ImageRestaurant::where('restaurant_id', $restaurant->id)->get();
+        return view('gravute_detail', compact('imagerestaurant','restaurant'));
+    }
+
+     public function showRestaurant()
+    {
+        $restaurants = Restaurant::where('cate_id',1)->get();
+        return view('restaurant', compact('restaurants'));
+    }
+
+    public function showRestaurantDetail($alias)
+    {
+        $restaurant= Restaurant::where('alias',$alias)->first();
+        $imagerestaurant = ImageRestaurant::where('restaurant_id', $restaurant->id)->get();
+        return view('restaurant_detail', compact('imagerestaurant','restaurant'));
+    }
+
+    public function showSport()
+    {
+        $sports = Restaurant::where('cate_id',2)->get();
+        return view('sport', compact('sports'));
+    }
+
+    public function showSportDetail($alias)
+    {
+        $sport= Restaurant::where('alias',$alias)->first();
+        $imagerestaurant = ImageRestaurant::where('restaurant_id', $sport->id)->get();
+        return view('sport_detail', compact('imagerestaurant','sport'));
+    }
+
+     public function showFashion()
+    {
+        $fashions = Restaurant::where('cate_id',2)->get();
+        return view('fashion', compact('fashions'));
+    }
+
+    public function showFashionDetail($alias)
+    {
+        $fashion= Restaurant::where('alias',$alias)->first();
+        $imagerestaurant = ImageRestaurant::where('restaurant_id', $fashion->id)->get();
+        return view('fashion_detail', compact('imagerestaurant','fashion'));
+    }
+
+
+ 	public function showHolyday()
+    {
+        $holydays = Restaurant::where('cate_id',2)->get();
+        return view('holyday', compact('holydays'));
+    }
+
+    public function showHolydayDetail($alias)
+    {
+        $holyday= Restaurant::where('alias',$alias)->first();
+        $imagerestaurant = ImageRestaurant::where('restaurant_id', $holyday->id)->get();
+        return view('holyday_detail', compact('imagerestaurant','holyday'));
+    }
+
+    public function showmillionGodSystem()
+    {
+    	$system = System::first();
+    	return view('millon_god_system',compact('system'));
+    }
+
+    public function showGigiloGodSystem()
+    {
+    	$system = System::first();
+    	return view('gigolo_system',compact('system'));
+    }
 }

@@ -37,7 +37,7 @@ class FeatureEventController extends Controller {
 	{
 	    $schedule = Schedule::pluck("name_event", "id")->prepend('Please select', null);
 	    
-	    return view('admin.featureevent.create');
+	    return view('admin.featureevent.create',compact('schedule'));
 	}
 
 	/**
@@ -49,9 +49,9 @@ class FeatureEventController extends Controller {
 	{
 	    $request = $this->saveFiles($request);
 	    
-	    $event = EventsFeature::orderBy('id','desc')->first();
+	    $event = FeatureEvent::orderBy('id','desc')->first();
 		
-		$input = $request->all();
+		$input = [''];
 	    if ($event == null) {
 	    	$number = 1;
 	    }else{

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Ranking;
 use App\GodStaffs;
+use Image;
 
 class MillionGodRankingStaffController extends Controller {
 
@@ -49,8 +50,49 @@ class MillionGodRankingStaffController extends Controller {
 	 */
 	public function store(CreateMillionGodRankingStaffRequest $request)
 	{
-	    $request = $this->saveFiles($request);
-		MillionGodRankingStaff::create($request->all());
+	     $length =3;
+		$image = $request->file('image');
+
+        $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+	    $chars_length = (strlen($chars) - 1);
+	    $string = $chars{rand(0, $chars_length)};
+
+	    for ($i = 1; $i < $length; $i = strlen($string))
+	    {
+	        $r = $chars{rand(0, $chars_length)};
+	        if ($r != $string{$i - 1}) $string .=  $r;
+	    }
+	    $input['imagename'] = '';
+	    if ($image != null) {
+	    	$input['imagename'] = time().'-'.$string.'.'.$image->getClientOriginalExtension();
+	        $destinationPath = public_path('uploads/thumb');
+	        $img = Image::make($image->getRealPath());
+	        $img->resize(50, 50, function ($constraint) {
+	            $constraint->aspectRatio();
+	        })->save($destinationPath.'/'.$input['imagename']);
+	        $destinationPath = public_path('uploads');
+	            $image->move($destinationPath, $input['imagename']);
+	    }
+
+	    $image2 = $request->file('banner');
+        $input['imagename1']= '';
+	    if ($image2 != null) {
+		        $string = $chars{rand(0, $chars_length)};
+		        $input['imagename1'] = time().'-'.$string.'.'.$image2->getClientOriginalExtension();
+		        $destinationPath = public_path('uploads/thumb');
+		        $img = Image::make($image2->getRealPath());
+		        $img->resize(50, 50, function ($constraint) {
+		            $constraint->aspectRatio();
+		        })->save($destinationPath.'/'.$input['imagename1']);
+		        $destinationPath = public_path('uploads');
+		        $image2->move($destinationPath, $input['imagename1']);
+	    }
+
+		MillionGodRankingStaff::create(['ranking_id'=>$request->ranking_id,
+          'godstaffs_id'=>$request->godstaffs_id,
+          'image'=>$input['imagename'],
+          'banner'=>$input['imagename1']]);
+
 
 		return redirect()->route(config('quickadmin.route').'.milliongodrankingstaff.index');
 	}
@@ -80,9 +122,60 @@ class MillionGodRankingStaffController extends Controller {
 	{
 		$milliongodrankingstaff = MillionGodRankingStaff::findOrFail($id);
 
-        $request = $this->saveFiles($request);
+        $length =3;
+		$image = $request->file('image');
 
-		$milliongodrankingstaff->update($request->all());
+        $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+	    $chars_length = (strlen($chars) - 1);
+	    $string = $chars{rand(0, $chars_length)};
+
+	    for ($i = 1; $i < $length; $i = strlen($string))
+	    {
+	        $r = $chars{rand(0, $chars_length)};
+	        if ($r != $string{$i - 1}) $string .=  $r;
+	    }
+	    $input['imagename'] = '';
+	    if ($image != null) {
+	    	$input['imagename'] = time().'-'.$string.'.'.$image->getClientOriginalExtension();
+	        $destinationPath = public_path('uploads/thumb');
+	        $img = Image::make($image->getRealPath());
+	        $img->resize(50, 50, function ($constraint) {
+	            $constraint->aspectRatio();
+	        })->save($destinationPath.'/'.$input['imagename']);
+	        $destinationPath = public_path('uploads');
+	            $image->move($destinationPath, $input['imagename']);
+	    }
+
+	    $image2 = $request->file('banner');
+        $input['imagename1']= '';
+	    if ($image2 != null) {
+		        $string = $chars{rand(0, $chars_length)};
+		        $input['imagename1'] = time().'-'.$string.'.'.$image2->getClientOriginalExtension();
+		        $destinationPath = public_path('uploads/thumb');
+		        $img = Image::make($image2->getRealPath());
+		        $img->resize(50, 50, function ($constraint) {
+		            $constraint->aspectRatio();
+		        })->save($destinationPath.'/'.$input['imagename1']);
+		        $destinationPath = public_path('uploads');
+		        $image2->move($destinationPath, $input['imagename1']);
+	    }
+
+        $input1 = [];
+
+        if ($request->ranking_id != null) {
+        	$input1['ranking_id']= $request->ranking_id;
+        }
+        if ($request->godstaffs_id != null) {
+        	$input1['godstaffs_id']= $request->godstaffs_id;
+        }
+        if ($request->image != null) {
+        	$input1['image']= $input['imagename'];
+        }
+        if ($request->banner != null) {
+        	$input1['banner']= $input['imagename1'];
+        }
+
+		$milliongodrankingstaff->update($input1);
 
 		return redirect()->route(config('quickadmin.route').'.milliongodrankingstaff.index');
 	}

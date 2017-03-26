@@ -39,17 +39,12 @@ class FeatureEvent extends Model {
   
     public function schedule()
     {
-        return $this->hasOne('App\Schedule', 'id', 'id_event');
+        return $this->hasOne('App\Schedule', 'id', 'schedule_id');
     }
     
     public function eventsfeatureimage()
     {
         return $this->hasMany('App\ImagesEventFeature', 'eventsfeature_id', 'id');
-    }
-
-     public function schedule()
-    {
-        return $this->hasOne('App\Schedule', 'schedule_id', 'id');
     }
     
 }

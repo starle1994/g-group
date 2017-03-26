@@ -1,7 +1,9 @@
 @extends('admin.layouts.master')
 
 @section('content')
-
+<script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 <div class="row">
     <div class="col-sm-10 col-sm-offset-2">
         <h1>{{ trans('quickadmin::templates.templates-view_create-add_new') }}</h1>
@@ -53,5 +55,5 @@
 </div>
 
 {!! Form::close() !!}
-
+ 
 @endsection

@@ -1,0 +1,165 @@
+@media all and (min-width: 320px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.youtube-list {
+			padding-top: 10px;
+    		padding-left: 10px;
+    		margin: 0px;
+
+			.left {
+				padding-right: 0px;
+				padding-left: 0px;
+
+				img {
+					width: 30%;
+					padding: 3px;
+				}
+			}
+
+			.right {
+				padding-right: 25px;
+				padding-left: 0px;
+
+				.title {
+
+					img {
+						width: 100%;
+					}
+				}
+
+				.content {
+					background: url(images/youtube-list/bk.jpg);
+					.avatar-youtube {
+						padding-left: 0px;
+						padding-right: 0px;
+						img {
+							width: 100%;
+						}
+
+						.nen {
+							position: absolute;
+						}
+
+						.button-youtube {
+							position: relative;
+							padding: 30%;
+							padding-top: 58px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 600px) {
+	.container-fluid {
+		padding-right: 0px;
+
+		.youtube-list {
+			.right {
+				.content {
+					padding-top: 50px;
+
+					.avatar-youtube{
+						.button-youtube {
+							padding-top: 88px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	.youtube-list {
+		.left {
+			img {
+				width: 90% !important;
+				padding-bottom: 20px !important;
+			}
+		}
+
+		.right {
+			.content {
+				.avatar-youtube {
+					margin-right: 14px;
+					padding-left: 17px !important;
+					width: 45%;
+					height: 250px;
+
+					.button-youtube {
+						padding-top: 53px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1024px) {
+	.youtube-list {
+		.left {
+			padding-right: 45px !important;
+			img {
+				width: 100% !important;
+				margin-bottom: 20px;
+				/*height: 200px;*/
+			}
+		}
+
+		.right {
+			.content {
+				.row {
+					margin: 0px;
+					.avatar-youtube {
+						padding-right: 0px;
+						height: 500px;
+						padding-left: 26px !important;
+						img {
+							padding-top: 20px;
+							margin-bottom: 20px;
+							height: 450px;
+						}
+
+						.button-youtube {
+							    height: 256px;
+    							top: 102px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 1280px) {
+	.youtube-list {
+
+		.right {
+			.content {
+				.row {
+					margin: 0px;
+					.avatar-youtube {
+						.button-youtube {
+						    height: 301px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
