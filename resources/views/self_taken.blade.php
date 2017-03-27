@@ -12,7 +12,7 @@
         <div class="exe-fa-head-1">
             <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
         </div>        
-        <div class="self-taken-main-content">
+        <div class="self-taken-main-content" style="background-color: white">
             <div class="item">
                 <div class="row">
                 <?php
@@ -24,6 +24,9 @@
                     ?>
                     @if($date != $dateOld && $dateOld != null)
                         </div>
+                        <div style="text-align: right;margin-right: 2%;font-size: 24px">
+                            {{$dateOld}}
+                        </div>                        
                             </div>
                         <div class="self-taken-line">                            
                         </div>
@@ -43,13 +46,14 @@
                 @endforeach
                 </div>
             </div>
+            <div style="text-align: right;margin-right: 2%;font-size: 24px">
+                {{$dateOld}}
+            </div> 
             <div class="self-taken-line">                            
              </div>
         </div>
 
-        <div class="exe-fa-paganitor">
-            <img src="images/rookie-feature/h2.png" alt="">
-        </div>
+        
 
     </div>
 </div>

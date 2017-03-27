@@ -205,22 +205,23 @@
             </div>
         </div>
         <div>
-
+        <input type="hidden" id="address" value="{{$system->address}}">
         <!-- starts: Google Maps -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <div id="googlemaps-container-top"></div>
         <div id="googlemaps" class="google-map google-map-full"></div>
         <div id="googlemaps-container-bottom"></div>
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRKPm1IFR0c3NFyYlgiBbEyhQ1881Z0oE&callback=myMap"></script>
         <script src="js/jquery.gmap.min.js"></script>
         <script type="text/javascript">
+            var a = $('#address').val();
             $('#googlemaps').gMap({
                 maptype: 'ROADMAP',
                 scrollwheel: false,
                 zoom: 13,
                 markers: [
                     {
-                        address: 'Cầu Thuận Phước, Thanh Khê, Sơn Trà, Đà Nẵng, Việt Nam', // Your Adress Here
+                        address: a, // Your Adress Here
                         html: '',
                         popup: false,
                     }

@@ -29,7 +29,7 @@
                                     
                                 </div>
                                 <div class="col-sm-6 ft">
-                                    <img src="{{ asset('css/css/images/shop-list/バナー(GOD).jpg') }}" alt="">
+                                    <a href="{{route('million-god')}}"><img src="{{ asset('css/css/images/shop-list/バナー(GOD).jpg') }}" alt=""></a>
                                 </div>
                             </div>
 
@@ -57,7 +57,7 @@
                                     
                                 </div>
                                 <div class="col-sm-6 ft">
-                                    <img src="{{asset('images/shop-list/バナー(GOD).jpg')}}" alt="">
+                                    <a href="{{route('gigoro')}}"><img src="{{asset('css/css/images/shop-list/gigolo.png')}}" alt=""></a>
                                 </div>
                             </div>
 

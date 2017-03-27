@@ -7,6 +7,11 @@ function array_event()
 	return	array('1' => 'Birthday', '2' => 'Event','3'=>'Holiday');
 }
 
+function pages()
+{
+	return	array('1' => 'Group top', '2' => 'Millon God','3'=>'Gigolo');
+}
+
 /*
  * Get months options list.
  */

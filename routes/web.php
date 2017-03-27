@@ -28,7 +28,8 @@ Route::get('/gigolo',['as'=>'gigoro','uses'=>'HomeController@showGigoro']);
 Route::get('/system',['as'=>'system','uses'=>'HomeController@showSystem']);
 
 Route::get('/staff-detail/{alias}',['as'=>'staff-detail','uses'=>'HomeController@staffDetail']);
-Route::get('/ranking-staff',['as'=>'ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
+Route::get('/million-ranking-staff',['as'=>'million-ranking-staff','uses'=>'HomeController@rankingMillionStaff']);
+Route::get('/gigolo-ranking-staff',['as'=>'gigolo-ranking-staff','uses'=>'HomeController@rankingGigoloStaff']);
 
 Route::get('/event',['as'=>'event','uses'=>'HomeController@showEvent']);
 Route::get('/event-detail/{alias}',['as'=>'event-detail','uses'=>'HomeController@showEventDetail']);
@@ -50,7 +51,7 @@ Route::get('/office-work-feature-detail/{alias}',['as'=>'office-work-feature-det
 Route::get('/blog',['as'=>'Blog','uses'=>'HomeController@showBlog']);
 Route::get('/blog-detail/{alias}',['as'=>'blog-detail','uses'=>'HomeController@showBlogDetail']);
 
-Route::get('/self-feature',['as'=>'self-taken','uses'=>'HomeController@showSelfFeature']);
+Route::get('/self-taken',['as'=>'self-taken','uses'=>'HomeController@showSelfFeature']);
 
 Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showCoupon']);
 Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showRecruit']);
@@ -76,8 +77,7 @@ Route::get('/photo-list-detail/{alias}',['as'=>'photo-list-detail','uses'=>'Home
 
 Route::get('/last-song',['as'=>'last-song','uses'=>'HomeController@showFashion']);
 
-Route::get('/link',['as'=>'link','uses'=>'HomeController@showFashion']);
-Route::get('/link-detail/{alias}',['as'=>'link-detail','uses'=>'HomeController@showFashionDetail']);
+Route::get('/link',['as'=>'link','uses'=>'HomeController@showLink']);
 
 Route::get('milliongod-system',['as'=>'milliongod-system','uses'=>'HomeController@showmillionGodSystem']);
 

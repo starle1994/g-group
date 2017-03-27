@@ -208,7 +208,7 @@
                <div class="gold">
                @foreach($shop_list as $list)
                    <div class="contentGold">
-                       <img src="{{ asset('uploads/'.$list->image) }}" alt="">
+                       <a href="{{route($list->alias)}}"><img src="{{ asset('uploads/'.$list->image) }}" alt=""></a>
                    </div>
                 @endforeach 
                </div>

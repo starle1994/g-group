@@ -28,6 +28,7 @@ use App\Restaurant;
 use App\ImageRestaurant;
 use App\System;
 use App\RecomentCate;
+use App\Link;
 
 class HomeController extends Controller
 {
@@ -119,6 +120,13 @@ class HomeController extends Controller
 		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
 		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
 
+		return view('million_ranking_staff', compact('group_ranking','million_god_staff'));
+	}
+
+	public function rankingGigoloStaff()
+	{
+		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
+		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff'));
 	}
 
@@ -293,4 +301,10 @@ class HomeController extends Controller
     	$system = System::first();
     	return view('gigolo_system',compact('system'));
     }
+
+   	public function showLink()
+   	{
+   		$links = Link::all();
+   		return view('link', compact('links'));
+   	}
 }

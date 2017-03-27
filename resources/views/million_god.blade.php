@@ -214,7 +214,7 @@
                         <div class="row rowPlus">
                         @foreach($godPageContent as $item)
                             <div class="col-xs-6 bcLeft">
-                                <img src="{{ asset('uploads/'.$item->image) }}" alt="">
+                                <a href="{{route($item->alias)}}"><img src="{{ asset('uploads/'.$item->image) }}" alt=""></a>
                             </div>                                          
                             
                         @endforeach
@@ -223,10 +223,10 @@
                </div>
                <div class="gold">
                    @foreach($shop_list as $list)
-                        <div class="contentGold">
-                            <img src="{{ asset('uploads/'.$list->image) }}" alt="">
-                        </div>
-                    @endforeach 
+                   <div class="contentGold">
+                       <a href="{{route($list->alias)}}"><img src="{{ asset('uploads/'.$list->image) }}" alt=""></a>
+                   </div>
+                @endforeach 
                </div>
             </div>
         </div>
