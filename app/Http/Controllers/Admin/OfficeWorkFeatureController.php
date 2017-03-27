@@ -47,8 +47,20 @@ class OfficeWorkFeatureController extends Controller {
 	 */
 	public function store(CreateOfficeWorkFeatureRequest $request)
 	{
+	    $cast = OfficeWorkFeature::orderBy('id','desc')->first();
+
 	    $request = $this->saveFiles($request);
-		OfficeWorkFeature::create($request->all());
+	    $input = $request->all();
+	    if ($cast == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$cast->alias);
+
+	    	$number = $alias[3]+1;
+	    }
+	    
+	    $input['alias'] = 'office-work-feature-'.$number;
+		OfficeWorkFeature::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.officeworkfeature.index');
 	}

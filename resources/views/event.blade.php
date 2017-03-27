@@ -10,7 +10,7 @@
 
     <div class="col-sm-9">
         <div class="exe-fa-head-1">
-            <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
+            <img src="{{ asset('css/css/images/event/h1.png') }}" alt="">
         </div>
         
         <div class="exe-main-content">

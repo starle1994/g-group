@@ -24,7 +24,8 @@ class OfficeWorkFeature extends Model {
     protected $fillable = [
           'image',
           'backgroud_image',
-          'description'
+          'description',
+          'alias'
     ];
     
 

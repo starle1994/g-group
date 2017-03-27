@@ -22,9 +22,11 @@
                 <a href=""></a>
             </div>
             <div id="bannerMain">
-                <img src="{{ asset('css/css/images/grouptop/banner-group.jpg') }}" alt="Flower">
+               <img src="{{ asset('uploads/'.$banner->image) }}" alt="Flower">
+                @if($banner->page==1)
                     <a class="a1Banner" href="{{route('million-god')}}"></a>
                     <a class="a2Banner" href="{{route('gigoro')}}"></a>
+                @endif
             </div>
             <div id="mainMenu" >
                 <img class="hidden-xs" src="{{ asset('css/css/images/grouptop/bg-menu.jpg') }}" alt="">

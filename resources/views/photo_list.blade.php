@@ -10,7 +10,7 @@
 
     <div class="col-sm-9">
         <div class="exe-fa-head-1">
-            <img src="{{ asset('css/css/images/self-taken/h.jpg') }}" alt="">
+            <img src="{{ asset('css/css/images/h1.png') }}" alt="">
         </div>        
         <div class="self-taken-main-content" style="background-color: white">
             <div class="item">
@@ -18,7 +18,7 @@
                 <?php
                        $dateOld = null;             
                 ?>   
-                @foreach($self_taken as $item)
+                @foreach($fashions as $item)
                     <?php
                         $date = $item->time;                
                     ?>
@@ -51,10 +51,7 @@
             </div> 
             <div class="self-taken-line">                            
              </div>
-        </div>
-
-        
-
+        </div>      
     </div>
 </div>
 @endsection

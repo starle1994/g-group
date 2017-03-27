@@ -9,9 +9,8 @@ use App\StaffPhotos;
 use App\Http\Requests\CreateStaffPhotosRequest;
 use App\Http\Requests\UpdateStaffPhotosRequest;
 use Illuminate\Http\Request;
-
-use App\Staffs;
-
+use App\GodStaffs;
+use Image;
 
 class StaffPhotosController extends Controller {
 
@@ -36,7 +35,7 @@ class StaffPhotosController extends Controller {
 	 */
 	public function create()
 	{
-	    $staffs = Staffs::pluck("name", "id")->prepend('Please select', null);
+	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 
 	    
 	    return view('admin.staffphotos.create', compact("staffs"));
@@ -49,10 +48,34 @@ class StaffPhotosController extends Controller {
 	 */
 	public function store(CreateStaffPhotosRequest $request)
 	{
-	    
-		StaffPhotos::create($request->all());
+	    $length =3;
+		$image = $request->file('file');
+      
+        $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+	    $chars_length = (strlen($chars) - 1);
+	    $string = $chars{rand(0, $chars_length)};
 
-		return redirect()->route(config('quickadmin.route').'.staffphotos.index');
+	    for ($i = 1; $i < $length; $i = strlen($string))
+	    {
+	        $r = $chars{rand(0, $chars_length)};
+	        if ($r != $string{$i - 1}) $string .=  $r;
+	    }
+        $input['imagename'] = time().'-'.$string.'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/thumb');
+        $img = Image::make($image->getRealPath());
+        $img->resize(50, 50, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+
+        $destinationPath = public_path('uploads');
+            $image->move($destinationPath, $input['imagename']);
+
+		StaffPhotos::create([
+		'staffs_id'=>$request->staffs_id,
+          'photo'=>$input['imagename']
+          ]);
+
+		return response()->json(['success'=>$input['imagename']]);
 	}
 
 	/**
@@ -64,7 +87,7 @@ class StaffPhotosController extends Controller {
 	public function edit($id)
 	{
 		$staffphotos = StaffPhotos::find($id);
-	    $staffs = Staffs::pluck("name", "id")->prepend('Please select', null);
+	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 
 	    
 		return view('admin.staffphotos.edit', compact('staffphotos', "staffs"));

@@ -10,34 +10,42 @@
                     <div><img class="imgex" src="{{ asset('css/css/images/grouptop/titleMino.png') }}"
                      alt=""></div>
                     <div class="scroll">
-                        <div class="infoTop">
-                            <img src="{{ asset('css/css/images/info1.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1 right">11月29日(土) </span>
-                                <span class="title-2"> 空城リュウ×奏  スペシャルグラビア☆</span>
+                    <?php $first = true?>
+                    @foreach($blogs1 as $blog)
+                        <?php
+                            $datetime = new DateTime($blog->created_at) ; 
+                            $year = $datetime->format('Y');
+                            $month = $datetime->format('m');
+                            $day = $datetime->format('d');
+                            $time = $datetime->format('h:m');
+                        ?>
+                        @if($first==true)
+                            <div class="infoTop">
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                   <a href="{{route('blog-detail',$blog->alias)}}"> <span class="title-2"> {{$blog->name}}</span></a>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
+                                
                             </div>
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                        @else
+                            <?php $first = false?>
+                            <div class="infoTop">
+                                
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
                             </div>
-                            <img src="{{ asset('css/css/images/info2.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">1月29日(土)</span>
-                                <span class="title-2"> 夜神 優姫矢× レナ☆SPECIAL ☆</span>
-                            </div>
-
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                            </div>
-                            <img src="{{ asset('css/css/images/info5.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">3月14日(火)</span>
-                                <span class="title-2">ホワイトデーイベント☆  のコピー 2</span>
-                            </div>
-                        </div>
+                        @endif
+                    @endforeach                        
                     </div>
                 </div>
             </div>
@@ -47,34 +55,41 @@
                      alt=""></div>
 
                     <div class="scroll">
-                        <div class="infoTop">
-                            <img src="{{ asset('css/css/images/info3.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1 right">11月29日(土) </span>
-                                <span class="title-2"> 空城リュウ×奏  スペシャルグラビア☆</span>
+                    <?php $first = true?>
+                    @foreach($blogs as $blog)
+                        <?php
+                            $datetime = new DateTime($blog->created_at) ; 
+                            $year = $datetime->format('Y');
+                            $month = $datetime->format('m');
+                            $day = $datetime->format('d');
+                            $time = $datetime->format('h:m');
+                        ?>
+                        @if($first==true)
+                            <div class="infoTop">
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                        @else
+                            <?php $first = false?>
+                            <div class="infoTop">
+                                
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
                             </div>
-                            <img src="{{ asset('css/css/images/info4.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">1月29日(土)</span>
-                                <span class="title-2"> 夜神 優姫矢× レナ☆SPECIAL ☆</span>
-                            </div>
-
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                            </div>
-                            <img src="{{ asset('css/css/images/info5.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">3月14日(火)</span>
-                                <span class="title-2">ホワイトデーイベント☆  のコピー 2</span>
-                            </div>
-                        </div>
+                        @endif
+                    @endforeach                          
                     </div>
                 </div>
             </div>
@@ -84,34 +99,41 @@
                      alt=""></div>
 
                     <div class="scroll">
-                        <div class="infoTop">
-                            <img src="{{ asset('css/css/images/info1.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1 right">11月29日(土) </span>
-                                <span class="title-2"> 空城リュウ×奏  スペシャルグラビア☆</span>
+                    <?php $first = true?>
+                    @foreach($blogs2 as $blog)
+                        <?php
+                            $datetime = new DateTime($blog->created_at) ; 
+                            $year = $datetime->format('Y');
+                            $month = $datetime->format('m');
+                            $day = $datetime->format('d');
+                            $time = $datetime->format('h:m');
+                        ?>
+                        @if($first==true)
+                            <div class="infoTop">
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                        @else
+                            <?php $first = false?>
+                            <div class="infoTop">
+                                
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <span class="title-2"> {{$blog->name}}</span>
+                                </div>
+                                <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                </div>
                             </div>
-                            <img src="{{ asset('css/css/images/info2.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">1月29日(土)</span>
-                                <span class="title-2"> 夜神 優姫矢× レナ☆SPECIAL ☆</span>
-                            </div>
-
-                        </div>
-                        <div class="infoTop">
-                            <div class="line">
-                                <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                            </div>
-                            <img src="{{ asset('css/css/images/info5.png')}}" alt="">
-                            <div class="content1">
-                                <span class="title-1">3月14日(火)</span>
-                                <span class="title-2">ホワイトデーイベント☆  のコピー 2</span>
-                            </div>
-                        </div>
+                        @endif
+                    @endforeach  
                     </div>
                 </div>
             </div>

@@ -72,7 +72,7 @@ Route::get('/fashion-detail/{alias}',['as'=>'fashion-detail','uses'=>'HomeContro
 Route::get('/holiday',['as'=>'holiday','uses'=>'HomeController@showHolyday']);
 Route::get('/holiday-detail/{alias}',['as'=>'holyday-detail','uses'=>'HomeController@showHolydayDetail']);
 
-Route::get('/photo-list',['as'=>'photo-list','uses'=>'HomeController@showFashion']);
+Route::get('/photo-list',['as'=>'photo-list','uses'=>'HomeController@showPhotolist']);
 Route::get('/photo-list-detail/{alias}',['as'=>'photo-list-detail','uses'=>'HomeController@showFashionDetail']);
 
 Route::get('/last-song',['as'=>'last-song','uses'=>'HomeController@showFashion']);

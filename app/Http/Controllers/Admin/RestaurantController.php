@@ -48,8 +48,21 @@ class RestaurantController extends Controller {
 	 */
 	public function store(CreateRestaurantRequest $request)
 	{
+	     $rookie = Restaurant::orderBy('id','desc')->first();
 	    $request = $this->saveFiles($request);
-		$restaurant = Restaurant::create($request->all());
+		
+		$input = $request->all();
+		
+	    if ($rookie == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$rookie->alias);
+
+	    	$number = $alias[1]+1;
+	    }
+	    
+	    $input['alias'] = 'list-'.$number;
+		$restaurant = Restaurant::create($input);
 
 		return redirect()->route('admin.restaurant.image',$restaurant->id);
 	}
@@ -83,13 +96,9 @@ class RestaurantController extends Controller {
         $destinationPath = public_path('uploads');
             $image->move($destinationPath, $input['imagename']);
 
-        if ($request->id == 8) {
-			
-		}
-
         ImageRestaurant::create(['image'=>$input['imagename'],
         						 'restaurant_id'=>$request->id,
-                                'description' =>$description]);
+                                'description' =>$request->description]);
 
 		return response()->json(['success'=>$input['imagename']]);
 	}

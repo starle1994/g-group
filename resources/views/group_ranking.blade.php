@@ -219,7 +219,8 @@
    </div>
 </div>
 <script type="text/javascript">
-     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
+    
+    height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
     $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
     $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
@@ -244,7 +245,25 @@
         $('.gr-rank-footer-p1 .item').height(height3);
     });
 
-   
-   
+    $('#mainMenu a:nth-child(7)').after("<br>");
+    $('#menu').click(function(){
+        $('#mainMenu').toggle();
+    });
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+    })
 </script>
 @endsection

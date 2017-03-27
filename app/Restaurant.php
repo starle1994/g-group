@@ -25,7 +25,8 @@ class Restaurant extends Model {
           'name',
           'image',
           'cate_id',
-          'description'
+          'description',
+          'alias',
     ];
     
 
