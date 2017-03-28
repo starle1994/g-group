@@ -364,4 +364,10 @@ class HomeController extends Controller
         $banner					= Banner::where('page','1')->first();
         return view('photo_list', compact('fashions','banner'));
     }
+
+    public function showLastSong()
+    {
+    	$banner					= Banner::where('page','1')->first();
+    	return view('last_song',compact('banner'));
+    }
 }

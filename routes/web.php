@@ -75,7 +75,7 @@ Route::get('/holiday-detail/{alias}',['as'=>'holyday-detail','uses'=>'HomeContro
 Route::get('/photo-list',['as'=>'photo-list','uses'=>'HomeController@showPhotolist']);
 Route::get('/photo-list-detail/{alias}',['as'=>'photo-list-detail','uses'=>'HomeController@showFashionDetail']);
 
-Route::get('/last-song',['as'=>'last-song','uses'=>'HomeController@showFashion']);
+Route::get('/last-song',['as'=>'last-song','uses'=>'HomeController@showLastSong']);
 
 Route::get('/link',['as'=>'link','uses'=>'HomeController@showLink']);
 
