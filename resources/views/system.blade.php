@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="titText">
+                <div class="titText2">
                     
                 </div>
                 <div class="sysContent2">
@@ -119,7 +119,7 @@
                 </div>
 
 
-                <div class="titText">
+                <div class="titText3">
                     
                 </div>
                 <div class="syscontent3">
@@ -163,7 +163,7 @@
                 </div>
 
 
-                <div class="titText">
+                <div class="titText4">
                     
                 </div>
                 <div class="syscontent4">
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="titText">
+                <div class="titText5">
                     
                 </div>
                 <div class="syscontent5">
@@ -204,7 +204,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div style="margin-top: 20px;">
         <input type="hidden" id="address" value="{{$system->address}}">
         <!-- starts: Google Maps -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

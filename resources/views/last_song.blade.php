@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<?php 
-    $arr =['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
-
- ?>
 <div class="row group-god">
     <div class="col-sm-3 left">
         
@@ -14,7 +10,7 @@
 
     <div class="col-sm-9 right">
         <div class="title">
-            <img src="{{ asset('css/css/images/blog-list/ブログ素材.jpg')}}" alt="">
+            <img src="{{ asset('css/css/images/movie/h1.jpg')}}" alt="">
         </div>
         
         <div class="content">
@@ -32,28 +28,36 @@
     </div>
    
 </div>
+<?php 
+  $arrName = array();
+  $arrRating = array();
+  foreach ($rating as $song) {
+    array_push($arrName,$song->name);
+    array_push($arrRating, $song->raiting);
+  }
+  ?>
 <script type="text/javascript">
-    var a = <?php echo json_encode($arr); ?>;
+    var arrName = <?php echo json_encode($arrName); ?>;
+    var arrRating = <?php echo json_encode($arrRating); ?>;
+    var month = <?php echo  ($rating->isEmpty() == false) ? $rating[0]->month : ''; ?>;
     Highcharts.chart('container', {
     chart: {
         type: 'bar'
     },
     title: {
-        text: 'Historic World Population by Region'
-    },
-    subtitle: {
-        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+        text: 'LAST SONG'
     },
     xAxis: {
-        categories: a,
+        categories: arrName,
         title: {
             text: null
         }
     },
     yAxis: {
         min: 0,
+        max: 31,
         title: {
-            text: 'Population (millions)',
+            text: 'Number (times)',
             align: 'high'
         },
         labels: {
@@ -61,7 +65,7 @@
         }
     },
     tooltip: {
-        valueSuffix: ' millions'
+        valueSuffix: ' times'
     },
     plotOptions: {
         bar: {
@@ -85,8 +89,8 @@
         enabled: false
     },
     series: [{
-        name: 'Year 1800',
-        data: [107, 31, 635, 203, 2]
+        name: month,
+        data: arrRating
     }]
 });
 </script>

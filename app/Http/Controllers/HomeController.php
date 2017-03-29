@@ -32,6 +32,8 @@ use App\Link;
 use App\Banner;
 use App\OfficeWorkFeature;
 use App\PhotoList;
+use App\SongRating;
+	
 class HomeController extends Controller
 {
 
@@ -368,6 +370,9 @@ class HomeController extends Controller
     public function showLastSong()
     {
     	$banner					= Banner::where('page','1')->first();
-    	return view('last_song',compact('banner'));
+    	$month = (int)date('m');
+    	$rating = SongRating::orderBy('raiting','desc')->where("month",$month)->join('song','song_id','=','song.id')->select('name','raiting','month')->get();
+    	$banner					= Banner::where('page','1')->first();
+    	return view('last_song',compact('banner','rating','banner'));
     }
 }

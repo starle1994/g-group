@@ -2633,7 +2633,7 @@ footer {
     .contentSyst .text1 .txt-span {
       color: red; }
     .contentSyst .text1 p {
-      font-size: 20px;
+      font-size: 14px;
       /*margin: 20px;*/
       padding: 10px;
       text-align: center; }
@@ -2645,7 +2645,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-paraph p {
-    font-size: 20px;
+    font-size: 14px;
     margin-left: 20px; }
   .contentSyst .titText-h2 {
     background: url(images/recruit/h2.png) no-repeat;
@@ -2693,7 +2693,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-h4-pa p {
-    font-size: 20px; }
+    font-size: 14px; }
   .contentSyst .titText-h6 {
     background: url(images/recruit/h6.png) no-repeat;
     background-size: 100% 100%;
@@ -2716,7 +2716,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-h7-pa p {
-    font-size: 20px; }
+    font-size: 14px; }
   .contentSyst .titText-h8 {
     background: url(images/recruit/h8.png) no-repeat;
     background-size: 100% 100%;
@@ -2827,7 +2827,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .system .contentSyst .titText-h4-pa p {
-    font-size: 20px; }
+    font-size: 14px; }
   .system .contentSyst .titText-h6 {
     background: url(images/recruit/h6.png) no-repeat;
     background-size: 100% 100%;
@@ -2850,7 +2850,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .system .contentSyst .titText-h7-pa p {
-    font-size: 20px; }
+    font-size: 14px; }
   .system .contentSyst .titText-h8 {
     background: url(images/recruit/h8.png) no-repeat;
     background-size: 100% 100%;
@@ -2859,7 +2859,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .system .contentSyst .syscontent3 p {
-    font-size: 20px; }
+    font-size: 14px; }
   .system .contentSyst .syscontent3 .note {
     color: red; }
   .system .contentSyst .syscontent3 .tel {
@@ -3177,4 +3177,63 @@ footer {
 
 .gr-rank-p2 .contents .ft-bk a{
   color: white !important;
+}
+
+.system .contentSyst .textSyst .titText2 {
+    background: url(images/system/textTitle2.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+.system .contentSyst .textSyst .titText2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.system .contentSyst .textSyst .titText3 {
+    background: url(images/system/textTitle3.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+.system .contentSyst .textSyst .titText3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.system .contentSyst .textSyst .titText4 {
+    background: url(images/system/textTitle4.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+.system .contentSyst .textSyst .titText4 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.system .contentSyst .textSyst .titText5 {
+    background: url(images/system/textTitle5.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 0;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+.system .contentSyst .textSyst .titText5 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.system .contentSyst .titText-h9-ct .col-sm-6{
+ 
+  border: 5px solid white;
 }

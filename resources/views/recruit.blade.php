@@ -1,7 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style type="text/css">
+     p{
+        font-size: 14px !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        font-weight: bold;
+    }
+</style>
 <div class="row system">
                         <div class="bbq-list-item">
                             <div class="col-sm-3 left">
@@ -22,8 +29,8 @@
                                             <img src="{{asset('css/css/images/recruit/a2.png')}}" alt="">
                                         </div>
                                     </div>
-
-                                    <div class="text1">
+                                    <div style="clear: both;"></div>
+                                    <div class="text1" style="text-align: center;">
                                         <p>数あるホスト求人のサイトの中からこのページに出会い、この文章を読んでいる…。</p>
                                         <p>それはまさに <span class="txt-span">運命</span>です。</p>
                                         <p>歌舞伎町で数々の実績を残し、名古屋に進出。</p>
@@ -89,7 +96,7 @@
                                     </div>
 
                                     <div class="row titText-h3-content">
-                                        <div class="col-sm-6 pa">
+                                        <div class="col-sm-6 pa" style="margin-top: 20px">
                                             <p>1.キャスト（レギュラー）
                                             最低保障10000円
                                             (売上によるスライド制で最高70000円)
@@ -125,7 +132,7 @@
                                             ＋１ステージごとに 高額歩合有、忘相</p>     
                                         </div>
 
-                                        <div class="col-sm-6 pa">
+                                        <div class="col-sm-6 pa" style="margin-top: 20px">
                                             <p>8.送迎
                                             キャスト送迎、一人当たり1,000円～3,000円支給
                                             距離や時間に応じて変動します。</p>
@@ -166,30 +173,30 @@
                                     </div>
                                     <div class="titText-h6-pa">
                                         <p>
-                                            <span class="star">☆暴力・派閥無し</span>
-                                            上下関係・暴力・派閥など一切ありません!!アットホームで楽しく稼ぐならKIZUNAです!!
+                                            <span class="star">☆暴力・派閥無し</span><br>
+                                            p上下関係・暴力・派閥など一切ありません!!アットホームで楽しく稼ぐならKIZUNAです!!
                                         </p>
 
                                         <p>
-                                            <span class="star">☆日払い・賞金有</span>
+                                            <span class="star">☆日払い・賞金有</span><br>
                                             毎日の日払いはもちろんのこと、日々沢山の賞金GETのチャンスがあなたを待っています!!
                                         </p>
 
                                         <p>
-                                            <span class="star">☆高級マンション寮完備</span>
+                                            <span class="star">☆高級マンション寮完備</span><br>
                                             即入居可能な高級マンション寮を準備しています。
                                             店舗からも徒歩5分圏内と近く憧れのホスト生活をスタート出来ます。  
                                             他府県の方も身一つで来て下さい。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆慰安旅行有</span>
+                                            <span class="star">☆慰安旅行有</span><br>
                                             しっかり働いた後はみんなでリフレッシュ。
                                             みんなで楽しい時間と思い出を作りましょう!!
                                         </p>
 
                                         <p>
-                                            <span class="star">☆研修制度有</span>
+                                            <span class="star">☆研修制度有</span><br>
                                             未経験で稼げるようにしっかりとした研修制度!!
                                             学生、Wワーク関係ありません。
                                             最初は誰でも不安だし、出来なくて当たり前!!
@@ -198,19 +205,19 @@
                                         </p>
 
                                         <p>
-                                            <span class="star">☆ノルマ一切無し</span>
+                                            <span class="star">☆ノルマ一切無し</span><br>
                                             強制指名、同伴日など一切ありません。
                                             もちろん理不尽な罰金等もありません。
                                             自分ペースでやるのも良し、がんばって稼ぐのも良し、自分にあった頑張りで稼げます!!
                                         </p>
 
                                         <p>
-                                            <span class="star">☆完全シフト制出勤</span>
+                                            <span class="star">☆完全シフト制出勤</span><br>
                                             1週間ごとのシフト制なので安心してバランスを取りながら働くことが出来ます。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆飲酒ＮＧでも可</span>
+                                            <span class="star">☆飲酒ＮＧでも可</span><br>
                                             お酒が飲めなくても安心!!
                                             ノンアルコールメニューの充実はもちろんの事、
                                             今まで全くお酒が飲めない子達を何人も売れっ子に育て上げてきました。
@@ -220,7 +227,7 @@
                                         </p>
 
                                         <p>
-                                            <span class="star">☆ベア上昇制度有</span>
+                                            <span class="star">☆ベア上昇制度有</span><br>
                                             働く程上がっていく給料!!
                                             『million GOD』では勤続年数に応じて給料が上がっていきます!!
                                             よくホストクラブにある指名が取れないとどんどん給料が下がっていくという事は一切ありません。
@@ -228,20 +235,20 @@
                                         </p>
 
                                         <p>
-                                            <span class="star">☆専属ヘアメイク有</span>
+                                            <span class="star">☆専属ヘアメイク有</span><br>
                                             million GODには専属のヘアメイクさんがあなたを華麗に変身させます。
                                             ホストへの第一歩を後押ししてくれます。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆残業一切無し</span>
+                                            <span class="star">☆残業一切無し</span><br>
                                             終電上がりとキッチリとした営業時間!!
                                             時間制のお店なので営業時間が長引く事はありません。
                                             そして学生やWワークの方でも働きやすく終電上がりで上がることも出来ます。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆1日体験制度有</span>
+                                            <span class="star">☆1日体験制度有</span><br>
                                             実際にホストという仕事がどういうものか1日体験出来ます!!
                                             お店に来て頂くだけで大丈夫です!!
                                             後は僕らに任せて下さい!!
@@ -249,19 +256,19 @@
                                         </p>
 
                                         <p>
-                                            <span class="star">☆高級スーツ貸与有</span>
+                                            <span class="star">☆高級スーツ貸与有</span><br>
                                             スーツが無くても大丈夫!!
                                             常時レンタルスーツ整っております。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆上京費支給</span>
+                                            <span class="star">☆上京費支給</span><br>
                                             北は北海道、南は沖縄県まで当店で働くための交通費全額支給させて頂きます。
                                             かばん一つでお越し下さい。
                                         </p>
 
                                         <p>
-                                            <span class="star">☆名古屋一の日給永久保障!!</span>
+                                            <span class="star">☆名古屋一の日給永久保障!!</span><br>
                                             ホストクラブの全ての店舗が、日給保障が下がっていく中million GODはナント!!
                                             日給１万円永久保証!!
                                             売れてなくてもしっかり稼げる環境が整っています!!
@@ -344,6 +351,7 @@
                                         
                                     </div>
                                     <div class="row titText-h9-ct">
+                                    <div class="col-md-12">
                                         <div class="col-sm-6">
                                             <h2>未経験者の方へ</h2>
                                             <p>未経験者の方へ  このページを見て頂いているということは、
