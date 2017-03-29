@@ -69,7 +69,7 @@
                                 </div>
 
                                 <div class="ft-bk">
-<a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}">{{$group_ranking[$i]->godstaffs->name}}</a>
+                                    <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}">{{$group_ranking[$i]->godstaffs->name}}</a>
                                 </div>
                             </div>
                         @endfor
@@ -218,8 +218,7 @@
        
    </div>
 </div>
-<script type="text/javascript">
-    
+<script type="text/javascript">    
     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
     $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();

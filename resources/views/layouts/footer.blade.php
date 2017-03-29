@@ -5,6 +5,3 @@
 <div class="ftRight">
     18歳未満の方のご入店、<br> 及びサイトの閲覧はお断りしております事をご了承下さい。
 </div>
-<script src='{!! url('js/jquery-3.1.1.min.js') !!}' type='text/javascript'></script>
-    <script src='{!! url('js/bootstrap.min.js') !!}' type='text/javascript'></script>
-    <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script>

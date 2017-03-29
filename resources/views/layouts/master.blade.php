@@ -12,7 +12,9 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <link href='{!! url('css/css/owl.carousel.min.css') !!}' rel='stylesheet' type='text/css' />
      <link href='{!! url('css/css/style.css') !!}' rel='stylesheet' type='text/css' />
-      
+     <script src='{!! url('js/jquery-3.1.1.min.js') !!}' type='text/javascript'></script>
+    <script src='{!! url('js/bootstrap.min.js') !!}' type='text/javascript'></script>
+    <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script> 
     </head>
 <body id="calendar_div">
     <div id="wrapper" class="groupTop">
