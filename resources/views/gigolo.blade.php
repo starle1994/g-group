@@ -6,8 +6,8 @@
         <div class="row">
                             <div class="col-sm-6">
                                 <div class="ct-topLeft">
-                                    <div><img class="imgex" src="{{ asset('css/css/images/rookie-feature/ex-title.png') }}"
-                                     alt=""></div>
+                                   <div><img class="imgex" src="{{ asset('css/css/images/milion-god/t1.jpg')}}"
+                     alt=""></div>
                                     <div class="scroll">
                                         <?php $first = true?>
                                             @foreach($blogs2 as $blog)
@@ -47,8 +47,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="ct-topLeft">
-                                    <div><img class="imgex" src="{{ asset('css/css/images/rookie-feature/ex-title.png') }}"
-                                     alt=""></div>
+                                    <div><img class="imgex" src="{{ asset('css/css/images/milion-god/t2.jpg')}}"
+                     alt=""></div>
                                     <div class="scroll">
                                         <?php $first = true?>
                                             @foreach($blogs as $blog)

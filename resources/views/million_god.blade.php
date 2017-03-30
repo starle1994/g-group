@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="ct-topLeft">
-                    <div><img class="imgex" src="{{ asset('css/css/images/grouptop/titleMino.png')}}"
+                    <div><img class="imgex" src="{{ asset('css/css/images/milion-god/t1.jpg')}}"
                      alt=""></div>
 
                     <div class="scroll">
@@ -48,7 +48,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="ct-topLeft">
-                    <div><img class="imgex" src="{{ asset('css/css/images/grouptop/titleMino2.png')}}"
+                    <div><img class="imgex" src="{{ asset('css/css/images/milion-god/t2.jpg')}}"
                      alt=""></div>
 
                     <div class="scroll">

@@ -75,9 +75,6 @@
         </div>
         
 
-        <div class="exe-fa-paganitor">
-            <img src="images/rookie-feature/h2.png" alt="">
-        </div>
 
     </div>
    
