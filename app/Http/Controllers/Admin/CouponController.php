@@ -47,8 +47,18 @@ class CouponController extends Controller {
 	 */
 	public function store(CreateCouponRequest $request)
 	{
+	    $blogs = Coupon::orderBy('id','desc')->first();
 	    $request = $this->saveFiles($request);
-		Coupon::create($request->all());
+	    $input = $request->all();
+	    if ($blogs == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$blogs->alias);
+	    	$number = $alias[2]+1;
+	    }
+	    
+	    $input['alias'] = 'list-coupon-'.$number;
+		Coupon::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.coupon.index');
 	}
