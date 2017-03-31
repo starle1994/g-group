@@ -317,10 +317,7 @@
                                         </div>
                                         <br>
                                         <br>
-                                        <p>住所：名古屋市中区錦2丁目12番21号 錦カナアンビル5F</p>
-                                        <p>最寄り駅：地下鉄『栄』より徒歩3分</p>
-                                        <p>方法： <span class="note">写メールでの面接アリです！とりあえずお気軽に写メールを送ってみてください！</span></p>
-                                        <p>TEL： <span class="tel">070-6515-8506</span></p>
+                                        {!! $shopslist[0]->apply_method !!}
 
                                         <div class="dong-ke">
                                             
@@ -342,14 +339,7 @@
                                         </div>
                                         <br>
                                         <br>
-                                        <p>住所：名古屋市中区栄3-10-6 ルネッサンスビル1Ｆ</p>
-                                        <p>最寄り駅：地下鉄『栄』より徒歩3分</p>
-                                        <p>方法： <span>写メールでの面接アリです！とりあえずお気軽に写メールを送ってみてください！</span></p>
-                                        <p>TEL： <span>090-6860-6699</span></p>
-                                        <p>MAIL： <span>ken-ken-1126@ezweb.ne.jp</span></p>
-                                        <p>担当：大城</p>
-                                        <p>LINE ID： <span>o_kenyaman</span></p>
-                                        <p>担当：大城</p>
+                                        {!! $shopslist[1]->apply_method !!}
 
                                     </div>
 

@@ -474,6 +474,7 @@ footer {
     overflow-x: hidden; }
   .groupTop #mainContetn {
     position: absolute;
+
     background-image: url(images/grouptop/bg-group.jpg);
     background-size: 100%;
     background-repeat: no-repeat;

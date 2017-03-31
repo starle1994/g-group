@@ -25,7 +25,8 @@ class ShopsList extends Model {
           'name',
           'image',
           'image_intro',
-          'description'
+          'description',
+          'apply_method',
     ];
     
 

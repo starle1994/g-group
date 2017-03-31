@@ -32,6 +32,7 @@
         {!! Form::hidden('image_h', 4096) !!}
         
     </div>
+</div>
 <div class="form-group">
     {!! Form::label('image_intro', 'image_intro', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
@@ -44,6 +45,13 @@
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description',$shopslist->description), array('class'=>'form-control ckeditor')) !!}
+        
+    </div>
+</div>
+<div class="form-group">
+    {!! Form::label('apply_method', 'apply_method', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::textarea('apply_method', old('apply_method',$shopslist->apply_method), array('class'=>'form-control ckeditor')) !!}
         
     </div>
 </div>

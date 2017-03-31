@@ -266,7 +266,8 @@ class HomeController extends Controller
     public function showRecruit()
     {
     	$banner					= Banner::where('page','1')->first();
-    	return view('recruit',compact('banner'));
+    	$shopslist 		= ShopsList::select('id','apply_method')->get();
+    	return view('recruit',compact('banner','shopslist'));
     }
 
     public function showGravuteDetail($alias)
