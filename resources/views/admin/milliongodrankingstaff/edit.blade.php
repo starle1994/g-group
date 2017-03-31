@@ -24,10 +24,11 @@
         {!! Form::select('ranking_id', $ranking, old('ranking_id',$milliongodrankingstaff->ranking_id), array('class'=>'form-control')) !!}
         
     </div>
-</div><div class="form-group">
+</div>
+<div class="form-group">
     {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('name', old('name',$milliongodrankingstaff->name), array('class'=>'form-control')) !!}
+        {!! Form::select('godstaffs_id', $godstaffs, old('godstaffs_id',$milliongodrankingstaff->godstaffs_id), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">

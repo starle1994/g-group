@@ -24,6 +24,7 @@ class LogGroupRanking extends Model {
     protected $fillable = [
           'id_ranking',
           'id_staff',
+          'type',
           'month',
           'year'
     ];

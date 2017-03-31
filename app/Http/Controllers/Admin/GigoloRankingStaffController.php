@@ -13,6 +13,9 @@ use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Ranking;
 use App\GodStaffs;
 use Image;
+use App\LogGroupRanking;
+use DateTime;
+
 
 class GigoloRankingStaffController extends Controller {
 
@@ -93,6 +96,17 @@ class GigoloRankingStaffController extends Controller {
           'image'=>$input['imagename'],
           'banner'=>$input['imagename1']]);
 
+		$now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month = $prevDateTime->format('m');
+        $year  = $prevDateTime->format('Y');
+		LogGroupRanking::create([
+			'id_ranking'	=> $request->ranking_id,
+			'id_staff'=> $request->godstaffs_id,
+			'type' =>4,
+			'month'	=>$month,
+			'year'	=>$year,
+		]);
 		return redirect()->route(config('quickadmin.route').'.gigolorankingstaff.index');
 	}
 
@@ -160,16 +174,38 @@ class GigoloRankingStaffController extends Controller {
 	        $destinationPath = public_path('uploads');
 	            $image2->move($destinationPath, $input['imagename1']);
 	    }
-        $ranking_id = ($request->ranking_id == '') ? $gigolorankingstaff->ranking_id : $request->ranking_id;
-        $godstaffs_id = ($request->godstaffs_id == '') ? $gigolorankingstaff->godstaffs_id : $request->ranking_id;
-         $imagename = ($input['imagename'] == '') ? $gigolorankingstaff->image : $input['imagename'];
-        $imagename1 = ($input['imagename1'] == '') ? $gigolorankingstaff->banner : $input['imagename1'];
 
-		$gigolorankingstaff->update(['ranking_id'=>$ranking_id,
-          'godstaffs_id'=>$godstaffs_id,
-          'image'=>$imagename,
-          'banner'=>$imagename1]);
+       $now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month 	= $prevDateTime->format('m');
+        $year  	= $prevDateTime->format('Y');
+        $log 	= LogGroupRanking::where('id_staff',$gigolorankingstaff->godstaffs_id)
+        			->where('type',4)
+        			->where('month',$month)
+        			->where('year',$year)
+        			->first();
 
+        $input1 = [];
+
+        if ($request->ranking_id != null) {
+        	$input1['ranking_id']= $request->ranking_id;
+        	$input1['id_ranking'] = $request->ranking_id;
+        }
+        if ($request->godstaffs_id != null) {
+        	$input1['godstaffs_id']= $request->godstaffs_id;
+        	$input1['id_staff'] = $request->godstaffs_id;
+        }
+        if ($request->image != null) {
+        	$input1['image']= $input['imagename'];
+        }
+        if ($request->banner != null) {
+        	$input1['banner']= $input['imagename1'];
+        }
+
+		$gigolorankingstaff->update($input1);
+		$input1['month'] =$month;
+		$input1['year']	=$year;
+		$log->update($input1);
 		return redirect()->route(config('quickadmin.route').'.gigolorankingstaff.index');
 	}
 

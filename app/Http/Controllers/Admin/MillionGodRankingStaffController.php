@@ -13,6 +13,8 @@ use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Ranking;
 use App\GodStaffs;
 use Image;
+use App\LogGroupRanking;
+use DateTime;
 
 class MillionGodRankingStaffController extends Controller {
 
@@ -93,6 +95,17 @@ class MillionGodRankingStaffController extends Controller {
           'image'=>$input['imagename'],
           'banner'=>$input['imagename1']]);
 
+		$now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month = $prevDateTime->format('m');
+        $year  = $prevDateTime->format('Y');
+		LogGroupRanking::create([
+			'id_ranking'	=> $request->ranking_id,
+			'id_staff'=> $request->godstaffs_id,
+			'type' =>3,
+			'month'=>$month,
+			'year'=>$year,
+		]);
 
 		return redirect()->route(config('quickadmin.route').'.milliongodrankingstaff.index');
 	}
@@ -107,9 +120,9 @@ class MillionGodRankingStaffController extends Controller {
 	{
 		$milliongodrankingstaff = MillionGodRankingStaff::find($id);
 	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-
+	     $godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 	    
-		return view('admin.milliongodrankingstaff.edit', compact('milliongodrankingstaff', "ranking"));
+		return view('admin.milliongodrankingstaff.edit', compact('milliongodrankingstaff', "ranking","godstaffs"));
 	}
 
 	/**
@@ -160,13 +173,25 @@ class MillionGodRankingStaffController extends Controller {
 		        $image2->move($destinationPath, $input['imagename1']);
 	    }
 
+	    $now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month 	= $prevDateTime->format('m');
+        $year  	= $prevDateTime->format('Y');
+        $log 	= LogGroupRanking::where('id_staff',$milliongodrankingstaff->godstaffs_id)
+        			->where('type',3)
+        			->where('month',$month)
+        			->where('year',$year)
+        			->first();
+
         $input1 = [];
 
         if ($request->ranking_id != null) {
         	$input1['ranking_id']= $request->ranking_id;
+        	$input1['id_ranking'] = $request->ranking_id;
         }
         if ($request->godstaffs_id != null) {
         	$input1['godstaffs_id']= $request->godstaffs_id;
+        	$input1['id_staff'] = $request->godstaffs_id;
         }
         if ($request->image != null) {
         	$input1['image']= $input['imagename'];
@@ -176,7 +201,9 @@ class MillionGodRankingStaffController extends Controller {
         }
 
 		$milliongodrankingstaff->update($input1);
-
+		$input1['month'] =$month;
+		$input1['year']	=$year;
+		$log->update($input1);
 		return redirect()->route(config('quickadmin.route').'.milliongodrankingstaff.index');
 	}
 
