@@ -78,8 +78,13 @@ class LeftCateVer2Controller extends Controller {
 		$leftcatever2 = LeftCateVer2::findOrFail($id);
 
         $request = $this->saveFiles($request);
-
-		$leftcatever2->update($request->all());
+        $input = [];
+        if ($request->image != null) {
+        	$input['image']=$request->image;
+        }
+        $input['name'] 	= 	$request->name;
+        $input['alias'] = $request->alias;
+		$leftcatever2->update($input);
 
 		return redirect()->route(config('quickadmin.route').'.leftcatever2.index');
 	}

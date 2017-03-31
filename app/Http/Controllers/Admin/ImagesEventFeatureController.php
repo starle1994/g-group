@@ -92,7 +92,7 @@ class ImagesEventFeatureController extends Controller {
         	$input['eventsfeature_id']	= $request->eventsfeature_id;
         }
 
-		$imageseventfeature->update($request->all());
+		$imageseventfeature->update($input);
 
 		return redirect()->route(config('quickadmin.route').'.imageseventfeature.index');
 	}

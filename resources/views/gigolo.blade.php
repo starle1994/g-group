@@ -195,7 +195,7 @@
                         <div class="row rowPlus">
                             @foreach($gigoloPageContents as $item)
                                 <div class="col-xs-6 bcLeft">
-                                    <img src="{{ asset('uploads/'.$item->image) }}" alt="">
+                                    <a href="{{route($item->alias)}}"><img src="{{ asset('uploads/'.$item->image) }}" alt=""></a>
                                 </div>                                                                                   
                             @endforeach
                         </div>        

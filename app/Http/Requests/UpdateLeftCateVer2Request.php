@@ -24,7 +24,6 @@ class UpdateLeftCateVer2Request extends FormRequest {
 	public function rules()
 	{
 		return [
-            'image' => 'required', 
             'name' => 'required', 
             'alias' => 'required|unique:leftcatever2,alias,'.$this->leftcatever2, 
             
