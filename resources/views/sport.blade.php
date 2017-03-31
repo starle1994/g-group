@@ -11,7 +11,7 @@
 
         <div class="col-sm-9 right">
             <div class="title">
-                <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
+                <img src="{{ asset('css/css/images/rookie-feature/sport.jpg') }}" alt="">
             </div>
 
             <div class="content">
