@@ -3238,10 +3238,12 @@ footer {
   border: 5px solid white;
 }
 
-.exe-fa {
-    margin-top: 0px;
-}
+
 
 .groupTop header #mainMenu .ctMenu{
   padding-top: 5px;
+}
+
+.bbq-list-item .left img{
+  padding: 0px 0px 20px 0px !important;
 }
