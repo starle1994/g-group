@@ -162,7 +162,7 @@
             <div class="col-xs-9">
                <div class="slider1">
                     <div class="sliderAva">
-                        <p class="titleAva"></p>
+                        <p class="titleAva4"></p>
                     </div>
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
@@ -175,7 +175,7 @@
                </div>
                <div class="slider2">
                     <div class="sliderAva">
-                        <p class="titleAva">abc</p>
+                        <p class="titleAva5"></p>
                     </div>
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
@@ -189,7 +189,7 @@
 
                <div class="number">
                    <div class="sliderAva">
-                        <p class="titleAva">abc</p>
+                        <p class="titleAva6"></p>
                     </div>
                     <div class="bannerContent">
                         <div class="row rowPlus">

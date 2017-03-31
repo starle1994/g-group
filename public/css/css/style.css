@@ -3247,3 +3247,22 @@ footer {
 .bbq-list-item .left img{
   padding: 0px 0px 20px 0px !important;
 }
+
+.titleAva4 {
+   border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important;
+}
+
+.titleAva5 {
+   border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important;
+}
+
+.titleAva6 {
+   border-top-left-radius: 10px !important;
+      border-top-right-radius: 10px !important;
+}
+
+.groupTop .lineSli{
+  margin-top:20px;
+}
