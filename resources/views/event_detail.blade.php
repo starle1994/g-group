@@ -26,7 +26,7 @@
 	                    $time = $datetime->format('h:m');
 	                ?>
                         <p>
-                            {{$year}}年{{$month}}月{{$day}}日　{{$time}}（水） <br>
+                            {{$year}}年{{$month}}月{{$day}}日　{{$time}}<br>
                         </p>
                         {!! $event->description !!}
                     </div>

@@ -3267,3 +3267,7 @@ footer {
 .groupTop .lineSli{
   margin-top:20px;
 }
+
+.last-song .content{
+      background: url(images/dialogue-item/bk-lg.jpg);
+}

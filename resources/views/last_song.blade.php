@@ -1,7 +1,23 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="row group-god">
+<style type="text/css">
+    .infoTop{
+        background-color: white;margin-left: 40px;margin-right: 40px; margin-bottom: 20px;
+    }
+    .infoTop img{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .infoTop .content1{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .infoTop span{
+        font-size: 20px;
+    }
+</style>
+<div class="row group-god last-song">
     <div class="col-sm-3 left">
         
         @include('include.categories_left2')
@@ -13,14 +29,26 @@
             <img src="{{ asset('css/css/images/movie/h1.jpg')}}" alt="">
         </div>
         
-        <div class="content">
+        <div class="dialogue-main-content">
             <div class="row">
-               <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+                @foreach($last_song as $song)
+                   <?php 
+                        $datetime = new DateTime($song->date) ; 
+                        $year = $datetime->format('Y');
+                        $month = $datetime->format('m');
+                        $day = $datetime->format('d');
+                    ?>                        
+                    <div class="infoTop" >
 
-<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-
-                
+                            <img src="{{ asset('uploads/'.$song->image)}}" alt="">
+                            <div class="content1">
+                                <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
+                                <strong><h1>{{$song->title}}</h1></strong>
+                                <span >{!! mb_substr($song->description ,0,100 )!!}...</span>
+                            </div>
+                        </div>
+                  
+                @endforeach
             </div>
             
         </div>
@@ -28,70 +56,4 @@
     </div>
    
 </div>
-<?php 
-  $arrName = array();
-  $arrRating = array();
-  foreach ($rating as $song) {
-    array_push($arrName,$song->name);
-    array_push($arrRating, $song->raiting);
-  }
-  ?>
-<script type="text/javascript">
-    var arrName = <?php echo json_encode($arrName); ?>;
-    var arrRating = <?php echo json_encode($arrRating); ?>;
-    var month = <?php echo  ($rating->isEmpty() == false) ? $rating[0]->month : ''; ?>;
-    Highcharts.chart('container', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'LAST SONG'
-    },
-    xAxis: {
-        categories: arrName,
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        min: 0,
-        max: 31,
-        title: {
-            text: 'Number (times)',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' times'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-        shadow: true
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: month,
-        data: arrRating
-    }]
-});
-</script>
 @endsection
