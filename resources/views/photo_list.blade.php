@@ -25,7 +25,15 @@
                     @if($date != $dateOld && $dateOld != null)
                         </div>
                         <div style="text-align: right;margin-right: 2%;font-size: 24px">
-                            {{$dateOld}}
+                            <?php 
+                                $datetime = new DateTime($dateOld) ; 
+                                $year = $datetime->format('Y');
+                                $month = $datetime->format('m');
+                                $day = $datetime->format('d');
+                            ?>
+                            <p>
+                                {{$year}}年{{$month}}月{{$day}}日 <br>
+                            </p>
                         </div>                        
                             </div>
                         <div class="self-taken-line">                            
@@ -47,7 +55,15 @@
                 </div>
             </div>
             <div style="text-align: right;margin-right: 2%;font-size: 24px">
-                {{$dateOld}}
+                <?php 
+                                $datetime = new DateTime($dateOld) ; 
+                                $year = $datetime->format('Y');
+                                $month = $datetime->format('m');
+                                $day = $datetime->format('d');
+                            ?>
+                            <p>
+                                {{$year}}年{{$month}}月{{$day}}日 <br>
+                            </p>
             </div> 
             <div class="self-taken-line">                            
              </div>

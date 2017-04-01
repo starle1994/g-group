@@ -22,7 +22,7 @@ trait FileUploadTrait
 
                 if ($request->has($key . '_w') && $request->has($key . '_h')) {
                     // Check file width
-                    $filename = time() . '-' . $request->file($key)->getClientOriginalName();
+                    $filename = time() .'.'.$request->file($key)->getClientOriginalExtension();
                     $file     = $request->file($key);
                     $image    = Image::make($file);
                     Image::make($file)->resize(50, 50)->save(public_path('uploads/thumb') . '/' . $filename);
@@ -44,7 +44,7 @@ trait FileUploadTrait
                     $request = new Request(array_merge($request->all(), [$key => $filename]));
                     
                 } else {
-                    $filename = time() . '-' . $request->file($key)->getClientOriginalName();
+                    $filename = time()  .'.'.$request->file($key)->getClientOriginalExtension();
                     $request->file($key)->move(public_path('uploads'), $filename);
                     $request = new Request(array_merge($request->all(), [$key => $filename]));
                 }

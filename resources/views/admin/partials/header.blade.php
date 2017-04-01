@@ -36,6 +36,9 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.standalone.min.css"/>
     <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 </head>
 
 <body class="page-header-fixed">

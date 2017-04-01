@@ -149,6 +149,15 @@ Route::group([ 'middleware' => 'auth'], function () {
             'as' => 'admin.restaurant.image.post',
             'uses' => 'Admin\RestaurantController@postUloadImage'
         ]);
+
+        Route::get(config('quickadmin.route') . '/feature-event/image/{id}', [
+            'as' => 'admin.featureevent.image',
+            'uses' => 'Admin\FeatureEventController@showUloadImage'
+        ]);
+        Route::post(config('quickadmin.route') . '/feature-event/image', [
+            'as' => 'admin.featureevent.image.post',
+            'uses' => 'Admin\FeatureEventController@postUloadImage'
+        ]);
     });
 });
 

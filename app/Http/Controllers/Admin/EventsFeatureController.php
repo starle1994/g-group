@@ -50,7 +50,8 @@ class EventsFeatureController extends Controller {
 	    $event = EventsFeature::orderBy('id','desc')->first();
 		
 		$input = $request->all();
-	    if ($event == null) {
+		dd($event->alias);
+	    if ($event == null && $event->alias != null) {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode($event->alias,'-');

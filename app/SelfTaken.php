@@ -41,14 +41,7 @@ class SelfTaken extends Model {
      * Set attribute to date format
      * @param $input
      */
-    public function setTimeAttribute($input)
-    {
-        if($input != '') {
-            $this->attributes['time'] = Carbon::createFromFormat(config('quickadmin.date_format'), $input)->format('Y-m-d');
-        }else{
-            $this->attributes['time'] = '';
-        }
-    }
+   
 
     /**
      * Get attribute from date format
@@ -56,15 +49,7 @@ class SelfTaken extends Model {
      *
      * @return string
      */
-    public function getTimeAttribute($input)
-    {
-        if($input != '0000-00-00') {
-            return Carbon::createFromFormat('Y-m-d', $input)->format(config('quickadmin.date_format'));
-        }else{
-            return '';
-        }
-    }
-
+    
 
     
 }

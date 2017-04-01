@@ -1,6 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+  .td-video-play-ico > img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 60;
+}
+.item-video {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    margin-top: 15px;
+}
+
+
+</style>
 <div class="row exe-fa">
     <div class="col-sm-3">
         <div class="exe-fa-line">
@@ -16,8 +35,9 @@
         <div class="exe-main-content">
        
        
-        <div class="row">
-        @foreach($movies as $item)       
+        <div class="row" >
+          <div class="col-xs-12" style="margin-bottom: 15px;">
+             @foreach($movies as $item)       
             <?php                 
                 if ($item->image == null) {
                     $embedCode = '<iframe src="'.$item->link.'" frameborder="0" allowfullscreen></iframe>';
@@ -39,17 +59,17 @@
                 $target = 'myModal-'.$item->id ; 
                 $target_1= '#'.$target ;
             ?>                                                                                  
-                <div class="col-xs-6 exe-fa-content">
+                <div class="col-xs-6 ">
                     <div class="item-video">                                                      
                             <div class="catgimg_container" data-toggle="modal" data-target="{{$target_1}}">
                               <img src="{!! $thumbURL !!}" class="img-responsive">
                               <span class="td-video-play-ico">
-                                 <img width="40" class="td-retina" src="{!! asset('css/img/ico-video-large.png') !!}" alt="video">
+                                 <img class="td-retina" src="{!! asset('css/css/images/ico-video-large.png') !!}" alt="video">
                              </span>
                             </div>
-                            <div class="title-image">
-                              <p class="post_titile"><a href="">{{$item->name}}</a></p>
-                              <div class="comments_box" > <span class="meta_date">{{$item->created_at}}</span> </div>
+                            <div class="title-image text-center" style="padding-top: 10px">
+                              <p class="post_titile">{{$item->name}}</p>
+                              
                             </div>                                                       
                     </div>
 
@@ -71,6 +91,8 @@
                   </div> 
             </div>         
         @endforeach   
+          </div>
+       
         </div>        
         </div>
         

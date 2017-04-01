@@ -7,5 +7,11 @@
   };
   CKEDITOR.replace('my-editor', options);
 </script>
+<script type="text/javascript">
+        Dropzone.options.imageUpload = {
+            maxFilesize         :       10,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif"
+        };
+</script>
 </body>
 </html>

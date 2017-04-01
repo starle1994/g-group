@@ -16,7 +16,7 @@
     </div>
 </div>
 
-{!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.photolist.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
+{!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.photolist.store','enctype' => 'multipart/form-data', 'class' => 'dropzone', 'id' => 'image-upload')) !!}
 
 <div class="form-group">
     {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
@@ -27,25 +27,13 @@
 </div><div class="form-group">
     {!! Form::label('image', 'image', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::file('image') !!}
-        {!! Form::hidden('image_w', 4096) !!}
-        {!! Form::hidden('image_h', 4096) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('time', 'time', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('time', old('time'), array('class'=>'form-control')) !!}
+       <div>
+                <h3>Upload Multiple Image By Click On Box</h3>
+            </div>
         
     </div>
 </div>
-
-<div class="form-group">
-    <div class="col-sm-10 col-sm-offset-2">
-      {!! Form::submit( trans('quickadmin::templates.templates-view_create-create') , array('class' => 'btn btn-primary')) !!}
-    </div>
 </div>
-
 {!! Form::close() !!}
 
 @endsection

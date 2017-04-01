@@ -10,7 +10,8 @@ use App\Http\Requests\CreatePhotoListRequest;
 use App\Http\Requests\UpdatePhotoListRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-
+use Image;
+use DateTime;
 
 class PhotoListController extends Controller {
 
@@ -47,8 +48,35 @@ class PhotoListController extends Controller {
 	 */
 	public function store(CreatePhotoListRequest $request)
 	{
-	    $request = $this->saveFiles($request);
-		PhotoList::create($request->all());
+	    $length =3;
+		$image = $request->file('file');
+        $description = $request->get('description');
+        $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+	    $chars_length = (strlen($chars) - 1);
+	    $string = $chars{rand(0, $chars_length)};
+
+	    for ($i = 1; $i < $length; $i = strlen($string))
+	    {
+	        $r = $chars{rand(0, $chars_length)};
+	        if ($r != $string{$i - 1}) $string .=  $r;
+	    }
+        $input['imagename'] = time().'-'.$string.'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/thumb');
+        $img = Image::make($image->getRealPath());
+        $img->resize(50, 50, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+
+        $destinationPath = public_path('uploads');
+            $image->move($destinationPath, $input['imagename']);
+
+        $datetime = new DateTime() ; 
+        $time = $datetime->format('Y:m:d');
+
+        PhotoList::create(['image'=>$input['imagename'],
+        					'name'=>$request->name,
+        					'time'=>$time,
+        				]);
 
 		return redirect()->route(config('quickadmin.route').'.photolist.index');
 	}

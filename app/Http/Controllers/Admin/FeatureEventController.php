@@ -11,6 +11,8 @@ use App\Http\Requests\UpdateFeatureEventRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Schedule;
+use App\ImagesEventFeature;
+use Image;
 
 class FeatureEventController extends Controller {
 
@@ -51,21 +53,56 @@ class FeatureEventController extends Controller {
 	    
 	    $event = FeatureEvent::orderBy('id','desc')->first();
 		
-		$input = [''];
-	    if ($event == null) {
+		$input = $request->all();
+	    if ($event == null && $event->alias == null) {
 	    	$number = 1;
 	    }else{
-	    	$alias = explode($event->alias,'-');
+	    	$alias = explode('-',$event->alias);
 	    	$number = $alias[2]+1;
 	    }
 	    
 	    $input['alias'] = 'list-event-'.$number;
 
-		FeatureEvent::create($input);
+		$event = FeatureEvent::create($input);
 
-		return redirect()->route(config('quickadmin.route').'.featureevent.index');
+		return redirect()->route('admin.featureevent.image',$event->id);
 	}
 
+	public function showUloadImage($id)
+	{
+		return view('admin.featureevent.image',compact('id'));
+	}
+
+	public function postUloadImage(Request $request)
+	{
+		$length =3;
+		$image = $request->file('file');
+        $description = $request->get('description');
+        $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+	    $chars_length = (strlen($chars) - 1);
+	    $string = $chars{rand(0, $chars_length)};
+
+	    for ($i = 1; $i < $length; $i = strlen($string))
+	    {
+	        $r = $chars{rand(0, $chars_length)};
+	        if ($r != $string{$i - 1}) $string .=  $r;
+	    }
+        $input['imagename'] = time().'-'.$string.'.'.$image->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/thumb');
+        $img = Image::make($image->getRealPath());
+        $img->resize(50, 50, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+
+        $destinationPath = public_path('uploads');
+        $image->move($destinationPath, $input['imagename']);
+
+        ImagesEventFeature::create(['image'=>$input['imagename'],
+        						 'eventsfeature_id'=>$request->id,
+                                'description' =>$request->description]);
+
+		return response()->json(['success'=>$input['imagename']]);
+	}
 	/**
 	 * Show the form for editing the specified featureevent.
 	 *
