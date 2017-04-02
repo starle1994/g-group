@@ -61,10 +61,6 @@
                 
             </div>
         </div>
-        
-        <div class="col-xs-12 col-sm-12 paginators">
-            <img src="images/shop-list/paginator.jpg" alt="">
-        </div>
     </div>
                 
 @endsection

@@ -74,7 +74,9 @@
     margin-left: 5px;
 
 }
-
+#mainContetn{
+    position: absolute;
+}
 </style> 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
@@ -82,10 +84,10 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
 <div class="row system">
     <div class="bbq-list-item">
-                            <div class="col-sm-3 left">
-                                 @include('include.categories_left2')
-                            </div>
-                        </div>
+        <div class="col-sm-3 left">
+             @include('include.categories_left2')
+        </div>
+    </div>
     <div class="col-sm-10 home-right">
         <img class="stTitl" src="{{asset('css/css/images/system/mainTitle.jpg')}}" alt="">
         <div class="contentSyst">
@@ -211,7 +213,8 @@
         <div id="googlemaps-container-top"></div>
         <div id="googlemaps" class="google-map google-map-full"></div>
         <div id="googlemaps-container-bottom"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRKPm1IFR0c3NFyYlgiBbEyhQ1881Z0oE&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjiosnaD573LajklQ4M5NdDunTtG1su4
+&callback=myMap"></script>
         <script src="js/jquery.gmap.min.js"></script>
         <script type="text/javascript">
             var a = $('#address').val();

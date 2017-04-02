@@ -68,9 +68,6 @@
 
                                     </div>
                                 </div>
-                            <div class="exe-fa-paganitor">
-                                <img src="{{ asset('css/css/images/rookie-feature/h2.png') }}" alt="">
-                            </div>
                                 @endforeach
 
                         </div>

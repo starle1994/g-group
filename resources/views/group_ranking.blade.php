@@ -192,7 +192,7 @@
                         @endif
                         
 
-                        <div class="col-md-2 col-xs-2 item" style="">
+                        <div class="col-md-2 col-xs-2 item" style="margin-top: 30px">
                         <div class="title">
                            <img src="{{ asset($image)}}" alt="">
                         </div>
