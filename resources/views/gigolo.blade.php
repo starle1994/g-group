@@ -192,7 +192,7 @@
                         <p class="titleAva6"></p>
                     </div>
                     <div class="bannerContent">
-                        <div class="row rowPlus">
+                        <div class="row rowPlus" style="margin-left:0px">
                             @foreach($gigoloPageContents as $item)
                                 <div class="col-xs-6 bcLeft">
                                     <a href="{{route($item->alias)}}"><img src="{{ asset('uploads/'.$item->image) }}" alt=""></a>
