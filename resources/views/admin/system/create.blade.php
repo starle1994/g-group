@@ -25,12 +25,6 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('before_visiting', 'Before visiting', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::textarea('before_visiting', old('before_visiting'), array('class'=>'form-control ckeditor')) !!}
-        
-    </div>
-</div><div class="form-group">
     {!! Form::label('greeting', 'greeting', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('greeting', old('greeting'), array('class'=>'form-control ckeditor')) !!}
