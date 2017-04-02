@@ -474,7 +474,7 @@ footer {
     position: relative;
     padding: 0px; }
     .groupTop header #mainMenu .ctMenu {
-     position: absolute;
+      position: absolute;
       width: 100%;
       top: 0px;
       padding-top: 18px; }
@@ -700,7 +700,7 @@ footer {
 
 .gr-rank-lineSli #lineImg img {
   width: 100%;
-  margin-bottom: 30px; }
+  /*margin-bottom: 30px;*/ }
 
 .gr-rank-sliderAva {
   /*margin-bottom: 45px;*/ }
@@ -740,14 +740,14 @@ footer {
         color: white; }
     .gr-rank-containerSlider .right .avt-left .txt-2 {
       position: relative;
-      font-size: 64px;
+      font-size: 45px;
       color: white;
       text-align: center;
       font-weight: 700; }
 
 .gr-rank-p2 .contents {
   margin: 0px;
-  margin-top: 25px; }
+  /*margin-top: 25px;*/ }
   .gr-rank-p2 .contents .av-main .bg-lf {
     position: absolute;
     padding-right: 15px; }
@@ -794,7 +794,124 @@ footer {
     font-size: 40px; }
 
   .gr-rank-containerSlider .right .avt-left img {
-    width: 60px; } }
+    /*width: 60px;*/ } }
+@media screen and (min-width: 320px) and (min-width: 768px) {
+  .group-rankking-top #mainMenu {
+    display: inline-block;
+    top: 0px; } }
+@media screen and (min-width: 320px) and (min-width: 768px) {
+  .group-rankking-top #mainMenu .ctMenu {
+    position: absolute !important;
+    max-width: none !important; } }
+@media screen and (min-width: 320px) and (min-width: 768px) {
+  .group-rankking-top #mainMenu .ctMenu a {
+    display: initial;
+    padding-left: 40px !important;
+    border: none; } }
+@media screen and (min-width: 320px) and (min-width: 1280px) {
+  .group-rankking-top #mainMenu .ctMenu a {
+    padding-left: 0px !important;
+    display: inline-block; } }
+@media screen and (min-width: 320px) {
+  .group-rankking-top #main .bgCheo {
+    padding-left: 8%; } }
+  @media screen and (min-width: 320px) and (min-width: 768px) {
+    .group-rankking-top #main .bgCheo {
+      padding-left: 0px; } }
+@media screen and (min-width: 320px) {
+  .group-rankking-top #main #mainContetn .container-fluid {
+    padding-left: 0px;
+    padding-top: 50px; } }
+  @media screen and (min-width: 320px) and (min-width: 768px) {
+    .group-rankking-top #main #mainContetn .container-fluid {
+      padding-top: 0px; } }
+@media screen and (min-width: 320px) {
+    .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left {
+      margin-top: 0px;
+      padding-right: 0px;
+      padding-left: 0px; }
+      .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli {
+        margin-left: 0px;
+        margin-right: 0px; }
+        .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg {
+          width: 100%;
+          padding-left: 0px;
+          padding-right: 0px; } }
+        @media screen and (min-width: 320px) and (min-width: 768px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg {
+            width: 25%;
+            padding-left: 25px; } }
+        @media screen and (min-width: 320px) and (min-width: 1024px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg {
+            padding-left: 0px; } }
+@media screen and (min-width: 320px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg img {
+            max-width: 40%;
+            margin-left: 19px;
+            margin-bottom: 16px; } }
+          @media screen and (min-width: 320px) and (min-width: 600px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg img {
+              max-width: 30%;
+              margin-left: 9px; } }
+          @media screen and (min-width: 320px) and (min-width: 768px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli #lineImg img {
+              max-width: 100%;
+              margin-left: 0px; } }
+@media screen and (min-width: 320px) {
+        .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking {
+          padding-left: 0px;
+          padding-right: 0px;
+          width: 100%; } }
+        @media screen and (min-width: 320px) and (min-width: 768px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking {
+            width: 75%;
+            padding-left: 15px; } }
+@media screen and (min-width: 320px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf {
+            padding-right: 0px;
+            padding-left: 0px; }
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .bk-left {
+              width: 100%; }
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .bk-left img {
+                width: 100% !important;
+                height: auto !important; }
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .avt-left img {
+              width: 100%; }
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right {
+            padding-right: 0px;
+            padding-left: 0px; }
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .avt-left ul {
+              padding-top: 30px; }
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .avt-left .txt-2 {
+              font-size: 37px; } }
+            @media screen and (min-width: 320px) and (min-width: 1024px) {
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .avt-left .txt-2 {
+                font-size: 28px; } }
+@media screen and (min-width: 320px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .txt {
+              font-size: 40px; } }
+            @media screen and (min-width: 320px) and (min-width: 1024px) {
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .txt {
+                font-size: 30px; } }
+@media screen and (min-width: 320px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 {
+            padding-top: 30px; } }
+          @media screen and (min-width: 320px) and (min-width: 768px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 {
+              padding-top: 0px; } }
+@media screen and (min-width: 320px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .col-sm-6 {
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-bottom: 25px; }
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .ft-bk {
+              font-size: 25px; }
+    .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-right {
+      padding-top: 30px; } }
+    @media screen and (min-width: 320px) and (min-width: 768px) {
+      .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-right {
+        padding-top: 0px; } }
+
 .milion-god .home-right .logo {
   margin-bottom: 32px; }
   .milion-god .home-right .logo img {
@@ -3177,16 +3294,14 @@ footer {
   .youtube-list .right .content .row {
     margin: 0px; }
     .youtube-list .right .content .row .avatar-youtube .button-youtube {
-      height: 301px; } }
-
-/*# sourceMappingURL=style.css.map */
-.groupTop .titleAva1{
+      height: 301px; } 
+.groupTop .ct-ava .titleAva1{
    padding: 30px 0px 10px 35px;
  }
- .groupTop .titleAva2{
+ .groupTop .ct-ava .titleAva2{
    padding: 30px 0px 10px 35px;
  }
- .groupTop .titleAva3{
+ .groupTop .ct-ava .titleAva3{
    padding: 30px 0px 10px 35px;
  }
  .groupTop .titleAva4{
@@ -3199,6 +3314,16 @@ footer {
  .groupTop .titleAva6{
    padding: 30px 0px 10px 35px;
  }
+ .groupTop .titleAva1{
+   padding: 30px 0px 10px 35px;
+ }
+  .groupTop .titleAva2{
+   padding: 30px 0px 10px 35px;
+ }
+  }
+
+/*# sourceMappingURL=style.css.map */
+
  
  .bcLeft {
      padding-right: 0px;
@@ -3368,6 +3493,32 @@ footer {
   .container-fluid .bbq-list-item .left{
     padding-left: 20px;
   }
+  .groupTop .ct-ava .titleAva1{
+   padding: 15px 0px 10px 35px;
+ }
+ .groupTop .ct-ava .titleAva2{
+   padding: 15px 0px 10px 35px;
+ }
+ .groupTop .ct-ava .titleAva3{
+   padding: 15px 0px 10px 35px;
+ }
+ .groupTop .titleAva4{
+   padding: 15px 0px 10px 35px;
+ }
+ .groupTop .titleAva5{
+   padding: 15px 0px 10px 35px;
+ }
+ 
+ .groupTop .titleAva6{
+   padding: 15px 0px 10px 35px;
+ }
+ .groupTop .titleAva1{
+   padding: 15px 0px 10px 35px;
+ }
+ 
+ .groupTop .titleAva2{
+   padding: 15px 0px 10px 35px;
+ }
 }
 
 @media screen and (min-width: 1280px) and (min-width: 320px)

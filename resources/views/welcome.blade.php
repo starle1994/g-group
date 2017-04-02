@@ -145,12 +145,24 @@
                 </div>
             </div>
             @foreach($million_ranking_staff as $million)
-                <div class="col-xs-4 pdLeft">
+                <div class="col-xs-4 <?php if($million->ranking->number ==1) echo 'pdLeft' ;if($million->ranking->number ==2) echo 'pdCenter'; if($million->ranking->number ==3) echo 'pdRight'?> ">
                     <div class="ct-ava">
                         <img src="{{ asset('uploads/'.$million->image) }}" alt="{{$million->name}}">
+                        @if($million->ranking->number ==1)
                         <p class="titleAva1">
                             
                         </p>
+                        @endif
+                        @if($million->ranking->number ==2)
+                        <p class="titleAva2">
+                            
+                        </p>
+                        @endif
+                        @if($million->ranking->number ==3)
+                        <p class="titleAva3">
+                            
+                        </p>
+                        @endif
                     </div>
                 </div>
             @endforeach
@@ -161,16 +173,29 @@
                 </div>
             </div>
             @foreach($gigolo_ranking_staff as $gigolo)
-                <div class="col-xs-4 pdLeft">
+                <div class="col-xs-4 <?php if($gigolo->ranking->number ==1) echo 'pdLeft' ;if($gigolo->ranking->number ==2) echo 'pdCenter'; if($gigolo->ranking->number ==3) echo 'pdRight'?> ">
                     <div class="ct-ava">
                         <img src="{{ asset('uploads/'.$gigolo->image) }}" alt="{{$gigolo->name}}">
+                        @if($gigolo->ranking->number ==1)
                         <p class="titleAva1">
                             
                         </p>
+                        @endif
+                        @if($gigolo->ranking->number ==2)
+                        <p class="titleAva2">
+                            
+                        </p>
+                        @endif
+                        @if($gigolo->ranking->number ==3)
+                        <p class="titleAva3">
+                            
+                        </p>
+                        @endif
                     </div>
                 </div>
             @endforeach
         </div>
+       
         <div class="row lineSli">
             <div class="col-xs-3" id="lineImg">
                 <img src="{{ asset('css/css/images/group-rankking/Line@.jpg')}}" alt="">
