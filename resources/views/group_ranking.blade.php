@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style type="text/css">
+    a{
+        color: white;
+    }
+</style>
 <div class="row group-rankking">
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row gr-rank-lineSli">
@@ -160,7 +164,7 @@
                 <!-- dong 2 -->
                 <div  class="slider1">
                     <div class="gr-rank-sliderAva" style="margin-top: 30px">
-                        <img src="{{ asset('css/css/images/group-rankking/H2.jpg')}}" alt="">
+                        <img src="{{ asset('css/css/images/group-rankking/H3.jpg')}}" alt="">
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
@@ -195,12 +199,12 @@
                         
                         <div class="av-main">
                             <div class="avt-lf">
-                               <a href="{{route('ranking-staff')}}">  <img class="avt-img" src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt=""></a>
+                               <a href="{{route('staff-detail',base64_encode($group2->godstaffs->id))}}">  <img class="avt-img" src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt=""></a>
                             </div>
                         </div>
 
                         <div class="ft-bk">
-                                <a href="{{route('ranking-staff')}}"> {{$group2->godstaffs->name}}</a>
+                                <a href="{{route('staff-detail',base64_encode($group2->godstaffs->id))}}"> {{$group2->godstaffs->name}}</a>
                             </div>
                     </div>
                     @endforeach

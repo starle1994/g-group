@@ -1,6 +1,18 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+    .td-video-play-ico > img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 40px !important;
+}
+</style>
 <div class="row rkItem">
     <div class="col-xs-12 col-sm-7 home-left">
         <div class="col-xs-3 rkImgLeft">
@@ -29,7 +41,7 @@
 
                         @if($staff->staffphotos->isEmpty() != true)
                             @foreach($staff->staffphotos as $photo)
-                                <div class="item"><img class="" src="{{ asset('uploads/'.$photo->image)}}" alt=""></div>
+                                <div class="item"><img class="" src="{{ asset('uploads/'.$photo->photo)}}" alt=""></div>
                             @endforeach
                         @endif
                     </div>
@@ -41,20 +53,53 @@
                 <div class="containerSlider">
                     <div class="owl-carousel owlRankking owl-theme">
                         @if($staff->staffmovies->isEmpty() != true)
-                            @foreach($staff->staffmovies as $movie)
-                                <div class="item"><img class="" src="{{ asset('uploads/'.$movie->image)}}" alt=""></div>
+                            @foreach($staff->staffmovies as $item)
+                                <?php                 
+                                    if ($item->image == null) {
+                                        $embedCode = '<iframe src="'.$item->link.'" frameborder="0" allowfullscreen></iframe>';
+                                        preg_match('/src="([^"]+)"/', $embedCode, $match);
+
+                                        // Extract video url from embed code
+                                        $videoURL = $match[1];
+                                        $urlArr = explode("/",$videoURL);
+                                        $urlArrNum = count($urlArr);
+
+                                        // YouTube video ID
+                                        $youtubeVideoId = $urlArr[$urlArrNum - 1];
+
+                                        // Generate youtube thumbnail url
+                                        $thumbURL = 'http://img.youtube.com/vi/'.$youtubeVideoId.'/0.jpg';
+                                    }else{
+                                        $thumbURL = asset('uploads/'.$item->image);
+                                    }                  
+                                    $target = 'myModal-'.$item->id ; 
+                                    $target_1= '#'.$target ;
+                                ?>  
+                                <div class="item">
+                                    <img class="" src="{!! $thumbURL !!}" alt="">
+                                    <span class="td-video-play-ico">
+                                        <img class="td-retina" src="{!! asset('css/css/images/ico-video-large.png') !!}" alt="video">
+                                    </span>
+                                </div>
                             @endforeach
                         @endif
                     </div>
                 </div>
             </div>
 
-
-
             <div class="rkBot">
                 <p>過去の実績</p>
                 @foreach($logs as $log)
-                    <span>{{$log->year}}年{{$log->month}}月{{$staff->shopslist->name}}No.3</span>
+                    @if($log->type == 1)
+                        <span>{{$log->year}}年{{$log->month}}グループ売上ランキングNo.{{$log->ranking->number}}</span>
+                    @else 
+                        @if($log->type == 2)
+                            <span>{{$log->year}}年{{$log->month}}月グループ指名本数ランキングNo.{{$log->ranking->number}}</span>
+                        @else
+                            <span>{{$log->year}}年{{$log->month}}月{{$staff->shopslist->name}}No.{{$log->ranking->number}}</span>
+                        @endif
+                    @endif
+                    
                 @endforeach
             </div>
         </div>

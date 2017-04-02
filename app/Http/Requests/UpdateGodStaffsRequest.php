@@ -26,7 +26,7 @@ class UpdateGodStaffsRequest extends FormRequest {
 		return [
             'shopslist_id' => 'required', 
             'name' => 'required', 
-            'image' => 'required', 
+            
             
 		];
 	}

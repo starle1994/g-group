@@ -10,7 +10,7 @@ use App\Http\Requests\CreateStaffMoviesRequest;
 use App\Http\Requests\UpdateStaffMoviesRequest;
 use Illuminate\Http\Request;
 
-use App\Staffs;
+use App\GodStaffs;
 
 
 class StaffMoviesController extends Controller {
@@ -36,7 +36,7 @@ class StaffMoviesController extends Controller {
 	 */
 	public function create()
 	{
-	    $staffs = Staffs::pluck("name", "id")->prepend('Please select', null);
+	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 
 	    
 	    return view('admin.staffmovies.create', compact("staffs"));
@@ -64,7 +64,7 @@ class StaffMoviesController extends Controller {
 	public function edit($id)
 	{
 		$staffmovies = StaffMovies::find($id);
-	    $staffs = Staffs::pluck("name", "id")->prepend('Please select', null);
+	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
 
 	    
 		return view('admin.staffmovies.edit', compact('staffmovies', "staffs"));

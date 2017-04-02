@@ -130,7 +130,7 @@ class HomeController extends Controller
 	{
 		$id = base64_decode($id);
 		$staff = GodStaffs::where('id',$id)->with('staffphotos')->first();
-		$logs = LogGroupRanking::where('id_staff', $staff->id)->get();
+		$logs = LogGroupRanking::where('id_staff', $staff->id)->with('ranking')->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('staff_detail',compact('staff','logs','banner'));
 	}

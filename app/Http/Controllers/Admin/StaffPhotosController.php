@@ -11,6 +11,7 @@ use App\Http\Requests\UpdateStaffPhotosRequest;
 use Illuminate\Http\Request;
 use App\GodStaffs;
 use Image;
+use App\Http\Controllers\Traits\FileUploadTrait;
 
 class StaffPhotosController extends Controller {
 
@@ -103,8 +104,8 @@ class StaffPhotosController extends Controller {
 	{
 		$staffphotos = StaffPhotos::findOrFail($id);
 
+        $request = $this->saveFiles($request);
         
-
 		$staffphotos->update($request->all());
 
 		return redirect()->route(config('quickadmin.route').'.staffphotos.index');

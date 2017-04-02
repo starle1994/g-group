@@ -28,4 +28,9 @@ class LogGroupRanking extends Model {
           'month',
           'year'
     ];
+
+    public function ranking()
+    {
+        return $this->hasOne('App\Ranking', 'id', 'id_ranking');
+    }
 }
