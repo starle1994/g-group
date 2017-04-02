@@ -75,7 +75,7 @@
                                     $target = 'myModal-'.$item->id ; 
                                     $target_1= '#'.$target ;
                                 ?>  
-                                <div class="item">
+                                <div class="item" data-toggle="modal" data-target="{{$target_1}}">
                                     <img class="" src="{!! $thumbURL !!}" alt="">
                                     <span class="td-video-play-ico">
                                         <img class="td-retina" src="{!! asset('css/css/images/ico-video-large.png') !!}" alt="video">
@@ -109,4 +109,28 @@
         @include('include.categories_right')
     </div>
 </div>
+@if($staff->staffmovies->isEmpty() != true)
+            @foreach($staff->staffmovies as $item)
+                <?php 
+                    $target = 'myModal-'.$item->id ; 
+                ?>                 
+    <div id="{{$target}}" class="modal fade" data-backdrop="static"  >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">{{$item->id}}</h4>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9" class="modal-body" >
+              <iframe  src="{{$item->link}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+  </div> 
+  @endforeach
+@endif
+
 @endsection

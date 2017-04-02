@@ -3,10 +3,10 @@
   /*background-repeat: no-repea*/
 }
 
-#mainContetn {
+/*#mainContetn {
     background: url(images/grouptop/bg-group.jpg) no-repeat;
   background-size: 100% 100%;
-}
+}*/
 
 .system{
     color: black;
@@ -201,10 +201,10 @@
 }
 
 @media(max-width: 320px){ 
-    #mainContetn {
+   /* #mainContetn {
         background: url(images/grouptop/bg-group.jpg);
         background-size: 100% 100% !important;
-    }
+    }*/
 
     .textSyst {
         .anh-gioi-thieu {
@@ -371,10 +371,10 @@
 }
 
 @media(min-width: 600px){
-    #mainContetn {
+    /*#mainContetn {
         background: url(images/grouptop/bg-group.jpg);
         background-size: 100% 100% !important;
-    }
+    }*/
     .contentSyst {
         .anh-gioi-thieu {
             img {
@@ -390,7 +390,7 @@
                 color: red;
             }
             p {
-                font-size: 14px;
+                font-size: 20px;
                 /*margin: 20px;*/
                 padding: 10px;
                 text-align: center;
@@ -408,7 +408,7 @@
 
         .titText-paraph {
             p {
-                font-size: 14px;
+                font-size: 20px;
                 margin-left: 20px;
             }
         }
@@ -475,7 +475,7 @@
 
         .titText-h4-pa {
             p {
-                font-size: 14px;
+                font-size: 20px;
             }
         }
 
@@ -514,7 +514,7 @@
 
         .titText-h7-pa {
             p {
-                font-size: 14px;
+                font-size: 20px;
             }
         }
 
@@ -571,10 +571,10 @@
 
 @media(min-width: 768px){
     .system {
-        #mainContetn {
+        /*#mainContetn {
             background: url(images/grouptop/bg-group.jpg);
             background-size: 100% 100% !important;
-        }
+        }*/
 
         .home-right {
             float: right;
@@ -685,7 +685,7 @@
 
             .titText-h4-pa {
                 p {
-                    font-size: 14px;
+                    font-size: 20px;
                 }
             }
 
@@ -724,7 +724,7 @@
 
             .titText-h7-pa {
                 p {
-                    font-size: 14px;
+                    font-size: 20px;
                 }
             }
 
@@ -739,7 +739,7 @@
 
             .syscontent3 {
                 p{
-                    font-size: 14px;
+                    font-size: 20px;
                 }
                 .note {
                     color: red;
@@ -789,6 +789,17 @@
                 margin-bottom: 20px;
                 float: left;
                 padding: 15px;
+            }
+        }
+    }
+
+    .titText-h3-content {   
+        .pa {
+            p {
+                font-size: 15px;
+                    padding-left: 100px !important;
+                    /*padding-top: 67px !important;*/
+                    line-height: 34px !important;
             }
         }
     }

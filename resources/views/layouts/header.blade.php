@@ -12,15 +12,19 @@
                             <div class="col-sm-3 hidden-xs">
                                 <a href=""><img class="logoTop" src="{{ asset('css/css/images/grouptop/logoGiga.png') }}" alt=""></a>
                             </div>
+                            <img id="menu" class="visible-xs" src="{{ asset('css/css/images/menu.png') }}" alt="">
+                <a href=""></a>
                        </div>
                    </div>
+
                 </div>
+
                 <div class="mapBanner">
                     <img class="bgLogo" src="{{ asset('css/css/images/grouptop/bg-logo.jpg') }}" alt="">
                 </div>
-                <img id="menu" class="visible-xs" src="{{ asset('css/css/images/menu.png') }}" alt="">
-                <a href=""></a>
+                
             </div>
+            <div style="clear: both;"> </div>
             <div id="bannerMain">
                <img src="{{ asset('uploads/'.$banner->image) }}" alt="Flower">
                 @if($banner->page==1)

@@ -1,10 +1,10 @@
 .recruit {
   /*background-repeat: no-repea*/ }
 
-#mainContetn {
-  background: url(images/grouptop/bg-group.jpg) no-repeat;
-  background-size: 100% 100%; }
-
+/*#mainContetn {
+    background: url(images/grouptop/bg-group.jpg) no-repeat;
+  background-size: 100% 100%;
+}*/
 .system {
   color: black; }
   .system .flexImg {
@@ -151,10 +151,10 @@
   .system .contentSyst .syscontent4 .card .flexCard {
     margin-top: 40px; } }
 @media (max-width: 320px) {
-  #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-
+  /* #mainContetn {
+       background: url(images/grouptop/bg-group.jpg);
+       background-size: 100% 100% !important;
+   }*/
   .textSyst .anh-gioi-thieu img {
     width: 100%;
     margin-bottom: 20px; }
@@ -264,10 +264,10 @@
     .textSyst .titText-h9-ct p {
       margin-bottom: 20px; } }
 @media (min-width: 600px) {
-  #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-
+  /*#mainContetn {
+      background: url(images/grouptop/bg-group.jpg);
+      background-size: 100% 100% !important;
+  }*/
   .contentSyst .anh-gioi-thieu img {
     width: 100%;
     padding: 20px; }
@@ -393,144 +393,152 @@
     .contentSyst .titText-h9-ct p {
       margin-bottom: 20px; } }
 @media (min-width: 768px) {
-  .system #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-  .system .home-right {
-    float: right;
-    width: 75%; }
-  .system .col-sm-10 {
-    width: 75%; }
-  .system .contentSyst .anh-gioi-thieu img {
-    width: 100%;
-    padding: 20px; }
-  .system .contentSyst .text1 {
-    background: url(images/recruit/a3.png) no-repeat;
-    background-size: 3050%;
-    /*padding: 50px 0 80px 0;*/ }
-    .system .contentSyst .text1 .txt-span {
-      color: red; }
-    .system .contentSyst .text1 p {
+  .system {
+    /*#mainContetn {
+        background: url(images/grouptop/bg-group.jpg);
+        background-size: 100% 100% !important;
+    }*/ }
+    .system .home-right {
+      float: right;
+      width: 75%; }
+    .system .col-sm-10 {
+      width: 75%; }
+    .system .contentSyst .anh-gioi-thieu img {
+      width: 100%;
+      padding: 20px; }
+    .system .contentSyst .text1 {
+      background: url(images/recruit/a3.png) no-repeat;
+      background-size: 3050%;
+      /*padding: 50px 0 80px 0;*/ }
+      .system .contentSyst .text1 .txt-span {
+        color: red; }
+      .system .contentSyst .text1 p {
+        font-size: 20px;
+        /*margin: 20px;*/
+        padding: 10px;
+        text-align: center; }
+    .system .contentSyst .titText-h1 {
+      background: url(images/recruit/h1.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-paraph p {
       font-size: 20px;
-      /*margin: 20px;*/
-      padding: 10px;
-      text-align: center; }
-  .system .contentSyst .titText-h1 {
-    background: url(images/recruit/h1.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-paraph p {
-    font-size: 20px;
-    margin-left: 20px; }
-  .system .contentSyst .titText-h2 {
-    background: url(images/recruit/h2.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .bgContent {
-    background: url(images/system/bgContent2.png) no-repeat;
-    background-size: 100% 100%;
-    text-align: center;
-    padding: 50px 30%; }
-    .system .contentSyst .bgContent span {
-      display: block;
-      color: white;
-      font-size: 16px;
-      margin: 10px 0;
-      text-align: left;
-      font-weight: bold; }
-  .system .contentSyst .titText-h3 {
-    background: url(images/recruit/h3.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h3-content {
-    margin: 0px;
-    background: url(images/system/bgContent4.png) no-repeat;
-    background-size: 100% 100%;
-    padding: 50px 0 80px 0; }
-    .system .contentSyst .titText-h3-content .pa {
-      padding-right: 0px;
-      padding-left: 0px; }
-      .system .contentSyst .titText-h3-content .pa p {
-        padding-left: 50px;
-        padding-right: 50px;
-        /*padding-top: 30px;*/ }
-  .system .contentSyst .titText-h4 {
-    background: url(images/recruit/h4.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h4-pa p {
-    font-size: 20px; }
-  .system .contentSyst .titText-h6 {
-    background: url(images/recruit/h6.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h6-pa p .star {
-    color: red; }
-  .system .contentSyst .titText-h6-pa .star {
-    color: red; }
-  .system .contentSyst .titText-h6-pa p {
-    margin-bottom: 30px;
-    font-size: 20px; }
-  .system .contentSyst .titText-h7 {
-    background: url(images/recruit/h7.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h7-pa p {
-    font-size: 20px; }
-  .system .contentSyst .titText-h8 {
-    background: url(images/recruit/h8.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .syscontent3 p {
-    font-size: 20px; }
-  .system .contentSyst .syscontent3 .note {
-    color: red; }
-  .system .contentSyst .syscontent3 .tel {
-    color: 5458ff; }
-  .system .contentSyst .syscontent3 .dong-ke {
-    background: url(images/recruit/o_sen3.png);
-    height: 10px; }
-  .system .contentSyst .titText-h9 {
-    background: url(images/recruit/h9.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h9-ct {
-    margin: 0px; }
-    .system .contentSyst .titText-h9-ct .col-sm-6 {
-      padding-left: 0px;
-      padding-right: 0px;
-      background-color: #eeeeee; }
-    .system .contentSyst .titText-h9-ct p {
-      margin-bottom: 20px; } }
+      margin-left: 20px; }
+    .system .contentSyst .titText-h2 {
+      background: url(images/recruit/h2.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .bgContent {
+      background: url(images/system/bgContent2.png) no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      padding: 50px 30%; }
+      .system .contentSyst .bgContent span {
+        display: block;
+        color: white;
+        font-size: 16px;
+        margin: 10px 0;
+        text-align: left;
+        font-weight: bold; }
+    .system .contentSyst .titText-h3 {
+      background: url(images/recruit/h3.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h3-content {
+      margin: 0px;
+      background: url(images/system/bgContent4.png) no-repeat;
+      background-size: 100% 100%;
+      padding: 50px 0 80px 0; }
+      .system .contentSyst .titText-h3-content .pa {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .system .contentSyst .titText-h3-content .pa p {
+          padding-left: 50px;
+          padding-right: 50px;
+          /*padding-top: 30px;*/ }
+    .system .contentSyst .titText-h4 {
+      background: url(images/recruit/h4.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h4-pa p {
+      font-size: 20px; }
+    .system .contentSyst .titText-h6 {
+      background: url(images/recruit/h6.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h6-pa p .star {
+      color: red; }
+    .system .contentSyst .titText-h6-pa .star {
+      color: red; }
+    .system .contentSyst .titText-h6-pa p {
+      margin-bottom: 30px;
+      font-size: 20px; }
+    .system .contentSyst .titText-h7 {
+      background: url(images/recruit/h7.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h7-pa p {
+      font-size: 20px; }
+    .system .contentSyst .titText-h8 {
+      background: url(images/recruit/h8.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .syscontent3 p {
+      font-size: 20px; }
+    .system .contentSyst .syscontent3 .note {
+      color: red; }
+    .system .contentSyst .syscontent3 .tel {
+      color: 5458ff; }
+    .system .contentSyst .syscontent3 .dong-ke {
+      background: url(images/recruit/o_sen3.png);
+      height: 10px; }
+    .system .contentSyst .titText-h9 {
+      background: url(images/recruit/h9.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h9-ct {
+      margin: 0px; }
+      .system .contentSyst .titText-h9-ct .col-sm-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+        background-color: #eeeeee; }
+      .system .contentSyst .titText-h9-ct p {
+        margin-bottom: 20px; } }
 @media (min-width: 1280px) {
   .textSyst .anh-gioi-thieu img {
     width: 50%;
     margin-bottom: 20px;
     float: left;
-    padding: 15px; } }
+    padding: 15px; }
+
+  .titText-h3-content .pa p {
+    font-size: 15px;
+    padding-left: 100px !important;
+    /*padding-top: 67px !important;*/
+    line-height: 34px !important; } }
 
 /*# sourceMappingURL=recruit.css.map */

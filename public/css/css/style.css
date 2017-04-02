@@ -24,15 +24,15 @@
     width: 100%; }
 
 #mainMenu {
-  background-color: #d20000;
+  /*background-color: #d20000;*/
   text-align: center;
   padding: 10px 0px; }
   #mainMenu a {
     width: 15%;
-    max-width: 145px;
+    max-width: 113px;
     display: inline-block;
     color: white;
-    font-size: 16px;
+    font-size: 13px;
     padding: 5px 0; }
 
 .infoTop {
@@ -338,63 +338,107 @@ footer {
       .gs-1-left .content-top .item img {
         max-width: 100%; }
 
-.shop-list-avaId {
-  margin-top: 20px;
-  /*background-color: white;*/
-  overflow: auto;
-  border-radius: 10px; }
-
-.shop-list-home-left {
-  /*margin-top: 30px;*/
-  padding: 0; }
-  .shop-list-home-left img {
-    margin-bottom: 25px; }
-
-.shop-list-content-item {
-  margin-left: 0px;
-  margin-right: 0px;
-  background-color: #fff; }
-  .shop-list-content-item .replace {
-    height: 340px; }
-
-.shop-list-item {
-  padding-top: 74px; }
-  .shop-list-item .shop-list-pgh {
-    font-size: 24px;
-    text-align: center;
-    line-height: 2;
-    font-weight: bold; }
-  .shop-list-item .shop-list-pgp {
-    font-size: 19px;
-    /*text-align: center;*/
-    line-height: 2;
-    /*font-weight: bold;*/
-    margin-left: 10px; }
-  .shop-list-item .right {
-    position: relative; }
-    .shop-list-item .right .chil {
-      position: absolute;
-      left: 20px;
-      top: 20px; }
-    .shop-list-item .right .parent {
-      padding-right: 20px;
-      width: 100%; }
-  .shop-list-item .ft {
-    text-align: center; }
-  .shop-list-item .shop-list-line {
-    margin-top: 55px;
-    /*text-align: center;*/
-    padding-left: 10px;
-    padding-right: 10px;
-    /*margin-bottom: 50px;*/ }
-    .shop-list-item .shop-list-line img {
-      width: 100%; }
-
-.shop-list-footer .paginators {
-  padding: 0px; }
-.shop-list-footer img {
-  width: 100%; }
-
+@media screen and (min-width: 320px) and (min-width: 1280px) {
+  .shop_list #main #mainContetn {
+    padding-top: 80px; } }
+@media screen and (min-width: 320px) {
+  .shop_list #main .container-fluid {
+    padding-left: 0px; }
+    .shop_list #main .container-fluid .shop-list-home-left {
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center; } }
+    @media screen and (min-width: 320px) and (min-width: 1280px) {
+      .shop_list #main .container-fluid .shop-list-home-left {
+        padding-top: 0px;
+        padding-bottom: 0px; } }
+@media screen and (min-width: 320px) {
+      .shop_list #main .container-fluid .shop-list-home-left img {
+        max-width: 40%;
+        padding: 5px; } }
+      @media screen and (min-width: 320px) and (min-width: 600px) {
+        .shop_list #main .container-fluid .shop-list-home-left img {
+          max-width: 19%; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .shop-list-home-left img {
+          max-width: 80%;
+          padding-bottom: 25px; } }
+@media screen and (min-width: 320px) {
+    .shop_list #main .container-fluid .content {
+      padding-right: 0px;
+      padding-left: 0px; }
+      .shop_list #main .container-fluid .content .shop-list-title img {
+        max-width: 100%; }
+      .shop_list #main .container-fluid .content .shop-list-content-item {
+        margin-left: 0px;
+        margin-right: 0px;
+        background-color: #ffffff; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item {
+          padding-top: 50px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .row {
+          margin-right: 0px;
+          margin-left: 0px; }
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .row .col-sm-6 {
+            padding-left: 0px;
+            padding-right: 0px; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+          text-align: center;
+          margin: 10px 0px 10px;
+          font-weight: bold; } }
+        @media screen and (min-width: 320px) and (min-width: 600px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+            font-size: 20px;
+            line-height: 2; } }
+        @media screen and (min-width: 320px) and (min-width: 1280px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+            font-size: 25px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgp {
+          padding-left: 10px;
+          text-align: left; } }
+        @media screen and (min-width: 320px) and (min-width: 600px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgp {
+            font-size: 20px;
+            padding-left: 45px; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .relation-image img {
+          padding-right: 30px;
+          padding-left: 30px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .parent {
+          position: relative; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .chil {
+          position: absolute;
+          top: 10px; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item img {
+          max-width: 100%; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .item-button {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-align: center; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line {
+          padding-top: 50px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line img {
+          max-width: 100%;
+          height: 10px;
+          margin-bottom: 10px; } }
+        @media screen and (min-width: 320px) and (min-width: 1280px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line img {
+            width: 100%; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .clear-KH {
+          height: 300px; }
+      .shop_list #main .container-fluid .content .paginators {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .shop_list #main .container-fluid .content .paginators img {
+          max-width: 100%; } }
 .groupTop {
   background-image: url(images/grouptop/bg-group.jpg);
   background-size: 100% 100%;
@@ -430,7 +474,7 @@ footer {
     position: relative;
     padding: 0px; }
     .groupTop header #mainMenu .ctMenu {
-      position: absolute;
+     position: absolute;
       width: 100%;
       top: 0px;
       padding-top: 18px; }
@@ -447,9 +491,22 @@ footer {
           padding-top: 3px; } }
       @media (max-width: 992px) {
         .groupTop header #mainMenu .ctMenu {
+          /*position: none;*/
           padding-top: 0px; }
           .groupTop header #mainMenu .ctMenu a {
             padding: 0px; } }
+      @media (min-width: 320px) {
+        .groupTop header #mainMenu .ctMenu {
+          /*padding-top: 3px;*/
+          max-width: 40%;
+          float: right;
+          position: initial; } }
+      @media (min-width: 1280px) {
+        .groupTop header #mainMenu .ctMenu {
+          /*padding-top: 3px;*/
+          max-width: 100%;
+          float: right;
+          position: absolute; } }
     .groupTop header #mainMenu img {
       width: 100%; }
   .groupTop header .img-logo {
@@ -473,8 +530,7 @@ footer {
     overflow: auto;
     overflow-x: hidden; }
   .groupTop #mainContetn {
-    position: absolute;
-
+    /*position: absolute;*/
     background-image: url(images/grouptop/bg-group.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -2358,10 +2414,10 @@ footer {
 .recruit {
   /*background-repeat: no-repea*/ }
 
-#mainContetn {
-  background: url(images/grouptop/bg-group.jpg) no-repeat;
-  background-size: 100% 100%; }
-
+/*#mainContetn {
+    background: url(images/grouptop/bg-group.jpg) no-repeat;
+  background-size: 100% 100%;
+}*/
 .system {
   color: black; }
   .system .flexImg {
@@ -2508,10 +2564,10 @@ footer {
   .system .contentSyst .syscontent4 .card .flexCard {
     margin-top: 40px; } }
 @media (max-width: 320px) {
-  #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-
+  /* #mainContetn {
+       background: url(images/grouptop/bg-group.jpg);
+       background-size: 100% 100% !important;
+   }*/
   .textSyst .anh-gioi-thieu img {
     width: 100%;
     margin-bottom: 20px; }
@@ -2621,10 +2677,10 @@ footer {
     .textSyst .titText-h9-ct p {
       margin-bottom: 20px; } }
 @media (min-width: 600px) {
-  #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-
+  /*#mainContetn {
+      background: url(images/grouptop/bg-group.jpg);
+      background-size: 100% 100% !important;
+  }*/
   .contentSyst .anh-gioi-thieu img {
     width: 100%;
     padding: 20px; }
@@ -2634,7 +2690,7 @@ footer {
     .contentSyst .text1 .txt-span {
       color: red; }
     .contentSyst .text1 p {
-      font-size: 14px;
+      font-size: 20px;
       /*margin: 20px;*/
       padding: 10px;
       text-align: center; }
@@ -2646,7 +2702,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-paraph p {
-    font-size: 14px;
+    font-size: 20px;
     margin-left: 20px; }
   .contentSyst .titText-h2 {
     background: url(images/recruit/h2.png) no-repeat;
@@ -2694,7 +2750,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-h4-pa p {
-    font-size: 14px; }
+    font-size: 20px; }
   .contentSyst .titText-h6 {
     background: url(images/recruit/h6.png) no-repeat;
     background-size: 100% 100%;
@@ -2717,7 +2773,7 @@ footer {
     padding: 10px 0px;
     margin-bottom: 20px; }
   .contentSyst .titText-h7-pa p {
-    font-size: 14px; }
+    font-size: 20px; }
   .contentSyst .titText-h8 {
     background: url(images/recruit/h8.png) no-repeat;
     background-size: 100% 100%;
@@ -2750,145 +2806,153 @@ footer {
     .contentSyst .titText-h9-ct p {
       margin-bottom: 20px; } }
 @media (min-width: 768px) {
-  .system #mainContetn {
-    background: url(images/grouptop/bg-group.jpg);
-    background-size: 100% 100% !important; }
-  .system .home-right {
-    float: right;
-    width: 75%; }
-  .system .col-sm-10 {
-    width: 75%; }
-  .system .contentSyst .anh-gioi-thieu img {
-    width: 100%;
-    padding: 20px; }
-  .system .contentSyst .text1 {
-    background: url(images/recruit/a3.png) no-repeat;
-    background-size: 3050%;
-    /*padding: 50px 0 80px 0;*/ }
-    .system .contentSyst .text1 .txt-span {
-      color: red; }
-    .system .contentSyst .text1 p {
+  .system {
+    /*#mainContetn {
+        background: url(images/grouptop/bg-group.jpg);
+        background-size: 100% 100% !important;
+    }*/ }
+    .system .home-right {
+      float: right;
+      width: 75%; }
+    .system .col-sm-10 {
+      width: 75%; }
+    .system .contentSyst .anh-gioi-thieu img {
+      width: 100%;
+      padding: 20px; }
+    .system .contentSyst .text1 {
+      background: url(images/recruit/a3.png) no-repeat;
+      background-size: 3050%;
+      /*padding: 50px 0 80px 0;*/ }
+      .system .contentSyst .text1 .txt-span {
+        color: red; }
+      .system .contentSyst .text1 p {
+        font-size: 20px;
+        /*margin: 20px;*/
+        padding: 10px;
+        text-align: center; }
+    .system .contentSyst .titText-h1 {
+      background: url(images/recruit/h1.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-paraph p {
       font-size: 20px;
-      /*margin: 20px;*/
-      padding: 10px;
-      text-align: center; }
-  .system .contentSyst .titText-h1 {
-    background: url(images/recruit/h1.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-paraph p {
-    font-size: 20px;
-    margin-left: 20px; }
-  .system .contentSyst .titText-h2 {
-    background: url(images/recruit/h2.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .bgContent {
-    background: url(images/system/bgContent2.png) no-repeat;
-    background-size: 100% 100%;
-    text-align: center;
-    padding: 50px 30%; }
-    .system .contentSyst .bgContent span {
-      display: block;
-      color: white;
-      font-size: 16px;
-      margin: 10px 0;
-      text-align: left;
-      font-weight: bold; }
-  .system .contentSyst .titText-h3 {
-    background: url(images/recruit/h3.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h3-content {
-    margin: 0px;
-    background: url(images/system/bgContent4.png) no-repeat;
-    background-size: 100% 100%;
-    padding: 50px 0 80px 0; }
-    .system .contentSyst .titText-h3-content .pa {
-      padding-right: 0px;
-      padding-left: 0px; }
-      .system .contentSyst .titText-h3-content .pa p {
-        padding-left: 50px;
-        padding-right: 50px;
-        /*padding-top: 30px;*/ }
-  .system .contentSyst .titText-h4 {
-    background: url(images/recruit/h4.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h4-pa p {
-    font-size: 14px; }
-  .system .contentSyst .titText-h6 {
-    background: url(images/recruit/h6.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h6-pa p .star {
-    color: red; }
-  .system .contentSyst .titText-h6-pa .star {
-    color: red; }
-  .system .contentSyst .titText-h6-pa p {
-    margin-bottom: 30px;
-    font-size: 20px; }
-  .system .contentSyst .titText-h7 {
-    background: url(images/recruit/h7.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h7-pa p {
-    font-size: 14px; }
-  .system .contentSyst .titText-h8 {
-    background: url(images/recruit/h8.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .syscontent3 p {
-    font-size: 14px; }
-  .system .contentSyst .syscontent3 .note {
-    color: red; }
-  .system .contentSyst .syscontent3 .tel {
-    color: 5458ff; }
-  .system .contentSyst .syscontent3 .dong-ke {
-    background: url(images/recruit/o_sen3.png);
-    height: 10px; }
-  .system .contentSyst .titText-h9 {
-    background: url(images/recruit/h9.png) no-repeat;
-    background-size: 100% 100%;
-    margin-top: 20px;
-    height: 56px;
-    padding: 10px 0px;
-    margin-bottom: 20px; }
-  .system .contentSyst .titText-h9-ct {
-    margin: 0px; }
-    .system .contentSyst .titText-h9-ct .col-sm-6 {
-      padding-left: 0px;
-      padding-right: 0px;
-      background-color: #eeeeee; }
-    .system .contentSyst .titText-h9-ct p {
-      margin-bottom: 20px; } }
+      margin-left: 20px; }
+    .system .contentSyst .titText-h2 {
+      background: url(images/recruit/h2.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .bgContent {
+      background: url(images/system/bgContent2.png) no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+      padding: 50px 30%; }
+      .system .contentSyst .bgContent span {
+        display: block;
+        color: white;
+        font-size: 16px;
+        margin: 10px 0;
+        text-align: left;
+        font-weight: bold; }
+    .system .contentSyst .titText-h3 {
+      background: url(images/recruit/h3.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h3-content {
+      margin: 0px;
+      background: url(images/system/bgContent4.png) no-repeat;
+      background-size: 100% 100%;
+      padding: 50px 0 80px 0; }
+      .system .contentSyst .titText-h3-content .pa {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .system .contentSyst .titText-h3-content .pa p {
+          padding-left: 50px;
+          padding-right: 50px;
+          /*padding-top: 30px;*/ }
+    .system .contentSyst .titText-h4 {
+      background: url(images/recruit/h4.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h4-pa p {
+      font-size: 20px; }
+    .system .contentSyst .titText-h6 {
+      background: url(images/recruit/h6.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h6-pa p .star {
+      color: red; }
+    .system .contentSyst .titText-h6-pa .star {
+      color: red; }
+    .system .contentSyst .titText-h6-pa p {
+      margin-bottom: 30px;
+      font-size: 20px; }
+    .system .contentSyst .titText-h7 {
+      background: url(images/recruit/h7.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h7-pa p {
+      font-size: 20px; }
+    .system .contentSyst .titText-h8 {
+      background: url(images/recruit/h8.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .syscontent3 p {
+      font-size: 20px; }
+    .system .contentSyst .syscontent3 .note {
+      color: red; }
+    .system .contentSyst .syscontent3 .tel {
+      color: 5458ff; }
+    .system .contentSyst .syscontent3 .dong-ke {
+      background: url(images/recruit/o_sen3.png);
+      height: 10px; }
+    .system .contentSyst .titText-h9 {
+      background: url(images/recruit/h9.png) no-repeat;
+      background-size: 100% 100%;
+      margin-top: 20px;
+      height: 56px;
+      padding: 10px 0px;
+      margin-bottom: 20px; }
+    .system .contentSyst .titText-h9-ct {
+      margin: 0px; }
+      .system .contentSyst .titText-h9-ct .col-sm-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+        background-color: #eeeeee; }
+      .system .contentSyst .titText-h9-ct p {
+        margin-bottom: 20px; } }
 @media (min-width: 1280px) {
   .textSyst .anh-gioi-thieu img {
     width: 50%;
     margin-bottom: 20px;
     float: left;
-    padding: 15px; } }
+    padding: 15px; }
+
+  .titText-h3-content .pa p {
+    font-size: 15px;
+    padding-left: 100px !important;
+    /*padding-top: 67px !important;*/
+    line-height: 34px !important; } }
 @media all and (min-width: 320px) {
   .container-fluid {
     padding-right: 0px; }
@@ -3270,4 +3334,48 @@ footer {
 
 .last-song .content{
       background: url(images/dialogue-item/bk-lg.jpg);
+}
+
+@media (max-width: 767px){
+  #mainMenu {
+      position: fixed !important;
+      display: none;
+      top: 19px;
+      z-index: 10;
+      left: 0px;
+      width: 100%;
+  }
+  #menu {
+    float: right;
+    width: 20px;
+    margin-right: 20px;
+    margin-top: 3px;
+}
+
+
+}
+@media (max-width: 768px)
+{
+  .home-left, .title-Right {
+      margin-top: 0px;
+  }
+  .row, .thumbnails {
+    margin-left: -15px;
+}
+.groupTop header #mainMenu .ctMenu{
+  padding-top: 0px;
+}
+  .container-fluid .bbq-list-item .left{
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-width: 320px)
+{
+  .shop_list #main #mainContetn {
+      padding-top: 20px;
+  }
+  .exe-fa{
+    margin-top: 0px;
+  }
 }

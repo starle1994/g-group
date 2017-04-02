@@ -1,58 +1,103 @@
-.shop-list-avaId {
-  margin-top: 20px;
-  /*background-color: white;*/
-  overflow: auto;
-  border-radius: 10px; }
-
-.shop-list-home-left {
-  /*margin-top: 30px;*/
-  padding: 0; }
-  .shop-list-home-left img {
-    margin-bottom: 25px; }
-
-.shop-list-content-item {
-  margin-left: 0px;
-  margin-right: 0px;
-  background-color: #fff; }
-  .shop-list-content-item .replace {
-    height: 340px; }
-
-.shop-list-item {
-  padding-top: 74px; }
-  .shop-list-item .shop-list-pgh {
-    font-size: 24px;
-    text-align: center;
-    line-height: 2;
-    font-weight: bold; }
-  .shop-list-item .shop-list-pgp {
-    font-size: 19px;
-    /*text-align: center;*/
-    line-height: 2;
-    /*font-weight: bold;*/
-    margin-left: 10px; }
-  .shop-list-item .right {
-    position: relative; }
-    .shop-list-item .right .chil {
-      position: absolute;
-      left: 20px;
-      top: 20px; }
-    .shop-list-item .right .parent {
-      padding-right: 20px;
-      width: 100%; }
-  .shop-list-item .ft {
-    text-align: center; }
-  .shop-list-item .shop-list-line {
-    margin-top: 55px;
-    /*text-align: center;*/
-    padding-left: 10px;
-    padding-right: 10px;
-    /*margin-bottom: 50px;*/ }
-    .shop-list-item .shop-list-line img {
-      width: 100%; }
-
-.shop-list-footer .paginators {
-  padding: 0px; }
-.shop-list-footer img {
-  width: 100%; }
+@media screen and (min-width: 320px) and (min-width: 1280px) {
+  .shop_list #main #mainContetn {
+    padding-top: 80px; } }
+@media screen and (min-width: 320px) {
+  .shop_list #main .container-fluid {
+    padding-left: 0px; }
+    .shop_list #main .container-fluid .shop-list-home-left {
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center; } }
+    @media screen and (min-width: 320px) and (min-width: 1280px) {
+      .shop_list #main .container-fluid .shop-list-home-left {
+        padding-top: 0px;
+        padding-bottom: 0px; } }
+@media screen and (min-width: 320px) {
+      .shop_list #main .container-fluid .shop-list-home-left img {
+        max-width: 40%;
+        padding: 5px; } }
+      @media screen and (min-width: 320px) and (min-width: 600px) {
+        .shop_list #main .container-fluid .shop-list-home-left img {
+          max-width: 19%; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .shop-list-home-left img {
+          max-width: 80%;
+          padding-bottom: 25px; } }
+@media screen and (min-width: 320px) {
+    .shop_list #main .container-fluid .content {
+      padding-right: 0px;
+      padding-left: 0px; }
+      .shop_list #main .container-fluid .content .shop-list-title img {
+        max-width: 100%; }
+      .shop_list #main .container-fluid .content .shop-list-content-item {
+        margin-left: 0px;
+        margin-right: 0px;
+        background-color: #ffffff; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item {
+          padding-top: 50px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .row {
+          margin-right: 0px;
+          margin-left: 0px; }
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .row .col-sm-6 {
+            padding-left: 0px;
+            padding-right: 0px; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+          text-align: center;
+          margin: 10px 0px 10px;
+          font-weight: bold; } }
+        @media screen and (min-width: 320px) and (min-width: 600px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+            font-size: 20px;
+            line-height: 2; } }
+        @media screen and (min-width: 320px) and (min-width: 1280px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgh {
+            font-size: 25px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgp {
+          padding-left: 10px;
+          text-align: left; } }
+        @media screen and (min-width: 320px) and (min-width: 600px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-pgp {
+            font-size: 20px;
+            padding-left: 45px; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .relation-image img {
+          padding-right: 30px;
+          padding-left: 30px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .parent {
+          position: relative; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .chil {
+          position: absolute;
+          top: 10px; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item img {
+          max-width: 100%; }
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .item-button {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-align: center; } }
+      @media screen and (min-width: 320px) and (min-width: 1280px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line {
+          padding-top: 50px; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line img {
+          max-width: 100%;
+          height: 10px;
+          margin-bottom: 10px; } }
+        @media screen and (min-width: 320px) and (min-width: 1280px) {
+          .shop_list #main .container-fluid .content .shop-list-content-item .shop-list-item .shop-list-line img {
+            width: 100%; } }
+@media screen and (min-width: 320px) {
+        .shop_list #main .container-fluid .content .shop-list-content-item .clear-KH {
+          height: 300px; }
+      .shop_list #main .container-fluid .content .paginators {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .shop_list #main .container-fluid .content .paginators img {
+          max-width: 100%; } }
 
 /*# sourceMappingURL=shop_list.css.map */

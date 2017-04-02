@@ -17,7 +17,7 @@
     <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script> 
     </head>
 <body id="calendar_div">
-    <div id="wrapper" class="groupTop">
+    <div id="wrapper" class="groupTop shop_list">
         @include('layouts.header')
         <div id="main">
             <img class="bgCheo" src="{{ asset('css/css/images/grouptop/bgCheo.jpg')}}" alt="">
