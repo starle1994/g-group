@@ -36,7 +36,7 @@ class RestaurantController extends Controller {
 	 */
 	public function create()
 	{
-	     $categories = CategoryLeft::pluck("name", "id")->prepend('Please select', null);
+	     $categories = CategoryLeft::where('is_restaurant',0)->pluck("name", "id")->prepend('Please select', null);
 	    
 	    return view('admin.restaurant.create',compact('categories'));
 	}
