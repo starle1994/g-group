@@ -210,7 +210,7 @@
                         <p class="titleAva6"></p>
                     </div>
                     <div class="bannerContent">
-                        <div class="row rowPlus">
+                        <div class="row rowPlus" style="margin-left:0px">
                             @foreach($contents as $content)
                             <div class="col-xs-6 bcLeft">
                                <a href="{{route($content->alias)}}"> <img src="{{ asset('uploads/'.$content->image) }}" alt="{{$content->name}}"></a>
