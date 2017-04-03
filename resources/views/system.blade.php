@@ -74,8 +74,9 @@
     margin-left: 5px;
 
 }
-#mainContetn{
-    position: absolute;
+.system .contentSyst .syscontent3 .ctImg3 img{
+    min-height:auto;
+    max-height: auto;
 }
 </style> 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
