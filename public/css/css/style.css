@@ -3558,6 +3558,9 @@ footer {
 .system .contentSyst .textSyst{
   padding-top: 20px;
 }
+.lineSli #lineImg img{
+  margin-bottom: 10px;
+}
 }
 
 @media screen and (min-width: 1280px) and (min-width: 320px)
