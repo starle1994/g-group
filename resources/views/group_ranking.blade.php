@@ -20,20 +20,20 @@
                </div>
                <div class="gr-rank-slider2">
                     <div class=" row gr-rank-containerSlider">
-                        <div style="padding: 0px" class="col-md-6 col-sm-12 lf">
+                        <div class="col-md-6 col-sm-12 lf">
                             <div class="bk-left">
-                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"> <img style="width: 100%" src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
+                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"> <img src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
                                </a>
                             </div>
                             
                             <div class="avt-left">
-                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"><img style="width: 100%" src="{{ asset('uploads/'.$group_ranking[0]->godstaffs->image) }}" alt="">
+                               <a href="{{route('staff-detail',base64_encode($group_ranking[0]->godstaffs->id))}}"><img src="{{ asset('uploads/'.$group_ranking[0]->godstaffs->image) }}" alt="">
                                </a>
                             </div>
 
                         </div>
 
-                        <div style="padding: 0px" class="col-md-6 col-sm-12 right">
+                        <div class="col-md-6 col-sm-12 right">
                             <div class="avt-left">
                                 <ul>
                                     <li><img src="{{ asset('css/css/images/group-rankking/m1.png') }}" alt=""></li>
@@ -141,14 +141,14 @@
                                 @elseif($group->ranking_id ==10)
                                     <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                         @endif
-                        <div class="col-xs-2 item" style="margin-top: 30px;">
+                        <div class="col-xs-2 col-md-2 item" style="margin-top: 30px">
                             <div class="title">
                                <img src="{{asset($image)}}" alt="">
                             </div>
                             
                             <div class="av-main">
                                 <div class="avt-lf">
-                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                 </div>
                             </div>
 
@@ -192,14 +192,14 @@
                         @endif
                         
 
-                        <div class="col-md-2 col-xs-2 item" style="margin-top: 30px">
+                        <div class="col-xs-2 col-md-2 item" style="margin-top: 30px">
                         <div class="title">
                            <img src="{{ asset($image)}}" alt="">
                         </div>
                         
                         <div class="av-main">
                             <div class="avt-lf">
-                               <a href="{{route('staff-detail',base64_encode($group2->godstaffs->id))}}">  <img class="avt-img" src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt=""></a>
+                               <a href="{{route('staff-detail',base64_encode($group2->godstaffs->id))}}">  <img src="{{ asset('uploads/'.$group2->godstaffs->image) }}" alt=""></a>
                             </div>
                         </div>
 
@@ -222,8 +222,10 @@
        
    </div>
 </div>
-<script type="text/javascript">    
+<script type="text/javascript">
+    
     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
+
     $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
     $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
@@ -234,9 +236,10 @@
     $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
     height3 = $('.gr-rank-footer-p1 .item:first-child').height();
     $('.gr-rank-footer-p1 .item').height(height3);
-
+  
     $( window ).resize(function() {
         height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
+
         $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
         width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
         $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
@@ -249,5 +252,24 @@
     });
 
     
+    $('#menu').click(function(){
+        $('#mainMenu').toggle();
+    });
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+    })
 </script>
 @endsection

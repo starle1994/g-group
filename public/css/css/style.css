@@ -3484,9 +3484,7 @@ footer {
   .home-left, .title-Right {
       margin-top: 0px;
   }
-  .row, .thumbnails {
-    margin-left: -15px;
-}
+  
 .groupTop header #mainMenu .ctMenu{
   padding-top: 0px;
 }
