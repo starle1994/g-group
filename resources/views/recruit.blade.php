@@ -14,9 +14,12 @@
 </style>
 <div class="row system">
                         <div class="bbq-list-item">
-                            <div class="col-sm-3 left">
-                                 @include('include.categories_left2')
+                           <div class="col-sm-3  col-xs-12 shop-list-home-left"">
+                                <div class="exe-fa-line">
+                                     @include('include.categories_left2')
+                                </div>     
                             </div>
+
                         </div>
                         
                         <div class="col-sm-9 home-right">

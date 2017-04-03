@@ -3541,4 +3541,29 @@ footer {
 .shop_list #main .container-fluid .shop-list-home-left{
   padding-top: 0px;
 }
+.container-fluid .group-god .right{
+  padding-right: 10px !important;
+}
+.mi-gi{
+  padding: 20px 50px !important;
+}
+.sp2{
+  padding: 20px 50px !important;
+}
+.container-fluid .bbq-list-item{
+  padding-top: 0px;
+}
+.container-fluid .event-restaurant{
+  padding-top: 0px;
+}
+.container-fluid .event-restaurant .right{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container-fluid .event-restaurant .right .content .event-loop .top .even-text .lg{
+  font-size: 25px;
+}
+.exe-fa{
+  margin-top: 0px !important;
+}
 }

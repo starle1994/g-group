@@ -84,9 +84,12 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
 <div class="row system">
     <div class="bbq-list-item">
-        <div class="col-sm-3 left">
-             @include('include.categories_left2')
+        <div class="col-sm-3  col-xs-12 shop-list-home-left"">
+            <div class="exe-fa-line">
+                 @include('include.categories_left2')
+            </div>     
         </div>
+
     </div>
     <div class="col-sm-10 home-right">
         <img class="stTitl" src="{{asset('css/css/images/system/mainTitle.jpg')}}" alt="">
@@ -131,7 +134,7 @@
                         <div class="flexImg3">
                             <div>Million GOD</div>
                             <div>
-                                <a href="{{route('milliongod-system')}}"><span style="padding: 20px 100px"></span></a>
+                                <a href="{{route('milliongod-system')}}"><span class="mi-gi"></span></a>
                             </div>
                         </div>
                     </div>
@@ -149,7 +152,7 @@
                         <div class="flexImg3">
                             <div>Gigolo</div>
                             <div>
-                                <a href="{{route('gigilo-system')}}"><span class="sp2" style="padding: 20px 100px"></span></a>
+                                <a href="{{route('gigilo-system')}}"><span class="sp2" ></span></a>
                             </div>
                         </div>
                     </div>

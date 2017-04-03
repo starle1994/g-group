@@ -2,11 +2,12 @@
 
 @section('content')
 <div class="row exe-fa">
-    <div class="col-sm-3">
+    <div class="col-sm-3  col-xs-12 shop-list-home-left"">
         <div class="exe-fa-line">
              @include('include.categories_left2')
         </div>     
     </div>
+
 
     <div class="col-sm-9">
         <div class="exe-fa-head-1">
