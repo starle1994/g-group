@@ -7,9 +7,7 @@
   .home-left, .title-Right {
       margin-top: 0px;
   }
-  .row, .thumbnails {
-    margin-left: -15px;
-}
+  
 @media screen and (min-width: 320px)
 {
     .group-rankking-top #main #mainContetn .container-fluid {
