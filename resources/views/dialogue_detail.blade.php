@@ -8,6 +8,7 @@
                  @include('include.categories_left2')
             </div>     
         </div>
+       
         <div class="col-sm-9 right">
             <div class="exe-fa-head-1">
                 <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">

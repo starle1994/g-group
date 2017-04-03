@@ -9,10 +9,10 @@
 </style>
 <div class="row system">
     <div class="bbq-list-item">
-                            <div class="col-sm-3 left">
-                                 @include('include.categories_left2')
-                            </div>
-                        </div>
+            <div class="col-sm-3 left">
+                 @include('include.categories_left2')
+            </div>
+        </div>
     <div class="col-sm-10 home-right">
         <img class="stTitl" src="{{asset('css/css/images/system/mainTitle.jpg')}}" alt="">
         <div class="contentSyst">

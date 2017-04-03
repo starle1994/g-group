@@ -11,6 +11,10 @@
     .star{
         color: red;
     }
+    .system .contentSyst .syscontent3 .ctImg3 img{
+    min-height:auto;
+    max-height: inherit;
+}
 </style>
 <div class="row system">
      <div class="bbq-list-item">
@@ -28,11 +32,11 @@
                 <div class="textSyst">
                     
                     <div class="ctImg3 anh-gioi-thieu">
-                        <div style="padding-left: 0px; padding-right: 0px;" class="col-sm-6">
-                            <img src="{{asset('css/css/images/recruit/a1.png')}}" alt="">
+                        <div style="padding-left: 0px; padding-right: 0px;" class="col-sm-6 col-xs-12">
+                            <img src="{{asset('css/css/images/recruit/a1.png')}}" class="img-responsive" alt="">
                         </div>
-                        <div style="padding-left: 0px; padding-right: 0px;" class="col-sm-6">
-                            <img src="{{asset('css/css/images/recruit/a2.png')}}" alt="">
+                        <div style="padding-left: 0px; padding-right: 0px;" class="col-sm-6 col-xs-12">
+                            <img src="{{asset('css/css/images/recruit/a2.png')}}" class="img-responsive" alt="">
                         </div>
                     </div>
                     <div style="clear: both;"></div>
@@ -494,5 +498,11 @@
             </div>
         </div>
    </div>
-</div>            
+</div> 
+<script type="text/javascript">
+    var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
+                 $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+            
+    
+</script>           
 @endsection

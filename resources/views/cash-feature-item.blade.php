@@ -7,8 +7,6 @@
              @include('include.categories_left2')
         </div>     
     </div>
-
-
     <div class="col-sm-9 right">
         <div class="title">
             <img src="{{ asset('css/css/images/cash-feature/h1.png') }}" alt="">

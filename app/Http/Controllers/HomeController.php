@@ -67,8 +67,8 @@ class HomeController extends Controller
 				case 'getCalender':
 					$year = $_GET['year'];
 					$month = $_GET['month'];
-				
-					return view('schedule',compact('year','month'));	
+					$banner					= Banner::where('page','1')->first();
+					return view('schedule',compact('year','month','banner'));	
 					break;
 			}
 		}																		

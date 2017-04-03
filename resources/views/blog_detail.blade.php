@@ -8,7 +8,6 @@
         </div>     
     </div>
 
-
     <div class="col-sm-9 right">
         <div class="title">
             <img src="{{ asset('css/css/images/blog-list/ブログ素材.jpg')}}" alt="">
@@ -16,7 +15,7 @@
         
         <div class="content">
                                 <!-- back -->
-            <a href="{{route('Blog')}}"><h2 class="back">◁戻る</h2></a>
+            <a href="{{route('Blog')}}"><p class="back name-blog">◁戻る</p></a>
 
             <div class="row title-first">
                 <div class="col-sm-6 text-center">
@@ -36,7 +35,7 @@
             </div>
 
             <div class="row header text-center">
-                <h2>{{$blog->name}}</h2>
+                <p class="name-blog">{{$blog->name}}</p>
             </div>
 
             <div class="row blog-content text-center">

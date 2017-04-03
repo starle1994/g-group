@@ -3517,6 +3517,47 @@ footer {
  .groupTop .titleAva2{
    padding: 15px 0px 10px 35px;
  }
+ .contentSche a span {
+  font-size: 15px;
+}
+.mon2{
+  font-size: 15px;
+}
+.schedule .titCol h3{
+  font-size: 15px;
+}
+.scheBox span{
+   font-size: 12px !important;
+}
+.schedule .colTab td:first-child{
+  width: 50px;
+}
+.bgTit{
+  display: none;
+}
+.scheTitle{
+  padding: 20px !important;
+}
+.row, .thumbnails{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#mainContetn .col-sm-9{
+  clear: both;
+}
+#mainContetn .col-sm-10{
+    clear: both;
+}
+.name-blog{
+  font-size: 15px;
+  font-weight: bold;
+}
+.system .contentSyst .anh-gioi-thieu img{
+  padding: 10px;
+}
+.system .contentSyst .textSyst{
+  padding-top: 20px;
+}
 }
 
 @media screen and (min-width: 1280px) and (min-width: 320px)
@@ -3529,6 +3570,13 @@ footer {
   }
   .group-rankking {
     margin-top: 0px;
+}
+.name-blog{
+  font-size: 25px;
+  font-weight: bold;
+}
+.shop_list #main .container-fluid .shop-list-home-left img{
+  padding-bottom: 0px;
 }
 }
 
@@ -3566,4 +3614,10 @@ footer {
 .exe-fa{
   margin-top: 0px !important;
 }
+.group-rankking-top #main #mainContetn .container-fluid{
+  padding-top: 0px;
+}
+}
+.light_sky{
+  background-color: #96ffff;
 }
