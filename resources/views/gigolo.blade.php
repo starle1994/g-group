@@ -1,6 +1,27 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+    @media (max-width: 768px)
+{
+  .home-left, .title-Right {
+      margin-top: 0px;
+  }
+  .row, .thumbnails {
+    margin-left: -15px;
+}
+@media screen and (min-width: 320px)
+{
+    .group-rankking-top #main #mainContetn .container-fluid {
+    padding-left: 0px;
+    padding-top: 0px;
+}
+}
+
+
+
+}
+</style>
  <div class="row milion-god">
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row">
