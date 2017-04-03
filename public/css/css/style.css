@@ -3536,7 +3536,9 @@ footer {
 {
 .group-rankking-top #main #mainContetn .container-fluid {
     padding-left: 0px;
-    padding-top: 0px;
+    padding-top: 20px;
 }
-
+.shop_list #main .container-fluid .shop-list-home-left{
+  padding-top: 0px;
+}
 }
