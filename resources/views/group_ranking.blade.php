@@ -251,25 +251,5 @@
         $('.gr-rank-footer-p1 .item').height(height3);
     });
 
-    
-    $('#menu').click(function(){
-        $('#mainMenu').toggle();
-    });
-    $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-    })
 </script>
 @endsection
