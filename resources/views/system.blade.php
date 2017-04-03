@@ -76,7 +76,7 @@
 }
 .system .contentSyst .syscontent3 .ctImg3 img{
     min-height:auto;
-    max-height: auto;
+    max-height: inherit;
 }
 </style> 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
@@ -236,6 +236,9 @@
                 ],
 
             });
+           var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
+            $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+
         </script>
         <!-- end: Google Maps -->
     </div>
