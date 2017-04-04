@@ -42,29 +42,7 @@ class LastSongVerTwo extends Model {
      * Set attribute to date format
      * @param $input
      */
-    public function setDateAttribute($input)
-    {
-        if($input != '') {
-            $this->attributes['date'] = Carbon::createFromFormat(config('quickadmin.date_format'), $input)->format('Y-m-d');
-        }else{
-            $this->attributes['date'] = '';
-        }
-    }
-
-    /**
-     * Get attribute from date format
-     * @param $input
-     *
-     * @return string
-     */
-    public function getDateAttribute($input)
-    {
-        if($input != '0000-00-00') {
-            return Carbon::createFromFormat('Y-m-d', $input)->format(config('quickadmin.date_format'));
-        }else{
-            return '';
-        }
-    }
+    
 
 
     
