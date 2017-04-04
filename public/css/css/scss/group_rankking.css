@@ -1,6 +1,9 @@
 .gr-rank-lineSli {
   /*margin-top: 90px;*/ }
 
+/*.body-group-rankking {
+	height: 3200px;
+}*/
 .group-rankking {
   margin-top: 40px; }
 
@@ -175,9 +178,20 @@
 @media screen and (min-width: 320px) {
           .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf {
             padding-right: 0px;
-            padding-left: 0px; }
+            padding-left: 0px; } }
+          @media screen and (min-width: 320px) and (min-width: 1280px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf {
+              padding: 15px !important; } }
+          @media screen and (min-width: 320px) and (min-width: 768px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf {
+              padding-bottom: 15px; } }
+@media screen and (min-width: 320px) {
             .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .bk-left {
-              width: 100%; }
+              width: 100%; } }
+            @media screen and (min-width: 320px) and (min-width: 1280px) {
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .bk-left {
+                width: 90%; } }
+@media screen and (min-width: 320px) {
               .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .lf .bk-left img {
                 width: 100% !important;
                 height: auto !important; }
@@ -185,7 +199,14 @@
               width: 100%; }
           .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right {
             padding-right: 0px;
-            padding-left: 0px; }
+            padding-left: 0px; } }
+          @media screen and (min-width: 320px) and (min-width: 1280px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right {
+              padding: 15px; } }
+          @media screen and (min-width: 320px) and (min-width: 768px) {
+            .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right {
+              padding-bottom: 15px; } }
+@media screen and (min-width: 320px) {
             .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .avt-left ul {
               padding-top: 30px; }
             .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-slider2 .gr-rank-containerSlider .right .avt-left .txt-2 {
@@ -209,9 +230,20 @@
             .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .col-sm-6 {
               padding-left: 0px;
               padding-right: 0px;
-              padding-bottom: 25px; }
+              padding-bottom: 25px; } }
+            @media screen and (min-width: 320px) and (min-width: 1280px) {
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .col-sm-6 {
+                padding: 10px; } }
+            @media screen and (min-width: 320px) and (min-width: 768px) {
+              .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .col-sm-6 {
+                padding: 10px; } }
+@media screen and (min-width: 320px) {
             .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .gr-rank-p2 .contents .ft-bk {
-              font-size: 25px; }
+              font-size: 25px; } }
+        @media screen and (min-width: 320px) and (min-width: 768px) {
+          .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-left .gr-rank-lineSli .stt-rankking .list-item-foot {
+            padding-bottom: 100px; } }
+@media screen and (min-width: 320px) {
     .group-rankking-top #main #mainContetn .container-fluid .group-rankking .home-right {
       padding-top: 30px; } }
     @media screen and (min-width: 320px) and (min-width: 768px) {

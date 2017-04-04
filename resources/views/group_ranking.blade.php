@@ -223,10 +223,9 @@
    </div>
 </div>
 <script type="text/javascript">
-    
+     
     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-
-    $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
+  
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
     $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
     $('.gr-rank-containerSlider .right .avt-left').height(height1);
@@ -236,10 +235,9 @@
     $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
     height3 = $('.gr-rank-footer-p1 .item:first-child').height();
     $('.gr-rank-footer-p1 .item').height(height3);
-  
+
     $( window ).resize(function() {
         height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-
         $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
         width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
         $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
@@ -250,6 +248,5 @@
         $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
         $('.gr-rank-footer-p1 .item').height(height3);
     });
-
 </script>
 @endsection

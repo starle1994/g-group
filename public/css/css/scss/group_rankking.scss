@@ -2,6 +2,10 @@
     /*margin-top: 90px;*/
 }
 
+/*.body-group-rankking {
+	height: 3200px;
+}*/
+
 .group-rankking {
 	margin-top: 40px;
 }
@@ -262,9 +266,19 @@
 											.lf {
 												padding-right: 0px;
 												padding-left: 0px;
+												@media screen and (min-width: 1280px) {
+													padding: 15px !important;
+												}
+
+												@media screen and (min-width: 768px) {
+													padding-bottom: 15px ;
+												}
 
 												.bk-left {
 													width: 100%;
+													@media screen and (min-width: 1280px) {
+														width: 90%;
+													}
 													img {
 														width: 100% !important;
 														height: auto !important;
@@ -281,6 +295,13 @@
 											.right {
 												padding-right: 0px;
 												padding-left: 0px;
+												@media screen and (min-width: 1280px) {
+													padding: 15px;
+												}
+
+												@media screen and (min-width: 768px) {
+													padding-bottom: 15px;
+												}
 
 												.avt-left {
 													ul {
@@ -316,6 +337,14 @@
 												padding-left: 0px;
 												padding-right: 0px;
 												padding-bottom: 25px;
+
+												@media screen and (min-width: 1280px) {
+													padding: 10px ;
+												}
+
+												@media screen and (min-width: 768px) {
+													padding: 10px ;
+												}
 											}
 
 											.ft-bk {
@@ -323,6 +352,11 @@
 											}
 										}
 									}
+									.list-item-foot {
+											@media screen and (min-width: 768px) {
+												padding-bottom: 100px;
+											}
+										}
 								}
 							}
 						}
