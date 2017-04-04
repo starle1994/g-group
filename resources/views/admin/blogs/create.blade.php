@@ -33,7 +33,7 @@
 </div><div class="form-group">
     {!! Form::label('content', 'content*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        <textarea id="my-editor" name="content" class="form-control">{!! old('content', 'test editor content') !!}</textarea>
+        <textarea id="my-editor" name="content" class="form-control">{!! old('content', '') !!}</textarea>
 
     </div>
 </div><div class="form-group">
