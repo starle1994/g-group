@@ -83,7 +83,6 @@
                 <div class="gr-rank-p2">
                    <div class="row contents">
                         @for( $i= 4 ;$i<=5; $i++)
-                        <?php dd($group_ranking) ?>
                             <div class="col-sm-6">
                                 @if($group_ranking[$i]->ranking_id ==4)
                                     <?php $image = 'css/css/images/group-rankking/4st.jpg' ?>
