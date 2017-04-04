@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="backs-1" style="height: auto">
-                    <a href="{{route($link->alias)}}"><img src="{{ asset('uploads/'.$link->image)}}" alt="" ></a>
+                   <img src="{{ asset('uploads/'.$link->image)}}" alt="" >
                 </div>
             </div>
 
