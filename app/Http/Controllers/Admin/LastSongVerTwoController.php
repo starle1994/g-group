@@ -49,7 +49,7 @@ class LastSongVerTwoController extends Controller {
 	{
 	    $request = $this->saveFiles($request);
 	    $input = $request->all();
-	    if ($input->date == null) {
+	    if ($input['date'] == null) {
 	    	$input['date'] = '0000-00-00';
 	    }
 		LastSongVerTwo::create($input);
