@@ -27,19 +27,19 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('date', 'date*', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('date', 'date', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('date', old('date'), array('class'=>'form-control datepicker')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('title', 'title*', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('title', 'title', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('title', old('title'), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}
         

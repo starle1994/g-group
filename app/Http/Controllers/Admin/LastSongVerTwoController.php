@@ -10,7 +10,7 @@ use App\Http\Requests\CreateLastSongVerTwoRequest;
 use App\Http\Requests\UpdateLastSongVerTwoRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
-
+use DateTime;
 
 class LastSongVerTwoController extends Controller {
 
@@ -49,8 +49,10 @@ class LastSongVerTwoController extends Controller {
 	{
 	    $request = $this->saveFiles($request);
 	    $input = $request->all();
+	    $datetime = new DateTime(); 
+        $time = $datetime->format('Y:m:d');
 	    if ($input['date'] == null) {
-	    	$input['date'] = '0000-00-00';
+	    	$input['date'] = $time;
 	    }
 		LastSongVerTwo::create($input);
 

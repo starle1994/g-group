@@ -42,11 +42,13 @@
                     <div class="infoTop" >
 
                             <img src="{{ asset('uploads/'.$song->image)}}" alt="">
+                            @if($song->description !=null)
                             <div class="content1">
                                 <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
                                 <strong><h1>{{$song->title}}</h1></strong>
                                 <span >{!! mb_substr($song->description ,0,100 )!!}...</span>
                             </div>
+                            @endif
                         </div>
                   
                 @endforeach
