@@ -83,6 +83,7 @@
                 <div class="gr-rank-p2">
                    <div class="row contents">
                         @for( $i= 4 ;$i<=5; $i++)
+                        <?php dd($group_ranking) ?>
                             <div class="col-sm-6">
                                 @if($group_ranking[$i]->ranking_id ==4)
                                     <?php $image = 'css/css/images/group-rankking/4st.jpg' ?>
@@ -141,7 +142,7 @@
                                 @elseif($group->ranking_id ==10)
                                     <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                         @endif
-                        <div class="col-xs-2 col-md-2 item" style="margin-top: 30px">
+                        <div class="col-xs-2 item" style="margin-top: 30px">
                             <div class="title">
                                <img src="{{asset($image)}}" alt="">
                             </div>

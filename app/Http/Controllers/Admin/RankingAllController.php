@@ -124,7 +124,7 @@ class RankingAllController extends Controller {
 		$rankingall->update($input);
 		$input['month'] =$month;
 		$input['year']	=$year;
-		$log->update($input);
+		//$log->update($input);
 
 		return redirect()->route(config('quickadmin.route').'.rankingall.index');
 	}
