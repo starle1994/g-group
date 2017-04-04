@@ -3658,6 +3658,9 @@ footer {
 .container-fluid .event-restaurant .right .content .event-loop img{
   width: auto;
 }
+.container-fluid .group-god .right .content .avatar img{
+  width: auto;
+}
 }
 .light_sky{
   background-color: #96ffff;
