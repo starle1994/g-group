@@ -48,7 +48,11 @@ class LastSongVerTwoController extends Controller {
 	public function store(CreateLastSongVerTwoRequest $request)
 	{
 	    $request = $this->saveFiles($request);
-		LastSongVerTwo::create($request->all());
+	    $input = $request->all();
+	    if ($input->date == null) {
+	    	$input['date'] = '0000-00-00';
+	    }
+		LastSongVerTwo::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.lastsongvertwo.index');
 	}

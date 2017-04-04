@@ -38,12 +38,4 @@ class LastSongVerTwo extends Model {
     }
     
     
-    /**
-     * Set attribute to date format
-     * @param $input
-     */
-    
-
-
-    
 }
