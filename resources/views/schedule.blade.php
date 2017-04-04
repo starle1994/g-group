@@ -71,29 +71,39 @@
 										for($day = 1; $day <= $daysInMonth; $day++) {
                       $date = $year.'-'.$month.'-'.$day;
 
-                    $event = \App\Schedule::whereDate('start_time',$date)->first();
-                    $class = '';
-                    if ($event != null) {
-                        if ($event->event_type ==1) {
-                          $class = 'contai';
-                        }else{
-                          if ($event->event_type ==2) {
-                            $class = 'music';
-                          }else{
-                            $class = 'holiday';
-                          }
-                        }
-                    }
-
+                    $events = \App\Schedule::whereDate('start_time',$date)->get();
+                    $class = [];
+                    
+                    if ($events->isEmpty() != true) {
+                        foreach ($events as $event) {
+                            if ($event->event_type ==1) {
+                              $class[$event->id] = './css/css/images/schedule/contai.png';
+                            }else{
+                              if ($event->event_type ==2) {
+                                $class[$event->id] = './css/css/images/schedule/music.png';
+                              }else{
+                                $class[$event->id] = './css/css/images/schedule/char.png';
+                              }
+                            }
+                        } 
+                      }
 											if( ($day + $offset - 1) % 7 == 0 && $day != 1) {
 												echo "</tr><tr>";
 												$rows++;
 											}
 
 											if ($day == date("d") && $dateMonth == date('m')){
-												echo "<td class ='light_sky ".$class."'>" . $day . "</td>";
+												echo "<td class ='light_sky' style='width:14%'>" . $day ."<br>";
+                        foreach ($events as $event) {
+                          echo "<img class='imgCol' src='".$class[$event->id]."'>";
+                        }
+                        echo "</td>";
 											}else{
-												echo "<td class ='".$class."'>" . $day . "</td>";
+												echo "<td style='width:14%'>" . $day."<br>" ;
+                        foreach ($events as $event) {
+                          echo "<img class='imgCol' src='".$class[$event->id]."'>";
+                        }
+                        echo "</td>";
 											}
 									 		
 										}
@@ -134,30 +144,40 @@
                                               for($day = 1; $day <= $daysInMonth; $day++) {
                                               $date = $year.'-'.$month.'-'.$day;
 
-                                            $event = \App\Schedule::whereDate('start_time', $date)->first();
-                                            $class = '';
-                                            if ($event != null) {
-                                                if ($event->event_type ==1) {
-                                                  $class = './css/css/images/schedule/contai.png';
-                                                }else{
-                                                  if ($event->event_type ==2) {
-                                                    $class = './css/css/images/schedule/music.png';
+                                            $events = \App\Schedule::whereDate('start_time',$date)->get();
+                                            
+                                            $class = [];
+                                           
+                                            if ($events->isEmpty() != true) {
+                                              foreach ($events as $event) {
+                                                  if ($event->event_type ==1) {
+                                                    $class[$event->id] = './css/css/images/schedule/contai.png';
                                                   }else{
-                                                    $class = './css/css/images/schedule/char.png';
+                                                    if ($event->event_type ==2) {
+                                                      $class[$event->id] = './css/css/images/schedule/music.png';
+                                                    }else{
+                                                      $class[$event->id] = './css/css/images/schedule/char.png';
+                                                    }
                                                   }
-                                                }
+                                                 
+                                              }
+                                                
                                             }
-
+                                          
                                               if( ($day + $offset - 1) % 7 == 0 && $day != 1) {
                                                 echo "</tr><tr>";
                                                 $rows++;
                                               }
-                                              if ($event != null){
+                                              if ($events->isEmpty() != true){
                                                 echo "<tr>";
                                                 echo "<td class='red'>".$day."日</td>";
                                                 echo "<td>";
-                                                echo "<img class='imgCol' src='".$class."'>";
-                                                echo  $event['description'];
+                                                foreach ($events as $event) {
+                                                  echo "<img class='imgCol' src='".$class[$event->id]."'>";
+                                                  echo  $event['description'];
+                                                  echo "</br>";
+                                                }
+                                                
                                                 echo "</td>";
                                                 echo "</tr>";
                                               }else{

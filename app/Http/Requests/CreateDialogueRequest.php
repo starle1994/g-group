@@ -26,7 +26,7 @@ class CreateDialogueRequest extends FormRequest {
 		return [
             'image' => 'required', 
             'name' => 'required', 
-            'link' => 'required', 
+            
             
 		];
 	}

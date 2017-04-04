@@ -17,7 +17,6 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>image</th>
-<th>backgroud_image</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -30,7 +29,6 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>@if($row->backgroud_image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->backgroud_image }}">@endif</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.officeworkfeature.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

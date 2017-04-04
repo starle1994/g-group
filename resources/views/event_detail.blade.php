@@ -21,15 +21,18 @@
 
                     <div class="col-sm-6 paraph">
                     <?php 
-	                    $datetime = new DateTime($event->schedule->start_time) ; 
+                        $date =isset($event->schedule->start_time) ? $event->schedule->start_time : '');
+	                    $datetime = new DateTime($date) ; 
 	                    $year = $datetime->format('Y');
 	                    $month = $datetime->format('m');
 	                    $day = $datetime->format('d');
 	                    $time = $datetime->format('h:m');
 	                ?>
+                    @if(isset($event->schedule->start_time))
                         <p>
                             {{$year}}年{{$month}}月{{$day}}日　{{$time}}<br>
                         </p>
+                    @endif
                         {!! $event->description !!}
                     </div>
                 </div>
