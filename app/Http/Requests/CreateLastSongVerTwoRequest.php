@@ -24,10 +24,10 @@ class CreateLastSongVerTwoRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'image' => 'required', 
-            'date' => 'required', 
-            'title' => 'required', 
-            'description' => 'required', 
+             'image' => 'required', 
+            // 'date' => 'required', 
+            // 'title' => 'required', 
+            // 'description' => 'required', 
             
 		];
 	}
