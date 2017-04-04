@@ -57,8 +57,11 @@ class RestaurantController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$rookie->alias);
-
-	    	$number = $alias[1]+1;
+	    	if(isset($alias[1])){
+	    		$number = $alias[1]+1;
+	    	}else{
+	    		$number =1;
+	    	}
 	    }
 	    
 	    $input['alias'] = 'list-'.$number;

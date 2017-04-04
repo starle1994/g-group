@@ -27,12 +27,6 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('backgroud_image', 'backgroud_image', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('backgroud_image', old('backgroud_image',$rookiefeature->backgroud_image), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
     {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description',$rookiefeature->description), array('class'=>'form-control ckeditor')) !!}

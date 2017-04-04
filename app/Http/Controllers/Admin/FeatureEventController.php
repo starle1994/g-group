@@ -58,7 +58,12 @@ class FeatureEventController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$event->alias);
-	    	$number = $alias[2]+1;
+	    	if(isset($alias[2])){
+	    		$number = $alias[2]+1;
+	    	}else{
+	    		$number =1;
+	    	}
+	    	
 	    }
 	    
 	    $input['alias'] = 'list-event-'.$number;

@@ -55,8 +55,12 @@ class RookieFeatureController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$rookie->alias);
-
-	    	$number = $alias[3]+1;
+	    	if(isset($alias[3])){
+	    		$number = $alias[3]+1;
+	    	}else{
+	    		$number =1;
+	    	}
+	    	
 	    }
 	    
 	    $input['alias'] = 'list-rookie-feature-'.$number;

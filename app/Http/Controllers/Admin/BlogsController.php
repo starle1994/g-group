@@ -56,7 +56,11 @@ class BlogsController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$blogs->alias);
-	    	$number = $alias[2]+1;
+	    	if(isset($alias[2])){
+	    		$number = $alias[2]+1;
+	    	}else{
+	    		$number =1;
+	    	}
 	    }
 	    
 	    $input['alias'] = 'list-blog-'.$number;

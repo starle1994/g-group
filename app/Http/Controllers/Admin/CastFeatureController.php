@@ -55,7 +55,11 @@ class CastFeatureController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$cast->alias);
-
+	    	if(isset($alias[3])){
+	    		$number = $alias[3]+1;
+	    	}else{
+	    		$number =1;
+	    	}
 	    	$number = $alias[3]+1;
 	    }
 	    

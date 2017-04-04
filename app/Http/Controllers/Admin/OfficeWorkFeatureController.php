@@ -55,8 +55,11 @@ class OfficeWorkFeatureController extends Controller {
 	    	$number = 1;
 	    }else{
 	    	$alias = explode('-',$cast->alias);
-
-	    	$number = $alias[3]+1;
+	    	if(isset($alias[3])){
+	    		$number = $alias[3]+1;
+	    	}else{
+	    		$number =1;
+	    	}
 	    }
 	    
 	    $input['alias'] = 'office-work-feature-'.$number;
