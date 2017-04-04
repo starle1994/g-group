@@ -48,8 +48,24 @@ class DialogueController extends Controller {
 	public function store(CreateDialogueRequest $request)
 	{
 	    $request = $this->saveFiles($request);
-		Dialogue::create($request->all());
 
+		$dialog = Dialogue::orderBy('id','desc')->first();
+		
+		$input = $request->all();
+	    if ($dialog == null && $dialog->alias == null) {
+	    	$number = 1;
+	    }else{
+	    	$alias = explode('-',$dialog->alias);
+	    	if(isset($alias[2])){
+	    		$number = $alias[2]+1;
+	    	}else{
+	    		$number =1;
+	    	}
+	    	
+	    }
+	    
+	    $input['alias'] = 'list-dialog-'.$number;
+	    Dialogue::create($input);
 		return redirect()->route(config('quickadmin.route').'.dialogue.index');
 	}
 

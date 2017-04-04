@@ -25,7 +25,8 @@ class Dialogue extends Model {
           'image',
           'name',
           'description',
-          'link'
+          'link',
+          'alias'
     ];
     
 

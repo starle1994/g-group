@@ -25,12 +25,6 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('description', old('description',$movies->description), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
     {!! Form::label('link', 'link*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('link', old('link',$movies->link), array('class'=>'form-control')) !!}

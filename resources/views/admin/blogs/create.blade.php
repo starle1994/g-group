@@ -17,23 +17,17 @@
 </div>
 
 {!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.blogs.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
-
+<div class="form-group">
+    {!! Form::label('shopslist_id', 'ShopList*', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::select('shopslist_id', $shopslist, old('shopslist_id'), array('class'=>'form-control')) !!}
+        
+    </div>
+</div>
 <div class="form-group">
     {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('name', old('name'), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('text', 'text', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('text', old('text'), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('description', old('description'), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
@@ -48,12 +42,6 @@
         {!! Form::file('image') !!}
         {!! Form::hidden('image_w', 4096) !!}
         {!! Form::hidden('image_h', 4096) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('shopslist_id', 'ShopList*', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::select('shopslist_id', $shopslist, old('shopslist_id'), array('class'=>'form-control')) !!}
         
     </div>
 </div>
