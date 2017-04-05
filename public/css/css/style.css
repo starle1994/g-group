@@ -3667,3 +3667,6 @@ footer {
   background-color: #96ffff;
 }
 
+.group-rankking-top .avatar{
+  float: inherit;
+}
