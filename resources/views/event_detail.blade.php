@@ -41,13 +41,15 @@
                     
                 </div>
                 <!-- loop -->
-                <div class="row main">
+                <div style="margin-right: 0px; margin-left: 0px;"  class="row main">
                 @foreach($event->eventsfeatureimage as $image)
                     <div class="col-sm-6 avatar">
-                        <img src="{{ asset('uploads/'.$image->image)}}" alt="">
-                        <p>
-                            {!! $image->description !!}
-                        </p>
+                        <div class="event-item-item">
+                            <img src="{{ asset('uploads/'.$image->image)}}" alt="">
+                            <p>
+                                {!! $image->description !!}
+                            </p>
+                        </div>
                     </div>
                  @endforeach
                    

@@ -24,7 +24,7 @@ class RestaurantController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $restaurant = Restaurant::all();
+        $restaurant = Restaurant::orderBy('id','desc')->get();
 
 		return view('admin.restaurant.index', compact('restaurant'));
 	}
@@ -149,7 +149,8 @@ class RestaurantController extends Controller {
 	public function destroy($id)
 	{
 		Restaurant::destroy($id);
-
+		$image = ImageRestaurant::where('restaurant_id', $id)->get();
+		dd($image);
 		return redirect()->route(config('quickadmin.route').'.restaurant.index');
 	}
 

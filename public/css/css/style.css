@@ -3666,3 +3666,9 @@ footer {
 .light_sky{
   background-color: #96ffff;
 }
+.container-fluid .event-item .right .content {
+    background: none;
+    background-color: #fff;
+    padding: 3px;
+    padding-top: 10px;
+}

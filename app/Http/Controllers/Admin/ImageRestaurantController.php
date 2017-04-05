@@ -24,7 +24,7 @@ class ImageRestaurantController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $imagerestaurant = ImageRestaurant::with("restaurant")->get();
+        $imagerestaurant = ImageRestaurant::with("restaurant")->orderBy('id','desc')->get();
 
 		return view('admin.imagerestaurant.index', compact('imagerestaurant'));
 	}
