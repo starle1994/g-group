@@ -20,7 +20,7 @@
 
                         <div class="col-sm-6 avatar">
 
-                            <a href="{{route('restaurant-detail',$item->alias)}}">
+                            <a href="{{route('gravute-detail',$item->alias)}}">
                                 <img src="{{ asset('uploads/'.$item->image)}}" alt="">
                             </a>
 

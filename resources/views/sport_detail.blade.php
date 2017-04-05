@@ -28,28 +28,15 @@ add sport_detail.blade.php
                 <!-- loop -->
                 <div class="row main">
                     <div class="col-sm-12 bao-avatar">
-                        <div class="col-sm-7 avatar">
+                       
                             @foreach($imagerestaurant as $item)
-                                <div class="row phan-tren">
-
-                                    <div class="col-sm-6 a-top">
-                                        <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}">
-                                    </div>
-
-                                    <div class="col-sm-6 a-top">
-                                        <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}">
-                                    </div>
-                                </div>
+                               
+                             <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}">
+                                   
 
 
-
-                        </div>
-
-                        <div class="col-sm-5 avatar">
-
-                        </div>
                         @endforeach
-                    </div>
+                   
                 </div>
             </div>
         </div>
