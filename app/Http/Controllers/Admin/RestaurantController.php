@@ -80,6 +80,7 @@ class RestaurantController extends Controller {
 		$length =3;
 		$image = $request->file('file');
         $description = $request->get('description');
+        $restaurant_id = $request->get('restaurant_id');
         $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
 	    $chars_length = (strlen($chars) - 1);
 	    $string = $chars{rand(0, $chars_length)};
@@ -100,8 +101,8 @@ class RestaurantController extends Controller {
             $image->move($destinationPath, $input['imagename']);
 
         ImageRestaurant::create(['image'=>$input['imagename'],
-        						 'restaurant_id'=>$request->id,
-                                'description' =>$request->description]);
+        						 'restaurant_id'=>$restaurant_id,
+                                'description' =>$description]);
 
 		return response()->json(['success'=>$input['imagename']]);
 	}

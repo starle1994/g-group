@@ -288,8 +288,10 @@ class HomeController extends Controller
 
     public function showRestaurantDetail($alias)
     {
+
         $restaurant= Restaurant::where('alias',$alias)->first();
         $imagerestaurant = ImageRestaurant::where('restaurant_id', $restaurant->id)->get();
+        
         $banner					= Banner::where('page','1')->first();
         return view('restaurant_detail', compact('imagerestaurant','restaurant','banner'));
     }

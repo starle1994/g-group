@@ -28,8 +28,7 @@ class MillionGodRankingStaffController extends Controller {
 	public function index(Request $request)
     {
         $milliongodrankingstaff = MillionGodRankingStaff::with("ranking")->with("godstaffs")->get();
-
-		return view('admin.milliongodrankingstaff.index', compact('milliongodrankingstaff'));
+       		return view('admin.milliongodrankingstaff.index', compact('milliongodrankingstaff'));
 	}
 
 	/**

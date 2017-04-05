@@ -19,7 +19,7 @@
                         <th>ranking</th>
 <th>name</th>
 <th>image</th>
-<th>Executiv_layer</th>
+<th>banner</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -34,7 +34,8 @@
                             <td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
 <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
 <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>{{ $row->executive_layer }}</td>
+<td>@if($row->banner != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->banner }}">@endif</td>
+
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.milliongodrankingstaff.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

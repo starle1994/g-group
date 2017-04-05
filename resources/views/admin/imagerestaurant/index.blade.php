@@ -19,7 +19,7 @@
                         <th>name</th>
 <th>description</th>
 <th>image</th>
-<th>Restaurant</th>
+<th>Content</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -27,6 +27,7 @@
 
                 <tbody>
                     @foreach ($imagerestaurant as $row)
+                    
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
