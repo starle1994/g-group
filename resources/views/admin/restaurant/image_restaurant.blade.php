@@ -3,12 +3,20 @@
 @section('content')
 
 {!! Form::open([ 'route' => config('quickadmin.route').'.restaurant.image.post', 'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone', 'id' => 'image-upload' ]) !!}
+@if($restaurant->CategoryLeft->id==3)
 <div class="form-group">
-    {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'Question', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}
+        {!! Form::textarea('name', old('description'), array('class'=>'form-control')) !!}
     </div>
 </div>
+<div class="form-group">
+    {!! Form::label('description', 'answer', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::textarea('description', old('description'), array('class'=>'form-control')) !!}
+    </div>
+</div>
+@endif
 {!! Form::hidden('restaurant_id', $id) !!}
 <div class="form-group">
     {!! Form::label('image', 'image', array('class'=>'col-sm-2 control-label')) !!}

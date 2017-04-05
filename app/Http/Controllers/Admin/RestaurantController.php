@@ -72,7 +72,8 @@ class RestaurantController extends Controller {
 
 	public function showUloadImage($id)
 	{
-		return view('admin.restaurant.image_restaurant',compact('id'));
+		$restaurant = Restaurant::where('id',$id)->with('CategoryLeft')->first();
+		return view('admin.restaurant.image_restaurant',compact('id','restaurant'));
 	}
 
 	public function postUloadImage(Request $request)
@@ -81,6 +82,7 @@ class RestaurantController extends Controller {
 		$image = $request->file('file');
         $description = $request->get('description');
         $restaurant_id = $request->get('restaurant_id');
+        $name = $request->get('name');
         $chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
 	    $chars_length = (strlen($chars) - 1);
 	    $string = $chars{rand(0, $chars_length)};
@@ -100,9 +102,11 @@ class RestaurantController extends Controller {
         $destinationPath = public_path('uploads');
             $image->move($destinationPath, $input['imagename']);
 
-        ImageRestaurant::create(['image'=>$input['imagename'],
-        						 'restaurant_id'=>$restaurant_id,
-                                'description' =>$description]);
+        ImageRestaurant::create(['image'			=>$input['imagename'],
+        						 'restaurant_id'	=>$restaurant_id,
+                                'description' 		=>$description,
+                                'name'				=>$name
+                                ]);
 
 		return response()->json(['success'=>$input['imagename']]);
 	}

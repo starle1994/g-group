@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row group-god-item">
+    <div class="row gigolo-list-item">
         <div class="col-sm-3 left">
             @include('include.categories_left')
         </div>
@@ -17,26 +17,43 @@
                     <div class="col-sm-6 avt-parent">
                         <img src="{{ asset('uploads/'.$fashion->image)}}" alt="{{$fashion->name}}">
                     </div>
-
+                    <div class="col-sm-6 paraph">
+                    <?php 
+                        $datetime = new DateTime($fashion->created_at) ; 
+                        $year = $datetime->format('Y');
+                        $month = $datetime->format('m');
+                        $day = $datetime->format('d');
+                        $time = $datetime->format('h:m');
+                     ?>
+                        <p>
+                            <span class="time">                            {{$year}}年{{$month}}月{{$day}}日</span> <br>
+                            <span class="year">{{$fashion->name}}</span> <br>
+                            {!! $fashion->description !!}
+                        </p>
+                    </div>
                 </div>
 
                 <div class="dong-ke">
                 </div>
 
-                <!-- loop -->
+               
                 <div class="row main">
-                    <div class="col-sm-12 ">
-                        
-                        @foreach($imagerestaurant as $item)
-                           <div class="col-sm-6" style="margin-top: 5px">
-                               <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}" class="img-responsive">
-                           </div>
-                        @endforeach
-                   
+                    <div class="main-follow">
+                    @foreach($imagerestaurant as $item)
+                        <div class="col-sm-12 loop">
+                            <div class="col-sm-6 avatar">
+                                <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}">
+                            </div>
+
+                            <div class="col-sm-6 paraph">
+                                <h2 class="question">{!! $item->name !!}</h2>
+                                <p class="answer">{!! $item->description !!}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
         </div>
-
+    </div>
 @endsection

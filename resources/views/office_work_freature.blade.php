@@ -13,7 +13,6 @@
         <div class="exe-fa-head-1">
             <img src="{{ asset('css/css/images/tomo-list/h1.jpg')}}" alt="">
         </div>
-        
         <div class="exe-main-content">
             <div class="row">
                 @foreach($officeWorkFreature as $officeWorkFreature)

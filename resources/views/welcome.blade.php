@@ -214,7 +214,6 @@
                 </div>
             @endforeach
         </div>
-       
         <div class="row lineSli">
             <div class="col-xs-3" id="lineImg">
                 <img src="{{ asset('css/css/images/group-rankking/Line@.jpg')}}" alt="">
@@ -242,7 +241,10 @@
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
                             @foreach($rookies_feature as $rookie)
-                            <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$rookie->image) }}" alt="{{$rookie->name}}"></div>
+                            <div class="item">
+                                 <a href="{{route('rookie-feature-detail',$rookie->alias)}}"><img class="setHeight" src="{{ asset('uploads/'.$rookie->image) }}" alt="{{$rookie->name}}">
+                                 </a>
+                            </div>
           
                             @endforeach
                         </div>
