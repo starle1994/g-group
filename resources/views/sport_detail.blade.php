@@ -29,7 +29,7 @@ add sport_detail.blade.php
                     <div class="col-sm-12 ">
                         
                         @foreach($imagerestaurant as $item)
-                           <div class="col-sm-6">
+                           <div class="col-sm-6" style="margin-top: 5px">
                                <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}" class="img-responsive">
                            </div>
                         @endforeach
