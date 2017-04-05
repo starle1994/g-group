@@ -21,7 +21,7 @@
 
                     <div class="col-sm-6 paraph">
                     <?php 
-                        $date =isset($event->schedule->start_time) ? $event->schedule->start_time : '');
+                        $date =isset($event->schedule->start_time) ? $event->schedule->start_time : '';
 	                    $datetime = new DateTime($date) ; 
 	                    $year = $datetime->format('Y');
 	                    $month = $datetime->format('m');
