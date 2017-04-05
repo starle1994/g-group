@@ -25,22 +25,18 @@ add sport_detail.blade.php
                 <div class="dong-ke">
                 </div>
 
-                <!-- loop -->
                 <div class="row main">
-                    <div class="col-sm-12 bao-avatar">
-                       
-                            @foreach($imagerestaurant as $item)
-                               <div class="col-sm-6">
-                                   <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}" class="img-responsive">
-                               </div>
-                             
-                                   
-
-
+                    <div class="col-sm-12 ">
+                        
+                        @foreach($imagerestaurant as $item)
+                           <div class="col-sm-6">
+                               <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}" class="img-responsive">
+                           </div>
                         @endforeach
                    
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection
