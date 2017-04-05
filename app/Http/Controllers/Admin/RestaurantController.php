@@ -150,7 +150,7 @@ class RestaurantController extends Controller {
 	{
 		Restaurant::destroy($id);
 		$image = ImageRestaurant::where('restaurant_id', $id)->get();
-		dd($image);
+	
 		return redirect()->route(config('quickadmin.route').'.restaurant.index');
 	}
 
