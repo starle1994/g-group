@@ -30,8 +30,10 @@ add sport_detail.blade.php
                     <div class="col-sm-12 bao-avatar">
                        
                             @foreach($imagerestaurant as $item)
-                               
-                             <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}">
+                               <div class="col-sm-6">
+                                   <img src="{{ asset('uploads/'.$item->image)}}" alt="{{$item->name}}" class="img-responsive">
+                               </div>
+                             
                                    
 
 
