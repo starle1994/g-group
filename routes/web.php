@@ -57,7 +57,7 @@ Route::get('/coupon',['as'=>'coupon','uses'=>'HomeController@showCoupon']);
 Route::get('/recruit',['as'=>'recruit','uses'=>'HomeController@showRecruit']);
 
 Route::get('/gravute',['as'=>'gravure','uses'=>'HomeController@showGroupGod']);
-Route::get('/gravute-detail/{alias}',['as'=>'restaurant-detail','uses'=>'HomeController@showGravuteDetail']);
+Route::get('/gravute-detail/{alias}',['as'=>'gravute-detail','uses'=>'HomeController@showGravuteDetail']);
 
 Route::get('/restaurant',['as'=>'restaurant','uses'=>'HomeController@showRestaurant']);
 Route::get('/restaurant-detail/{alias}',['as'=>'restaurant-detail','uses'=>'HomeController@showRestaurantDetail']);
