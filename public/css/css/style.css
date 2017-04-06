@@ -3603,8 +3603,8 @@ footer {
   font-size: 13px;
 }
   .container-fluid .event-item .right{
-    padding-right: 0px !important;
-    padding-left: 0px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
   }
 }
 
