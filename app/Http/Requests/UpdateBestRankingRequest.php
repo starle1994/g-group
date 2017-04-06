@@ -25,7 +25,7 @@ class UpdateBestRankingRequest extends FormRequest {
 	{
 		return [
             'godstaffs_id' => 'required', 
-            'image' => 'required', 
+       
             
 		];
 	}
