@@ -12,7 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\GodStaffs;
 use App\Ranking;
-
+use App\LogGroupRanking;
+use DateTime;
 
 class BestRankingController extends Controller {
 
@@ -37,8 +38,8 @@ class BestRankingController extends Controller {
 	 */
 	public function create()
 	{
-	    $godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
-$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+	    $godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
+		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    
 	    return view('admin.bestranking.create', compact("godstaffs", "ranking"));
@@ -53,7 +54,17 @@ $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 	{
 	    $request = $this->saveFiles($request);
 		BestRanking::create($request->all());
-
+		$now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month = $prevDateTime->format('m');
+        $year  = $prevDateTime->format('Y');
+		LogGroupRanking::create([
+			'id_ranking'	=> $request->ranking_id,
+			'id_staff'=> $request->godstaffs_id,
+			'type' =>5,
+			'month'=>$month,
+			'year'=>$year,
+		]);
 		return redirect()->route(config('quickadmin.route').'.bestranking.index');
 	}
 
@@ -66,8 +77,8 @@ $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 	public function edit($id)
 	{
 		$bestranking = BestRanking::find($id);
-	    $godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
-$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+	    $godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
+		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    
 		return view('admin.bestranking.edit', compact('bestranking', "godstaffs", "ranking"));

@@ -31,9 +31,7 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
-
+                            <td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.bestranking.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.bestranking.destroy', $row->id))) !!}

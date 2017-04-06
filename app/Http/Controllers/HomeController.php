@@ -45,7 +45,7 @@ class HomeController extends Controller
 		$gigolo_ranking_staff 	= GigoloRankingStaff::limit(3)->orderBy('ranking_id','asc')->get();	
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
-		$shop_list 				= ShopsList::all();
+		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$banner					= Banner::where('page','1')->first();
 		$blogs 					= Blogs::take(10)->select('name','image','created_at','alias')->get();
 		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image','created_at','alias')->take(10)->get();
@@ -77,7 +77,7 @@ class HomeController extends Controller
 	public function showShopList()
 	{
 		$banner					= Banner::where('page','1')->first();
-		$shop_list 				= ShopsList::all();
+		$shop_list 				= ShopsList::where('is_active',1)->get();
 		return view('shop_list',compact('shop_list','banner'));
 	}
 
@@ -99,7 +99,7 @@ class HomeController extends Controller
 		$godPageContent 		= GodPageContent::all();
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
-		$shop_list 				= ShopsList::all();
+		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$recoments 				= RecomentCate::where('shopslist_id',1)->get();
 		$banner					= Banner::where('page','2')->first();
 		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list','recoments','banner','blogs','blogs1'));
@@ -113,7 +113,7 @@ class HomeController extends Controller
 		$gigoloPageContents 	= GigoloPageContents::all();
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
-		$shop_list 				= ShopsList::all();
+		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$recoments 				= RecomentCate::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','3')->first();
 		return view('gigolo',compact('gigoloRankingStaff','gigoloPageContents','secrect_contents','rookies_feature','shop_list','recoments','banner','blogs2','blogs'));
@@ -268,7 +268,7 @@ class HomeController extends Controller
     public function showRecruit()
     {
     	$banner					= Banner::where('page','1')->first();
-    	$shopslist 		= ShopsList::select('id','apply_method')->get();
+    	$shopslist 		= ShopsList::select('id','apply_method')->where('is_active',1)->get();
     	return view('recruit',compact('banner','shopslist'));
     }
 

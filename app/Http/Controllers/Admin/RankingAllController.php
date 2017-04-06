@@ -39,7 +39,7 @@ class RankingAllController extends Controller {
 	public function create()
 	{
 	    $grouprankingtype = GroupRankingType::pluck("name", "id")->prepend('Please select', null);
-		$godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
+		$godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
 		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    
@@ -79,7 +79,7 @@ class RankingAllController extends Controller {
 	{
 		$rankingall = RankingAll::find($id);
 	    $grouprankingtype = GroupRankingType::pluck("name", "id")->prepend('Please select', null);
-		$godstaffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
+		$godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
 		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    

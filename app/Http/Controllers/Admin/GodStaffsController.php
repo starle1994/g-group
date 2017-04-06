@@ -24,9 +24,23 @@ class GodStaffsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $godstaffs = GodStaffs::with("shopslist")->orderBy('id','desc')->get();
+        $godstaffs = GodStaffs::with("shopslist")->orderBy('id','desc')->where('shopslist_id',1)->get();
+        $shopslist_id =1;
+		return view('admin.godstaffs.index', compact('godstaffs','shopslist_id'));
+	}
 
-		return view('admin.godstaffs.index', compact('godstaffs'));
+	public function gigolo(Request $request)
+    {
+        $godstaffs = GodStaffs::with("shopslist")->orderBy('id','desc')->where('shopslist_id',2)->get();
+         $shopslist_id =2;
+		return view('admin.godstaffs.index', compact('godstaffs','shopslist_id'));
+	}
+
+	public function gGroup(Request $request)
+    {
+        $godstaffs = GodStaffs::with("shopslist")->orderBy('id','desc')->where('shopslist_id',3)->get();
+         $shopslist_id =3;
+		return view('admin.godstaffs.index', compact('godstaffs','shopslist_id'));
 	}
 
 	/**

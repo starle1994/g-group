@@ -25,8 +25,6 @@ class CreateShopsListRequest extends FormRequest {
 	{
 		return [
             'name' => 'required', 
-            'image' => 'required', 
-            'description' => 'required', 
             
 		];
 	}

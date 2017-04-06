@@ -158,6 +158,14 @@ Route::group([ 'middleware' => 'auth'], function () {
             'as' => 'admin.featureevent.image.post',
             'uses' => 'Admin\FeatureEventController@postUloadImage'
         ]);
+        Route::get(config('quickadmin.route') . '/godstaffs/gigolo', [
+            'as' => 'admin.godstaffs.gigolo',
+            'uses' => 'Admin\GodStaffsController@gigolo'
+        ]);
+         Route::get(config('quickadmin.route') . '/godstaffs/g5', [
+            'as' => 'admin.godstaffs.g5',
+            'uses' => 'Admin\GodStaffsController@gGroup'
+        ]);
     });
 });
 

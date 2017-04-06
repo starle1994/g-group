@@ -3,6 +3,12 @@
 @section('content')
 
 <p>{!! link_to_route(config('quickadmin.route').'.godstaffs.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
+<br>
+<span>{!! link_to_route(config('quickadmin.route').'.godstaffs.index', ' Million GOD（ミリオンゴッド）' , null, array('class' => ($shopslist_id==1) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<span>{!! link_to_route(config('quickadmin.route').'.godstaffs.gigolo', ' "Gigolo（"ジゴロ.）' , null, array('class' => ($shopslist_id==2) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<span>{!! link_to_route(config('quickadmin.route').'.godstaffs.g5', ' "G5' , null, array('class' => ($shopslist_id==3) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<br>
+<br>
 
 @if ($godstaffs->count())
     <div class="portlet box green">
