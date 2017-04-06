@@ -85,7 +85,7 @@ class HomeController extends Controller
 	{
 		$best_ranking 			= BestRanking::orderBy('ranking_id','asc')->with('godstaffs')->limit(5)->get();
 		$group_ranking 			= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
-		dd($group_ranking);
+		
 		$group_ranking_type2 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('group_ranking',compact('best_ranking','group_ranking','group_ranking_type2','banner'));
