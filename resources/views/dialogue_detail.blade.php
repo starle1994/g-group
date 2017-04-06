@@ -11,7 +11,7 @@
        
         <div class="col-sm-9 right">
             <div class="exe-fa-head-1">
-                <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
+                <img src="{{ asset('css/css/images/dialogue/h1.jpg') }}" alt="">
             </div>
 
             <div class="content">
