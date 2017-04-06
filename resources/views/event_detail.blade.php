@@ -64,7 +64,7 @@
         $( window ).resize(function() {
             height = $('.groupTop .right .content .main .avatar:first-child img').height();        
             $('.groupTop .right .content .main .avatar img').height(height);  
-        };
+        });
 });
 </script>   
 @endsection
