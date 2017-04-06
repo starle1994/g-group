@@ -45,8 +45,5 @@ class MillionGodRankingStaff extends Model {
     {
         return $this->hasOne('App\GodStaffs', 'id', 'godstaffs_id');
     }
-
-    
-    
     
 }
