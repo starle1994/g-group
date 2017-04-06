@@ -59,11 +59,11 @@
     </div>
 <script type="text/javascript">
  $(document).ready(function () {    
-        height = $('.groupTop .right .content .avatar:first-child img').height();        
-        $('.groupTop .right .content .avatar img').height(height);  
+        height = $('.groupTop .right .content .main .avatar:first-child img').height();        
+        $('.groupTop .right .content .main .avatar img').height(height);  
         $( window ).resize(function() {
-            height = $('.groupTop .right .content .avatar:first-child img').height();        
-            $('.groupTop .right .content .avatar img').height(height);  
+            height = $('.groupTop .right .content .main .avatar:first-child img').height();        
+            $('.groupTop .right .content .main .avatar img').height(height);  
         };
 });
 </script>   
