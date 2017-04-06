@@ -18,7 +18,6 @@
                         </th>
                         <th>Ranking Stype</th>
 <th>name</th>
-<th>image</th>
 <th>Ranking</th>
 
                         <th>&nbsp;</th>
@@ -33,7 +32,6 @@
                             </td>
                             <td>{{ isset($row->grouprankingtype->name) ? $row->grouprankingtype->name : '' }}</td>
 <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
 <td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
 
                             <td>
