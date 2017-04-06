@@ -17,43 +17,44 @@
                 </div>
                 <div class="gr-rank-footer-p1">
                     @foreach ($group_ranking as $group)
-                       
-                        @if($group->ranking_id ==1)
-                                    <?php $image = 'css/css/images/group-rankking/l1.jpg' ?>
-                                @elseif($group->ranking_id ==2)
-                                    <?php $image = 'css/css/images/group-rankking/l2.jpg' ?>
-                                @elseif($group->ranking_id ==3)
-                                    <?php $image = 'css/css/images/group-rankking/l3.jpg' ?>
-                                @elseif($group->ranking_id ==4)
-                                    <?php $image = 'css/css/images/group-rankking/l4.jpg' ?>
-                                @elseif($group->ranking_id ==5)
-                                    <?php $image = 'css/css/images/group-rankking/l5.jpg' ?>
-                                @elseif($group->ranking_id ==6)
-                                    <?php $image = 'css/css/images/group-rankking/l6.jpg' ?>
-                                @elseif($group->ranking_id ==7)
-                                    <?php $image = 'css/css/images/group-rankking/l7.jpg' ?>
-                                @elseif($group->ranking_id ==8)
-                                    <?php $image = 'css/css/images/group-rankking/l8.jpg' ?>
-                                @elseif($group->ranking_id ==9)
-                                    <?php $image = 'css/css/images/group-rankking/l9.jpg' ?>
-                                @elseif($group->ranking_id ==10)
-                                    <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
-                        @endif
-                        <div class="col-xs-2 item" style="margin-bottom: 30px;">
-                            <div class="title">
-                               <img src="{{asset($image)}}" alt="">
-                            </div>
-                            
-                            <div class="av-main">
-                                <div class="avt-lf">
-                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                        @if($group->godstaffs !=null)
+                            @if($group->ranking_id ==1)
+                                        <?php $image = 'css/css/images/group-rankking/l1.jpg' ?>
+                                    @elseif($group->ranking_id ==2)
+                                        <?php $image = 'css/css/images/group-rankking/l2.jpg' ?>
+                                    @elseif($group->ranking_id ==3)
+                                        <?php $image = 'css/css/images/group-rankking/l3.jpg' ?>
+                                    @elseif($group->ranking_id ==4)
+                                        <?php $image = 'css/css/images/group-rankking/l4.jpg' ?>
+                                    @elseif($group->ranking_id ==5)
+                                        <?php $image = 'css/css/images/group-rankking/l5.jpg' ?>
+                                    @elseif($group->ranking_id ==6)
+                                        <?php $image = 'css/css/images/group-rankking/l6.jpg' ?>
+                                    @elseif($group->ranking_id ==7)
+                                        <?php $image = 'css/css/images/group-rankking/l7.jpg' ?>
+                                    @elseif($group->ranking_id ==8)
+                                        <?php $image = 'css/css/images/group-rankking/l8.jpg' ?>
+                                    @elseif($group->ranking_id ==9)
+                                        <?php $image = 'css/css/images/group-rankking/l9.jpg' ?>
+                                    @elseif($group->ranking_id ==10)
+                                        <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
+                            @endif
+                            <div class="col-xs-2 item" style="margin-bottom: 30px;">
+                                <div class="title">
+                                   <img src="{{asset($image)}}" alt="">
+                                </div>
+                                
+                                <div class="av-main">
+                                    <div class="avt-lf">
+                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                                    </div>
+                                </div>
+
+                                <div class="ft-bk">
+                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
                                 </div>
                             </div>
-
-                            <div class="ft-bk">
-                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
-                            </div>
-                        </div>
+                         @endif
                     @endforeach
                     
                 </div>
