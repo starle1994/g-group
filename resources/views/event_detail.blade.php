@@ -44,12 +44,12 @@
                 <div style="margin-right: 0px; margin-left: 0px;"  class="row main">
                 @foreach($event->eventsfeatureimage as $image)
                     <div class="col-sm-6 avatar">
-                        <div class="event-item-item">
+                     
                             <img src="{{ asset('uploads/'.$image->image)}}" alt="">
                             <p>
                                 {!! $image->description !!}
                             </p>
-                        </div>
+    
                     </div>
                  @endforeach
                    
@@ -60,7 +60,7 @@
 <script type="text/javascript">
  $(document).ready(function () {    
         height = $('.groupTop .right .content .avatar:first-child img').height();        
-        $('.groupTop .content .content .avatar img').height(height);  
+        $('.groupTop .right .content .avatar img').height(height);  
         $( window ).resize(function() {
             height = $('.groupTop .right .content .avatar:first-child img').height();        
             $('.groupTop .right .content .avatar img').height(height);  
