@@ -500,9 +500,15 @@
    </div>
 </div> 
 <script type="text/javascript">
+$(document).ready(function() {
     var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
-                 $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
-            
+
+    $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+    $(window).resize(function() {
+        var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
+        $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+    })
+});
     
 </script>           
 @endsection

@@ -228,7 +228,7 @@
    </div>
 </div>
 <script type="text/javascript">
-     
+ $(document).ready(function () {    
     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
   
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
@@ -253,5 +253,6 @@
         $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
         $('.gr-rank-footer-p1 .item').height(height3);
     });
+  });
 </script>
 @endsection
