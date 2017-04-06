@@ -17,8 +17,7 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>Name</th>
-<th>image</th>
-<th>ranking</th>
+                        <th>ranking</th>
 
                         <th>&nbsp;</th>
                     </tr>

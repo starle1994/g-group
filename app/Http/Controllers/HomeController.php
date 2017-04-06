@@ -138,7 +138,7 @@ class HomeController extends Controller
 
 	public function rankingMillionStaff()
 	{
-		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
+		$group_ranking 	= MillionGodRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
 		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
@@ -146,7 +146,7 @@ class HomeController extends Controller
 
 	public function rankingGigoloStaff()
 	{
-		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
+		$group_ranking 	= GigoloRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
 		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
