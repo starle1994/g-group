@@ -25,7 +25,6 @@ class CreateBestRankingRequest extends FormRequest {
 	{
 		return [
             'godstaffs_id' => 'required', 
-            'image' => 'required', 
             
 		];
 	}
