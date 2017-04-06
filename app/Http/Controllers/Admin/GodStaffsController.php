@@ -24,7 +24,7 @@ class GodStaffsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $godstaffs = GodStaffs::with("shopslist")->get();
+        $godstaffs = GodStaffs::with("shopslist")->orderBy('id','desc')->get();
 
 		return view('admin.godstaffs.index', compact('godstaffs'));
 	}
