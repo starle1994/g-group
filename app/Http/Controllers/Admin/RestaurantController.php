@@ -149,7 +149,7 @@ class RestaurantController extends Controller {
 	public function destroy($id)
 	{
 		Restaurant::destroy($id);
-		$image = ImageRestaurant::where('restaurant_id', $id)->get();
+		$image = ImageRestaurant::where('restaurant_id', $id)->delete();
 	
 		return redirect()->route(config('quickadmin.route').'.restaurant.index');
 	}

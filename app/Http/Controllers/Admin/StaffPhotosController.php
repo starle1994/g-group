@@ -24,7 +24,7 @@ class StaffPhotosController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $staffphotos = StaffPhotos::with("staffs")->get();
+        $staffphotos = StaffPhotos::with("staffs")->orderBy('id','desc')->get();
 
 		return view('admin.staffphotos.index', compact('staffphotos'));
 	}

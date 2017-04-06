@@ -24,7 +24,7 @@ class StaffMoviesController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $staffmovies = StaffMovies::with("staffs")->get();
+        $staffmovies = StaffMovies::with("staffs")->orderBy('id','desc')->get();
 
 		return view('admin.staffmovies.index', compact('staffmovies'));
 	}

@@ -24,7 +24,7 @@ class StaffsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $staffs = Staffs::with("shopslist")->get();
+        $staffs = Staffs::with("shopslist")->orderBy('id','desc')->get();
 
 		return view('admin.staffs.index', compact('staffs'));
 	}
