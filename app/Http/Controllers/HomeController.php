@@ -95,7 +95,7 @@ class HomeController extends Controller
 		$blogs 					= Blogs::take(10)->select('name','image','created_at','alias')->get();
 		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image','created_at','alias')->take(10)->get();
 		$millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->get();
-		$godPageContent = GodPageContent::all();
+		$godPageContent 		= GodPageContent::all();
 		$secrect_contents 		= SecrectContents::all();
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::all();
@@ -138,7 +138,7 @@ class HomeController extends Controller
 	public function rankingMillionStaff()
 	{
 		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
-		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
+		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
 	}
@@ -146,7 +146,7 @@ class HomeController extends Controller
 	public function rankingGigoloStaff()
 	{
 		$group_ranking 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
-		$million_god_staff = GodStaffs::where('shopslist_id',3)->get();
+		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
 	}
