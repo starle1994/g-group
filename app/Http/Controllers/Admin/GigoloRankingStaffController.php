@@ -41,7 +41,11 @@ class GigoloRankingStaffController extends Controller {
 	public function create()
 	{
 	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-	    $godstaffs = GodStaffs::where('shopslist_id',2)->pluck("name", "id")->prepend('Please select', null);
+	    $godstaff = GodStaffs::where('shopslist_id',2)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 	    
 	    return view('admin.gigolorankingstaff.create', compact("ranking","godstaffs"));
 	}
@@ -120,7 +124,11 @@ class GigoloRankingStaffController extends Controller {
 	{
 		$gigolorankingstaff = GigoloRankingStaff::with("godstaffs")->where('id',$id)->first();
 	    $ranking = Ranking::pluck("description", "id")->prepend('Please select', null);
-	     $godstaffs = GodStaffs::where('shopslist_id',2)->pluck("name", "id")->prepend('Please select', null);
+	    $godstaff = GodStaffs::where('shopslist_id',2)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 	    
 		return view('admin.gigolorankingstaff.edit', compact('gigolorankingstaff', "ranking","godstaffs"));
 	}

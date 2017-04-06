@@ -39,7 +39,11 @@ class MillionGodRankingStaffController extends Controller {
 	public function create()
 	{
 	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-	    $godstaffs = GodStaffs::where('shopslist_id',1)->pluck("name", "id")->prepend('Please select', null);
+	    $godstaff = GodStaffs::where('shopslist_id',1)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 	    
 	    return view('admin.milliongodrankingstaff.create', compact("ranking","godstaffs"));
 	}
@@ -119,7 +123,11 @@ class MillionGodRankingStaffController extends Controller {
 	{
 		$milliongodrankingstaff = MillionGodRankingStaff::find($id);
 	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-	     $godstaffs = GodStaffs::where('shopslist_id',1)->pluck("name", "id")->prepend('Please select', null);
+	     $godstaff = GodStaffs::where('shopslist_id',1)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 	    
 		return view('admin.milliongodrankingstaff.edit', compact('milliongodrankingstaff', "ranking","godstaffs"));
 	}

@@ -23,7 +23,7 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>ショップリスト*</th>
-<th>romajiname</th>
+<th>name</th>
 <th>position</th>
 <th>image</th>
 

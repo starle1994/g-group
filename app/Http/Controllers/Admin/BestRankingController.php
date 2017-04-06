@@ -38,7 +38,11 @@ class BestRankingController extends Controller {
 	 */
 	public function create()
 	{
-	    $godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
+	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    
@@ -77,7 +81,11 @@ class BestRankingController extends Controller {
 	public function edit($id)
 	{
 		$bestranking = BestRanking::find($id);
-	    $godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
+	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
+	    $godstaffs[0]= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
 
 	    
