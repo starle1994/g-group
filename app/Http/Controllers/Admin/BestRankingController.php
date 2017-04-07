@@ -39,12 +39,15 @@ class BestRankingController extends Controller {
 	public function create()
 	{
 	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
-	    $godstaffs[0]= 'Please select';
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
-		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
 	    
 	    return view('admin.bestranking.create', compact("godstaffs", "ranking"));
 	}
@@ -82,13 +85,16 @@ class BestRankingController extends Controller {
 	{
 		$bestranking = BestRanking::find($id);
 	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
-	    $godstaffs[0]= 'Please select';
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
-		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
 
-	    
+	    }
 		return view('admin.bestranking.edit', compact('bestranking', "godstaffs", "ranking"));
 	}
 
@@ -106,6 +112,27 @@ class BestRankingController extends Controller {
 
 		$bestranking->update($request->all());
 
+		$now = new DateTime();
+        $prevDateTime = $now->modify("last day of previous month");
+        $month 	= $prevDateTime->format('m');
+        $year  	= $prevDateTime->format('Y');
+        $log 	= LogGroupRanking::where('id_staff',$bestranking->godstaffs_id)
+        			->where('type',5)
+        			->where('month',$month)
+        			->where('year',$year)
+        			->first();
+
+        $input1['id_ranking'] = $request->ranking_id;
+		$input1['id_staff'] = $request->godstaffs_id;
+        $input1['month'] 	=$month;
+		$input1['year']	=$year;
+		$input1['type'] =5;
+
+		if ($log == null) {
+			LogGroupRanking::create($input1);
+		}else{
+			$log->update($input1);
+		}
 		return redirect()->route(config('quickadmin.route').'.bestranking.index');
 	}
 

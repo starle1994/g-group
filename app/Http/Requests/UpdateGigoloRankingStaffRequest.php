@@ -24,7 +24,8 @@ class UpdateGigoloRankingStaffRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            
+            'ranking_id'=>'required',
+          	'godstaffs_id'=>'required',
 		];
 	}
 }

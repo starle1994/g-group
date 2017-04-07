@@ -19,13 +19,13 @@
 {!! Form::model($gigolorankingstaff, array('files' => true, 'class' => 'form-horizontal', 'id' => 'form-with-validation', 'method' => 'PATCH', 'route' => array(config('quickadmin.route').'.gigolorankingstaff.update', $gigolorankingstaff->id))) !!}
 
 <div class="form-group">
-    {!! Form::label('ranking_id', 'ranking', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('ranking_id', 'ranking*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::select('ranking_id', $ranking, old('ranking_id',$gigolorankingstaff->ranking_id), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
 {!! Form::select('godstaffs_id', $godstaffs, old('godstaffs_id',$gigolorankingstaff->godstaffs), array('class'=>'form-control')) !!}
         

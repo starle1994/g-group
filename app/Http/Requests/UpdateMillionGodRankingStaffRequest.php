@@ -25,7 +25,7 @@ class UpdateMillionGodRankingStaffRequest extends FormRequest {
 	{
 		return [
             'ranking_id' => 'required', 
-            
+            'godstaffs_id' => 'required',
 		];
 	}
 }

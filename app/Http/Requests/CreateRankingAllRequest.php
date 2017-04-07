@@ -24,7 +24,9 @@ class CreateRankingAllRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            
+            'grouprankingtype_id'=>'required',
+          	'godstaffs_id'		=>'required',
+          	'ranking_id'		=>'required'
 		];
 	}
 }

@@ -38,10 +38,21 @@ class RankingAllController extends Controller {
 	 */
 	public function create()
 	{
-	    $grouprankingtype = GroupRankingType::pluck("name", "id")->prepend('Please select', null);
-		$godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
-		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-
+	    $grouprankingtypes = GroupRankingType::all();
+	    $grouprankingtype['']= 'Please select';
+	    foreach ($grouprankingtypes as $value_ty) {
+	    	$grouprankingtype[$value_ty->id]=$value_ty->name;
+	    }
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
+	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
+	    $godstaffs['']= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 	    
 	    return view('admin.rankingall.create', compact("grouprankingtype", "godstaffs", "ranking"));
 	}
@@ -78,11 +89,22 @@ class RankingAllController extends Controller {
 	public function edit($id)
 	{
 		$rankingall = RankingAll::find($id);
-	    $grouprankingtype = GroupRankingType::pluck("name", "id")->prepend('Please select', null);
-		$godstaffs = GodStaffs::where('shopslist_id',3)->pluck("name", "id")->prepend('Please select', null);
-		$ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+	    $grouprankingtypes = GroupRankingType::all();
+	    $grouprankingtype['']= 'Please select';
+	    foreach ($grouprankingtypes as $value_ty) {
+	    	$grouprankingtype[$value_ty->id]=$value_ty->name;
+	    }
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
+	    $godstaff = GodStaffs::where('shopslist_id',3)->get();
+	    $godstaffs['']= 'Please select';
+	    foreach ($godstaff as $value) {
+	    	$godstaffs[$value->id]=$value->name;
+	    }
 
-	    
 		return view('admin.rankingall.edit', compact('rankingall', "grouprankingtype", "godstaffs", "ranking"));
 	}
 
@@ -124,7 +146,13 @@ class RankingAllController extends Controller {
 		$rankingall->update($input);
 		$input['month'] =$month;
 		$input['year']	=$year;
-		//$log->update($input);
+		$input['type'] 	=$request->grouprankingtype_id;
+
+		if ($log == null) {
+			LogGroupRanking::create($input);
+		}else{
+			$log->update($input);
+		}
 
 		return redirect()->route(config('quickadmin.route').'.rankingall.index');
 	}

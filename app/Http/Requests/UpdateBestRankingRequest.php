@@ -24,7 +24,8 @@ class UpdateBestRankingRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'godstaffs_id' => 'required', 
+            'godstaffs_id' => 'required',
+            'ranking_id'	=>'required'
 		];
 	}
 }

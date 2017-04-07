@@ -230,7 +230,6 @@
 <script type="text/javascript">
  $(document).ready(function () {    
     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-  
     width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
     $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
     $('.gr-rank-containerSlider .right .avt-left').height(height1);

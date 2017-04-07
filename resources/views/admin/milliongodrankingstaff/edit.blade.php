@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="form-group">
-    {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::select('godstaffs_id', $godstaffs, old('godstaffs_id',$milliongodrankingstaff->godstaffs_id), array('class'=>'form-control')) !!}
         
@@ -49,15 +49,6 @@
         
     </div>
 </div>
-<div class="form-group">
-    {!! Form::label('executive_layer', 'Executiv_layer', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::hidden('executive_layer','') !!}
-        {!! Form::checkbox('executive_layer', 1, $milliongodrankingstaff->executive_layer == 1) !!}
-        
-    </div>
-</div>
-
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
       {!! Form::submit(trans('quickadmin::templates.templates-view_edit-update'), array('class' => 'btn btn-primary')) !!}

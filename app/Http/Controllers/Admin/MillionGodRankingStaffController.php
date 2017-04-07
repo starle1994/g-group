@@ -38,9 +38,13 @@ class MillionGodRankingStaffController extends Controller {
 	 */
 	public function create()
 	{
-	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
 	    $godstaff = GodStaffs::where('shopslist_id',1)->get();
-	    $godstaffs[0]= 'Please select';
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
@@ -122,9 +126,13 @@ class MillionGodRankingStaffController extends Controller {
 	public function edit($id)
 	{
 		$milliongodrankingstaff = MillionGodRankingStaff::find($id);
-	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
-	     $godstaff = GodStaffs::where('shopslist_id',1)->get();
-	    $godstaffs[0]= 'Please select';
+		$rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
+	    $godstaff = GodStaffs::where('shopslist_id',1)->get();
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
@@ -210,7 +218,14 @@ class MillionGodRankingStaffController extends Controller {
 		$milliongodrankingstaff->update($input1);
 		$input1['month'] =$month;
 		$input1['year']	=$year;
-		$log->update($input1);
+		$input1['type'] =3;
+
+		if ($log == null) {
+			LogGroupRanking::create($input1);
+		}else{
+			$log->update($input1);
+		}
+		
 		return redirect()->route(config('quickadmin.route').'.milliongodrankingstaff.index');
 	}
 

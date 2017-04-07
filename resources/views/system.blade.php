@@ -217,8 +217,7 @@
         <div id="googlemaps-container-top"></div>
         <div id="googlemaps" class="google-map google-map-full"></div>
         <div id="googlemaps-container-bottom"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjiosnaD573LajklQ4M5NdDunTtG1su4
-&callback=myMap"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjiosnaD573LajklQ4M5NdDunTtG1su4&callback=myMap"></script>
         <script src="js/jquery.gmap.min.js"></script>
         <script type="text/javascript">
             var a = $('#address').val();

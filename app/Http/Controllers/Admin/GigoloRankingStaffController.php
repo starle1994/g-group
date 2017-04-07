@@ -40,9 +40,13 @@ class GigoloRankingStaffController extends Controller {
 	 */
 	public function create()
 	{
-	    $ranking = Ranking::pluck("number", "id")->prepend('Please select', null);
+	    $rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
 	    $godstaff = GodStaffs::where('shopslist_id',2)->get();
-	    $godstaffs[0]= 'Please select';
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
@@ -123,9 +127,13 @@ class GigoloRankingStaffController extends Controller {
 	public function edit($id)
 	{
 		$gigolorankingstaff = GigoloRankingStaff::with("godstaffs")->where('id',$id)->first();
-	    $ranking = Ranking::pluck("description", "id")->prepend('Please select', null);
+	    $rankings = Ranking::all();
+	    $ranking['']= 'Please select';
+	    foreach ($rankings as $value_ran) {
+	    	$ranking[$value_ran->id]=$value_ran->number;
+	    }
 	    $godstaff = GodStaffs::where('shopslist_id',2)->get();
-	    $godstaffs[0]= 'Please select';
+	    $godstaffs['']= 'Please select';
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
@@ -213,7 +221,13 @@ class GigoloRankingStaffController extends Controller {
 		$gigolorankingstaff->update($input1);
 		$input1['month'] =$month;
 		$input1['year']	=$year;
-		$log->update($input1);
+		$input1['type'] =4;
+
+		if ($log == null) {
+			LogGroupRanking::create($input1);
+		}else{
+			$log->update($input1);
+		}
 		return redirect()->route(config('quickadmin.route').'.gigolorankingstaff.index');
 	}
 

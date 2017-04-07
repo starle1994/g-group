@@ -25,7 +25,9 @@ class CreateMillionGodRankingStaffRequest extends FormRequest {
 	{
 		return [
             'ranking_id' => 'required', 
-            
+            'godstaffs_id' => 'required', 
+            'image' => 'required', 
+            'banner' => 'required', 
 		];
 	}
 }

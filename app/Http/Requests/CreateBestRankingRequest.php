@@ -25,7 +25,7 @@ class CreateBestRankingRequest extends FormRequest {
 	{
 		return [
             'godstaffs_id' => 'required', 
-            
+            'ranking_id'	=>'required'
 		];
 	}
 }
