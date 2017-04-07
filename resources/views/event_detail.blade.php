@@ -60,7 +60,8 @@
 <script type="text/javascript">
  $(document).ready(function () {  
      $("img").each(function(){
-        height = $('.groupTop .right .content .main .avatar:first-child img').height();        
+        height = $('.groupTop .right .content .main .avatar:first-child img').height(); 
+        console.log(height);       
         $('.groupTop .right .content .main .avatar img').height(height);  
         $( window ).resize(function() {
             height = $('.groupTop .right .content .main .avatar:first-child img').height();        
