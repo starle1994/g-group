@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+    a{
+        color: #fff;
+    }
+</style>
 <div class="row group-rankking">
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row gr-rank-lineSli">
@@ -19,11 +24,14 @@
                     @foreach ($group_ranking as $group)
                         @if($group->godstaffs !=null)
                             @if($group->ranking_id ==1)
-                                        <?php $image = 'css/css/images/group-rankking/l1.jpg' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l1.jpg';
+                                            $bk ='css/css/images/group-rankking/bk2.png'; ?>
                                     @elseif($group->ranking_id ==2)
-                                        <?php $image = 'css/css/images/group-rankking/l2.jpg' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l2.jpg' ;
+                                        $bk ='css/css/images/group-rankking/bk3.png';?>
                                     @elseif($group->ranking_id ==3)
-                                        <?php $image = 'css/css/images/group-rankking/l3.jpg' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l3.jpg' ;
+                                        $bk ='css/css/images/group-rankking/bk4.png';?>
                                     @elseif($group->ranking_id ==4)
                                         <?php $image = 'css/css/images/group-rankking/l4.jpg' ?>
                                     @elseif($group->ranking_id ==5)
@@ -45,25 +53,27 @@
                                 </div>
                                 
                                 <div class="av-main">
+                                    <div class="bg-lf" style="position: absolute;">
+                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img src="{{asset($bk)}}" alt=""></a>
+                                    </div>
                                     <div class="avt-lf">
                                         <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                     </div>
                                 </div>
 
                                 <div class="ft-bk">
-                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
+                                    {{$group->godstaffs->position}}<br> 
+                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
                                 </div>
                             </div>
                          @endif
                     @endforeach
                     
                 </div>
-
-
                 <!-- dong 2 -->
                 <div style="margin-bottom: 30px;" class="slider1">
                     <div class="gr-rank-sliderAva" >
-                        <img src="{{ asset('css/css/images/gigolo/img1.png')}}" alt="">
+                        <img src="{{ asset('css/css/images/gigolo/img2.png')}}" alt="">
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
@@ -76,13 +86,36 @@
                             </div>
 
                             <div class="ft-bk">
-                                    <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a> 
-                                </div>
+                                {{$group2->position}}<br> 
+                                <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a> 
+                            </div>
                         </div>
                     @endforeach
-                    
-                    
-                    
+                </div>
+
+                <!-- dong 2 -->
+                <div style="margin-bottom: 30px;" class="slider1">
+                    <div class="gr-rank-sliderAva" >
+                        <img src="{{ asset('css/css/images/gigolo/img3.png')}}" alt="">
+                    </div>
+                </div>
+                <div class="gr-rank-footer-p1">
+                    @foreach ($million_god_staff as $group2)
+                        @if($group2->position !=null)
+                        <div class="col-md-2 col-xs-2 item" style="margin-bottom: 15px;">
+                            <div class="av-main">
+                                <div class="avt-lf">
+                                    <a href="{{route('staff-detail',base64_encode($group2->id))}}"><img class="avt-img" src="{{ asset('uploads/'.$group2->image) }}" alt=""></a>
+                                </div>
+                            </div>
+
+                            <div class="ft-bk">
+                                {{$group2->position}}<br> 
+                                <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a> 
+                            </div>
+                        </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -95,31 +128,22 @@
    </div>
 </div>
 <script type="text/javascript">
-     height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-    $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
-    width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
-    $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
-    $('.gr-rank-containerSlider .right .avt-left').height(height1);
-    height2 = $('.group-rankking .gr-rank-p2 .avt-lf img').height(); 
-    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').height(height2); 
-    width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
-    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
-    height3 = $('.gr-rank-footer-p1 .item:first-child').height();
-    $('.gr-rank-footer-p1 .item').height(height3);
+$(document).ready(function() {
+
+    var height = $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child').height();
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').height(height);
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:last-child img').height(height);
+    width2 = $('.groupTop .group-rankking .gr-rank-footer-p1 .item  div:first-child').width(); 
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').width(width2);
 
     $( window ).resize(function() {
-        height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-        $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
-        width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
-        $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
-        $('.gr-rank-containerSlider .right .avt-left').height(height1);
-        height2 = $('.group-rankking .gr-rank-p2 .avt-lf img').height(); 
-        $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').height(height2); 
-        width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
-        $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
-        $('.gr-rank-footer-p1 .item').height(height3);
+        var height = $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child').height();
+        $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child img').height(height);
+        $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:last-child img').height(height);
+        width2 = $('.groupTop .group-rankking .gr-rank-footer-p1 .item div:first-child').width(); 
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').width(width2);
     });
-
+});
    
    
 </script>

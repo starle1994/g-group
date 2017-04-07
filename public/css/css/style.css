@@ -3676,3 +3676,12 @@ footer {
     padding: 3px;
     padding-top: 10px;
 }
+
+.gr-rank-p2 .contents .av-main .bg-lf {
+    position: absolute;
+    padding-right: 10px;
+}
+
+.ft-bk{
+  height: 40px;
+}

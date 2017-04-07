@@ -33,7 +33,6 @@
                             </div>
 
                         </div>
-
                         <div class="col-md-6 col-sm-12 right">
                             <div class="avt-left">
                                 <ul>
@@ -57,16 +56,19 @@
                             @if(isset($best_ranking[$i]))
                             <div class="col-sm-6">
                                 @if($best_ranking[$i]->ranking_id ==2)
-                                    <?php $image = 'css/css/images/group-rankking/2st.jpg' ?>
+                                    <?php $image = 'css/css/images/group-rankking/2st.jpg' ;
+                                        $bk ='css/css/images/group-rankking/bk3.png';
+                                    ?>
                                 @elseif($best_ranking[$i]->ranking_id ==3)
-                                    <?php $image = 'css/css/images/group-rankking/3st.jpg' ?>
+                                    <?php $image = 'css/css/images/group-rankking/3st.jpg';
+                                    $bk ='css/css/images/group-rankking/bk4.png'; ?>
                                 @endif
                                 <div class="title">
                                    <img src="{{asset($image)}}" alt="">
                                 </div>
                                 <div class="av-main">
                                     <div class="bg-lf">
-                                        <a href="{{route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id))}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
+                                        <a href="{{route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id))}}"><img src="{{asset($bk)}}" alt=""></a>
                                     </div>
 
                                     <div class="avt-lf">
@@ -98,10 +100,6 @@
                                 </div>
                                 
                                 <div class="av-main">
-                                    <div class="bg-lf">
-                                        <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}"><img src="{{asset('css/css/images/group-rankking/bk3.png')}}" alt=""></a>
-                                    </div>
-
                                     <div class="avt-lf">
                                         <img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt="">
                                     </div>
@@ -228,30 +226,43 @@
    </div>
 </div>
 <script type="text/javascript">
- $(document).ready(function () {    
-    height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-    width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
-    $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
-    $('.gr-rank-containerSlider .right .avt-left').height(height1);
-    height2 = $('.group-rankking .gr-rank-p2 .avt-lf img').height(); 
-    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').height(height2); 
+$(document).ready(function() {
+ var height = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child').height();
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child img').height(height);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:last-child img').height(height);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .right div:first-child').height(height);
+
+ var height2 = $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:first-child').height();
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:first-child img').height(height2);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:last-child img').height(height2); 
+
+    var height4 = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-footer-p1 .av-main div:first-child').height();
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-footer-p1 .av-main div:first-child img').height(height4);
+
+     var height3 = $('.gr-rank-footer-p1 .item:first-child').height();
+    $('.gr-rank-footer-p1 .item').height(height3);
     width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
     $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
-    height3 = $('.gr-rank-footer-p1 .item:first-child').height();
-    $('.gr-rank-footer-p1 .item').height(height3);
 
-    $( window ).resize(function() {
-        height1 = $('.group-rankking .gr-rank-slider2 .avt-left img').height();
-        $('.group-rankking .gr-rank-slider2 .bk-left img').height(height1);
-        width1 = $('.group-rankking .gr-rank-slider2 .avt-left img').width();
-        $('.group-rankking .gr-rank-slider2 .bk-left img').width(width1);
-        $('.gr-rank-containerSlider .right .avt-left').height(height1);
-        height2 = $('.group-rankking .gr-rank-p2 .avt-lf img').height(); 
-        $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').height(height2); 
-        width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
-        $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
-        $('.gr-rank-footer-p1 .item').height(height3);
+    $(window).resize(function() {
+       var height = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child').height();
+
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child img').height(height);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:last-child img').height(height);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .right div:first-child').height(height);
+
+    var height2 = $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:first-child').height();
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:first-child img').height(height2);
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .contents .av-main div:last-child img').height(height2); 
+
+     var height4 = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-footer-p1 .av-main div:first-child').height();
+    $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-footer-p1 .av-main div:first-child img').height(height4);
+     var height3 = $('.gr-rank-footer-p1 .item:first-child').height();
+    $('.gr-rank-footer-p1 .item').height(height3);
+    width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
+    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
     });
-  });
+});
+
 </script>
 @endsection
