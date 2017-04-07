@@ -230,6 +230,7 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
+     
  var height = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child').height();
     $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child img').height(height);
     $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:last-child img').height(height);
@@ -265,6 +266,7 @@ $(document).ready(function() {
     width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
     $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
     });
+ 
 });
 
 </script>

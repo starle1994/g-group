@@ -59,7 +59,7 @@
     </div>
 <script type="text/javascript">
  $(document).ready(function () {  
-     $("img").each(function(){
+     $(window).bind('scroll', function(ev){
         height = $('.groupTop .right .content .main .avatar:first-child img').height(); 
         console.log(height);       
         $('.groupTop .right .content .main .avatar img').height(height);  
