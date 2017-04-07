@@ -8,7 +8,6 @@
                  @include('include.categories_left2')
             </div>     
         </div>
-       
         <div class="col-sm-9 right">
             <div class="exe-fa-head-1">
                 <img src="{{ asset('css/css/images/dialogue/h1.jpg') }}" alt="">
@@ -16,7 +15,7 @@
 
             <div class="content">
                 <div class="row top">
-                    <div class="exe-fa-head-1">
+                    <div class="col-sm-6 avt-parent">
                         <img src="{{ asset('uploads/'.$dialog->image)}}" alt="">
                     </div>
 
@@ -36,7 +35,7 @@
                         <iframe  src="{{$dialog->link}}" frameborder="0" allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-sm-12 footer-head">
+                    <div class="col-sm-12 footer-head text-center">
                        <!-- <img src="images/dialogue-item/footer.png" alt="">-->
                         <img src="{{ asset('css/css/images/dialogue-item/footer.png') }}" alt="">
                         <p>{!! $dialog->name !!}</p>

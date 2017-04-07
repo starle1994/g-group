@@ -8,7 +8,7 @@ use Laraveldaily\Quickadmin\Observers\UserActionsObserver;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Dialogue extends Model {
+class DialogueTopic extends Model {
 
     use SoftDeletes;
 
@@ -19,15 +19,11 @@ class Dialogue extends Model {
     */
     protected $dates = ['deleted_at'];
 
-    protected $table    = 'dialogue';
+    protected $table    = 'dialoguetopic';
     
     protected $fillable = [
-          'image',
           'name',
-          'description',
-          'link',
-          'alias',
-          'dialogue_topic_id'
+          'description'
     ];
     
 
@@ -35,7 +31,7 @@ class Dialogue extends Model {
     {
         parent::boot();
 
-        Dialogue::observe(new UserActionsObserver);
+        DialogueTopic::observe(new UserActionsObserver);
     }
     
     

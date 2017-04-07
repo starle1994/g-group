@@ -10,6 +10,7 @@ use App\Http\Requests\CreateDialogueRequest;
 use App\Http\Requests\UpdateDialogueRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
+use App\DialogueTopic;
 
 
 class DialogueController extends Controller {
@@ -24,8 +25,9 @@ class DialogueController extends Controller {
 	public function index(Request $request)
     {
         $dialogue = Dialogue::all();
-
-		return view('admin.dialogue.index', compact('dialogue'));
+        $dialoguetopic =DialogueTopic::orderBy('id','desc')->first();
+  
+		return view('admin.dialogue.index', compact('dialogue','dialoguetopic'));
 	}
 
 	/**
@@ -36,8 +38,8 @@ class DialogueController extends Controller {
 	public function create()
 	{
 	    
-	    
-	    return view('admin.dialogue.create');
+	    $dialog_topic=DialogueTopic::orderBy('id','desc')->first();
+	    return view('admin.dialogue.create',compact('dialog_topic'));
 	}
 
 	/**

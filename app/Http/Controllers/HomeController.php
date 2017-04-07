@@ -22,6 +22,7 @@ use App\FeatureEvent;
 use App\CastFeature;
 use App\SelfTaken;
 use App\Dialogue;
+use App\DialogueTopic;
 use App\Movies;
 use App\Coupon;
 use App\Restaurant;
@@ -168,9 +169,10 @@ class HomeController extends Controller
 
 	public function showDialog()
 	{
-	    $dialogs=Dialogue::orderBy('id','desc')->paginate(20);
+		$dialog_topic=DialogueTopic::orderBy('id','desc')->first();
+	    $dialogs=Dialogue::orderBy('id','desc')->where('dialogue_topic_id',$dialog_topic->id)->paginate(20);
 	    $banner					= Banner::where('page','1')->first();
-		return view('dialogue', compact('dialogs','banner'));
+		return view('dialogue', compact('dialogs','banner','dialog_topic'));
 	}
     public function showDialogDetail($alias)
     {

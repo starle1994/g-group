@@ -14,28 +14,19 @@
                             </div>
 
                             <div class="dialogue-main-content">
-                            @foreach($dialogs as $item)
+                            
                                 <div class="parap">
-                                    <p>
-                                        <?php echo $item->name; ?>
-                                    </p>
-                                    <p><?php echo $item->description; ?></p>
+                                    <p><?php echo $dialog_topic->description; ?></p>
 
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12 dialogue-content">
-
+                                @foreach($dialogs as $item)
+                                    <div class="row">
+                                        <div class="col-xs-12 dialogue-content">
+                                            <a href="{{route('dialogue-detail',$item->alias)}}">
+                                                <img src="{{asset('uploads/'.$item->image)}}" alt="">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12 dialogue-content">
-                                        <a href="{{route('dialogue-detail',$item->alias)}}">
-                                            <img src="{{asset('uploads/'.$item->image)}}" alt="">
-                                        </a>
-                                    </div>
-                                </div>
                                 @endforeach
 
                         </div>
