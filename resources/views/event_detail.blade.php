@@ -58,13 +58,15 @@
         </div>
     </div>
 <script type="text/javascript">
- $(document).ready(function () {    
+ $(document).ready(function () {  
+     $("img").each(function(){
         height = $('.groupTop .right .content .main .avatar:first-child img').height();        
         $('.groupTop .right .content .main .avatar img').height(height);  
         $( window ).resize(function() {
             height = $('.groupTop .right .content .main .avatar:first-child img').height();        
             $('.groupTop .right .content .main .avatar img').height(height);  
         });
+    });
 });
 </script>   
 @endsection
