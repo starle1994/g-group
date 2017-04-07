@@ -39,7 +39,7 @@
 </div><div class="form-group">
     {!! Form::label('position', 'position', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('position', old('position'), array('class'=>'form-control')) !!}
+        {!! Form::text('position', old('position'), array('class'=>'form-control','placeholder'=>"if nomal staff please don't fill in this field")) !!}
         
     </div>
 </div><div class="form-group">
