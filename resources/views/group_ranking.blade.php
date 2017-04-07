@@ -122,7 +122,7 @@
                 </div>
                 <div class="gr-rank-footer-p1">
                     @foreach ($group_ranking as $group)
-                       
+                       @if($group->godstaff != null)
                         @if($group->ranking_id ==1)
                                     <?php $image = 'css/css/images/group-rankking/l1.jpg' ?>
                                 @elseif($group->ranking_id ==2)
@@ -159,6 +159,7 @@
                                     <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a>
                             </div>
                         </div>
+                        @endif
                     @endforeach
                     
                 </div>
@@ -172,6 +173,7 @@
                 </div>
                 <div class="gr-rank-footer-p1">
                     @foreach ($group_ranking_type2 as $group2)
+                    @if($group2->godstaffs != null)
                         @if($group2->ranking_id ==1)
                                     <?php $image = 'css/css/images/group-rankking/l1.jpg' ?>
                                 @elseif($group2->ranking_id ==2)
@@ -210,6 +212,7 @@
                                 <a href="{{route('staff-detail',base64_encode($group2->godstaffs->id))}}"> {{$group2->godstaffs->name}}</a>
                             </div>
                     </div>
+                    @endif
                     @endforeach
                     
                     
