@@ -100,7 +100,7 @@ class RecomentCateController extends Controller {
         }
         
 		$recomentcate->update($input);
-		if ($recomentcate->id == 1) {
+		if ($recomentcate->shopslist_id == 1) {
 			return redirect()->route(config('quickadmin.route').'.recomentcate.index');
 		}else{
 			return redirect()->route(config('quickadmin.route').'.recomentcate.gigolo');
