@@ -36,8 +36,11 @@ class StaffPhotosController extends Controller {
 	 */
 	public function create()
 	{
-	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
-
+	    $staff = GodStaffs::all();
+	    $staffs[''] = 'Please choose';
+	    $foreach ($staff as $value) {
+	    	$staffs[$value->id] = $value->name;
+	    }
 	    
 	    return view('admin.staffphotos.create', compact("staffs"));
 	}
@@ -88,8 +91,11 @@ class StaffPhotosController extends Controller {
 	public function edit($id)
 	{
 		$staffphotos = StaffPhotos::find($id);
-	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
-
+	    $staff = GodStaffs::all();
+	    $staffs[''] = 'Please choose';
+	    $foreach ($staff as $value) {
+	    	$staffs[$value->id] = $value->name;
+	    }
 	    
 		return view('admin.staffphotos.edit', compact('staffphotos', "staffs"));
 	}

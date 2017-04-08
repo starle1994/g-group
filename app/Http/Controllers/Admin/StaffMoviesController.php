@@ -36,7 +36,11 @@ class StaffMoviesController extends Controller {
 	 */
 	public function create()
 	{
-	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
+	    $staff = GodStaffs::all();
+	    $staffs[''] = 'Please choose';
+	    $foreach ($staff as $value) {
+	    	$staffs[$value->id] = $value->name;
+	    }
 
 	    
 	    return view('admin.staffmovies.create', compact("staffs"));
@@ -64,7 +68,11 @@ class StaffMoviesController extends Controller {
 	public function edit($id)
 	{
 		$staffmovies = StaffMovies::find($id);
-	    $staffs = GodStaffs::pluck("name", "id")->prepend('Please select', null);
+	    $staff = GodStaffs::all();
+	    $staffs[''] = 'Please choose';
+	    $foreach ($staff as $value) {
+	    	$staffs[$value->id] = $value->name;
+	    }
 
 	    
 		return view('admin.staffmovies.edit', compact('staffmovies', "staffs"));
