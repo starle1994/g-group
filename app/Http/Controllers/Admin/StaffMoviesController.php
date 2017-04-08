@@ -38,7 +38,7 @@ class StaffMoviesController extends Controller {
 	{
 	    $staff = GodStaffs::all();
 	    $staffs[''] = 'Please choose';
-	    $foreach ($staff as $value) {
+	    foreach($staff as $value) {
 	    	$staffs[$value->id] = $value->name;
 	    }
 
@@ -70,7 +70,7 @@ class StaffMoviesController extends Controller {
 		$staffmovies = StaffMovies::find($id);
 	    $staff = GodStaffs::all();
 	    $staffs[''] = 'Please choose';
-	    $foreach ($staff as $value) {
+	    foreach($staff as $value) {
 	    	$staffs[$value->id] = $value->name;
 	    }
 

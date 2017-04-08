@@ -38,10 +38,9 @@ class StaffPhotosController extends Controller {
 	{
 	    $staff = GodStaffs::all();
 	    $staffs[''] = 'Please choose';
-	    $foreach ($staff as $value) {
+	    foreach($staff as $value) {
 	    	$staffs[$value->id] = $value->name;
-	    }
-	    
+	    }	    
 	    return view('admin.staffphotos.create', compact("staffs"));
 	}
 
@@ -93,7 +92,7 @@ class StaffPhotosController extends Controller {
 		$staffphotos = StaffPhotos::find($id);
 	    $staff = GodStaffs::all();
 	    $staffs[''] = 'Please choose';
-	    $foreach ($staff as $value) {
+	    foreach($staff as $value) {
 	    	$staffs[$value->id] = $value->name;
 	    }
 	    
