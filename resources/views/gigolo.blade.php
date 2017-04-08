@@ -122,7 +122,7 @@
                 <div class="ct-ava">
                     <?php $route1 = $recoments[1]->alias ?>
                     <a href="{{route($route1)}}"><img src="{{ asset('uploads/'.$recoments[1]->image) }}" alt=""></a>
-                    <p style="height: 45px;" class="titleAva2">
+                    <p style="height: 45px;" class="titleAva1">
                         {{ $recoments[1]->name }}
                     </p>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="ct-ava">
                     <?php $route2 = $recoments[2]->alias ?>
                     <a href="{{route($route2)}}"><img src="{{ asset('uploads/'.$recoments[2]->image) }}" alt=""></a>
-                    <p style="height: 45px;" class="titleAva3">
+                    <p style="height: 45px;" class="titleAva1">
                         {{ $recoments[2]->name }}
                     </p>
                 </div>
@@ -155,7 +155,7 @@
                 <div class="ct-ava">
                     <?php $route4 = $recoments[4]->alias ?>
                     <a href="{{route($route4)}}"><img src="{{ asset('uploads/'.$recoments[4]->image) }}" alt=""></a>
-                    <p style="height: 45px;" class="titleAva2">
+                    <p style="height: 45px;" class="titleAva1">
                         {{ $recoments[4]->name }}
                     </p>
                 </div>
@@ -164,7 +164,7 @@
                 <div class="ct-ava">
                     <?php $route5 = $recoments[5]->alias ?>
                     <a href="{{route($route5)}}"><img src="{{ asset('uploads/'.$recoments[5]->image) }}" alt=""></a>
-                    <p style="height: 45px;" class="titleAva3">
+                    <p style="height: 45px;" class="titleAva1">
                         {{ $recoments[5]->name }}
                     </p>
                 </div>
