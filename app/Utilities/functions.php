@@ -15,6 +15,8 @@ function pages()
 function alias()
 {
 	$alias[''] = '---Please select----';
+	$alias['million-god'] = 'Million-god';
+	$alias['gigoro'] = 'Gigolo';
 	$alias['million-ranking-staff']='スタッフ・ナンバー	';
 	$alias['gigolo-ranking-staff']='Gigiloスタッフ・ナンバー';
 	$alias['event']='イベント特集';
