@@ -24,7 +24,8 @@ class CreateImageRestaurantRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            
+           'image',
+          'restaurant_id' 
 		];
 	}
 }

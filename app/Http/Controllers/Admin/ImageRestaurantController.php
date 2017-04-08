@@ -36,8 +36,11 @@ class ImageRestaurantController extends Controller {
 	 */
 	public function create()
 	{
-	    $restaurant = Restaurant::pluck("name", "id")->prepend('Please select', null);
-
+	    $restaurants = Restaurant::orderBy('id','desc')->take(20)->get();
+	    $restaurant[''] = 'Please choose';
+	    foreach($restaurants as $value) {
+	    	$restaurant[$value->id] = $value->name;
+	    }
 	    
 	    return view('admin.imagerestaurant.create', compact("restaurant"));
 	}
@@ -64,8 +67,11 @@ class ImageRestaurantController extends Controller {
 	public function edit($id)
 	{
 		$imagerestaurant = ImageRestaurant::find($id);
-	    $restaurant = Restaurant::pluck("name", "id")->prepend('Please select', null);
-
+	    $restaurants = Restaurant::orderBy('id','desc')->take(20)->get();
+	    $restaurant[''] = 'Please choose';
+	    foreach($restaurants as $value) {
+	    	$restaurant[$value->id] = $value->name;
+	    }
 	    
 		return view('admin.imagerestaurant.edit', compact('imagerestaurant', "restaurant"));
 	}
