@@ -36,8 +36,11 @@ class RestaurantController extends Controller {
 	 */
 	public function create()
 	{
-	     $categories = CategoryLeft::where('is_restaurant',0)->pluck("name", "id")->prepend('Please select', null);
-	    
+	    $categories = CategoryLeft::where('is_restaurant',0)->get();
+	    $category[''] = 'Please choose';
+	    foreach($categories as $value) {
+	    	$category[$value->id] = $value->name;
+	    }
 	    return view('admin.restaurant.create',compact('categories'));
 	}
 
@@ -119,9 +122,12 @@ class RestaurantController extends Controller {
 	public function edit($id)
 	{
 		$restaurant = Restaurant::find($id);
+	     $categories = CategoryLeft::where('is_restaurant',0)->get();
+	    $category[''] = 'Please choose';
+	    foreach($categories as $value) {
+	    	$category[$value->id] = $value->name;
 	    
-	    
-		return view('admin.restaurant.edit', compact('restaurant'));
+		return view('admin.restaurant.edit', compact('restaurant','categories'));
 	}
 
 	/**
