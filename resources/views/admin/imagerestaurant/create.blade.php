@@ -18,7 +18,7 @@
 
 {!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.imagerestaurant.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
 <div class="form-group">
-    {!! Form::label('restaurant_id*', 'Restaurant', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('restaurant_id*', 'Restaurant*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::select('restaurant_id', $restaurant, old('restaurant_id'), array('class'=>'form-control')) !!}
         
