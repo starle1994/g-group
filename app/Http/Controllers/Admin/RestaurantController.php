@@ -126,7 +126,7 @@ class RestaurantController extends Controller {
 	    $category[''] = 'Please choose';
 	    foreach($categories as $value) {
 	    	$category[$value->id] = $value->name;
-	    
+	    }
 		return view('admin.restaurant.edit', compact('restaurant','categories'));
 	}
 
