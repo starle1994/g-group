@@ -65,8 +65,16 @@ class GodStaffsController extends Controller {
 	{
 	    $request = $this->saveFiles($request);
 		GodStaffs::create($request->all());
-
-		return redirect()->route(config('quickadmin.route').'.godstaffs.index');
+		if ($request->shopslist_id ==1) {
+			return redirect()->route(config('quickadmin.route').'.godstaffs.index');
+		}else{
+			if ($request->shopslist_id == 2) {
+				return redirect()->route('admin.godstaffs.gigolo');
+			}else{
+				return redirect()->route('admin.godstaffs.g5');
+			}
+		}
+		
 	}
 
 	/**
@@ -96,9 +104,16 @@ class GodStaffsController extends Controller {
 
         $request = $this->saveFiles($request);
 
-		$godstaffs->update($request->all());
-
-		return redirect()->route(config('quickadmin.route').'.godstaffs.index');
+		$a =$godstaffs->update($request->all());
+		if ($request->shopslist_id ==1) {
+			return redirect()->route(config('quickadmin.route').'.godstaffs.index');
+		}else{
+			if ($request->shopslist_id == 2) {
+				return redirect()->route('admin.godstaffs.gigolo');
+			}else{
+				return redirect()->route('admin.godstaffs.g5');
+			}
+		}
 	}
 
 	/**

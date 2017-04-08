@@ -162,9 +162,13 @@ Route::group([ 'middleware' => 'auth'], function () {
             'as' => 'admin.godstaffs.gigolo',
             'uses' => 'Admin\GodStaffsController@gigolo'
         ]);
-         Route::get(config('quickadmin.route') . '/godstaffs/g5', [
+        Route::get(config('quickadmin.route') . '/godstaffs/g5', [
             'as' => 'admin.godstaffs.g5',
             'uses' => 'Admin\GodStaffsController@gGroup'
+        ]);
+        Route::get(config('quickadmin.route') . '/recomentcate/gigolo', [
+            'as' => 'admin.recomentcate.gigolo',
+            'uses' => 'Admin\RecomentCateController@recommentGigolo'
         ]);
     });
 });

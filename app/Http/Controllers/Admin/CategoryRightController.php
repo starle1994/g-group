@@ -23,7 +23,7 @@ class CategoryRightController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $categoryright = CategoryRight::all();
+        $categoryright = CategoryRight::orderBy('id', 'desc')->get();
 
 		return view('admin.categoryright.index', compact('categoryright'));
 	}

@@ -25,7 +25,7 @@ class UpdateLeftCateVer2Request extends FormRequest {
 	{
 		return [
             'name' => 'required', 
-            'alias' => 'required|unique:leftcatever2,alias,'.$this->leftcatever2, 
+            'alias' => 'required', 
             
 		];
 	}

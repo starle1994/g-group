@@ -24,7 +24,8 @@ class UpdateCategoryRightRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            
+           'alias'=>'required',
+           'name'=>'required' 
 		];
 	}
 }

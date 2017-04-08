@@ -24,9 +24,8 @@ class UpdateOfficeWorkFeatureRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'image' => 'required', 
             'description' => 'required', 
-            
+            'content' 	=>'required',
 		];
 	}
 }

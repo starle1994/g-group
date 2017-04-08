@@ -43,6 +43,12 @@
         
     </div>
 </div><div class="form-group">
+    {!! Form::label('comment', 'comment', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::text('comment', old('comment'), array('class'=>'form-control')) !!}
+        
+    </div>
+</div><div class="form-group">
     {!! Form::label('image', 'image*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::file('image') !!}

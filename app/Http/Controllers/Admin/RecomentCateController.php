@@ -24,9 +24,16 @@ class RecomentCateController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $recomentcate = RecomentCate::with("shopslist")->get();
+        $recomentcate = RecomentCate::with("shopslist")->where("shopslist_id",1)->get();
+        $shopslist_id = 1;
+		return view('admin.recomentcate.index', compact('recomentcate', 'shopslist_id'));
+	}
 
-		return view('admin.recomentcate.index', compact('recomentcate'));
+	public function recommentGigolo(Request $request)
+    {
+        $recomentcate = RecomentCate::with("shopslist")->where("shopslist_id",2)->get();
+        $shopslist_id =2;
+		return view('admin.recomentcate.index', compact('recomentcate', 'shopslist_id'));
 	}
 
 	/**
@@ -76,7 +83,7 @@ class RecomentCateController extends Controller {
      *
 	 * @param  int  $id
 	 */
-	public function update($id, Request $request)
+	public function update($id, UpdateRecomentCateRequest $request)
 	{
 		$recomentcate = RecomentCate::findOrFail($id);
 
@@ -91,14 +98,14 @@ class RecomentCateController extends Controller {
         if ($request->alias != null) {
         	$input['alias'] = $request->alias;
         }
-
-        if ($request->alias != null) {
-        	$input['shopslist_id'] = $request->shopslist_id;
-        }
         
 		$recomentcate->update($input);
-
-		return redirect()->route(config('quickadmin.route').'.recomentcate.index');
+		if ($recomentcate->id == 1) {
+			return redirect()->route(config('quickadmin.route').'.recomentcate.index');
+		}else{
+			return redirect()->route(config('quickadmin.route').'.recomentcate.gigolo');
+		}
+		
 	}
 
 	/**

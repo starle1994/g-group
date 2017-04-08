@@ -26,7 +26,7 @@ class CreateLeftCateVer2Request extends FormRequest {
 		return [
             'image' => 'required', 
             'name' => 'required', 
-            'alias' => 'required|unique:leftcatever2,alias,'.$this->leftcatever2, 
+            'alias' => 'required', 
             
 		];
 	}

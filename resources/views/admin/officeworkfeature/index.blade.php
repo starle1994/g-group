@@ -17,7 +17,7 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>image</th>
-
+                        <th>description</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -30,6 +30,8 @@
                             </td>
                             <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
 
+                            <td>
+                            <td>{!!$row->description!!}</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.officeworkfeature.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.officeworkfeature.destroy', $row->id))) !!}

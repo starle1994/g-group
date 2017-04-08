@@ -24,10 +24,8 @@ class UpdateRecomentCateRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'image' => 'required', 
             'name' => 'required', 
             'alias' => 'required', 
-            
 		];
 	}
 }

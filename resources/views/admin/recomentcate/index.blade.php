@@ -2,8 +2,11 @@
 
 @section('content')
 
-<p>{!! link_to_route(config('quickadmin.route').'.recomentcate.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
-
+<!-- <p>{!! link_to_route(config('quickadmin.route').'.recomentcate.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p> -->
+<span>{!! link_to_route(config('quickadmin.route').'.recomentcate.index', ' Million GOD（ミリオンゴッド）' , null, array('class' => ($shopslist_id==1) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<span>{!! link_to_route(config('quickadmin.route').'.recomentcate.gigolo', ' "Gigolo（"ジゴロ.）' , null, array('class' => ($shopslist_id==2) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<br>
+<br>
 @if ($recomentcate->count())
     <div class="portlet box green">
         <div class="portlet-title">
@@ -17,9 +20,9 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>image</th>
-<th>name</th>
-<th>alias</th>
-<th>Shop</th>
+                        <th>name</th>
+                        <th>alias</th>
+                        <th>Shop</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -32,9 +35,9 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-<td>{{ $row->name }}</td>
-<td>{{ $row->alias }}</td>
-<td>{{ isset($row->shopslist->name) ? $row->shopslist->name : '' }}</td>
+                            <td>{{ $row->name }}</td>
+                            <td>{{ alias()[$row->alias] }}</td>
+                            <td>{{ isset($row->shopslist->name) ? $row->shopslist->name : '' }}</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.recomentcate.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

@@ -23,10 +23,9 @@ class UpdateCastFeatureRequest extends FormRequest {
 	 */
 	public function rules()
 	{
-		return [
-            'image' => 'required', 
+		return [ 
             'description' => 'required', 
-            
+             'content'	=>'required',
 		];
 	}
 }

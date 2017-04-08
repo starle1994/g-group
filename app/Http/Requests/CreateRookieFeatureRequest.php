@@ -25,7 +25,8 @@ class CreateRookieFeatureRequest extends FormRequest {
 	{
 		return [
             'image' => 'required', 
-            
+	        'content' => 'required',
+	        'description' => 'required',
 		];
 	}
 }

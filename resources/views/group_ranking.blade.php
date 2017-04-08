@@ -26,7 +26,6 @@
                                <a href="{{route('staff-detail',base64_encode($best_ranking[0]->godstaffs->id))}}"> <img src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
                                </a>
                             </div>
-                            
                             <div class="avt-left">
                                <a href="{{route('staff-detail',base64_encode($best_ranking[0]->godstaffs->id))}}"><img src="{{ asset('uploads/'.$best_ranking[0]->godstaffs->image) }}" alt="">
                                </a>
@@ -229,8 +228,7 @@
    </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function() {
-     
+window.onload = function(){
  var height = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child').height();
     $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child img').height(height);
     $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:last-child img').height(height);
@@ -246,8 +244,9 @@ $(document).ready(function() {
      var height3 = $('.gr-rank-footer-p1 .item:first-child').height();
     $('.gr-rank-footer-p1 .item').height(height3);
     width2 = $('.group-rankking .gr-rank-p2 .avt-lf img').width(); 
-    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2); 
-
+    $('.group-rankking .gr-rank-p2 .av-main .bg-lf img').width(width2);
+}; 
+$(document).ready(function() {
     $(window).resize(function() {
        var height = $('.group-rankking .gr-rank-lineSli .stt-rankking .gr-rank-containerSlider .lf div:first-child').height();
 

@@ -25,7 +25,8 @@ class CreateCategoryLeftRequest extends FormRequest {
 	{
 		return [
             'image' => 'required', 
-            
+            'name'	=> 'required',
+            'alias' => 'required'
 		];
 	}
 }

@@ -32,7 +32,7 @@
                             </td>
                             <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
 <td>{{ $row->name }}</td>
-<td>{{ $row->alias }}</td>
+<td>{{ alias()[$row->alias] }}</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.categoryleft.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

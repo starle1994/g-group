@@ -23,7 +23,7 @@ class CategoryLeftController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $categoryleft = CategoryLeft::all();
+        $categoryleft = CategoryLeft::orderBy('id','desc')->get();
 
 		return view('admin.categoryleft.index', compact('categoryleft'));
 	}

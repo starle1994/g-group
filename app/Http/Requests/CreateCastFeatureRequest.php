@@ -26,7 +26,7 @@ class CreateCastFeatureRequest extends FormRequest {
 		return [
             'image' => 'required', 
             'description' => 'required', 
-            
+            'content'	=>'required',
 		];
 	}
 }

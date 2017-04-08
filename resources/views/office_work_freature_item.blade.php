@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="row cash-feature-item">
-    <div class="col-sm-3  col-xs-12 shop-list-home-left"">
+<div class="row bbq-list-item">
+    <div class="col-sm-3 left">
         <div class="exe-fa-line">
              @include('include.categories_left2')
         </div>     
@@ -15,23 +15,22 @@
         </div>
         
         <div class="content">
-            <div class="row">
-                <div class="col-sm-6 avatar">
+            <div class="row top">
+                <div class="col-sm-6 avt-parent">
                     <img src="{{ asset('uploads/'.$officeWorkFreature->image) }}" alt="">
                 </div>
+                 <div class="col-sm-6 paraph">
+                        {!! $officeWorkFreature->description !!}
+                    </div>
             </div>
             
-            <div class="line">
-                
-            </div>
-
-            <div class="nen">
+                           <div class="dong-ke">
                     
-            </div>
+                </div>
             
             <!-- start loop -->
-            <div class="row for-loop" style="padding-right: 20px;padding-left: 20px">
-                {!! $officeWorkFreature->description !!}
+            <div class="row for-loop" style="padding-right: 40px;padding-left: 40px">
+                {!! $officeWorkFreature->content !!}
             </div>
             <!-- end loop -->
 

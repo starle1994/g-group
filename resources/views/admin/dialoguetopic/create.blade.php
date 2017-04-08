@@ -19,12 +19,6 @@
 {!! Form::open(array('route' => config('quickadmin.route').'.dialoguetopic.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
 
 <div class="form-group">
-    {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('name', old('name'), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}

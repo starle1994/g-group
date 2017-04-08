@@ -23,7 +23,7 @@ class LeftCateVer2Controller extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $leftcatever2 = LeftCateVer2::all();
+        $leftcatever2 = LeftCateVer2::orderBy('id','desc')->get();
 
 		return view('admin.leftcatever2.index', compact('leftcatever2'));
 	}

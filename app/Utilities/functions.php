@@ -12,6 +12,36 @@ function pages()
 	return	array('1' => 'Group top', '2' => 'Millon God','3'=>'Gigolo');
 }
 
+function alias()
+{
+	$alias[''] = '---Please select----';
+	$alias['million-ranking-staff']='スタッフ・ナンバー	';
+	$alias['gigolo-ranking-staff']='Gigiloスタッフ・ナンバー';
+	$alias['event']='イベント特集';
+	$alias['dialogue']='対談';
+	$alias['self-taken']='自撮り';
+	$alias['Blog']='ブログ	';
+	$alias['movie']='ムービ';
+	$alias['schedule']='スケジュール';
+	$alias['group-ranking']='group-ranking';
+	$alias['cast-feature']='キャスト特集';
+	$alias['rookie-feature']='新人特集';
+	$alias['office-work-feature']				='内勤特集';
+	$alias['self-taken']='自撮り';
+	$alias['photo-list']='フォトリスト';
+	$alias['system']='system';
+	$alias['coupon']='割引・クーポン';
+	$alias['recruit']='recruit';
+	$alias['restaurant']="飲食店×G's group";
+	$alias['sport']="名所×G's group";
+	$alias['fashion']='ファッション';
+	$alias['holiday']='ホストの休日';
+	$alias['gravure']='グラビア';
+	$alias['last-song']='月間人気ラスソン';
+	$alias['link']='link';
+	$alias['shop-list']='ショップリスト';
+	return $alias;
+}
 /*
  * Get months options list.
  */

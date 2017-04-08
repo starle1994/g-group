@@ -1,43 +1,39 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="row cash-feature-item">
-    <div class="col-sm-3  col-xs-12 shop-list-home-left"">
-        <div class="exe-fa-line">
-             @include('include.categories_left2')
-        </div>     
-    </div>
-
-
-    <div class="col-sm-9 right">
-        <div class="title">
-            <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
+<div class="row bbq-list-item">
+        <div class="col-sm-3 left">
+          @include('include.categories_left2')
         </div>
-        
-        <div class="content">
-            <div class="row">
-                <div class="col-sm-6 avatar">
-                    <img src="{{ asset('uploads/'.$rookie_feature->image) }}" alt="">
+
+        <div class="col-sm-9 right">
+            <div class="title">
+                <img src="{{ asset('css/css/images/rookie-feature/h1.png') }}" alt="">
+            </div>
+            
+            <div class="content">
+                <div class="row top">
+                    <div class="col-sm-6 avt-parent">
+                        <img src="{{ asset('uploads/'.$rookie_feature->image) }}" alt="" >
+                    </div>
+
+                    <div class="col-sm-6 paraph">
+                        {!! $rookie_feature->description !!}
+                    </div>
                 </div>
-            </div>
-            
-            <div class="line">
-                
-            </div>
 
-            <div class="nen">
+                <div class="dong-ke">
                     
+                </div>
+                
+                <!-- loop -->
+                <div class="row for-loop" style="padding-right: 40px;padding-left: 40px">
+                {!! $rookie_feature->content !!}
             </div>
-            
-            <!-- start loop -->
-            <div class="row for-loop" style="padding-right: 20px;padding-left: 20px">
-                {!! $rookie_feature->description !!}
-            </div>
-            <!-- end loop -->
-
         </div>
-
     </div>
-   
 </div>
+
+
+   
 @endsection

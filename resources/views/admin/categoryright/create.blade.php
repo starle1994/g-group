@@ -27,19 +27,19 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('name', 'name', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('name', old('name'), array('class'=>'form-control')) !!}
         
     </div>
-</div><div class="form-group">
-    {!! Form::label('alias', 'alias', array('class'=>'col-sm-2 control-label')) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('alias', 'alias*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('alias', old('alias'), array('class'=>'form-control')) !!}
+        {!! Form::select('alias', alias(), old('alias'), array('class'=>'form-control')) !!}
         
     </div>
 </div>
-
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
       {!! Form::submit( trans('quickadmin::templates.templates-view_create-create') , array('class' => 'btn btn-primary')) !!}

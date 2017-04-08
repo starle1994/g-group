@@ -35,7 +35,7 @@
 </div><div class="form-group">
     {!! Form::label('alias', 'alias*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('alias', old('alias',$leftcatever2->alias), array('class'=>'form-control')) !!}
+        {!! Form::select('alias', alias(), old('alias',$leftcatever2->alias), array('class'=>'form-control')) !!}
         
     </div>
 </div>

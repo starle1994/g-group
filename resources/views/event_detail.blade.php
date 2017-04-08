@@ -57,11 +57,11 @@
     </div>
 <script type="text/javascript">
     window.onload = function(){
-    var height = $('.groupTop .right .content .main .avatar:first-child img').height();      
-            $('.groupTop .right .content .main .avatar img').height(height);
-            height = $('.groupTop .right .content .main .avatar:first-child img').height();        
-            $('.groupTop .right .content .main .avatar img').height(height);  
-    };
+        var height = $('.groupTop .right .content .main .avatar:first-child img').height();      
+                $('.groupTop .right .content .main .avatar img').height(height);
+                height = $('.groupTop .right .content .main .avatar:first-child img').height();        
+                $('.groupTop .right .content .main .avatar img').height(height);  
+        };
     $(document).ready(function () {  
          
         $( window ).resize(function() {

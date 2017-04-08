@@ -24,8 +24,8 @@ class UpdateRookieFeatureRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'image' => 'required', 
-            
+            'content' => 'required',
+	        'description' => 'required', 
 		];
 	}
 }

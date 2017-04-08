@@ -19,12 +19,6 @@
 {!! Form::model($dialoguetopic, array('class' => 'form-horizontal', 'id' => 'form-with-validation', 'method' => 'PATCH', 'route' => array(config('quickadmin.route').'.dialoguetopic.update', $dialoguetopic->id))) !!}
 
 <div class="form-group">
-    {!! Form::label('name', 'name*', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::text('name', old('name',$dialoguetopic->name), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description',$dialoguetopic->description), array('class'=>'form-control ckeditor')) !!}

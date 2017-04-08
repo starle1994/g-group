@@ -22,9 +22,9 @@
                         <th>
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
-                        <th>ショップリスト*</th>
 <th>name</th>
 <th>position</th>
+<th>comment</th>
 <th>image</th>
 
                         <th>&nbsp;</th>
@@ -37,9 +37,9 @@
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
-                            <td>{{ isset($row->shopslist->name) ? $row->shopslist->name : '' }}</td>
 <td>{{ $row->name }}</td>
 <td>{{ $row->position }}</td>
+<td>{{$row->comment}}</td>
 <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
 
                             <td>

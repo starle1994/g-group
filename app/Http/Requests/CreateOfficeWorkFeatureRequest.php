@@ -26,7 +26,7 @@ class CreateOfficeWorkFeatureRequest extends FormRequest {
 		return [
             'image' => 'required', 
             'description' => 'required', 
-            
+            'content' 	=>'required',
 		];
 	}
 }

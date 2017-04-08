@@ -28,9 +28,16 @@
     </div>
 </div>
 <div class="form-group">
-    {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
          {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}
+        
+    </div>
+</div>
+<div class="form-group">
+    {!! Form::label('content', 'content*', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+         {!! Form::textarea('content', old('content'), array('class'=>'form-control ckeditor')) !!}
         
     </div>
 </div>

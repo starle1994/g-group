@@ -150,7 +150,7 @@ class HomeController extends Controller
 		$group_ranking 	= GigoloRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
 		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','1')->first();
-		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
+		return view('gigolo_ranking_staff', compact('group_ranking','million_god_staff','banner'));
 	}
 
 	public function showEvent()

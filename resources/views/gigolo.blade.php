@@ -183,7 +183,10 @@
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
                             @foreach($secrect_contents as $secrect_content)
-                                <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$secrect_content->image) }}" alt="{{$secrect_content->name}}">
+                                <div class="item">
+                                    <a href="{{route($secrect_content->alias)}}">
+                                        <img class="setHeight" src="{{ asset('uploads/'.$secrect_content->image) }}" alt="{{$secrect_content->name}}">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -196,7 +199,10 @@
                     <div class="containerSlider">
                         <div class="owl-carousel owl-theme">
                             @foreach($rookies_feature as $rookie)
-                                <div class="item"><img class="setHeight" src="{{ asset('uploads/'.$rookie->image) }}" alt="{{$rookie->name}}">
+                                <div class="item">
+                                    <a href="{{route('rookie-feature-detail',$rookie->alias)}}">
+                                        <img class="setHeight" src="{{ asset('uploads/'.$rookie->image) }}" alt="{{$rookie->name}}">
+                                    </a>
                                 </div>
                             @endforeach
                         </div>
@@ -236,7 +242,7 @@
        </div>
        @foreach($gigoloRankingStaff as $item)
             <div class="tableTop">
-               <img src="{{ asset('uploads/'.$item->banner) }}" alt="">
+               <a href="{{ ($item->godstaffs != null) ? route('staff-detail',base64_encode($item->godstaffs->id)) : ''}}"><img src="{{ asset('uploads/'.$item->banner) }}" alt=""></a>
                <div class="tableCt">
                    <p></p>
                </div>
