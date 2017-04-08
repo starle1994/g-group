@@ -114,7 +114,7 @@
                     <?php $route0 = $recoments[0]->alias ?>
                     <a href="{{route($route0)}}"><img src="{{ asset('uploads/'.$recoments[0]->image) }}" alt=""></a>
                     <p class="titleAva1">
-                        
+                        {{ $recoments[0]->name }}
                     </p>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                     <?php $route1 = $recoments[1]->alias ?>
                     <a href="{{route($route1)}}"><img src="{{ asset('uploads/'.$recoments[1]->image) }}" alt=""></a>
                     <p style="height: 45px;" class="titleAva2">
-                        
+                        {{ $recoments[1]->name }}
                     </p>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                     <?php $route2 = $recoments[2]->alias ?>
                     <a href="{{route($route2)}}"><img src="{{ asset('uploads/'.$recoments[2]->image) }}" alt=""></a>
                     <p style="height: 45px;" class="titleAva3">
-                        
+                        {{ $recoments[2]->name }}
                     </p>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                         <?php $route3 = $recoments[3]->alias ?>
                     <a href="{{route($route3)}}"><img src="{{ asset('uploads/'.$recoments[3]->image) }}" alt=""></a>
                         <p class="titleAva1">
-                            
+                            {{ $recoments[3]->name }}
                         </p>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     <?php $route4 = $recoments[4]->alias ?>
                     <a href="{{route($route4)}}"><img src="{{ asset('uploads/'.$recoments[4]->image) }}" alt=""></a>
                     <p style="height: 45px;" class="titleAva2">
-                        
+                        {{ $recoments[4]->name }}
                     </p>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                     <?php $route5 = $recoments[5]->alias ?>
                     <a href="{{route($route5)}}"><img src="{{ asset('uploads/'.$recoments[5]->image) }}" alt=""></a>
                     <p style="height: 45px;" class="titleAva3">
-                        
+                        {{ $recoments[5]->name }}
                     </p>
                 </div>
             </div>
