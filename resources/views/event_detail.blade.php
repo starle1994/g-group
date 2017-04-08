@@ -7,12 +7,10 @@
                  @include('include.categories_left2')
             </div>     
         </div>
-
         <div class="col-sm-9 right">
             <div class="title">
                 <img src="{{ asset('css/css/images/event/h1.png') }}" alt="">
             </div>
-            
             <div class="content">
                 <div class="row top">
                     <div class="col-sm-6 avt-parent">
@@ -58,11 +56,18 @@
         </div>
     </div>
 <script type="text/javascript">
- $(document).ready(function () {  
-        height = $('.groupTop .right .content .main .avatar:first-child img').height().top;        
-        $('.groupTop .right .content .main .avatar img').height(height);  
+    window.onload = function(){
+    var height = $('.groupTop .right .content .main .avatar:first-child img').height();      
+            $('.groupTop .right .content .main .avatar img').height(height);
+            height = $('.groupTop .right .content .main .avatar:first-child img').height();        
+            $('.groupTop .right .content .main .avatar img').height(height);  
+    };
+    $(document).ready(function () {  
+         
         $( window ).resize(function() {
-            height = $('.groupTop .right .content .main .avatar:first-child img').height().top;        
+            var height = $('.groupTop .right .content .main .avatar:first-child img').height();      
+            $('.groupTop .right .content .main .avatar img').height(height);
+            height = $('.groupTop .right .content .main .avatar:first-child img').height();        
             $('.groupTop .right .content .main .avatar img').height(height);  
         });
 });

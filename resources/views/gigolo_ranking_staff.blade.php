@@ -6,7 +6,7 @@
         color: #fff;
     }
 </style>
-<div class="row group-rankking million">
+<div class="row group-rankking">
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row gr-rank-lineSli">
             <div class="col-xs-3" id="lineImg">
@@ -24,28 +24,28 @@
                     @foreach ($group_ranking as $group)
                         @if($group->godstaffs !=null)
                             @if($group->ranking_id ==1)
-                                        <?php $image = 'css/css/images/million-god-staff/l1.png';
+                                        <?php $image = 'css/css/images/group-rankking/l1.jpg';
                                             $bk ='css/css/images/group-rankking/bk2.png'; ?>
                                     @elseif($group->ranking_id ==2)
-                                        <?php $image = 'css/css/images/million-god-staff/l2.png' ;
+                                        <?php $image = 'css/css/images/group-rankking/l2.jpg' ;
                                         $bk ='css/css/images/group-rankking/bk3.png';?>
                                     @elseif($group->ranking_id ==3)
-                                        <?php $image = 'css/css/images/million-god-staff/l3.png' ;
+                                        <?php $image = 'css/css/images/group-rankking/l3.jpg' ;
                                         $bk ='css/css/images/group-rankking/bk4.png';?>
                                     @elseif($group->ranking_id ==4)
-                                        <?php $image = 'css/css/images/million-god-staff/l4.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l4.jpg' ?>
                                     @elseif($group->ranking_id ==5)
-                                        <?php $image = 'css/css/images/million-god-staff/l5.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l5.jpg' ?>
                                     @elseif($group->ranking_id ==6)
-                                        <?php $image = 'css/css/images/million-god-staff/l6.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l6.jpg' ?>
                                     @elseif($group->ranking_id ==7)
-                                        <?php $image = 'css/css/images/million-god-staff/l7.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l7.jpg' ?>
                                     @elseif($group->ranking_id ==8)
-                                        <?php $image = 'css/css/images/million-god-staff/l8.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l8.jpg' ?>
                                     @elseif($group->ranking_id ==9)
-                                        <?php $image = 'css/css/images/million-god-staff/l9.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l9.jpg' ?>
                                     @elseif($group->ranking_id ==10)
-                                        <?php $image = 'css/css/images/million-god-staff/l10.png' ?>
+                                        <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                             @endif
                             <div class="col-xs-2 item" style="margin-bottom: 30px;">
                                 <div class="title">
@@ -53,11 +53,9 @@
                                 </div>
                                 
                                 <div class="av-main">
-                                    @if($group->ranking_id == 1 || $group->ranking_id==2 ||$group->ranking_id==3)
                                     <div class="bg-lf" style="position: absolute;">
                                         <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img src="{{asset($bk)}}" alt=""></a>
                                     </div>
-                                    @endif
                                     <div class="avt-lf">
                                         <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
                                     </div>
@@ -130,14 +128,14 @@
    </div>
 </div>
 <script type="text/javascript">
-window.onload = function(){
-    var height = $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child').height();
-        $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child img').height(height);
-        $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:last-child img').height(height);
-        width2 = $('.groupTop .group-rankking .gr-rank-footer-p1 .item div:first-child').width(); 
-    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').width(width2);
-};
 $(document).ready(function() {
+
+    var height = $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child').height();
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').height(height);
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:last-child img').height(height);
+    width2 = $('.groupTop .group-rankking .gr-rank-footer-p1 .item  div:first-child').width(); 
+    $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main  div:first-child img').width(width2);
+
     $( window ).resize(function() {
         var height = $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child').height();
         $('.groupTop .group-rankking .gr-rank-footer-p1 .item .av-main div:first-child img').height(height);

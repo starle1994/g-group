@@ -3685,3 +3685,11 @@ footer {
 .ft-bk{
   height: 40px;
 }
+
+.million .gr-rank-footer-p1 .item .ft-bk{
+  background: url(images/million-god-staff/title.png);
+}
+
+#main{
+  background-image: url(images/million-god-staff/bg.png);
+}
