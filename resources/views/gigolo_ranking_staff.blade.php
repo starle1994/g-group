@@ -21,30 +21,30 @@
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
-                    @foreach ($group_ranking as $group)
-                        @if($group->godstaffs !=null)
-                            @if($group->ranking_id ==1)
+                    @foreach ($group_ranking as $key =>$group)
+                        
+                            @if($key ==1)
                                         <?php $image = 'css/css/images/group-rankking/l1.jpg';
                                             $bk ='css/css/images/group-rankking/bk2.png'; ?>
-                                    @elseif($group->ranking_id ==2)
+                                    @elseif($key ==2)
                                         <?php $image = 'css/css/images/group-rankking/l2.jpg' ;
                                         $bk ='css/css/images/group-rankking/bk3.png';?>
-                                    @elseif($group->ranking_id ==3)
+                                    @elseif($key ==3)
                                         <?php $image = 'css/css/images/group-rankking/l3.jpg' ;
                                         $bk ='css/css/images/group-rankking/bk4.png';?>
-                                    @elseif($group->ranking_id ==4)
+                                    @elseif($key ==4)
                                         <?php $image = 'css/css/images/group-rankking/l4.jpg' ?>
-                                    @elseif($group->ranking_id ==5)
+                                    @elseif($key ==5)
                                         <?php $image = 'css/css/images/group-rankking/l5.jpg' ?>
-                                    @elseif($group->ranking_id ==6)
+                                    @elseif($key ==6)
                                         <?php $image = 'css/css/images/group-rankking/l6.jpg' ?>
-                                    @elseif($group->ranking_id ==7)
+                                    @elseif($key ==7)
                                         <?php $image = 'css/css/images/group-rankking/l7.jpg' ?>
-                                    @elseif($group->ranking_id ==8)
+                                    @elseif($key ==8)
                                         <?php $image = 'css/css/images/group-rankking/l8.jpg' ?>
-                                    @elseif($group->ranking_id ==9)
+                                    @elseif($key ==9)
                                         <?php $image = 'css/css/images/group-rankking/l9.jpg' ?>
-                                    @elseif($group->ranking_id ==10)
+                                    @elseif($key ==10)
                                         <?php $image = 'css/css/images/group-rankking/l10.jpg' ?>
                             @endif
                             <div class="col-xs-2 item" style="margin-bottom: 20px;">
@@ -53,23 +53,27 @@
                                 </div>
                                 
                                 <div class="av-main">
-                                    @if($group->ranking_id == 1 || $group->ranking_id==2 ||$group->ranking_id==3)
+                                    @if($key == 1 || $key==2 ||$key==3)
                                     <div class="bg-lf" style="position: absolute;">
-                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img src="{{asset($bk)}}" alt=""></a>
+                                        <a href="{{
+                                            (isset($group->godstaffs) && ($group->godstaffs != null)) ? route('staff-detail',base64_encode($group->godstaffs->id)) : ''
+                                        }}">
+                                            <img src="{{asset($bk)}}" alt="">
+                                        </a>
                                     </div>
                                     @endif
                                     <div class="avt-lf">
-                                        <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"><img class="avt-img"  src="{{asset('uploads/'.$group->godstaffs->image) }}" alt=""></a>
+                                        <a href="{{(isset($group->godstaffs) && ($group->godstaffs != null)) ? route('staff-detail',base64_encode($group->godstaffs->id)) : ''}}"><img class="avt-img"  src="{{(isset($group->godstaffs) && ($group->godstaffs != null)) ? asset('uploads/'.$group->godstaffs->image) : asset('css/css/images/gigolo/nothing.png') }}" alt=""></a>
                                     </div>
                                 </div>
 
                                 <div class="ft-bk">
-                                    {{$group->godstaffs->position}}<br> 
-                                    <a href="{{route('staff-detail',base64_encode($group->godstaffs->id))}}"> {{$group->godstaffs->name}}</a><br>
-                                    {{$group->godstaffs->comment}} 
+                                    {{ (isset($group->godstaffs) && ($group->godstaffs != null)) ? $group->godstaffs->position :'-'}}<br> 
+                                    <a href="{{(isset($group->godstaffs) && ($group->godstaffs != null)) ? route('staff-detail',base64_encode($group->godstaffs->id)) :''}}"> {{(isset($group->godstaffs) && ($group->godstaffs != null)) ? $group->godstaffs->name :'-'}}</a><br>
+                                    {{(isset($group->godstaffs) && ($group->godstaffs != null)) ? $group->godstaffs->comment : '-'}} 
                                 </div>
                             </div>
-                         @endif
+                         
                     @endforeach
                     
                 </div>

@@ -18,16 +18,15 @@
                         <img src="{{ asset('css/css/images/group-rankking/g5.jpg') }}" alt="">
                     </div>
                </div>
-               @if(isset($best_ranking[0]))
                <div class="gr-rank-slider2">
                     <div class=" row gr-rank-containerSlider">
                         <div class="col-md-6 col-sm-12 lf">
                             <div class="bk-left">
-                               <a href="{{route('staff-detail',base64_encode($best_ranking[0]->godstaffs->id))}}"> <img src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
+                               <a href="{{($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[1]->godstaffs->id)) : ''}}"> <img src="{{ asset('css/css/images/group-rankking/bk2.png') }}" alt="">
                                </a>
                             </div>
                             <div class="avt-left">
-                               <a href="{{route('staff-detail',base64_encode($best_ranking[0]->godstaffs->id))}}"><img src="{{ asset('uploads/'.$best_ranking[0]->godstaffs->image) }}" alt="">
+                               <a href="{{ ($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[1]->godstaffs->id)) : ''}}"><img src="{{ ($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ? asset('uploads/'.$best_ranking[1]->godstaffs->image) : asset('css/css/images/group-rankking/nothing.png')  }}" alt="">
                                </a>
                             </div>
 
@@ -35,30 +34,30 @@
                         <div class="col-md-6 col-sm-12 right">
                             <div class="avt-left">
                                 <ul>
-                                    <li><img src="{{ asset('css/css/images/group-rankking/m1.png') }}" alt=""></li>
-                                    <li class="txt">1樹</li>
-                                    <li><img src="{{ asset('css/css/images/group-rankking/m1.png') }}" alt=""></li>
+                                    <li class="col-md-4"><img src="{{ asset('css/css/images/group-rankking/m1.png') }}" alt="" class="img-responsive"></li>
+                                    <li class="col-md-4" style="margin-top: 15px"><img src="{{ asset('css/css/images/group-rankking/num1.png') }}" alt="" class="img-responsive"></li>
+                                    <li class="col-md-4"><img src="{{ asset('css/css/images/group-rankking/m1.png') }}" alt="" class="img-responsive"></li>
                                 </ul>
-
+                                <div style="clear: both"> </div>
                                 <div class="txt-2">
-                                   {{$best_ranking[0]->godstaffs->position}} <br>
-                                    {{$best_ranking[0]->godstaffs->name}} 
+                                    {{ ($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ?  $best_ranking[1]->godstaffs->position  : '-'}}<br>
+                                    {{ ($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ? $best_ranking[1]->godstaffs->name : '-'}}<br>
+                                    {!! ($best_ranking[1] != null && $best_ranking[1]->godstaffs != null) ? $best_ranking[1]->godstaffs->description : '-' !!}  
                                 </div>
                             </div>
                         </div>
                     </div>
                </div>
-               @endif
+               
                 <div class="gr-rank-p2">
                    <div class="row contents">
-                        @for( $i= 1 ;$i<=2; $i++)
-                            @if(isset($best_ranking[$i]))
+                        @for( $i= 2 ;$i<=3; $i++)
                             <div class="col-sm-6">
-                                @if($best_ranking[$i]->ranking_id ==2)
+                                @if($i == 2)
                                     <?php $image = 'css/css/images/group-rankking/2st.jpg' ;
                                         $bk ='css/css/images/group-rankking/bk3.png';
                                     ?>
-                                @elseif($best_ranking[$i]->ranking_id ==3)
+                                @elseif($i == 3)
                                     <?php $image = 'css/css/images/group-rankking/3st.jpg';
                                     $bk ='css/css/images/group-rankking/bk4.png'; ?>
                                 @endif
@@ -67,19 +66,20 @@
                                 </div>
                                 <div class="av-main">
                                     <div class="bg-lf">
-                                        <a href="{{route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id))}}"><img src="{{asset($bk)}}" alt=""></a>
+                                        <a href="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id)) : ''}}"><img src="{{asset($bk)}}" alt=""></a>
                                     </div>
 
                                     <div class="avt-lf">
-                                        <a href="{{route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id))}}"><img src="{{ asset('uploads/'.$best_ranking[$i]->godstaffs->image) }}" alt=""></a>
+                                        <a href="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id)) : ''}}"><img src="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ?  asset('uploads/'.$best_ranking[$i]->godstaffs->image) : asset('css/css/images/group-rankking/nothing.png')}}" alt=""></a>
                                     </div>
                                 </div>
 
                                 <div class="ft-bk">
-                                    <a href="{{route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id))}}">{{$best_ranking[$i]->godstaffs->name}}</a>
+                                     {{ ($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ?  $best_ranking[$i]->godstaffs->position  : '-'}}<br>
+                                    <a href="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id)) : ''}}">{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ?  $best_ranking[$i]->godstaffs->name : '-'}}</a><br>
+                                   
                                 </div>
                             </div>
-                            @endif
                         @endfor
                    </div>
                 </div>
@@ -88,24 +88,28 @@
                    <div class="row contents">
                         @for( $i= 4 ;$i<=5; $i++)
                             @if(isset($best_ranking[$i]))
-                            <div class="col-sm-6">
-                                @if($group_ranking[$i]->ranking_id ==4)
-                                    <?php $image = 'css/css/images/group-rankking/4st.jpg' ?>
-                                @elseif($group_ranking[$i]->ranking_id ==5)
-                                    <?php $image = 'css/css/images/group-rankking/5st.jpg' ?>
+                             <div class="col-sm-6">
+                                @if($i == 4)
+                                    <?php $image = 'css/css/images/group-rankking/4st.jpg' ;
+                                        
+                                    ?>
+                                @elseif($i == 5)
+                                    <?php $image = 'css/css/images/group-rankking/5st.jpg';
+                                     ?>
                                 @endif
                                 <div class="title">
                                    <img src="{{asset($image)}}" alt="">
                                 </div>
-                                
                                 <div class="av-main">
+                
+
                                     <div class="avt-lf">
-                                        <img src="{{ asset('uploads/'.$group_ranking[$i]->godstaffs->image) }}" alt="">
+                                        <a href="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id)) : ''}}"><img src="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ?  asset('uploads/'.$best_ranking[$i]->godstaffs->image) : asset('css/css/images/group-rankking/nothing.png')}}" alt=""></a>
                                     </div>
                                 </div>
-
                                 <div class="ft-bk">
-                                    <a href="{{route('staff-detail',base64_encode($group_ranking[$i]->godstaffs->id))}}">{{$group_ranking[$i]->godstaffs->name}}</a>
+                                     {{ ($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ?  $best_ranking[$i]->godstaffs->position  : '-'}}<br>
+                                    <a href="{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? route('staff-detail',base64_encode($best_ranking[$i]->godstaffs->id)) : ''}}">{{($best_ranking[$i] != null && $best_ranking[$i]->godstaffs != null) ? $best_ranking[$i]->godstaffs->name : '-'}}</a>
                                 </div>
                             </div>
                             @endif
@@ -213,9 +217,6 @@
                     </div>
                     @endif
                     @endforeach
-                    
-                    
-                    
                 </div>
             </div>
         </div>

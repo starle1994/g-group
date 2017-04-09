@@ -35,6 +35,7 @@ use App\OfficeWorkFeature;
 use App\PhotoList;
 use App\SongRating;
 use App\LastSongVerTwo;
+use App\Ranking;
 	
 class HomeController extends Controller
 {
@@ -84,7 +85,18 @@ class HomeController extends Controller
 
 	public function showGroupRanking()
 	{
-		$best_ranking 			= BestRanking::orderBy('ranking_id','asc')->with('godstaffs')->limit(5)->get();
+		$best_rankings 			= BestRanking::orderBy('ranking_id','asc')->with('godstaffs')->limit(5)->get();
+		$ranking = Ranking::take(5)->get();
+		foreach ($ranking as  $ran) {
+			$best_ranking[$ran->number] = [];
+		}
+		foreach ($ranking as $value_ran) {
+			foreach ($best_rankings as $value) {
+					if ($value_ran->number == $value->ranking_id) {
+						$best_ranking[$value_ran->number] = $value;
+					}
+				}
+		}
 		$group_ranking 			= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',1)->with('godstaffs')->limit(10)->get();
 		
 		$group_ranking_type2 	= RankingAll::orderBy('ranking_id','asc')->where('grouprankingtype_id',2)->with('godstaffs')->limit(10)->get();
@@ -139,7 +151,19 @@ class HomeController extends Controller
 
 	public function rankingMillionStaff()
 	{
-		$group_ranking 	= MillionGodRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
+		$group_rankings 	= MillionGodRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
+		$ranking = Ranking::all();
+		foreach ($ranking as  $ran) {
+			$group_ranking[$ran->number] = [];
+		}
+		foreach ($ranking as $value_ran) {
+			foreach ($group_rankings as $value) {
+					if ($value_ran->number == $value->ranking_id) {
+						$group_ranking[$value_ran->number] = $value;
+					}
+				}
+		}
+
 		$million_god_staff = GodStaffs::where('shopslist_id',1)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('million_ranking_staff', compact('group_ranking','million_god_staff','banner'));
@@ -147,7 +171,19 @@ class HomeController extends Controller
 
 	public function rankingGigoloStaff()
 	{
-		$group_ranking 	= GigoloRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
+		$group_rankings 	= GigoloRankingStaff::orderBy('ranking_id','asc')->with('godstaffs')->limit(10)->get();
+		$ranking = Ranking::all();
+		foreach ($ranking as  $ran) {
+			$group_ranking[$ran->number] = [];
+		}
+		foreach ($ranking as $value_ran) {
+			foreach ($group_rankings as $value) {
+					if ($value_ran->number == $value->ranking_id) {
+						$group_ranking[$value_ran->number] = $value;
+					}
+				}
+		}
+
 		$million_god_staff = GodStaffs::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','1')->first();
 		return view('gigolo_ranking_staff', compact('group_ranking','million_god_staff','banner'));
