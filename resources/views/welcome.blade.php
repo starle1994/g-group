@@ -18,7 +18,7 @@
 
 }
 </style>
- <div class="row">
+ <div class="row home">
     <!--                    all content left   -->
     <div class="col-sm-7 col-xs-12 home-left">
         <div class="row">
@@ -166,7 +166,7 @@
                     <div class="ct-ava">
                         <a href="{{ ($million->godstaffs != null) ? route('staff-detail',base64_encode($million->godstaffs->id)) : ''}}"><img src="{{ asset('uploads/'.$million->image) }}" alt="{{$million->name}}"></a>
                         @if($million->ranking->number ==1)
-                        <p class="titleAva1" style=" padding: 30px 0px 10px 35px;">
+                        <p class="titleAva1" >
                             
                         </p>
                         @endif
@@ -195,7 +195,7 @@
                     <div class="ct-ava">
                         <a href="{{ ($gigolo->godstaffs != null) ? route('staff-detail',base64_encode($gigolo->godstaffs->id)) : ''}}"><img src="{{ asset('uploads/'.$gigolo->image) }}" alt="{{$gigolo->name}}"></a>
                         @if($gigolo->ranking->number ==1)
-                        <p class="titleAva1" style=" padding: 30px 0px 10px 35px;">
+                        <p class="titleAva1">
                             
                         </p>
                         @endif

@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 <div class="row bbq-list-item">
         <div class="col-sm-3 left">
           @include('include.categories_left2')
