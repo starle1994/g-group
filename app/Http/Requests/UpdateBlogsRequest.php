@@ -26,7 +26,6 @@ class UpdateBlogsRequest extends FormRequest {
 		return [
             'name' => 'required', 
             'content' => 'required', 
-            'image' => 'required', 
             'shopslist_id' => 'required', 
             
 		];

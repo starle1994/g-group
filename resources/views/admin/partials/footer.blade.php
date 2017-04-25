@@ -1,3 +1,4 @@
+<script src="{{ asset('js/jquery.cropit.js')}}"></script>
 <script>
   var options = {
     filebrowserImageBrowseUrl: '{{asset("laravel-filemanager?type=Images")}}',

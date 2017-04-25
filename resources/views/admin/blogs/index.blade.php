@@ -17,7 +17,8 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>name</th>
-<th>image</th>
+<th>image 1</th>
+<th>image  2</th>
 <th>ShopList</th>
 
                         <th>&nbsp;</th>
@@ -32,6 +33,7 @@
                             </td>
                             <td>{{ $row->name }}</td>
 <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
+<td>@if($row->image_1 != '')<img width="50px" height="50px" src="{{ asset('uploads') . '/'.  $row->image_1 }}">@endif</td>
 <td>{{ isset($row->shopslist->name) ? $row->shopslist->name : '' }}</td>
 
                             <td>

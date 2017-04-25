@@ -1,6 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
+<style type="text/css">
+    .group-god .right .content .blog-content img{
+        width: 70%;
+        height: auto;
+    }
+    @media (max-width: 768px)
+{
+    .group-god .right .content .blog-content span{
+        font-size: 13px !important;
+    }
+    .group-god .right .content .blog-content p{
+        font-size: 13px !important;
+    }
+}
+</style>
 <div class="row group-god">
     <div class="col-sm-3  col-xs-12 shop-list-home-left"">
         <div class="exe-fa-line">

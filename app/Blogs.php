@@ -27,6 +27,7 @@ class Blogs extends Model {
           'description',
           'content',
           'image',
+          'image_1',
           'shopslist_id',
           'alias',
     ];
