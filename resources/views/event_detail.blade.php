@@ -1,6 +1,13 @@
  @extends('layouts.master')
 
 @section('content')
+<style >
+     .scroll2 {
+    height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+</style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
@@ -42,9 +49,9 @@
                     
                 </div>
                 <!-- loop -->
-                <div style="margin-right: 0px; margin-left: 0px;"  class="row main">
+                <div style="margin-right: 0px; margin-left: 0px;"  class="row main scroll2">
                 @foreach($imgs as $image)
-                    <div class="col-sm-6 avatar">
+                    <div class="col-sm-6 avatar ">
                      
                             <img src="{{ asset('uploads/'.$image->image)}}" alt="">
                             <p>
