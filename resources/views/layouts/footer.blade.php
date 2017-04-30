@@ -1,4 +1,4 @@
-<div>
+<div class="md-hidden">
 	<div class="row"><div class="col-xs-6"><p><お問い合わせ></p></div></div>
 	
 	<div class="row" style="margin-top: 10px">
