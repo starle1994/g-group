@@ -1,6 +1,9 @@
  @extends('layouts.master')
 
 @section('content')
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 	<div class="row event-item">
         <div class="col-sm-3  col-xs-12 shop-list-home-left"">
             <div class="exe-fa-line">
@@ -55,6 +58,14 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+
+    $("img").lazyload({
+        effect : "fadeIn"
+    });
+</script>
+
 <script type="text/javascript">
     window.onload = function(){
         var height = $('.groupTop .right .content .main .avatar:first-child img').height();      
