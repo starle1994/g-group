@@ -27,7 +27,9 @@ class Schedule extends Model {
           'description',
           'start_time',
           'end_time',
-          'event_type'
+          'event_type',
+          'shopslist_id',
+          'image',
     ];
     
 
@@ -74,5 +76,9 @@ class Schedule extends Model {
      */
    
 
+    public function shopslist()
+    {
+        return $this->hasOne('App\ShopsList', 'id', 'shopslist_id');
+    }
 
 }

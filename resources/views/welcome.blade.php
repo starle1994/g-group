@@ -21,48 +21,42 @@
  <div class="row home">
     <!--                    all content left   -->
     <div class="col-sm-7 col-xs-12 home-left">
-        <div class="row">
+        <div class="row sm-hidden">
             <div class="col-sm-4">
                 <div class="ct-topLeft">
                     <div><img class="imgex" src="{{ asset('css/css/images/grouptop/titleMino.png') }}"
                      alt=""></div>
                     <div class="scroll">
-                    <?php $first = true?>
-                    @foreach($blogs1 as $blog)
-                        <?php
-                            $datetime = new DateTime($blog->created_at) ; 
-                            $year = $datetime->format('Y');
-                            $month = $datetime->format('m');
-                            $day = $datetime->format('d');
-                            $time = $datetime->format('h:m');
-                        ?>
-                        @if($first==true)
-                            <div class="infoTop">
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                <div class="content1">
-                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
-                                   <a href="{{route('blog-detail',$blog->alias)}}"> <span class="title-2"> {{$blog->name}}</span></a>
+                    @if(isset($blogs1[0]) && strcmp ( $blogs1[0]->name , 'メンテナンス中') == 0)
+                        <div class="col-sm-12 under">
+                            <img src="{{ asset('uploads/'.$blogs1[0]->image) }}" alt="" class="img-responsive">
+                        </div>
+                    @else
+                         @foreach($blogs1 as $blog)
+                     
+                            <?php
+                                $datetime = new DateTime($blog->created_at) ; 
+                                $year = $datetime->format('Y');
+                                $month = $datetime->format('m');
+                                $day = $datetime->format('d');
+                                $time = $datetime->format('h:m');
+                            ?>
+                            
+                                <div class="infoTop">
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><img src="{{ asset('uploads/'.$blog->image_1) }}" alt=""></a>
+                                    <div class="content1">
+                                        <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                       <a href="{{route('blog-detail',$blog->alias)}}"> <span class="title-2"> {{$blog->name}}</span></a>
+                                    </div>
+                                    <div class="line">
+                                        <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                    </div>
+                                    
                                 </div>
-                                <div class="line">
-                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                </div>
-                                
-                            </div>
-                        @else
-                            <?php $first = false?>
-                            <div class="infoTop">
-                                
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                <div class="content1">
-                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
-                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
-                                </div>
-                                <div class="line">
-                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach                        
+                            
+                        @endforeach         
+                    @endif
+                                  
                     </div>
                 </div>
             </div>
@@ -72,18 +66,22 @@
                      alt=""></div>
 
                     <div class="scroll">
-                    <?php $first = true?>
-                    @foreach($blogs as $blog)
-                        <?php
-                            $datetime = new DateTime($blog->created_at) ; 
-                            $year = $datetime->format('Y');
-                            $month = $datetime->format('m');
-                            $day = $datetime->format('d');
-                            $time = $datetime->format('h:m');
-                        ?>
-                        @if($first==true)
+                    @if(isset($blogs[0]) && strcmp ( $blogs[0]->name , 'メンテナンス中') == 0)
+                        <div class="col-sm-12 under">
+                            <img src="{{ asset('uploads/'.$blogs[0]->image) }}" alt="" class="img-responsive">
+                        </div> 
+                    @else
+                        @foreach($blogs as $blog)
+                            <?php
+                                $datetime = new DateTime($blog->created_at) ; 
+                                $year = $datetime->format('Y');
+                                $month = $datetime->format('m');
+                                $day = $datetime->format('d');
+                                $time = $datetime->format('h:m');
+                            ?>
+                          
                             <div class="infoTop">
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <a href="{{route('blog-detail',$blog->alias)}}"><img src="{{ asset('uploads/'.$blog->image_1) }}" alt=""></a>
                                 <div class="content1">
                                     <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
                                     <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
@@ -92,21 +90,8 @@
                                     <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
                                 </div>
                             </div>
-                        @else
-                            <?php $first = false?>
-                            <div class="infoTop">
-                                
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                <div class="content1">
-                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
-                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
-                                </div>
-                                <div class="line">
-                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach                          
+                        @endforeach
+                    @endif                          
                     </div>
                 </div>
             </div>
@@ -116,41 +101,33 @@
                      alt=""></div>
 
                     <div class="scroll">
-                    <?php $first = true?>
-                    @foreach($blogs2 as $blog)
-                        <?php
-                            $datetime = new DateTime($blog->created_at) ; 
-                            $year = $datetime->format('Y');
-                            $month = $datetime->format('m');
-                            $day = $datetime->format('d');
-                            $time = $datetime->format('h:m');
-                        ?>
-                        @if($first==true)
-                            <div class="infoTop">
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                <div class="content1">
-                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
-                                    <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
-                                </div>
-                                <div class="line">
-                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                </div>
-                            </div>
-                        @else
-                            <?php $first = false?>
-                            <div class="infoTop">
+                    @if(isset($blogs2[0]) && strcmp ( $blogs2[0]->name , 'メンテナンス中') == 0)
+                        <div class="col-sm-12 under">
+                            <img src="{{ asset('uploads/'.$blogs2[0]->image) }}" alt="" class="img-responsive">
+                        </div>
                                 
-                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                <div class="content1">
-                                    <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
-                                    <span class="title-2"> {{$blog->name}}</span>
+                       
+                    @else
+                        @foreach($blogs2 as $blog)
+                            <?php
+                                $datetime = new DateTime($blog->created_at) ; 
+                                $year = $datetime->format('Y');
+                                $month = $datetime->format('m');
+                                $day = $datetime->format('d');
+                                $time = $datetime->format('h:m');
+                            ?>
+                                <div class="infoTop">
+                                    <a href="{{route('blog-detail',$blog->alias)}}"><img src="{{ asset('uploads/'.$blog->image_1) }}" alt=""></a>
+                                    <div class="content1">
+                                        <span class="title-1 right">{{$year}}年{{$month}}月{{$day}}日</span>
+                                        <a href="{{route('blog-detail',$blog->alias)}}"><span class="title-2"> {{$blog->name}}</span></a>
+                                    </div>
+                                    <div class="line">
+                                        <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
+                                    </div>
                                 </div>
-                                <div class="line">
-                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach  
+                        @endforeach  
+                    @endif
                     </div>
                 </div>
             </div>
@@ -214,11 +191,11 @@
             @endforeach
         </div>
         <div class="row lineSli">
-            <div class="col-xs-3" id="lineImg">
+            <div class="col-md-3 sm-hidden" id="lineImg">
                 <img src="{{ asset('css/css/images/group-rankking/Line@.jpg')}}" alt="">
                 @include('include.categories_left')
             </div>
-            <div class="col-xs-9">
+            <div class="col-md-9 col-md-12 no-padding ">
                <div class="slider1">
                     <div class="sliderAva">
                         <p class="titleAva4"></p>

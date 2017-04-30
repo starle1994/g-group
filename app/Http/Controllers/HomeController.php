@@ -36,6 +36,7 @@ use App\PhotoList;
 use App\SongRating;
 use App\LastSongVerTwo;
 use App\Ranking;
+use App\Schedule;
 	
 class HomeController extends Controller
 {
@@ -49,9 +50,9 @@ class HomeController extends Controller
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$banner					= Banner::where('page','1')->first();
-		$blogs 					= Blogs::take(10)->select('name','image','created_at','alias')->get();
-		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image','created_at','alias')->take(10)->get();
-		$blogs2					= Blogs::where('shopslist_id','2')->select('name','image','created_at','alias')->take(10)->get();
+		$blogs 					= Blogs::take(10)->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->get();
+		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
+		$blogs2					= Blogs::where('shopslist_id','2')->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
 		 return view('welcome', compact('contents','million_ranking_staff', 'gigolo_ranking_staff','secrect_contents','rookies_feature','shop_list','banner','blogs','blogs1','blogs2'));
 
 	}
@@ -106,8 +107,12 @@ class HomeController extends Controller
 
 	public function showMillionGod()
 	{
-		$blogs 					= Blogs::take(10)->select('name','image','created_at','alias')->get();
-		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image','created_at','alias')->take(10)->get();
+		$schedules 			= Schedule::take(20)->orderBy('start_time','desc')->where('shopslist_id','1')->get();
+		$blogs				= Blogs::where('shopslist_id','1')
+								->select('name','image','created_at','alias')
+								->orderBy('created_at','desc')
+								->take(10)
+								->get();
 		$millionGodRankingStaff = MillionGodRankingStaff::orderBy('ranking_id','asc')->get();
 		$godPageContent 		= GodPageContent::all();
 		$secrect_contents 		= SecrectContents::all();
@@ -115,13 +120,16 @@ class HomeController extends Controller
 		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$recoments 				= RecomentCate::where('shopslist_id',1)->get();
 		$banner					= Banner::where('page','2')->first();
-		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list','recoments','banner','blogs','blogs1'));
+		return view('million_god',compact('millionGodRankingStaff','godPageContent','secrect_contents','rookies_feature','shop_list','recoments','banner','schedules','blogs'));
 	}
 
 	public function showGigoro()
 	{
-		$blogs 					= Blogs::take(10)->select('name','image','created_at','alias')->get();
-		$blogs2					= Blogs::where('shopslist_id','2')->select('name','image','created_at','alias')->take(10)->get();
+		$schedules 				= Schedule::take(20)->orderBy('start_time','desc')->where('shopslist_id','2')->get();
+		$blogs					= Blogs::where('shopslist_id','2')
+										->select('name','image','created_at','alias')
+										->take(10)
+										->get();
 		$gigoloRankingStaff 	= GigoloRankingStaff::orderBy('ranking_id','asc')->get();
 		$gigoloPageContents 	= GigoloPageContents::all();
 		$secrect_contents 		= SecrectContents::all();
@@ -129,8 +137,15 @@ class HomeController extends Controller
 		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$recoments 				= RecomentCate::where('shopslist_id',2)->get();
 		$banner					= Banner::where('page','3')->first();
-		return view('gigolo',compact('gigoloRankingStaff','gigoloPageContents','secrect_contents','rookies_feature','shop_list','recoments','banner','blogs2','blogs'));
-		
+		return view('gigolo',compact('gigoloRankingStaff',
+										'gigoloPageContents',
+										'secrect_contents',
+										'rookies_feature',
+										'shop_list',
+										'recoments',
+										'banner',
+										'blogs',
+										'schedules'));
 	}
 
 	public function showSystem()
@@ -383,15 +398,18 @@ class HomeController extends Controller
     public function showmillionGodSystem()
     {
     	$system = System::first();
+    	$shopslist 		= ShopsList::where('is_active',1)->where('id',1)->first();
     	$banner					= Banner::where('page','1')->first();
-    	return view('millon_god_system',compact('system','banner'));
+    	
+    	return view('millon_god_system',compact('system','banner','shopslist'));
     }
 
     public function showGigiloGodSystem()
     {
     	$system = System::first();
+    	$shopslist 		= ShopsList::where('is_active',1)->where('id',2)->first();
     	$banner					= Banner::where('page','1')->first();
-    	return view('gigolo_system',compact('system','banner'));
+    	return view('gigolo_system',compact('system','banner','shopslist'));
     }
 
    	public function showLink()

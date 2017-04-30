@@ -4,6 +4,11 @@
 
 <p>{!! link_to_route(config('quickadmin.route').'.rankingall.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
 
+<span>{!! link_to_route(config('quickadmin.route').'.rankingall.index', ' グループ売上ランキング' , null, array('class' => ($id==1) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<span>{!! link_to_route(config('quickadmin.route').'.rankingall.type2', 'グループ指名本数ランキング' , $id, array('class' => ($id==2) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<span>{!! link_to_route(config('quickadmin.route').'.bestranking.index', 'G5' , null, array('class' => (!isset($id)) ? 'btn btn-primary' : 'btn btn-success')) !!}</span>
+<br>
+<br>
 @if ($rankingall->count())
     <div class="portlet box green">
         <div class="portlet-title">
@@ -16,9 +21,12 @@
                         <th>
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
-                        <th>Ranking Stype</th>
-<th>name</th>
-<th>Ranking</th>
+                        <th>name</th>
+                        <th>Position</th>
+                        <th>comment</th>
+                
+                        <th>image</th>
+                        <th>Ranking</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -30,9 +38,13 @@
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
-                            <td>{{ isset($row->grouprankingtype->name) ? $row->grouprankingtype->name : '' }}</td>
-<td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
-<td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
+                        
+                            <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
+                            <td>{{ isset($row->godstaffs->position) ? $row->godstaffs->position : '' }}</td>
+                            <td>{{ isset($row->godstaffs->comment) ? $row->godstaffs->comment : '' }}</td>
+                    
+                            <td>@if(isset($row->godstaffs->image))<img src="{{ asset('uploads/thumb') . '/'.  $row->godstaffs->image }}">@endif</td>
+                            <td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.rankingall.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

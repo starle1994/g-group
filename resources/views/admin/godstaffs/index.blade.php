@@ -22,26 +22,56 @@
                         <th>
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
-<th>name</th>
-<th>position</th>
-<th>comment</th>
-<th>image</th>
+                        <th>name</th>
+                        <th>position</th>
+                        <th>comment</th>
 
+                        @if($shopslist_id != 3)
+                            <th>ranking</th>
+                        @else
+                            <th>G5 </th>
+                            <th>グループ売上ランキング </th>
+                            <th>グループ指名本数ランキング</th>
+                        @endif
+                        
+                        <th>image</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
 
                 <tbody>
+               
                     @foreach ($godstaffs as $row)
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
-<td>{{ $row->name }}</td>
-<td>{{ $row->position }}</td>
-<td>{{$row->comment}}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
-
+                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->position }}</td>
+                            <td>{{$row->comment}}</td>
+                            <?php 
+                                if ($shopslist_id == 1) {
+                                    $ran = App\MillionGodRankingStaff::where('godstaffs_id',$row->id)->with('ranking')->first();
+                                
+                                }else{
+                                   if ($shopslist_id == 2) {
+                                        $ran = App\GigoloRankingStaff::where('godstaffs_id',$row->id)->with('ranking')->first();
+                                    
+                                    }else{
+                                        $best = App\BestRanking::where('godstaffs_id',$row->id)->with('ranking')->first();
+                                        $g1 = App\RankingAll::where('godstaffs_id',$row->id)->where('grouprankingtype_id', 1)->with('ranking')->first();
+                                         $g2 = App\RankingAll::where('godstaffs_id',$row->id)->where('grouprankingtype_id', 2)->with('ranking')->first();
+                                    } 
+                                }
+                             ?>
+                             @if($shopslist_id != 3)
+                                <td>{{ isset($ran->ranking) ? $ran->ranking->number : ''}}</td>
+                            @else
+                                <td>{{ isset($best->ranking) ? $best->ranking->number : ''}}</td>
+                                <td>{{ isset($g1->ranking) ? $g1->ranking->number : ''}}</td>
+                                <td>{{ isset($g2->ranking) ? $g2->ranking->number : ''}}</td>
+                            @endif
+                            <td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.godstaffs.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.godstaffs.destroy', $row->id))) !!}

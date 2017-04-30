@@ -48,6 +48,7 @@
 										}
 										$date = mktime(12, 0, 0, $month, 1, $year);
 										$daysInMonth = date("t", $date);
+                    
 										$offset = date("w", $date);
 										$rows = 1;
 										$prev_month = $month - 1;
@@ -71,7 +72,7 @@
 										for($day = 1; $day <= $daysInMonth; $day++) {
                       $date = $year.'-'.$month.'-'.$day;
 
-                    $events = \App\Schedule::whereDate('start_time',$date)->get();
+                    $events = \App\Schedule::whereDate('start_time','<=',$date)->where('end_time','>=',$date)->get();
                     $class = [];
                     
                     if ($events->isEmpty() != true) {
@@ -141,12 +142,14 @@
                                     <table class="table table-bordered colTab">
                                         <tbody>
                                           <?php 
+                                       
                                               for($day = 1; $day <= $daysInMonth; $day++) {
                                               $date = $year.'-'.$month.'-'.$day;
-
-                                            $events = \App\Schedule::whereDate('start_time',$date)->get();
+                                              $dt = new Carbon\Carbon($date );
+                                              $isWeekDay = $dt->isWeekend();
+                                              $events = \App\Schedule::whereDate('start_time','<=',$date)->where('end_time','>=',$date)->get();
                                             
-                                            $class = [];
+                                              $class = [];
                                            
                                             if ($events->isEmpty() != true) {
                                               foreach ($events as $event) {
@@ -170,7 +173,10 @@
                                               }
                                               if ($events->isEmpty() != true){
                                                 echo "<tr>";
-                                                echo "<td class='red'>".$day."日</td>";
+                                                if($isWeekDay == true)
+                                                  echo "<td class='red'>".$day."日</td>";
+                                                else
+                                                   echo "<td >".$day."日</td>";
                                                 echo "<td>";
                                                 foreach ($events as $event) {
                                                   echo "<img class='imgCol' src='".$class[$event->id]."'>";
@@ -182,7 +188,10 @@
                                                 echo "</tr>";
                                               }else{
                                                 echo "<tr>";
-                                                echo "<td >".$day."日</td>";
+                                                if($isWeekDay == true)
+                                                  echo "<td class='red'>".$day."日</td>";
+                                                else
+                                                   echo "<td >".$day."日</td>";
                                                 echo "<td>";
                                                 
                                                 echo "</td>";

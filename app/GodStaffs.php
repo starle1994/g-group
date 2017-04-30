@@ -58,4 +58,6 @@ class GodStaffs extends Model {
     {
         return $this->hasMany('App\LogGroupRanking', 'staffs_id', 'id');
     }
+    
+    
 }

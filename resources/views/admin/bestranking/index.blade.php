@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p>{!! link_to_route(config('quickadmin.route').'.bestranking.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
+<p>{!! link_to_route(config('quickadmin.route').'.bestranking.create','Add G5 new' , null, array('class' => 'btn btn-success')) !!}</p>
 
 @if ($bestranking->count())
     <div class="portlet box green">
@@ -16,9 +16,12 @@
                         <th>
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
-                        <th>Name</th>
                         <th>ranking</th>
-
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>comment</th>
+                        <th>image</th>
+                        <th>url</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -29,8 +32,12 @@
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
-                            <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
                             <td>{{ isset($row->ranking->number) ? $row->ranking->number : '' }}</td>
+                            <td>{{ isset($row->godstaffs->name) ? $row->godstaffs->name : '' }}</td>
+                            <td>{{ isset($row->godstaffs->position) ? $row->godstaffs->position : '' }}</td>
+                            <td>{{ isset($row->godstaffs->comment) ? $row->godstaffs->comment : '' }}</td>
+                            <td>@if(isset($row->godstaffs->image))<img src="{{ asset('uploads/thumb') . '/'.  $row->godstaffs->image }}">@endif</td>
+                            <td>{{ $row->url}}</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.bestranking.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.bestranking.destroy', $row->id))) !!}

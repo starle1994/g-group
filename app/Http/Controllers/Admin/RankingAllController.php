@@ -25,12 +25,18 @@ class RankingAllController extends Controller {
      *
      * @return \Illuminate\View\View
 	 */
-	public function index(Request $request)
+	public function index($id = 1)
     {
-        $rankingall = RankingAll::with("grouprankingtype")->with("godstaffs")->with("ranking")->get();
-		return view('admin.rankingall.index', compact('rankingall'));
+        $rankingall = RankingAll::with("grouprankingtype")->with("godstaffs")->with("ranking")->where('grouprankingtype_id',1)->get();
+		return view('admin.rankingall.index', compact('rankingall','id'));
 	}
 
+	public function type2($id)
+	{
+		$rankingall = RankingAll::with("grouprankingtype")->with("godstaffs")->with("ranking")->where('grouprankingtype_id',2)->get();
+
+		return view('admin.rankingall.index', compact('rankingall','id'));
+	}
 	/**
 	 * Show the form for creating a new rankingall
 	 *
@@ -77,7 +83,12 @@ class RankingAllController extends Controller {
 			'month'=>$month,
 			'year'=>$year,
 		]);
-		return redirect()->route(config('quickadmin.route').'.rankingall.index');
+		if ($request->grouprankingtype_id == 1) {
+			return redirect()->route(config('quickadmin.route').'.rankingall.index');
+		} else {
+			return redirect()->route(config('quickadmin.route').'.rankingall.type2',$request->grouprankingtype_id);
+		}
+		
 	}
 
 	/**
@@ -154,7 +165,11 @@ class RankingAllController extends Controller {
 			$log->update($input);
 		}
 
-		return redirect()->route(config('quickadmin.route').'.rankingall.index');
+		if ($request->grouprankingtype_id == 1) {
+			return redirect()->route(config('quickadmin.route').'.rankingall.index');
+		} else {
+			return redirect()->route(config('quickadmin.route').'.rankingall.type2',$request->grouprankingtype_id);
+		}
 	}
 
 	/**

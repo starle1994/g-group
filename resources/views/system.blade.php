@@ -148,7 +148,7 @@
                             <img class="im2" src="{{asset('css/css/images/system/ct3Top3.png')}}" alt="">
                         </div>
                     </div>
-
+                 
                     <div class="ctSys3">
                         <div class="flexImg3">
                             <div>Gigolo</div>
@@ -235,9 +235,16 @@
                 ],
 
             });
-           var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
-            $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
-
+           $(document).ready(function() {
+                window.onload = function(){
+                    var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
+                    $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+                 };
+                $(window).resize(function() {
+                    var height = $('.system .contentSyst .syscontent3 .ctImg3 div:first-child').height();
+                        $('.system .contentSyst .syscontent3 .ctImg3 div:first-child img').height(height);
+                })
+            }); 
         </script>
         <!-- end: Google Maps -->
     </div>

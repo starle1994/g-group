@@ -41,13 +41,22 @@
         {!! Form::hidden('image_intro_h', 4096) !!}
         
     </div>
-</div><div class="form-group">
+</div>
+<div class="form-group">
+    {!! Form::label('address', 'address*', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::text('address', old('address',$shopslist->address), array('class'=>'form-control')) !!}
+        
+    </div>
+</div>
+<div class="form-group">
     {!! Form::label('description', 'description*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('description', old('description',$shopslist->description), array('class'=>'form-control ckeditor')) !!}
         
     </div>
 </div>
+
 <div class="form-group">
     {!! Form::label('apply_method', 'apply_method', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
@@ -55,7 +64,13 @@
         
     </div>
 </div>
-
+<div class="form-group">
+    {!! Form::label('contact', 'contact', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::textarea('contact', old('contact',$shopslist->contact), array('class'=>'form-control ckeditor')) !!}
+        
+    </div>
+</div>
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
       {!! Form::submit(trans('quickadmin::templates.templates-view_edit-update'), array('class' => 'btn btn-primary')) !!}

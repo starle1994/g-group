@@ -48,14 +48,6 @@
         
     </div>
 </div>
-<div class="form-group">
-    {!! Form::label('Executive_layer', 'Executive_layer', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::hidden('Executive_layer','') !!}
-        {!! Form::checkbox('Executive_layer', 1, $gigolorankingstaff->Executive_layer == 1) !!}
-        
-    </div>
-</div>
 
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">

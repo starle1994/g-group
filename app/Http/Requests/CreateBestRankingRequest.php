@@ -24,8 +24,8 @@ class CreateBestRankingRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-            'godstaffs_id' => 'required', 
-            'ranking_id'	=>'required'
+            'godstaffs_id' => 'required|unique:bestranking,godstaffs_id,NULL,id,deleted_at,NULL',
+            'ranking_id' => 'required|unique:bestranking,ranking_id,NULL,id,deleted_at,NULL',
 		];
 	}
 }

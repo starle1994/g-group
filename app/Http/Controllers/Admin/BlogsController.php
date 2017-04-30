@@ -36,8 +36,11 @@ class BlogsController extends Controller {
 	 */
 	public function create()
 	{
-	    $shopslist = ShopsList::pluck("name", "id")->prepend('Please select', null);
-
+	    $shopslists = ShopsList::where('is_active',1)->get();
+	    $shopslist['']= 'Please select';
+	    foreach ($shopslists as $value) {
+	    	$shopslist[$value->id]=$value->name;
+	    }
 	    
 	    return view('admin.blogs.create', compact("shopslist"));
 	}
@@ -90,7 +93,6 @@ class BlogsController extends Controller {
 	    	$data = $this->uploadAvatarAgent($request->image_1, $request['image-data']);
 	    	$input['image_1']= $data['url'];
 	    }
-	
 		Blogs::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.blogs.index');
@@ -105,7 +107,12 @@ class BlogsController extends Controller {
 	public function edit($id)
 	{
 		$blogs = Blogs::find($id);
-	    $shopslist = ShopsList::pluck("name", "id")->prepend('Please select', null);
+	    $shopslists = ShopsList::where('is_active',1)->get();
+	    $shopslist['']= 'Please select';
+	    foreach ($shopslists as $value) {
+	    	$shopslist[$value->id]=$value->name;
+	    }
+	    
 		return view('admin.blogs.edit', compact('blogs', "shopslist"));
 	}
 
@@ -118,10 +125,18 @@ class BlogsController extends Controller {
 	public function update($id, UpdateBlogsRequest $request)
 	{
 		$blogs = Blogs::findOrFail($id);
+		if ($request->image != null) {
+			$request = $this->saveFiles($request);
+		}
+        
+        $input = $request->all();
 
-        $request = $this->saveFiles($request);
-
-		$blogs->update($request->all());
+        if ($request->image_1 != null) {
+	    	$data = $this->uploadAvatarAgent($request->image_1, $request['image-data']);
+	    	$input['image_1']= $data['url'];
+	    }
+	
+		$blogs->update($input);
 
 		return redirect()->route(config('quickadmin.route').'.blogs.index');
 	}

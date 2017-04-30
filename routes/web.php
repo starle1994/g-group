@@ -170,6 +170,10 @@ Route::group([ 'middleware' => 'auth'], function () {
             'as' => 'admin.recomentcate.gigolo',
             'uses' => 'Admin\RecomentCateController@recommentGigolo'
         ]);
+        Route::get(config('quickadmin.route') . '/rankingall/type/{id}', [
+            'as' => 'admin.rankingall.type2',
+            'uses' => 'Admin\RankingAllController@type2'
+        ]);
     });
 });
 

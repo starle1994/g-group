@@ -23,11 +23,12 @@ class CreateGigoloRankingStaffRequest extends FormRequest {
 	 */
 	public function rules()
 	{
-		return [
-            'ranking_id' => 'required', 
-            'godstaffs_id' => 'required', 
-            'image' => 'required', 
-            'banner' => 'required', 
+		return [ 
+			'ranking_id' => 'required|unique:gigolorankingstaff,ranking_id,NULL,id,deleted_at,NULL',
+            'godstaffs_id' => 'required|unique:gigolorankingstaff,godstaffs_id,NULL,id,deleted_at,NULL',
+            
+            'image' => 'required',
+            'banner' => 'required',
 		];
 	}
 }

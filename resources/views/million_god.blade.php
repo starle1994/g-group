@@ -8,13 +8,13 @@
       margin-top: 0px;
   }
   
-@media screen and (min-width: 320px)
-{
-    .group-rankking-top #main #mainContetn .container-fluid {
-    padding-left: 0px;
-    padding-top: 0px;
-}
-}
+    @media screen and (min-width: 320px)
+    {
+        .group-rankking-top #main #mainContetn .container-fluid {
+            padding-left: 0px;
+            padding-top: 0px;
+        }
+    }
 
 
 
@@ -29,38 +29,36 @@
                      alt=""></div>
 
                     <div class="scroll">
-                    <?php $first = true?>
-                        @foreach($blogs1 as $blog)
+                        @foreach($schedules as $schedule)
                             <?php
-                                $datetime = new DateTime($blog->created_at) ; 
+                                $datetime = new DateTime($schedule->start_time) ; 
                                 $year = $datetime->format('Y');
                                 $month = $datetime->format('m');
                                 $day = $datetime->format('d');
                                 $time = $datetime->format('h:m');
                             ?>
-                            @if($first==true)
-                                <?php $first = false?>
-                                <div class="infoTop">                                           
-                                    <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                     
+                                <div class="infoTop"> 
+                                    @if($schedule->image != null)   
+                                        <img src="{{ asset('uploads/'.$schedule->image) }}" alt="">
+                                    @else
+                                        @if($schedule->event_type == 1)
+                                             <img src="{{asset('css/css/images/schedule/contai.png')}}" alt="">
+                                        @else
+                                            @if($schedule->event_type == 2)
+                                                <img src="{{asset('css/css/images/schedule/music.png')}}" alt="">
+                                            @else
+                                                 <img src="{{asset('css/css/images/schedule/char.png')}}" alt="">
+                                            @endif
+                                        @endif
+
+                                    @endif                                        
                                     <div class="content1">
-                                        <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
-                                        <span class="title-2"> {{$blog->name}}</span>
+                                         <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
+                                        <span class="title-2"> {{$schedule->name_event}}</span>
                                     </div>
                                 </div>
                                 <div class="clear-fix"></div>
-                            @else
-                                <?php $first = false?>
-                                <div class="infoTop">
-                                    <div class="line">
-                                        <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                    </div>
-                                    <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                    <div class="content1">
-                                        <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
-                                        <span class="title-2"> {{$blog->name}}</span>
-                                    </div>
-                                </div>
-                            @endif
                         @endforeach                                            
                     </div>
                 </div>
@@ -71,7 +69,11 @@
                      alt=""></div>
 
                     <div class="scroll">
-                    <?php $first = true?>
+                    @if(isset($blogs[0]) && strcmp ( $blogs[0]->name , 'メンテナンス中') == 0)
+                        <div class="col-sm-12 under">
+                            <img src="{{ asset('uploads/'.$blogs[0]->image) }}" alt="" class="img-responsive">
+                        </div>
+                    @else
                         @foreach($blogs as $blog)
                             <?php
                                 $datetime = new DateTime($blog->created_at) ; 
@@ -80,29 +82,19 @@
                                 $day = $datetime->format('d');
                                 $time = $datetime->format('h:m');
                             ?>
-                            @if($first==true)
-                                <?php $first = false?>
-                                <div class="infoTop">                                           
-                                    <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                    <div class="content1">
-                                        <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
-                                        <span class="title-2"> {{$blog->name}}</span>
-                                    </div>
+                            <div class="infoTop">                                           
+                                <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
+                                <div class="content1">
+                                    <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
+                                    <span class="title-2"> {{$blog->name}}</span>
                                 </div>
-                            @else
-                                <?php $first = false?>
-                                <div class="infoTop">
-                                    <div class="line">
-                                        <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
-                                    </div>
-                                    <img src="{{ asset('uploads/'.$blog->image) }}" alt="">
-                                    <div class="content1">
-                                        <span class="title-1">{{$year}}年{{$month}}月{{$day}}日</span>
-                                        <span class="title-2"> {{$blog->name}}</span>
-                                    </div>
+                                
+                            </div>
+                            <div class="line">
+                                    <img src="{{ asset('css/css/images/line-title1.png')}}" alt="">
                                 </div>
-                            @endif
-                        @endforeach                                            
+                        @endforeach 
+                    @endif                                           
                     </div>
                 </div>
             </div>

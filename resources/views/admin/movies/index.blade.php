@@ -32,7 +32,7 @@
                             </td>
                             <td>{{ $row->name }}</td>
 <td>{{ $row->link }}</td>
-<td>@if($row->image != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->image }}">@endif</td>
+<td>@if($row->image != '')<img width="50px" height="50px" src="{{ asset('uploads/') . '/'.  $row->image }}">@endif</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.movies.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

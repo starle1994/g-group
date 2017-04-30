@@ -3510,6 +3510,9 @@ footer {
 }
 @media (max-width: 768px)
 {
+  .post_titile{
+    height: auto !important;
+  }
   .home-left, .title-Right {
       margin-top: 0px;
   }
@@ -3521,13 +3524,13 @@ footer {
     padding-left: 20px;
   }
   .groupTop .ct-ava .titleAva1{
-   padding: 15px 0px 10px 35px;
+   padding: 10px 0px 10px 35px;
  }
  .groupTop .ct-ava .titleAva2{
-   padding: 15px 0px 10px 35px;
+   padding: 10px 0px 10px 35px;
  }
  .groupTop .ct-ava .titleAva3{
-   padding: 15px 0px 10px 35px;
+   padding: 10px 0px 10px 35px;
  }
  .groupTop .titleAva4{
    padding: 15px 0px 10px 35px;
@@ -3592,6 +3595,12 @@ footer {
 }
 .groupTop .lineSli{
   margin-bottom: 10px;
+  
+}
+
+.no-padding{
+  padding-right:0px;
+  padding-left: 0px;
 }
 .schedule .imgCol{
   width: 15px;
@@ -3623,6 +3632,24 @@ footer {
   font-weight: bold;
   font-size: 10px;
 }
+.sm-hidden{
+  display: none;
+}
+.pdLeft{
+  padding-right: 5px;
+}
+.pdCenter {
+  padding-left: 3px;
+  padding-right: 2px;
+}
+.pdRight {
+  padding-left: 5px;
+}
+.groupTop footer p {
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
 }
 
 @media screen and (min-width: 1280px) and (min-width: 320px)
@@ -3647,6 +3674,9 @@ footer {
 
 @media screen and (min-width: 320px)
 {
+  .post_titile{
+    height: 40px;
+  }
 .group-rankking-top #main #mainContetn .container-fluid {
     padding-left: 0px;
     padding-top: 20px;
@@ -3729,4 +3759,14 @@ footer {
 
 .group-god .right .content .title-first{
   margin-bottom: 20px;
+}
+
+.infoTop  img {
+    float: left;
+    max-width: 100%;
+    width: 35%;
+}
+
+.under{
+  margin-top: 10px;
 }

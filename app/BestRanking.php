@@ -24,7 +24,8 @@ class BestRanking extends Model {
     protected $fillable = [
           'godstaffs_id',
           'image',
-          'ranking_id'
+          'ranking_id',
+          'url',
     ];
     
 
@@ -39,7 +40,6 @@ class BestRanking extends Model {
     {
         return $this->hasOne('App\GodStaffs', 'id', 'godstaffs_id');
     }
-
 
     public function ranking()
     {

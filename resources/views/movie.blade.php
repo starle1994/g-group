@@ -59,7 +59,7 @@
                 $target = 'myModal-'.$item->id ; 
                 $target_1= '#'.$target ;
             ?>                                                                                  
-                <div class="col-xs-6 ">
+                <div class="col-md-6 col-xs-12 avatar-youtube">
                     <div class="item-video">                                                      
                             <div class="catgimg_container" data-toggle="modal" data-target="{{$target_1}}">
                               <img src="{!! $thumbURL !!}" class="img-responsive">

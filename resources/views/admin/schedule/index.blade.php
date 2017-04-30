@@ -20,7 +20,8 @@
                         <th>start_time</th>
                         <th>end_time</th>
                         <th>event type</th>
-
+                        <th>image</th>
+                        <th>ShopList</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -42,6 +43,8 @@
                                     Holiday
                                 @endif
                             </td>
+                            <td>@if($row->image != '')<img width="50px" height="50px" src="{{ asset('uploads') . '/'.  $row->image }}">@endif</td>
+<td>{{ isset($row->shopslist->name) ? $row->shopslist->name : '' }}</td>
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.schedule.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.schedule.destroy', $row->id))) !!}

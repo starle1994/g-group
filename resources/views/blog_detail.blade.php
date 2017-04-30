@@ -3,8 +3,8 @@
 @section('content')
 <style type="text/css">
     .group-god .right .content .blog-content img{
-        width: 70%;
-        height: auto;
+        width: 70% !important;
+        height: auto !important;
     }
     @media (max-width: 768px)
 {

@@ -25,7 +25,7 @@ class UpdateBestRankingRequest extends FormRequest {
 	{
 		return [
             'godstaffs_id' => 'required',
-            'ranking_id'	=>'required'
+            'ranking_id' => 'required|unique:bestranking,ranking_id,NULL,id,deleted_at,NULL',
 		];
 	}
 }

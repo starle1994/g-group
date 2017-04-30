@@ -26,7 +26,7 @@ class BestRankingController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $bestranking = BestRanking::with("godstaffs")->with("ranking")->get();
+        $bestranking = BestRanking::with("godstaffs")->with("ranking")->orderBy('ranking_id','asc')->get();
 
 		return view('admin.bestranking.index', compact('bestranking'));
 	}
@@ -43,12 +43,12 @@ class BestRankingController extends Controller {
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
-		$rankings = Ranking::all();
 	    $ranking['']= 'Please select';
-	    foreach ($rankings as $value_ran) {
-	    	$ranking[$value_ran->id]=$value_ran->number;
-	    }
-	    
+	    $ranking[1] = 1;
+	    $ranking[2] = 2;
+	    $ranking[3] = 3;
+	    $ranking[4] = 4;
+	    $ranking[5] = 5;
 	    return view('admin.bestranking.create', compact("godstaffs", "ranking"));
 	}
 
@@ -89,12 +89,12 @@ class BestRankingController extends Controller {
 	    foreach ($godstaff as $value) {
 	    	$godstaffs[$value->id]=$value->name;
 	    }
-		$rankings = Ranking::all();
-	    $ranking['']= 'Please select';
-	    foreach ($rankings as $value_ran) {
-	    	$ranking[$value_ran->id]=$value_ran->number;
-
-	    }
+		$ranking['']= 'Please select';
+	    $ranking[1] = 1;
+	    $ranking[2] = 2;
+	    $ranking[3] = 3;
+	    $ranking[4] = 4;
+	    $ranking[5] = 5;
 		return view('admin.bestranking.edit', compact('bestranking', "godstaffs", "ranking"));
 	}
 

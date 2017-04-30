@@ -28,7 +28,6 @@ class CreateBlogsRequest extends FormRequest {
             'content' => 'required', 
             'image' => 'required', 
             'shopslist_id' => 'required', 
-            
 		];
 	}
 }

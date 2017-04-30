@@ -40,6 +40,28 @@ class MoviesController extends Controller {
 	    return view('admin.movies.create');
 	}
 
+	public function uploadAvatarAgent($file,$content)
+	{
+	//Check request Avata
+		$explode[1] = null;
+		$explode = explode('.', $file->getClientOriginalName());
+		$arr_ext = array('jpg', 'jpeg', 'png', 'PNG', 'JPG');
+		$result['status'] = 0; 
+		if(!empty($explode) && in_array($explode[1], $arr_ext)) {
+		list($type, $content) = explode(';', $content);
+		list(, $data) = explode(',', $content);
+		$data = base64_decode($data);
+		$setNewFileName = time() . "_" . rand(000000, 999999).'.'.$explode[1];
+		$fileUrl = public_path() . '/uploads/' . $setNewFileName;
+		file_put_contents($fileUrl, $data);
+		$result['status'] = 1;
+		$result['url'] = $setNewFileName; 
+		} else{
+		$result['status'] = 0;
+		$result['url'] = '';
+		}
+		return $result;
+	}
 	/**
 	 * Store a newly created movies in storage.
 	 *
@@ -47,8 +69,12 @@ class MoviesController extends Controller {
 	 */
 	public function store(CreateMoviesRequest $request)
 	{
-	    $request = $this->saveFiles($request);
-		Movies::create($request->all());
+		$input = $request->all();
+	    if ($request->image != null) {
+	    	$data = $this->uploadAvatarAgent($request->image, $request['image-data']);
+	    	$input['image']= $data['url'];
+	    }
+		Movies::create($input);
 
 		return redirect()->route(config('quickadmin.route').'.movies.index');
 	}
@@ -77,9 +103,12 @@ class MoviesController extends Controller {
 	{
 		$movies = Movies::findOrFail($id);
 
-        $request = $this->saveFiles($request);
-
-		$movies->update($request->all());
+        $input = $request->all();
+	    if ($request->image != null) {
+	    	$data = $this->uploadAvatarAgent($request->image, $request['image-data']);
+	    	$input['image']= $data['url'];
+	    }
+		$movies->update($input);
 
 		return redirect()->route(config('quickadmin.route').'.movies.index');
 	}
