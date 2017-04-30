@@ -43,7 +43,7 @@
                 </div>
                 <!-- loop -->
                 <div style="margin-right: 0px; margin-left: 0px;"  class="row main">
-                @foreach($event->eventsfeatureimage as $image)
+                @foreach($imgs as $image)
                     <div class="col-sm-6 avatar">
                      
                             <img src="{{ asset('uploads/'.$image->image)}}" alt="">

@@ -37,6 +37,7 @@ use App\SongRating;
 use App\LastSongVerTwo;
 use App\Ranking;
 use App\Schedule;
+use App\ImagesEventFeature;
 	
 class HomeController extends Controller
 {
@@ -213,9 +214,10 @@ class HomeController extends Controller
 
 	public function showEventDetail($alias)
 	{
-		$event = FeatureEvent::where('alias',$alias)->with('schedule')->with('eventsfeatureimage')->first();
+		$event = FeatureEvent::where('alias',$alias)->with('schedule')->first();
+		$imgs = ImagesEventFeature::where('eventsfeature_id', $event->id)->paginate(2);
 		$banner					= Banner::where('page','1')->first();
-		return view('event_detail',compact('event','event','banner'));
+		return view('event_detail',compact('event','event','banner','imgs'));
 	}
 
 	public function showDialog()
@@ -229,12 +231,12 @@ class HomeController extends Controller
     {
         $dialog = Dialogue::where('alias',$alias)->first();
         $banner					= Banner::where('page','1')->first();
-        return view('dialogue_detail',compact('dialog','banner'));
+        return view('dialogue_detaril',compact('dialog','banner'));
     }
 
 	public function showCastFeature()
 	{
-		$cast_feature = CastFeature::orderBy('id','desc')->paginate(20);
+		$cast_feature = CastFeatue::orderBy('id','desc')->paginate(20);
 		$banner					= Banner::where('page','1')->first();
 		return view('cast_feature',compact('cast_feature','banner'));
 	}
