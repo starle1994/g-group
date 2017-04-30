@@ -22,7 +22,7 @@
 </style>
 <div class="row milion-god">             
     <div class="col-sm-7 col-xs-12 home-left">
-        <div class="row">
+        <div class="row sm-hidden">
             <div class="col-sm-6">
                 <div class="ct-topLeft">
                     <div><img class="imgex" src="{{ asset('css/css/images/milion-god/t1.jpg')}}"
@@ -168,10 +168,10 @@
             </div>
         </div>
         <div class="row lineSli">
-            <div class="col-xs-3" id="lineImg">
+            <div class="col-xs-3 sm-hidden" id="lineImg">
                 @include('include.categories_left2')
             </div>
-            <div class="col-xs-9">
+            <div class="col-sm-9 col-xs-12 no-padding">
                <div class="slider1">
                     <div class="sliderAva">
                         <p class="titleAva4"></p>
