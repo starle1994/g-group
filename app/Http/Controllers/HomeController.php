@@ -50,9 +50,9 @@ class HomeController extends Controller
 		$rookies_feature 		= RookieFeature::all();
 		$shop_list 				= ShopsList::where('is_active',1)->get();
 		$banner					= Banner::where('page','1')->first();
-		$blogs 					= Blogs::take(10)->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->get();
-		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
-		$blogs2					= Blogs::where('shopslist_id','2')->select('name','image_1','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
+		$blogs 					= Blogs::take(10)->select('name','image_1','image','created_at','alias')->orderBy('created_at','desc')->get();
+		$blogs1					= Blogs::where('shopslist_id','1')->select('name','image_1','image','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
+		$blogs2					= Blogs::where('shopslist_id','2')->select('name','image_1','image','created_at','alias')->orderBy('created_at','desc')->take(10)->get();
 		 return view('welcome', compact('contents','million_ranking_staff', 'gigolo_ranking_staff','secrect_contents','rookies_feature','shop_list','banner','blogs','blogs1','blogs2'));
 
 	}
