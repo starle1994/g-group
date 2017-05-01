@@ -1,12 +1,13 @@
 @extends('admin.layouts.master')
 
 @section('content')
-
+<br>
+<h3>{{ isset($event) ? $event->name : '' }}</h3>
 {!! Form::open([ 'route' => config('quickadmin.route').'.featureevent.image.post', 'files' => true, 'enctype' => 'multipart/form-data', 'class' => 'dropzone', 'id' => 'image-upload' ]) !!}
 <div class="form-group">
     {!! Form::label('description', 'description', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::textarea('description', old('description'), array('class'=>'form-control ckeditor')) !!}
+        {!! Form::textarea('description', old('description'), array('class'=>'form-control')) !!}
     </div>
 </div>
 {!! Form::hidden('id', $id) !!}

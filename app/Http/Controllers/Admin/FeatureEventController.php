@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Schedule;
 use App\ImagesEventFeature;
-use Image;
+use Image,File;
 
 class FeatureEventController extends Controller {
 
@@ -75,7 +75,8 @@ class FeatureEventController extends Controller {
 
 	public function showUloadImage($id)
 	{
-		return view('admin.featureevent.image',compact('id'));
+		$event = FeatureEvent::where('id',$id)->first();
+		return view('admin.featureevent.image',compact('id','event'));
 	}
 
 	public function postUloadImage(Request $request)
@@ -146,8 +147,17 @@ class FeatureEventController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		FeatureEvent::destroy($id);
+		$image_f = FeatureEvent::where('id', $id)->first();
+		File::Delete(public_path().'/uploads/'.$image_f->image);
+		File::Delete(public_path().'/uploads/thumb/'.$image_f->image);
 
+		$images = ImagesEventFeature::where('eventsfeature_id', $id)->get();
+		foreach ($images as $img) {
+			File::Delete(public_path().'/uploads/'.$img->image);
+			File::Delete(public_path().'/uploads/thumb/'.$img->image);
+			ImagesEventFeature::destroy($img->id);
+		}
+		FeatureEvent::destroy($id);
 		return redirect()->route(config('quickadmin.route').'.featureevent.index');
 	}
 

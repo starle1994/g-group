@@ -11,7 +11,11 @@ function pages()
 {
 	return	array('1' => 'Group top', '2' => 'Millon God','3'=>'Gigolo');
 }
-
+function position()
+{
+	$position = ['1'=>'スタッフ','2'=>'SPECIAL PERSON'];
+	return $position;
+}
 function alias()
 {
 	$alias[''] = '---Please select----';

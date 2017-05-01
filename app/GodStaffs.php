@@ -28,7 +28,8 @@ class GodStaffs extends Model {
           'position',
           'comment',
           'image',
-          'description'
+          'description',
+          'important',
     ];
     
 

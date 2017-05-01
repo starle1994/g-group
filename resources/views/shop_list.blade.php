@@ -1,10 +1,13 @@
  @extends('layouts.master')
 
 @section('content')
-     <div class="col-sm-2 col-xs-12 shop-list-home-left">
-        @include('include.categories_left2')
+     <div class="col-sm-3 col-xs-12 shop-list-home-left">
+        <div class="exe-fa-line">\
+                    @include('include.categories_left2')
+        </div>
+
     </div>
-    <div class="col-sm-10 content">
+    <div class="col-sm-9 content">
         <div class="shop-list-title">
             <img style="width: 100%" src="{{ asset('css/css/images/shop-list/ショップリスト.jpg') }}" alt="">
         </div>

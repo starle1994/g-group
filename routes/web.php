@@ -140,8 +140,19 @@ Route::group([ 'middleware' => 'auth'], function () {
             'as' => 'actions.ajax',
             'uses' => 'UserActionsController@table'
         ]);
-
-        Route::get(config('quickadmin.route') . '/image/{id}', [
+        Route::get(config('quickadmin.route') . '/restaurant/create/{ID}', [
+            'as' => 'admin.restaurant.create',
+            'uses' => 'Admin\RestaurantController@create'
+        ]);
+        Route::get(config('quickadmin.route') . '/restaurant/image/view/{id}', [
+            'as' => 'admin.restaurant.image.view',
+            'uses' => 'Admin\ImageRestaurantController@view'
+        ]);
+        Route::get(config('quickadmin.route') . '/restaurant/view/{id}', [
+            'as' => 'admin.restaurant.view',
+            'uses' => 'Admin\RestaurantController@view'
+        ]);
+        Route::get(config('quickadmin.route') . '/restaurant/image/{id}', [
             'as' => 'admin.restaurant.image',
             'uses' => 'Admin\RestaurantController@showUloadImage'
         ]);
@@ -150,7 +161,7 @@ Route::group([ 'middleware' => 'auth'], function () {
             'uses' => 'Admin\RestaurantController@postUloadImage'
         ]);
 
-        Route::get(config('quickadmin.route') . '/feature-event/image/{id}', [
+        Route::get(config('quickadmin.route') . '/featureevent/image/{id}', [
             'as' => 'admin.featureevent.image',
             'uses' => 'Admin\FeatureEventController@showUloadImage'
         ]);
@@ -173,6 +184,10 @@ Route::group([ 'middleware' => 'auth'], function () {
         Route::get(config('quickadmin.route') . '/rankingall/type/{id}', [
             'as' => 'admin.rankingall.type2',
             'uses' => 'Admin\RankingAllController@type2'
+        ]);
+        Route::get(config('quickadmin.route') . '/featureevent/view/{id}', [
+            'as' => 'admin.imageseventfeature.view',
+            'uses' => 'Admin\ImagesEventFeatureController@view'
         ]);
     });
 });

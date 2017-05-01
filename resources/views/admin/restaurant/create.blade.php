@@ -22,8 +22,7 @@
 <div class="form-group">
     {!! Form::label('cate_id', 'Categories List*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::select('cate_id', $categories, old('cate_id'), array('class'=>'form-control')) !!}
-        
+        {!! Form::select('cate_id', $categories, old('cate_id',$id), array('class'=>'form-control')) !!}
     </div>
 </div>
 <div class="form-group">

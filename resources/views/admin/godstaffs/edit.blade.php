@@ -42,7 +42,15 @@
         {!! Form::text('position', old('position',$godstaffs->position), array('class'=>'form-control')) !!}
         
     </div>
-</div><div class="form-group">
+</div>
+<div class="form-group">
+    {!! Form::label('', '', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::select('important', position(), old('important',$godstaffs->important), array('class'=>'form-control')) !!}
+        
+    </div>
+</div>
+<div class="form-group">
     {!! Form::label('comment', 'comment', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('comment', old('comment',$godstaffs->comment), array('class'=>'form-control')) !!}

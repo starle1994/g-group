@@ -3,7 +3,6 @@
 @section('content')
 
 <p>{!! link_to_route(config('quickadmin.route').'.featureevent.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
-
 @if ($featureevent->count())
     <div class="portlet box green">
         <div class="portlet-title">
@@ -34,6 +33,7 @@
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.featureevent.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
+                                {!! link_to_route(config('quickadmin.route').'.imageseventfeature.view','View Image', array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.featureevent.destroy', $row->id))) !!}
                                 {!! Form::submit(trans('quickadmin::templates.templates-view_index-delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}

@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row gigolo-list-item">
-        <div class="col-sm-3 left">
+    <div class="row gigolo-list-item group-god">
+        <div class="col-sm-3 col-xs-12 left">
             @include('include.categories_left')
         </div>
 
-        <div class="col-sm-9 right">
+        <div class="col-sm-9 right" style="margin-top: 10px">
             <div class="title">
                 <img src="{{ asset('css/css/images/rookie-feature/fas.png') }}" alt="">
             </div>

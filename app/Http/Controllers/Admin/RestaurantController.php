@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\CategoryLeft;
 use App\ImageRestaurant;
-use Image;
+use Image,File;
 class RestaurantController extends Controller {
 
 	/**
@@ -24,9 +24,20 @@ class RestaurantController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $restaurant = Restaurant::orderBy('id','desc')->get();
+		
+        $category = CategoryLeft::where('is_restaurant',0)->get();
 
-		return view('admin.restaurant.index', compact('restaurant'));
+        $restaurant = Restaurant::orderBy('id','desc')->where('cate_id',$category[0]->id)->get();
+        $id = $category[0]->id;
+
+		return view('admin.restaurant.index', compact('restaurant','category','id'));
+	}
+
+	public function view($id)
+    {
+        $restaurant = Restaurant::orderBy('id','desc')->where('cate_id',$id)->get();
+       	$category = CategoryLeft::where('is_restaurant',0)->get();
+		return view('admin.restaurant.index', compact('restaurant','category','id'));
 	}
 
 	/**
@@ -34,14 +45,17 @@ class RestaurantController extends Controller {
 	 *
      * @return \Illuminate\View\View
 	 */
-	public function create()
+	public function create($id = null)
 	{
+		if ($id== null) {
+			return redirect()->back();
+		}
 	    $category = CategoryLeft::where('is_restaurant',0)->get();
 	    $categories[''] = 'Please choose';
 	    foreach($category as $value) {
 	    	$categories[$value->id] = $value->name;
 	    }
-	    return view('admin.restaurant.create',compact('categories'));
+	    return view('admin.restaurant.create',compact('categories','id'));
 	}
 
 	/**
@@ -154,10 +168,19 @@ class RestaurantController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		$image_f = Restaurant::where('id', $id)->first();
+		File::Delete(public_path().'/uploads/'.$image_f->image);
+		File::Delete(public_path().'/uploads/thumb/'.$image_f->image);
+
+		$images = ImageRestaurant::where('restaurant_id', $id)->get();
+		foreach ($images as $img) {
+			File::Delete(public_path().'/uploads/'.$img->image);
+			File::Delete(public_path().'/uploads/thumb/'.$img->image);
+			ImageRestaurant::destroy($img->id);
+		}
 		Restaurant::destroy($id);
-		$image = ImageRestaurant::where('restaurant_id', $id)->delete();
-	
-		return redirect()->route(config('quickadmin.route').'.restaurant.index');
+
+		return redirect()->back();
 	}
 
     /**

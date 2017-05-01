@@ -19,7 +19,7 @@
 {!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.godstaffs.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
 
 <div class="form-group">
-    {!! Form::label('shopslist_id', 'ショップリスト**', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('shopslist_id', 'ショップリスト*', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::select('shopslist_id', $shopslist, old('shopslist_id'), array('class'=>'form-control')) !!}
         
@@ -42,7 +42,15 @@
         {!! Form::text('position', old('position'), array('class'=>'form-control','placeholder'=>"if nomal staff please don't fill in this field")) !!}
         
     </div>
-</div><div class="form-group">
+</div>
+<div class="form-group">
+    {!! Form::label('', '', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::select('important', position(), old('important'), array('class'=>'form-control')) !!}
+        
+    </div>
+</div>
+<div class="form-group">
     {!! Form::label('comment', 'comment', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('comment', old('comment'), array('class'=>'form-control')) !!}

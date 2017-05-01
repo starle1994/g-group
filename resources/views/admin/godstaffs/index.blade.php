@@ -25,7 +25,7 @@
                         <th>name</th>
                         <th>position</th>
                         <th>comment</th>
-
+                        <th></th>
                         @if($shopslist_id != 3)
                             <th>ranking</th>
                         @else
@@ -49,6 +49,7 @@
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->position }}</td>
                             <td>{{$row->comment}}</td>
+                            <td>{{isset(position()[$row->important]) ? position()[$row->important] : '-'}}</td>
                             <?php 
                                 if ($shopslist_id == 1) {
                                     $ran = App\MillionGodRankingStaff::where('godstaffs_id',$row->id)->with('ranking')->first();

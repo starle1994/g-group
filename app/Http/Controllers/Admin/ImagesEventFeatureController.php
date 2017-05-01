@@ -11,7 +11,7 @@ use App\Http\Requests\UpdateImagesEventFeatureRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\FeatureEvent;
-
+use File;
 
 class ImagesEventFeatureController extends Controller {
 
@@ -24,11 +24,15 @@ class ImagesEventFeatureController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $imageseventfeature = ImagesEventFeature::with("eventsfeature")->get();
-
-		return view('admin.imageseventfeature.index', compact('imageseventfeature'));
+		return redirect()->back();
 	}
 
+	public function view($id)
+	{
+		$imageseventfeature = ImagesEventFeature::with("eventsfeature")->where('eventsfeature_id',$id)->get();
+		$event = FeatureEvent::where('id',$id)->first();
+		return view('admin.imageseventfeature.index', compact('imageseventfeature','event'));
+	}
 	/**
 	 * Show the form for creating a new imageseventfeature
 	 *
@@ -52,7 +56,7 @@ class ImagesEventFeatureController extends Controller {
 	    $request = $this->saveFiles($request);
 		ImagesEventFeature::create($request->all());
 
-		return redirect()->route(config('quickadmin.route').'.imageseventfeature.index');
+		return redirect()->back();
 	}
 
 	/**
@@ -94,7 +98,7 @@ class ImagesEventFeatureController extends Controller {
 
 		$imageseventfeature->update($input);
 
-		return redirect()->route(config('quickadmin.route').'.imageseventfeature.index');
+		return redirect()->back();
 	}
 
 	/**
@@ -104,9 +108,12 @@ class ImagesEventFeatureController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		$image = ImagesEventFeature::where('id', $id)->first();
+		File::Delete(public_path().'/uploads/'.$image->image);
+		File::Delete(public_path().'/uploads/thumb/'.$image->image);
 		ImagesEventFeature::destroy($id);
 
-		return redirect()->route(config('quickadmin.route').'.imageseventfeature.index');
+		return redirect()->back();
 	}
 
     /**
@@ -117,10 +124,13 @@ class ImagesEventFeatureController extends Controller {
      */
     public function massDelete(Request $request)
     {
+
         if ($request->get('toDelete') != 'mass') {
+        	dd('b');
             $toDelete = json_decode($request->get('toDelete'));
             ImagesEventFeature::destroy($toDelete);
         } else {
+        	dd('a');
             ImagesEventFeature::whereNotNull('id')->delete();
         }
 

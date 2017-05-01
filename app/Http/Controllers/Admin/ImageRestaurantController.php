@@ -11,7 +11,7 @@ use App\Http\Requests\UpdateImageRestaurantRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
 use App\Restaurant;
-
+use File;
 
 class ImageRestaurantController extends Controller {
 
@@ -24,9 +24,14 @@ class ImageRestaurantController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $imagerestaurant = ImageRestaurant::with("restaurant")->orderBy('id','desc')->get();
+        return redirect()->back();
+	}
 
-		return view('admin.imagerestaurant.index', compact('imagerestaurant'));
+	public function view($id)
+    {
+        $imagerestaurant = ImageRestaurant::with("restaurant")->orderBy('id','desc')->where('restaurant_id',$id)->get();
+        $restaurants = Restaurant::where('id',$id)->first();
+		return view('admin.imagerestaurant.index', compact('imagerestaurant','restaurants'));
 	}
 
 	/**
@@ -55,7 +60,7 @@ class ImageRestaurantController extends Controller {
 	    $request = $this->saveFiles($request);
 		ImageRestaurant::create($request->all());
 
-		return redirect()->route(config('quickadmin.route').'.imagerestaurant.index');
+		return redirect()->back();
 	}
 
 	/**
@@ -90,7 +95,7 @@ class ImageRestaurantController extends Controller {
 
 		$imagerestaurant->update($request->all());
 
-		return redirect()->route(config('quickadmin.route').'.imagerestaurant.index');
+		return redirect()->back();
 	}
 
 	/**
@@ -100,9 +105,13 @@ class ImageRestaurantController extends Controller {
 	 */
 	public function destroy($id)
 	{
+		$image = ImageRestaurant::where('id', $id)->first();
+		File::Delete(public_path().'/uploads/'.$image->image);
+		File::Delete(public_path().'/uploads/thumb/'.$image->image);
+
 		ImageRestaurant::destroy($id);
 
-		return redirect()->route(config('quickadmin.route').'.imagerestaurant.index');
+		return redirect()->back();
 	}
 
     /**

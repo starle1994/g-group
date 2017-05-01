@@ -3776,3 +3776,6 @@ footer {
 .under{
   margin-top: 10px;
 }
+.shop_list #main .container-fluid .content .shop-list-content-item .clear-KH{
+  height: 0px;
+}

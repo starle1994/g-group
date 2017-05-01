@@ -236,7 +236,7 @@ class HomeController extends Controller
 
 	public function showCastFeature()
 	{
-		$cast_feature = CastFeatue::orderBy('id','desc')->paginate(20);
+		$cast_feature = CastFeature::orderBy('id','desc')->paginate(20);
 		$banner					= Banner::where('page','1')->first();
 		return view('cast_feature',compact('cast_feature','banner'));
 	}
