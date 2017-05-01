@@ -215,7 +215,7 @@ class HomeController extends Controller
 	public function showEventDetail($alias)
 	{
 		$event = FeatureEvent::where('alias',$alias)->with('schedule')->first();
-		$imgs = ImagesEventFeature::where('eventsfeature_id', $event->id)->get();
+		$imgs = ImagesEventFeature::where('eventsfeature_id', $event->id)->paginate(2);
 		$banner					= Banner::where('page','1')->first();
 		return view('event_detail',compact('event','event','banner','imgs'));
 	}
