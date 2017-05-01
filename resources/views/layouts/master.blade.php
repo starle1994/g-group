@@ -15,9 +15,18 @@
      <link href='{!! url('css/css/style.css') !!}' rel='stylesheet' type='text/css' />
      <script src='{!! url('js/jquery-3.1.1.min.js') !!}' type='text/javascript'></script>
     <script src='{!! url('js/bootstrap.min.js') !!}' type='text/javascript'></script>
-    <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script> 
+    <script src='{!! url('js/owl.carousel.min.js') !!}' type='text/javascript'></script>
+    <style type="text/css">
+        #preloader{position:fixed; top:0; left:0; right:0; bottom:0; background-color:#fff; z-index:99}
+#status{width:200px; height:200px; position:absolute; left:50%; top:50%; background-image:url("status.gif"); background-repeat:no-repeat; background-position:center; margin:-100px 0 0 -100px}
+
+    </style> 
     </head>
 <body id="calendar_div">
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
     <div id="wrapper" class="groupTop shop_list group-rankking-top">
         @include('layouts.header')
         <div id="main">
@@ -53,6 +62,13 @@
                 items:2
             }
         }
-    })
+    });
+    $(window).on('load', function() { // makes sure the whole site is loaded
+    $('#status').fadeOut(); // will first fade out the loading animation
+    $('#preloader').delay(100).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    $('body').delay(100).css({
+        'overflow': 'visible'
+    });
+})    
 </script>
 </html>
