@@ -85,7 +85,7 @@
                 </div>
                 <div class="gr-rank-footer-p1">
                     @foreach ($million_god_staff as $group2)
-                        @if($group2->position ==null)
+                        @if($group2->important != 2)
                         <div class="col-md-2 col-xs-2 item" style="margin-bottom: 15px;">
                             <div class="av-main">
                                 <div class="avt-lf">
@@ -94,6 +94,7 @@
                             </div>
 
                             <div class="ft-bk" style="height: 40px;">
+                                {{ $group2->position != null ? $group2->position :'-'}}<br> 
                                 <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a> <br> 
                                  {{$group2->comment}}
                             </div>
@@ -109,19 +110,19 @@
                     </div>
                 </div>
                 <div class="gr-rank-footer-p1">
-                    @foreach ($million_god_staff as $group2)
-                        @if($group2->position !=null)
+                    @foreach ($million_god_staff as $group3)
+                        @if($group3->importan == 2)
                         <div class="col-md-2 col-xs-2 item" style="margin-bottom: 15px;">
                             <div class="av-main">
                                 <div class="avt-lf">
-                                    <a href="{{route('staff-detail',base64_encode($group2->id))}}"><img class="avt-img" src="{{ asset('uploads/'.$group2->image) }}" alt=""></a>
+                                    <a href="{{route('staff-detail',base64_encode($group3->id))}}"><img class="avt-img" src="{{ asset('uploads/'.$group3->image) }}" alt=""></a>
                                 </div>
                             </div>
 
                             <div class="ft-bk">
-                                {{$group2->position}}<br> 
-                                <a href="{{route('staff-detail',base64_encode($group2->id))}}">{{$group2->name}}</a><br> 
-                                {{$group2->comment}} 
+                                {{ $group3->position != null ? $group3->position :'-'}}<br> 
+                                <a href="{{route('staff-detail',base64_encode($group3->id))}}">{{$group3->name}}</a><br> 
+                                {{$group3->comment}} 
                             </div>
                         </div>
                         @endif
